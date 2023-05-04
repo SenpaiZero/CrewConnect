@@ -35,13 +35,12 @@ namespace WinFormsApp1
         // loginBtn
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (whatBtn != "login")
+            if (whatBtn != "login" && whatBtn != "")
             {
                 whatBtn = "login";
                 attendanceBtn.FillColor = Color.FromArgb(51, 52, 78);
                 loginBtn.FillColor = Color.FromArgb(39, 72, 93);
-                f.SendToBack();
-                this.mainsPanel.Controls.Remove(f);
+                f.Close();
             }
         }
 
@@ -84,7 +83,7 @@ namespace WinFormsApp1
         {
             managerAddEmployee ad = new managerAddEmployee();
             ad.ShowDialog();
-            this.Hide();
+            this.Close();
         }
 
         // Show password
@@ -118,6 +117,11 @@ namespace WinFormsApp1
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

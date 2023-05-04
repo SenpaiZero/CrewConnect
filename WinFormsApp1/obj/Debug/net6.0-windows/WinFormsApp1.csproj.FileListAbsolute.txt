@@ -24,3 +24,4 @@ C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\ref\WinFo
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.managerAddEmployee.resources
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.managerHome.resources
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.employeeID.resources
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.addEmployee.pages.page1.resources

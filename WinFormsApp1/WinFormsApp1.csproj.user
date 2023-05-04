@@ -10,10 +10,13 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ManagerClass\employeeID.cs">
+    <Compile Update="ManagerClass\addEmployee\employeeID.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ManagerClass\managerAddEmployee.cs">
+    <Compile Update="ManagerClass\addEmployee\managerAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ManagerClass\addEmployee\pages\page1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ManagerClass\managerHome.cs">
