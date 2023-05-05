@@ -67,6 +67,20 @@ namespace WinFormsApp1.ManagerClass
             set { photo = value; }
             get { return photo; }
         }
+
+        private void managerAddEmployee_Load(object sender, EventArgs e)
+        {
+            positionLabel.Text = globalVariables.position;
+            position.Text = "POSITION: " + globalVariables.position;
+            id.Text = "Row ID: " + globalVariables.id;
+            username.Text = "USERNAME: " + globalVariables.username;
+        }
+
+        private void header_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         public static Bitmap QRPhoto
         {
             set { qrPhoto = value; }

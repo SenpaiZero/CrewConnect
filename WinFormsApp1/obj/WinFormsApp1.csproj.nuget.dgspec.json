@@ -43,6 +43,14 @@
             "Guna.UI2.WinForms": {
               "target": "Package",
               "version": "[2.0.4.4, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [

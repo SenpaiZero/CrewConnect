@@ -22,5 +22,8 @@
     <Compile Update="ManagerClass\managerHome.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="pleaseWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

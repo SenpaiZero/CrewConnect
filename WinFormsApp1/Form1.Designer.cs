@@ -63,9 +63,9 @@
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.loginBtn = new Guna.UI2.WinForms.Guna2Button();
             this.attendanceBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.closeBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tooltip = new Guna.UI2.WinForms.Guna2HtmlToolTip();
-            this.closeBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2Panel4.SuspendLayout();
             this.mainsPanel.SuspendLayout();
             this.SuspendLayout();
@@ -337,14 +337,6 @@
             this.attendanceBtn.TextOffset = new System.Drawing.Point(15, 0);
             this.attendanceBtn.Click += new System.EventHandler(this.attendanceBtn_Click);
             // 
-            // tooltip
-            // 
-            this.tooltip.AllowLinksHandling = true;
-            this.tooltip.AutoPopDelay = 5500;
-            this.tooltip.InitialDelay = 550;
-            this.tooltip.MaximumSize = new System.Drawing.Size(0, 0);
-            this.tooltip.ReshowDelay = 100;
-            // 
             // closeBtn
             // 
             this.closeBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -359,6 +351,14 @@
             this.closeBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.closeBtn.ShadowDecoration.CustomizableEdges = customizableEdges1;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // tooltip
+            // 
+            this.tooltip.AllowLinksHandling = true;
+            this.tooltip.AutoPopDelay = 5500;
+            this.tooltip.InitialDelay = 550;
+            this.tooltip.MaximumSize = new System.Drawing.Size(0, 0);
+            this.tooltip.ReshowDelay = 100;
             // 
             // Form1
             // 

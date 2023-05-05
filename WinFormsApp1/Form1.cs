@@ -1,4 +1,7 @@
-﻿using System.Drawing.Imaging;
+﻿using System.ComponentModel;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 using WinFormsApp1.ManagerClass;
 
@@ -6,14 +9,22 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
+        public static bool isDone = false;
+
         static String whatBtn = "";
         static Form f;
+        static SqlConnection con;
+        static SqlCommand cmd;
+        static SqlDataReader dr;
 
         public Form1()
         {
             InitializeComponent();
         }
-       protected override CreateParams CreateParams
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+        protected override CreateParams CreateParams
         {
             get
             {
@@ -63,9 +74,6 @@ namespace WinFormsApp1
             Application.Exit();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
         {
@@ -81,9 +89,38 @@ namespace WinFormsApp1
         //Login btn
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            managerAddEmployee ad = new managerAddEmployee();
-            ad.ShowDialog();
-            this.Close();
+            String username, password;
+            username = userNameTB.Text;
+            password = passwordTB.Text;
+
+            using (con = new SqlConnection(globalVariables.server))
+            {
+                var loadingForm = new pleaseWaitForm();
+                loadingForm.StartPosition = FormStartPosition.CenterParent;
+                loadingForm.ShowDialog();
+                con.Open();
+                    managerAddEmployee ad = new managerAddEmployee();
+                    cmd = new SqlCommand($"SELECT * FROM Users WHERE username = '{username}' AND password = '{password}'", con);
+                    dr = cmd.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                            globalVariables.position = dr.GetString(3).ToUpper();
+                            globalVariables.id = dr.GetInt32(0).ToString().ToUpper();
+                            globalVariables.username = dr.GetString(1).ToUpper();
+                            dr.Close();
+
+                            this.Hide();
+                            ad.StartPosition = FormStartPosition.CenterParent;
+                            ad.ShowDialog();
+                            this.Dispose(true);
+                    }
+                    else
+                    {
+                        dr.Close();
+                        MessageBox.Show("INCORRECT");
+                    }
+                }
         }
 
         // Show password
@@ -125,5 +162,7 @@ namespace WinFormsApp1
         {
             Application.Exit();
         }
+
+
     }
 }
