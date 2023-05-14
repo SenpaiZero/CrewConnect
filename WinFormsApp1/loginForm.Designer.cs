@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class Form1
+    partial class loginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -48,7 +48,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.minimiseBtn = new Guna.UI2.WinForms.Guna2CircleButton();
@@ -234,6 +234,7 @@
             // 
             // passwordTB
             // 
+            this.passwordTB.AcceptsReturn = true;
             this.passwordTB.Animated = true;
             this.passwordTB.AutoRoundedCorners = true;
             resources.ApplyResources(this.passwordTB, "passwordTB");
@@ -262,6 +263,7 @@
             this.passwordTB.ShadowDecoration.CustomizableEdges = customizableEdges7;
             this.passwordTB.WordWrap = false;
             this.passwordTB.IconRightClick += new System.EventHandler(this.guna2TextBox2_IconRightClick);
+            this.passwordTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTB_KeyDown);
             // 
             // guna2Transition1
             // 
@@ -360,7 +362,7 @@
             this.tooltip.MaximumSize = new System.Drawing.Size(0, 0);
             this.tooltip.ReshowDelay = 100;
             // 
-            // Form1
+            // loginForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -373,8 +375,9 @@
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "loginForm";
+            this.Load += new System.EventHandler(this.loginForm_Load);
+            this.Shown += new System.EventHandler(this.loginForm_Shown);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.mainsPanel.ResumeLayout(false);

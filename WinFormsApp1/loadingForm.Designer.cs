@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1
 {
-    partial class pleaseWaitForm
+    partial class loadingForm
     {
         /// <summary>
         /// Required designer variable.

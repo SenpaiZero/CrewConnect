@@ -7,7 +7,10 @@
     <Compile Update="attendance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form1.cs">
+    <Compile Update="Helper\userInterfaceHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ManagerClass\addEmployee\employeeID.cs">
@@ -19,10 +22,25 @@
     <Compile Update="ManagerClass\addEmployee\pages\page1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ManagerClass\addEmployee\pages\page2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ManagerClass\addEmployee\pages\page3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ManagerClass\addEmployee\pages\page4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ManagerClass\addEmployee\previewInfo1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ManagerClass\managerHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="pleaseWaitForm.cs">
+    <Compile Update="loadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NoConnectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

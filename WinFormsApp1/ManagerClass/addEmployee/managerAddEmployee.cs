@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheArtOfDevHtmlRenderer.Adapters;
+using WinFormsApp1.Helper;
+using WinFormsApp1.ManagerClass.addEmployee.pages;
 
 namespace WinFormsApp1.ManagerClass
 {
@@ -16,6 +19,7 @@ namespace WinFormsApp1.ManagerClass
     {
         private static String name, role, idNum;
         private static Bitmap photo, qrPhoto;
+        public static Guna2Panel panel;
         public managerAddEmployee()
         {
             InitializeComponent();
@@ -70,13 +74,17 @@ namespace WinFormsApp1.ManagerClass
 
         private void managerAddEmployee_Load(object sender, EventArgs e)
         {
-            positionLabel.Text = globalVariables.position;
-            position.Text = "POSITION: " + globalVariables.position;
-            id.Text = "Row ID: " + globalVariables.id;
-            username.Text = "USERNAME: " + globalVariables.username;
+            positionLabel.Text = globalVariables.userPosition;
+            panel = this.mainPanel;
+            pageHelper.changePage(new page1(), panel);
         }
 
         private void header_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void managerAddEmployee_Load_1(object sender, EventArgs e)
         {
 
         }

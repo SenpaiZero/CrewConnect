@@ -4,25 +4,22 @@ using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 using WinFormsApp1.ManagerClass;
+using WinFormsApp1.Helper;
 
 namespace WinFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class loginForm : Form
     {
         public static bool isDone = false;
 
         static String whatBtn = "";
-        static Form f;
         static SqlConnection con;
         static SqlCommand cmd;
         static SqlDataReader dr;
 
-        public Form1()
+        public loginForm()
         {
             InitializeComponent();
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
         }
         protected override CreateParams CreateParams
         {
@@ -33,15 +30,6 @@ namespace WinFormsApp1
                 return handleParams;
             }
         }
-        public void loadForm(object Form)
-        {
-            f = Form as Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.mainsPanel.Controls.Add(f);
-            this.mainsPanel.Tag = f;
-            f.Show();
-        }
 
         // loginBtn
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -51,7 +39,7 @@ namespace WinFormsApp1
                 whatBtn = "login";
                 attendanceBtn.FillColor = Color.FromArgb(51, 52, 78);
                 loginBtn.FillColor = Color.FromArgb(39, 72, 93);
-                f.Close();
+                pageHelper.f.Close();
             }
         }
 
@@ -63,28 +51,9 @@ namespace WinFormsApp1
                 whatBtn = "attendance";
                 loginBtn.FillColor = Color.FromArgb(51, 52, 78);
                 attendanceBtn.FillColor = Color.FromArgb(39, 72, 93);
-                loadForm(new attendance());
-                f.BringToFront();
+                pageHelper.changePage(new attendance(), this.mainsPanel);
             }
         }
-
-        // ExitBtn
-        private void guna2ImageButton1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        
 
         //Login btn
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -95,8 +64,9 @@ namespace WinFormsApp1
 
             using (con = new SqlConnection(globalVariables.server))
             {
-                var loadingForm = new pleaseWaitForm();
+                var loadingForm = new loadingForm();
                 loadingForm.StartPosition = FormStartPosition.CenterParent;
+                loadingForm.loadingTime = 2500;
                 loadingForm.ShowDialog();
                 con.Open();
                     managerAddEmployee ad = new managerAddEmployee();
@@ -105,8 +75,7 @@ namespace WinFormsApp1
 
                     if (dr.Read())
                     {
-                            globalVariables.position = dr.GetString(3).ToUpper();
-                            globalVariables.id = dr.GetInt32(0).ToString().ToUpper();
+                            globalVariables.userPosition = dr.GetString(3).ToUpper();
                             globalVariables.username = dr.GetString(1).ToUpper();
                             dr.Close();
 
@@ -163,6 +132,28 @@ namespace WinFormsApp1
             Application.Exit();
         }
 
+        private void passwordTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                guna2Button2.PerformClick();
+            }
+        }
 
+        private async void loginForm_Shown(object sender, EventArgs e)
+        {
+            await Task.Delay(1000);
+            if (!validationHelper.internetAvailability())
+            {
+                NoConnectionForm noNetwork = new NoConnectionForm();
+                noNetwork.StartPosition = FormStartPosition.CenterParent;
+                noNetwork.ShowDialog();
+            }
+        }
+
+        private void loginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

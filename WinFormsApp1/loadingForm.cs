@@ -11,19 +11,18 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class pleaseWaitForm : Form
+    public partial class loadingForm : Form
     {
-        public pleaseWaitForm()
+        public loadingForm()
         {
             InitializeComponent();
         }
-        public static bool isDone = false;
         Stopwatch stopwatch = new Stopwatch();
+        public int loadingTime = 1000; 
         private void pleaseWaitForm_Load(object sender, EventArgs e)
         {
             timer1.Interval = 500;
             timer1.Start();
-            isDone = true;
 
             stopwatch.Start();
         }
@@ -34,19 +33,13 @@ namespace WinFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (stopwatch.ElapsedMilliseconds > 1000) 
+            if (stopwatch.ElapsedMilliseconds > loadingTime) 
             {
-                bool isConditionMet = true;
+                timer1.Stop();
+                stopwatch.Stop();
 
-                if (isConditionMet)
-                {
-                    // Stop the timer and perform any actions you need to do
-                    timer1.Stop();
-                    stopwatch.Stop();
-                    isDone = false;
-
-                    this.Close();
-                }
+                this.Close();
+                
             }
         }
     }
