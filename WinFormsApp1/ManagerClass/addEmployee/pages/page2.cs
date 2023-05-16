@@ -32,7 +32,34 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
-            pageHelper.changePage(new page3(), managerAddEmployee.panel);
+            // Debuging purposes
+            if(globalVariables.isDebuging)
+                pageHelper.changePage(new page3(), managerAddEmployee.panel);
+            else
+            // end of debugging 
+            if ((yearCB.Text != "YEAR" && monthCB.Text != "MONTH" &&
+                dayCB.Text != "DAY" && bloodTypeCB.Text != "BLOOD TYPE" &&
+                genderCB.Text != "GENDER" && nationalityCB.Text != "NATIONALITY" &&
+                statusCB.Text != "STATUS" && religionCB.Text != "RELIGION") )
+            {
+                pageHelper.changePage(new page3(), managerAddEmployee.panel);
+
+                globalVariables.year = Convert.ToInt32(yearCB.Text);
+                globalVariables.day = Convert.ToInt32(dayCB.Text);
+                globalVariables.month = monthCB.SelectedIndex;
+
+                globalVariables.bloodType = bloodTypeCB.Text;
+                globalVariables.gender = genderCB.Text;
+                globalVariables.nationality = nationalityCB.Text;
+                globalVariables.status = statusCB.Text;
+                globalVariables.religion = religionCB.Text;
+                globalVariables.age = Convert.ToInt32(ageTB.Text);
+            }
+            else
+            {
+                MessageBox.Show("incomplete input");
+            }
+
         }
 
         private void prevBtn_Click(object sender, EventArgs e)
@@ -73,12 +100,12 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
             String[] genders =
             {
-                "MALE", "FEMALE", "OTHERS"
+                "GENDER", "MALE", "FEMALE", "OTHERS"
             };
 
             String[] nationalities = 
             { 
-                "Filipino", "American", "Canadian", "British", "Australian", "Chinese", 
+                "NATIONALITY", "Filipino", "American", "Canadian", "British", "Australian", "Chinese", 
                 "Japanese", "Korean", "Russian", "French", "German", "Italian", "Spanish", 
                 "Mexican", "Brazilian" 
             };

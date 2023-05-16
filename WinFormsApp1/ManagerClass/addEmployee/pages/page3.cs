@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,21 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         private void prevBtn_Click(object sender, EventArgs e)
         {
             pageHelper.changePage(new page2(), managerAddEmployee.panel);
+        }
+
+        private void generateBtn_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            int baseId = 1000;
+
+            int randomDigits = random.Next(10000, 99999); // Generates a 5-digit random number
+
+            String randomizedId = (baseId * 100000 + randomDigits).ToString();
+
+            idNumTB.Text = randomizedId;
+            Bitmap img = qrCodeHelper.generateQrCode(randomizedId);
+            qrPic.Image = img;
+            img.Save($"C:\\Users\\Xeb\\Desktop\\{randomizedId}.png", ImageFormat.Png);
         }
     }
 }

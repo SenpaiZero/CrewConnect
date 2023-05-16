@@ -166,6 +166,7 @@
             this.generateBtn.Size = new System.Drawing.Size(154, 80);
             this.generateBtn.TabIndex = 45;
             this.generateBtn.Text = "GENERATE";
+            this.generateBtn.Click += new System.EventHandler(this.generateBtn_Click);
             // 
             // captureBtn
             // 
@@ -297,6 +298,7 @@
             this.qrPic.Name = "qrPic";
             this.qrPic.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.qrPic.Size = new System.Drawing.Size(200, 200);
+            this.qrPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.qrPic.TabIndex = 38;
             this.qrPic.TabStop = false;
             // 

@@ -89,6 +89,11 @@ namespace WinFormsApp1.ManagerClass
 
         }
 
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public static Bitmap QRPhoto
         {
             set { qrPhoto = value; }

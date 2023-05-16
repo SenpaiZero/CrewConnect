@@ -24,6 +24,9 @@ namespace WinFormsApp1.Helper
             "Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
 
+        // Debuging purposes
+        public static bool isDebuging { get; set; }
+
         // Persistence Data for adding employee
         // Page 1
         public static string? firstname { get; set; }
@@ -43,6 +46,8 @@ namespace WinFormsApp1.Helper
         public static String? bloodType { get; set; }
         public static String? gender { get; set; }
         public static String? nationality { get; set; }
+        public static String? status { get; set; }
+        public static String? religion { get; set; }
         public static int? age { get; set; }
 
         // Page 3
@@ -52,6 +57,8 @@ namespace WinFormsApp1.Helper
         public static string? phoneNumber { get; set; }
         public static string? email { get; set; }
         public static string? email2 { get; set; }
+        public static Bitmap? qrCodePic { get; set; }
+        public static Bitmap? selfPic { get; set; }
 
         // Page 4
         public static string? bankName { get; set; }

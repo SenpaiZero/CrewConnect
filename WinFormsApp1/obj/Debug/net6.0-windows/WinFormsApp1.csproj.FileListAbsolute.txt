@@ -62,3 +62,4 @@ C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsA
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.NoConnectionForm.resources
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Helper.userInterfaceHelper.resources
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.addEmployee.previewInfo1.resources
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\QRCoder.dll

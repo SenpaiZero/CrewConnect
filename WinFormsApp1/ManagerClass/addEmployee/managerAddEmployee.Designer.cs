@@ -208,6 +208,7 @@
             this.addBtn.Text = "ADD EMPLOYEE";
             this.addBtn.TextOffset = new System.Drawing.Point(15, 0);
             this.addBtn.UseTransparentBackground = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // rmvBtn
             // 

@@ -119,11 +119,11 @@ namespace WinFormsApp1.Helper
         public static void comboBoxValue(Guna2ComboBox cb, int start, int end, String title)
         {
             cb.Items.Clear();
-            cb.Items.Add(title);
             for (int i = start; i < end; i++)
             {
                 cb.Items.Add((i + 1).ToString());
             }
+            cb.Items.Add(title);
         }
 
         // Calculating date

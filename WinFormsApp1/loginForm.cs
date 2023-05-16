@@ -155,5 +155,17 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            globalVariables.isDebuging = true;
+            MessageBox.Show("Debugging turned on!");
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

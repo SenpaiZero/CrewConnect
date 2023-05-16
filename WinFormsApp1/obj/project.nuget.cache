@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6HwQ+f89yEaRs05mFYILEUA8WhsYQNZ/j8Gmp2sJc0kDdGwotbZ/F+GRRsXU+2ddf9s0QVnPcztoiWv1rqFg1A==",
+  "dgSpecHash": "06y9gfYcPS0csrXkq7s5Cgrr4bz+sZuu21Iog59W6SdIFhL+gZzb3IpfDPvqBrrSEnEsbu4liUJOfABe4i6+7A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Xeb\\Desktop\\CrewConnect\\WinFormsApp1\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,7 @@
     "C:\\Users\\Xeb\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Xeb\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Xeb\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Xeb\\.nuget\\packages\\qrcoder\\1.4.3\\qrcoder.1.4.3.nupkg.sha512",
     "C:\\Users\\Xeb\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Xeb\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Xeb\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

@@ -34,20 +34,36 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         }
         private void nextBtn_Click(object sender, EventArgs e)
         {
-            pageHelper.changePage(new page2(), managerAddEmployee.panel);
-            globalVariables.firstname = firstnameTB.Text;
-            globalVariables.middlename = middlenameTB.Text;
-            globalVariables.lastname = surnameTB.Text;
-            globalVariables.streetAdd = addressTB.Text;
-            globalVariables.city = cityTB.Text;
-            globalVariables.postal = postalTB.Text;
-            globalVariables.state = stateTB.Text;
-            globalVariables.permAdd = permAddCheckBox.Checked;
+            String[] data = { firstnameTB.Text, middlenameTB.Text, surnameTB.Text, 
+                addressTB.Text, cityTB.Text, postalTB.Text, stateTB.Text};
 
-            if (string.IsNullOrEmpty(address2TB.Text))
-                globalVariables.streetAdd2 = " ";
+            // Debugging purposes
+            if (globalVariables.isDebuging)
+                pageHelper.changePage(new page2(), managerAddEmployee.panel);
             else
-                globalVariables.streetAdd2 = address2TB.Text;
+            // End of debugging
+
+            if (data.Any(string.IsNullOrWhiteSpace))
+            {
+                MessageBox.Show("Incomplete data");
+            }
+            else
+            {
+                pageHelper.changePage(new page2(), managerAddEmployee.panel);
+                globalVariables.firstname = data[0];
+                globalVariables.middlename = data[1];
+                globalVariables.lastname = data[2];
+                globalVariables.streetAdd = data[3];
+                globalVariables.city = data[4];
+                globalVariables.postal = data[5];
+                globalVariables.state = data[6];
+                globalVariables.permAdd = permAddCheckBox.Checked;
+
+                if (string.IsNullOrWhiteSpace(address2TB.Text))
+                    globalVariables.streetAdd2 = " ";
+                else
+                    globalVariables.streetAdd2 = address2TB.Text;
+            }
         }
 
         private void surnameTB_Validating(object sender, CancelEventArgs e)

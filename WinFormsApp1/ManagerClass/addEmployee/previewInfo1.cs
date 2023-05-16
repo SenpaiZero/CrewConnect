@@ -58,5 +58,10 @@ namespace WinFormsApp1.ManagerClass.addEmployee
         {
             
         }
+
+        private void finishBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
