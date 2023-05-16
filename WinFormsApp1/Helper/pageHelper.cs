@@ -14,7 +14,6 @@ namespace WinFormsApp1.Helper
         {
             f = Form as Form;
             f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
             mainPanel.Controls.Add(f);
             mainPanel.Tag = f;
             f.Show();

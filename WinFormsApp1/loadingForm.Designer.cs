@@ -46,12 +46,11 @@
             // 
             this.loading.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.loading.AutoStart = true;
-            this.loading.Location = new System.Drawing.Point(100, 46);
-            this.loading.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.loading.Location = new System.Drawing.Point(114, 61);
             this.loading.Name = "loading";
             this.loading.ProgressColor = System.Drawing.Color.IndianRed;
             this.loading.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            this.loading.Size = new System.Drawing.Size(55, 46);
+            this.loading.Size = new System.Drawing.Size(63, 61);
             this.loading.TabIndex = 1;
             // 
             // guna2HtmlLabel1
@@ -59,10 +58,9 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Symbol", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(72, 96);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(82, 128);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(120, 27);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(149, 33);
             this.guna2HtmlLabel1.TabIndex = 2;
             this.guna2HtmlLabel1.Text = "PLEASE WAIT";
             // 
@@ -70,16 +68,18 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pleaseWaitForm
+            // loadingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 156);
+            this.ClientSize = new System.Drawing.Size(295, 208);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.loading);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "pleaseWaitForm";
+            this.Name = "loadingForm";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "pleaseWaitForm";
             this.Load += new System.EventHandler(this.pleaseWaitForm_Load);
             this.Shown += new System.EventHandler(this.pleaseWaitForm_Shown);
