@@ -51,6 +51,7 @@ namespace WinFormsApp1.Helper
         public static int? age { get; set; }
 
         // Page 3
+        public static string idNum { get; set; }
         public static string? qrPath { get; set; }
         public static string? picPath { get; set; }
         public static string? position { get; set; }

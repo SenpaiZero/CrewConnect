@@ -69,26 +69,26 @@ namespace WinFormsApp1
                 loadingForm.loadingTime = 2500;
                 loadingForm.ShowDialog();
                 con.Open();
-                    managerAddEmployee ad = new managerAddEmployee();
-                    cmd = new SqlCommand($"SELECT * FROM Users WHERE username = '{username}' AND password = '{password}'", con);
-                    dr = cmd.ExecuteReader();
+                managerAddEmployee ad = new managerAddEmployee();
+                cmd = new SqlCommand($"SELECT * FROM Users WHERE username = '{username}' AND password = '{password}'", con);
+                dr = cmd.ExecuteReader();
 
-                    if (dr.Read())
-                    {
-                            globalVariables.userPosition = dr.GetString(3).ToUpper();
-                            globalVariables.username = dr.GetString(1).ToUpper();
-                            dr.Close();
-
-                            this.Hide();
-                            ad.StartPosition = FormStartPosition.CenterParent;
-                            ad.ShowDialog();
-                            this.Dispose(true);
-                    }
-                    else
-                    {
+                if (dr.Read())
+                {
+                        globalVariables.userPosition = dr.GetString(3).ToUpper();
+                        globalVariables.username = dr.GetString(1).ToUpper();
                         dr.Close();
-                        MessageBox.Show("INCORRECT");
-                    }
+
+                        this.Hide();
+                        ad.StartPosition = FormStartPosition.CenterParent;
+                        ad.ShowDialog();
+                        this.Dispose(true);
+                }
+                else
+                {
+                    dr.Close();
+                    MessageBox.Show("INCORRECT");
+                }
                 }
         }
 
