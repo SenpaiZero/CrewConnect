@@ -69,7 +69,7 @@ namespace WinFormsApp1.Helper
         public static string? branch { get; set; }
         public static string? BSB { get; set; }
         public static string? accountNum { get; set; }
-        public static int? accountType { get; set; }
+        public static string? contract { get; set; }
         public static string? salary { get; set; }
 
         //

@@ -124,6 +124,7 @@
             // 
             // guna2BorderlessForm1
             // 
+            this.guna2BorderlessForm1.BorderRadius = 25;
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
@@ -423,6 +424,7 @@
             this.mainsPanel.Size = new System.Drawing.Size(1110, 924);
             this.mainsPanel.TabIndex = 6;
             this.mainsPanel.UseTransparentBackground = true;
+            this.mainsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainsPanel_Paint);
             // 
             // guna2Shapes2
             // 
@@ -1162,7 +1164,6 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm2;
         private Guna.UI2.WinForms.Guna2Button prevBtn;
         private Guna.UI2.WinForms.Guna2Button finishBtn;
-        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes5;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel email2Label;
         private Guna.UI2.WinForms.Guna2HtmlLabel emailLabel;

@@ -135,11 +135,11 @@
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(89, 38);
             this.guna2HtmlLabel1.TabIndex = 19;
+            this.guna2HtmlLabel1.TabStop = false;
             this.guna2HtmlLabel1.Text = "PAGE 1";
             // 
             // nextBtn
             // 
-            this.nextBtn.Animated = true;
             this.nextBtn.BorderRadius = 25;
             this.nextBtn.CustomizableEdges = customizableEdges1;
             this.nextBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -166,6 +166,7 @@
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(107, 33);
             this.guna2HtmlLabel5.TabIndex = 17;
+            this.guna2HtmlLabel5.TabStop = false;
             this.guna2HtmlLabel5.Text = "ADDRESS";
             // 
             // guna2HtmlLabel4
@@ -188,6 +189,7 @@
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(224, 30);
             this.guna2HtmlLabel3.TabIndex = 15;
+            this.guna2HtmlLabel3.TabStop = false;
             this.guna2HtmlLabel3.Text = "PERMANENT ADDRESS";
             // 
             // permAddCheckBox
@@ -210,6 +212,7 @@
             // 
             // postalTB
             // 
+            this.postalTB.BorderThickness = 5;
             this.postalTB.CustomizableEdges = customizableEdges5;
             this.postalTB.DefaultText = "";
             this.postalTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -228,11 +231,13 @@
             this.postalTB.SelectedText = "";
             this.postalTB.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.postalTB.Size = new System.Drawing.Size(368, 45);
+            this.postalTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.postalTB.TabIndex = 8;
             this.postalTB.Validating += new System.ComponentModel.CancelEventHandler(this.postalTB_Validating);
             // 
             // stateTB
             // 
+            this.stateTB.BorderThickness = 5;
             this.stateTB.CustomizableEdges = customizableEdges7;
             this.stateTB.DefaultText = "";
             this.stateTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -251,11 +256,13 @@
             this.stateTB.SelectedText = "";
             this.stateTB.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.stateTB.Size = new System.Drawing.Size(393, 45);
+            this.stateTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.stateTB.TabIndex = 7;
             this.stateTB.Validating += new System.ComponentModel.CancelEventHandler(this.stateTB_Validating);
             // 
             // cityTB
             // 
+            this.cityTB.BorderThickness = 5;
             this.cityTB.CustomizableEdges = customizableEdges9;
             this.cityTB.DefaultText = "";
             this.cityTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -274,11 +281,13 @@
             this.cityTB.SelectedText = "";
             this.cityTB.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.cityTB.Size = new System.Drawing.Size(368, 45);
+            this.cityTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cityTB.TabIndex = 6;
             this.cityTB.Validating += new System.ComponentModel.CancelEventHandler(this.cityTB_Validating);
             // 
             // address2TB
             // 
+            this.address2TB.BorderThickness = 5;
             this.address2TB.CustomizableEdges = customizableEdges11;
             this.address2TB.DefaultText = "";
             this.address2TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -297,10 +306,12 @@
             this.address2TB.SelectedText = "";
             this.address2TB.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.address2TB.Size = new System.Drawing.Size(787, 45);
+            this.address2TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.address2TB.TabIndex = 5;
             // 
             // addressTB
             // 
+            this.addressTB.BorderThickness = 5;
             this.addressTB.CustomizableEdges = customizableEdges13;
             this.addressTB.DefaultText = "";
             this.addressTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -319,11 +330,13 @@
             this.addressTB.SelectedText = "";
             this.addressTB.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.addressTB.Size = new System.Drawing.Size(787, 45);
+            this.addressTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.addressTB.TabIndex = 4;
             this.addressTB.Validating += new System.ComponentModel.CancelEventHandler(this.addressTB_Validating);
             // 
             // middlenameTB
             // 
+            this.middlenameTB.BorderThickness = 5;
             this.middlenameTB.CustomizableEdges = customizableEdges15;
             this.middlenameTB.DefaultText = "";
             this.middlenameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -342,11 +355,13 @@
             this.middlenameTB.SelectedText = "";
             this.middlenameTB.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.middlenameTB.Size = new System.Drawing.Size(185, 45);
+            this.middlenameTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.middlenameTB.TabIndex = 3;
             this.middlenameTB.Validating += new System.ComponentModel.CancelEventHandler(this.middlenameTB_Validating);
             // 
             // firstnameTB
             // 
+            this.firstnameTB.BorderThickness = 5;
             this.firstnameTB.CustomizableEdges = customizableEdges17;
             this.firstnameTB.DefaultText = "";
             this.firstnameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -365,6 +380,7 @@
             this.firstnameTB.SelectedText = "";
             this.firstnameTB.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.firstnameTB.Size = new System.Drawing.Size(263, 45);
+            this.firstnameTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.firstnameTB.TabIndex = 2;
             this.firstnameTB.Validating += new System.ComponentModel.CancelEventHandler(this.firstnameTB_Validating);
             // 
@@ -383,6 +399,7 @@
             this.guna2Button8.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.guna2Button8.Size = new System.Drawing.Size(134, 12);
             this.guna2Button8.TabIndex = 6;
+            this.guna2Button8.TabStop = false;
             // 
             // guna2Button7
             // 
@@ -399,6 +416,7 @@
             this.guna2Button7.ShadowDecoration.CustomizableEdges = customizableEdges22;
             this.guna2Button7.Size = new System.Drawing.Size(134, 12);
             this.guna2Button7.TabIndex = 5;
+            this.guna2Button7.TabStop = false;
             // 
             // guna2Button6
             // 
@@ -415,6 +433,7 @@
             this.guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.guna2Button6.Size = new System.Drawing.Size(134, 12);
             this.guna2Button6.TabIndex = 4;
+            this.guna2Button6.TabStop = false;
             // 
             // guna2Button2
             // 
@@ -431,9 +450,11 @@
             this.guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.guna2Button2.Size = new System.Drawing.Size(134, 12);
             this.guna2Button2.TabIndex = 3;
+            this.guna2Button2.TabStop = false;
             // 
             // surnameTB
             // 
+            this.surnameTB.BorderThickness = 5;
             this.surnameTB.CustomizableEdges = customizableEdges27;
             this.surnameTB.DefaultText = "";
             this.surnameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -475,6 +496,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "page1";
             this.Text = "page1";
+            this.Load += new System.EventHandler(this.page1_Load);
             this.mainsPanel.ResumeLayout(false);
             this.mainsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();

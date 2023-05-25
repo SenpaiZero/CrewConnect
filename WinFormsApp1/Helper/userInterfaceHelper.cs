@@ -37,62 +37,11 @@ namespace WinFormsApp1.Helper
             globalVariables.email2 = null;
             globalVariables.state = null;
             globalVariables.salary = null;
-            globalVariables.accountType = null;
+            globalVariables.contract = null;
         }
 
 
-        // Limitting text count in label display
-        public static String limitLabelDisplay(String text, int txtCount)
-        {
-            String txt;
-            if(text.Length > txtCount)
-            {
-                txt = text.Substring(0, txtCount-3);
-                txt += "...";
-                return txt;
-            }
-            return text;
-        }
-
-        // Checking if user entered a value in required field
-        public static bool checkFieldBlank(String tb)
-        {
-            if(string.IsNullOrEmpty(tb))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        // Check if user entered alphabets only
-        public static bool checkFieldAlpha(String tb)
-        {
-            if(Regex.IsMatch(tb, "^[a-zA-Z]+$"))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        // Checks if user entered alphabets and numbers only
-        public static bool checkFieldAlphaNumeric(String tb)
-        {
-            if (Regex.IsMatch(tb, "^[a-zA-Z0-9]+$"))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        // Check if user entered numbers only
-        public static bool checkFieldNumeric(String tb)
-        {
-            if(Regex.IsMatch(tb, "^[0-9]+$"))
-            {
-                return true;
-            }
-            return false;
-        }
+        
 
         // Adding value to combo box (Guna UI) - STRING
         public static void comboBoxValue(Guna2ComboBox cb, String[] values)
@@ -129,33 +78,17 @@ namespace WinFormsApp1.Helper
         // Calculating date
         public static String calculateAge(int year, int month, int day)
         {
-            DateTime date = DateTime.Now;
-            int year_ = date.Year;
-            int month_ = date.Month;
-            int day_ = date.Day;
+            DateTime today = DateTime.Now;
+            DateTime birthdate = new DateTime(year, month, day);
 
-            MessageBox.Show((year_ - year).ToString() + "  asdas  " + year + "  year_:" + year_);
-            if(month < month_)
-            {
-                globalVariables.age = (year_ - year);
-                return (year_ - year).ToString();
-            }
-            else if (month > month_)
-            {
-                globalVariables.age = ((year_ - year) + 1);
-                return ((year_ - year) + 1).ToString();
-            }
-            else if(month == month_)
-            {
-                if(day >= day_)
-                {
-                    globalVariables.age = ((year_ - year) + 1);
-                    return ((year_ - year) + 1).ToString();
-                }
-            }
+            int age = today.Year - birthdate.Year;
 
-            globalVariables.age = (year_ - year);
-            return (year_ - year).ToString();
+            // Check if the birthdate has already occurred this year
+            if (today.Month < birthdate.Month || (today.Month == birthdate.Month && today.Day < birthdate.Day))
+            {
+                age--;
+            }
+            return age.ToString();
         }
 
         private void InitializeComponent()
@@ -170,7 +103,18 @@ namespace WinFormsApp1.Helper
             this.ResumeLayout(false);
 
         }
-
+        // Limitting text count in label display
+        public static String limitLabelDisplay(String text, int txtCount)
+        {
+            String txt;
+            if (text.Length > txtCount)
+            {
+                txt = text.Substring(0, txtCount - 3);
+                txt += "...";
+                return txt;
+            }
+            return text;
+        }
         private void userInterfaceHelper_Load(object sender, EventArgs e)
         {
 

@@ -58,18 +58,18 @@ namespace WinFormsApp1
         //Login btn
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            SuspendLayout();
+
             String username, password;
             username = userNameTB.Text;
             password = passwordTB.Text;
 
-            using (con = new SqlConnection(globalVariables.server))
-            {
                 var loadingForm = new loadingForm();
                 loadingForm.StartPosition = FormStartPosition.CenterParent;
                 loadingForm.loadingTime = 2500;
                 loadingForm.ShowDialog();
                 con.Open();
-                managerAddEmployee ad = new managerAddEmployee();
+                adminPanel ad = new adminPanel();
                 cmd = new SqlCommand($"SELECT * FROM Users WHERE username = '{username}' AND password = '{password}'", con);
                 dr = cmd.ExecuteReader();
 
@@ -82,14 +82,18 @@ namespace WinFormsApp1
                         this.Hide();
                         ad.StartPosition = FormStartPosition.CenterParent;
                         ad.ShowDialog();
-                        this.Dispose(true);
+                        this.Close();
                 }
                 else
                 {
                     dr.Close();
-                    MessageBox.Show("INCORRECT");
+                    messageDialogForm msg = new messageDialogForm();
+                    msg.message = "You have entered an invalid username or password\n" +
+                        "Please ensure that you check the capitalization and other details accurately.";
+                    msg.ShowDialog();
                 }
-                }
+            con.Close();
+            ResumeLayout();
         }
 
         // Show password
@@ -153,7 +157,7 @@ namespace WinFormsApp1
 
         private void loginForm_Load(object sender, EventArgs e)
         {
-
+            con = new SqlConnection(globalVariables.server);
         }
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
@@ -166,6 +170,12 @@ namespace WinFormsApp1
         {
 
 
+        }
+
+        private void loginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(con.State == System.Data.ConnectionState.Open)
+                con.Close(); 
         }
     }
 }

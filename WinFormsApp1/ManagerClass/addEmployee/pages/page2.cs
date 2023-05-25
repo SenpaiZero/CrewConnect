@@ -32,9 +32,10 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
+            pageHelper.loading();
             // Debuging purposes
-            if(globalVariables.isDebuging)
-                pageHelper.changePage(new page3(), managerAddEmployee.panel);
+            if (globalVariables.isDebuging)
+                pageHelper.changePage(new page3(), adminPanel.panel);
             else
             // end of debugging 
             if ((yearCB.Text != "YEAR" && monthCB.Text != "MONTH" &&
@@ -42,7 +43,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 genderCB.Text != "GENDER" && nationalityCB.Text != "NATIONALITY" &&
                 statusCB.Text != "STATUS" && religionCB.Text != "RELIGION") )
             {
-                pageHelper.changePage(new page3(), managerAddEmployee.panel);
+                pageHelper.changePage(new page3(), adminPanel.panel);
 
                 globalVariables.year = Convert.ToInt32(yearCB.Text);
                 globalVariables.day = Convert.ToInt32(dayCB.Text);
@@ -57,14 +58,23 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             }
             else
             {
-                MessageBox.Show("incomplete input");
+                validationHelper.comboBoxValidation(monthCB, "MONTH", errorProvider1);
+                validationHelper.comboBoxValidation(dayCB, "DAY", errorProvider1);
+                validationHelper.comboBoxValidation(yearCB, "YEAR", errorProvider1);
+                validationHelper.comboBoxValidation(bloodTypeCB, "BLOOD TYPE", errorProvider1);
+                validationHelper.comboBoxValidation(genderCB, "GENDER", errorProvider1);
+                validationHelper.comboBoxValidation(nationalityCB, "NATIONALITY", errorProvider1);
+                validationHelper.comboBoxValidation(statusCB, "STATUS", errorProvider1);
+                validationHelper.comboBoxValidation(religionCB, "RELIGION", errorProvider1);
+
+                pageHelper.errorDetails();
             }
 
         }
 
         private void prevBtn_Click(object sender, EventArgs e)
         {
-            pageHelper.changePage(new page1(), managerAddEmployee.panel);
+            pageHelper.changePage(new page1(), adminPanel.panel);
         }
 
         private void mainsPanel_Paint(object sender, PaintEventArgs e)
@@ -74,6 +84,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void page2_Load(object sender, EventArgs e)
         {
+            validationHelper.comboBoxFirstLoad = true;
             // Birth Day
             String[] monthVal = 
             {
@@ -135,6 +146,9 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
             userInterfaceHelper.comboBoxValue(religionCB, religionsInPh);
             religionCB.SelectedIndex = 0;
+
+            errorProvider1.Clear();
+            validationHelper.comboBoxFirstLoad = false;
         }
 
         private void monthCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -189,6 +203,46 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         private void yearCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             calculateAge();
+        }
+
+        private void monthCB_SelectedValueChanged(object sender, EventArgs e)
+        {
+            validationHelper.comboBoxValidation(monthCB, "MONTH", errorProvider1);
+        }
+
+        private void dayCB_SelectedValueChanged(object sender, EventArgs e)
+        {
+            validationHelper.comboBoxValidation(dayCB, "DAY", errorProvider1);
+        }
+
+        private void yearCB_SelectedValueChanged(object sender, EventArgs e)
+        {
+            validationHelper.comboBoxValidation(yearCB, "YEAR", errorProvider1);
+        }
+
+        private void bloodTypeCB_SelectedValueChanged(object sender, EventArgs e)
+        {
+            validationHelper.comboBoxValidation(bloodTypeCB, "BLOOD TYPE", errorProvider1);
+        }
+
+        private void genderCB_SelectedValueChanged(object sender, EventArgs e)
+        {
+            validationHelper.comboBoxValidation(genderCB, "GENDER", errorProvider1);
+        }
+
+        private void nationalityCB_SelectedValueChanged(object sender, EventArgs e)
+        {
+            validationHelper.comboBoxValidation(nationalityCB, "NATIONALITY", errorProvider1);
+        }
+
+        private void statusCB_SelectedValueChanged(object sender, EventArgs e)
+        {
+            validationHelper.comboBoxValidation(statusCB, "STATUS", errorProvider1);
+        }
+
+        private void religionCB_SelectedValueChanged(object sender, EventArgs e)
+        {
+            validationHelper.comboBoxValidation(religionCB, "RELIGION", errorProvider1);
         }
     }
 }

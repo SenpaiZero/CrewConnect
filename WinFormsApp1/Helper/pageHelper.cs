@@ -37,5 +37,21 @@ namespace WinFormsApp1.Helper
             ph.loadForm(Form, mainPanel);
             f.BringToFront();
         }
+
+        public static void loading()
+        {
+            loadingForm load = new loadingForm();
+            load.loadingTime = 500;
+            load.StartPosition = FormStartPosition.CenterParent;
+            load.ShowDialog();
+        }
+
+        public static void errorDetails()
+        {
+            messageDialogForm msg = new messageDialogForm();
+            msg.title = "INCOMPLETE DATA";
+            msg.message = "Make sure you fill up the incomplete \nfields";
+            msg.ShowDialog();
+        }
     }
 }

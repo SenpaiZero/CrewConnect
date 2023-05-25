@@ -328,7 +328,7 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="minimiseBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>720, 9</value>
+    <value>708, 9</value>
   </data>
   <data name="minimiseBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -352,7 +352,7 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="maximiseBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>746, 9</value>
+    <value>734, 9</value>
   </data>
   <data name="maximiseBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -376,7 +376,7 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="exitBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>772, 9</value>
+    <value>760, 9</value>
   </data>
   <data name="exitBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>

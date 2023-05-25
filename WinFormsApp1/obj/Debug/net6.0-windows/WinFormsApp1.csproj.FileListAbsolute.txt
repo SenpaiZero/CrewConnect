@@ -63,3 +63,16 @@ C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsA
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.Helper.userInterfaceHelper.resources
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.addEmployee.previewInfo1.resources
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\QRCoder.dll
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.addEmployee.capturePicture.resources
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\AForge.dll
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\AForge.Controls.dll
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\AForge.Imaging.dll
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\AForge.Math.dll
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\AForge.Video.dll
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\AForge.Video.DirectShow.dll
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\AForge.Vision.dll
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\AForge.Genetic.dll
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\AForge.Neuro.dll
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\bin\Debug\net6.0-windows\zxing.dll
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.background.resources
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.messageDialogForm.resources

@@ -13,17 +13,29 @@ namespace WinFormsApp1.ManagerClass.addEmployee
 {
     public partial class previewInfo1 : Form
     {
+        static bool isDebug = false;
         public previewInfo1()
         {
             InitializeComponent();
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            this.BackColor = Color.Transparent;
+        }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParams = base.CreateParams;
+                handleParams.ExStyle |= 0x02000000;
+                return handleParams;
+            }
         }
 
         private void previewInfo1_Load(object sender, EventArgs e)
         {
-            page1LoadData();
-            page2LoadData();
+            isDebug = globalVariables.isDebuging;
+            if(isDebug = false)
+            {
+                page1LoadData();
+                page2LoadData();
+            }
         }
 
         void page1LoadData()
@@ -60,6 +72,11 @@ namespace WinFormsApp1.ManagerClass.addEmployee
         }
 
         private void finishBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainsPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

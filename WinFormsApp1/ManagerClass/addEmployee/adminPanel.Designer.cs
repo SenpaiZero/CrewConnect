@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp1.ManagerClass
 {
-    partial class managerAddEmployee
+    partial class adminPanel
     {
         /// <summary>
         /// Required designer variable.
@@ -181,7 +181,6 @@
             // addBtn
             // 
             this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.addBtn.Animated = true;
             this.addBtn.AutoRoundedCorners = true;
             this.addBtn.BackColor = System.Drawing.Color.Transparent;
             this.addBtn.BorderRadius = 39;
@@ -213,7 +212,6 @@
             // rmvBtn
             // 
             this.rmvBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rmvBtn.Animated = true;
             this.rmvBtn.AutoRoundedCorners = true;
             this.rmvBtn.BackColor = System.Drawing.Color.Transparent;
             this.rmvBtn.BorderRadius = 39;
@@ -244,7 +242,6 @@
             // guna2Button3
             // 
             this.guna2Button3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.guna2Button3.Animated = true;
             this.guna2Button3.AutoRoundedCorners = true;
             this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button3.BorderRadius = 39;
@@ -274,7 +271,6 @@
             // guna2Button4
             // 
             this.guna2Button4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.guna2Button4.Animated = true;
             this.guna2Button4.AutoRoundedCorners = true;
             this.guna2Button4.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button4.BorderRadius = 39;
@@ -304,7 +300,6 @@
             // guna2Button5
             // 
             this.guna2Button5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.guna2Button5.Animated = true;
             this.guna2Button5.AutoRoundedCorners = true;
             this.guna2Button5.BackColor = System.Drawing.Color.Transparent;
             this.guna2Button5.BorderRadius = 39;
@@ -385,6 +380,9 @@
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            adminPanel managerAddEmployee = this;
+            adminPanel.Name = "managerAddEmployee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "managerAddEmployee";
             this.Load += new System.EventHandler(this.managerAddEmployee_Load);
             this.header.ResumeLayout(false);

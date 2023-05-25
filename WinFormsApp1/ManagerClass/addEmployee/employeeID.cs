@@ -25,12 +25,12 @@ namespace WinFormsApp1.ManagerClass
             width = this.Width;
             height= this.Height;
 
-            nameLabel.Text = managerAddEmployee.Name;
-            roleLabel.Text = managerAddEmployee.Role;
-            employeeLabel.Text = managerAddEmployee.Id;
+            nameLabel.Text = adminPanel.Name;
+            roleLabel.Text = adminPanel.Role;
+            employeeLabel.Text = adminPanel.Id;
 
-            employeePhoto.Image = managerAddEmployee.Photo;
-            qrPhoto.Image = managerAddEmployee.QRPhoto;
+            employeePhoto.Image = adminPanel.Photo;
+            qrPhoto.Image = adminPanel.QRPhoto;
 
             saveID();
         }

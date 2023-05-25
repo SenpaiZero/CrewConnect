@@ -15,6 +15,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 {
     public partial class page1 : Form
     {
+        static bool[] isValid = new bool[7];
         public page1()
         {
             InitializeComponent();
@@ -34,140 +35,102 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         }
         private void nextBtn_Click(object sender, EventArgs e)
         {
-            String[] data = { firstnameTB.Text, middlenameTB.Text, surnameTB.Text, 
-                addressTB.Text, cityTB.Text, postalTB.Text, stateTB.Text};
-
+            String[] data = { firstnameTB.Text, middlenameTB.Text, surnameTB.Text, addressTB.Text,
+                            cityTB.Text, postalTB.Text, stateTB.Text};
             // Debugging purposes
             if (globalVariables.isDebuging)
-                pageHelper.changePage(new page2(), managerAddEmployee.panel);
-            else
+                pageHelper.changePage(new page2(), adminPanel.panel);
             // End of debugging
 
-            if (data.Any(string.IsNullOrWhiteSpace))
+            if(!isValid.Contains(false))
             {
-                MessageBox.Show("Incomplete data");
-            }
-            else
-            {
-                pageHelper.changePage(new page2(), managerAddEmployee.panel);
-                globalVariables.firstname = data[0];
-                globalVariables.middlename = data[1];
-                globalVariables.lastname = data[2];
-                globalVariables.streetAdd = data[3];
-                globalVariables.city = data[4];
-                globalVariables.postal = data[5];
-                globalVariables.state = data[6];
+                globalVariables.firstname = firstnameTB.Text;
+                globalVariables.middlename = middlenameTB.Text;
+                globalVariables.lastname = surnameTB.Text;
+                globalVariables.streetAdd = addressTB.Text;
+                globalVariables.city = cityTB.Text;
+                globalVariables.postal = postalTB.Text;
+                globalVariables.state = stateTB.Text;
                 globalVariables.permAdd = permAddCheckBox.Checked;
 
                 if (string.IsNullOrWhiteSpace(address2TB.Text))
                     globalVariables.streetAdd2 = " ";
                 else
                     globalVariables.streetAdd2 = address2TB.Text;
+                pageHelper.changePage(new page2(), adminPanel.panel, 500);
+            }
+            else 
+            {
+                pageHelper.loading();
+
+                validationHelper.textBoxValidation_Alpha(surnameTB, "Surname", errorProvider);
+                validationHelper.textBoxValidation_Alpha(firstnameTB, "First Name", errorProvider);
+                validationHelper.textBoxValidation_Alpha(middlenameTB, "Middle Name", errorProvider);
+                validationHelper.textBoxValidation_Alpha(addressTB, "Address", errorProvider);
+                validationHelper.textBoxValidation_Alpha(cityTB, "City", errorProvider);
+                validationHelper.textBoxValidation_Alpha(stateTB, "State", errorProvider);
+                validationHelper.textBoxValidation_Numeric(postalTB, "Postal", errorProvider);
+
+                pageHelper.errorDetails();
             }
         }
 
+        
         private void surnameTB_Validating(object sender, CancelEventArgs e)
         {
-            //Checks if its empty
-            if (userInterfaceHelper.checkFieldBlank(surnameTB.Text))
-                errorProvider.SetError(surnameTB, "Please don't leave a blank message");
-
-            // Checks if its alpha only
-            else if (!userInterfaceHelper.checkFieldAlpha(surnameTB.Text))
-                errorProvider.SetError(surnameTB, "Symbols and numbers are not allowed");
-
-            // Clears the error
-            else
-                errorProvider.SetError(surnameTB, null);
+            isValid[0] = false;
+            if (validationHelper.textBoxValidation_Alpha(surnameTB, "Surname", errorProvider))
+                isValid[0] = true;
         }
 
         private void firstnameTB_Validating(object sender, CancelEventArgs e)
         {
-            //Checks if its empty
-            if (userInterfaceHelper.checkFieldBlank(firstnameTB.Text))
-                errorProvider.SetError(firstnameTB, "Please don't leave a blank message");
-
-            // Checks if its alpha only
-            else if (!userInterfaceHelper.checkFieldAlpha(firstnameTB.Text))
-                errorProvider.SetError(firstnameTB, "Symbols and numbers are not allowed");
-
-            // Clears the error
-            else
-                errorProvider.SetError(firstnameTB, null);
+            isValid[1] = false;
+            if (validationHelper.textBoxValidation_Alpha(firstnameTB, "First Name", errorProvider))
+                isValid[1] = true;
         }
 
         private void middlenameTB_Validating(object sender, CancelEventArgs e)
         {
-            //Checks if its empty
-            if (userInterfaceHelper.checkFieldBlank(middlenameTB.Text))
-                errorProvider.SetError(middlenameTB, "Please don't leave a blank message");
-
-            // Checks if its alpha only
-            else if (!userInterfaceHelper.checkFieldAlpha(middlenameTB.Text))
-                errorProvider.SetError(middlenameTB, "Symbols and numbers are not allowed");
-
-            // Clears the error
-            else
-                errorProvider.SetError(middlenameTB, null);
+            isValid[2] = false;
+            if (validationHelper.textBoxValidation_Alpha(middlenameTB, "Middle Name", errorProvider))
+                isValid[2] = true;
         }
 
         private void addressTB_Validating(object sender, CancelEventArgs e)
         {
-            //Checks if its empty
-            if (userInterfaceHelper.checkFieldBlank(addressTB.Text))
-                errorProvider.SetError(addressTB, "Please don't leave a blank message");
-
-            // Checks if its alphanumeric only
-            else if (!userInterfaceHelper.checkFieldAlphaNumeric(addressTB.Text))
-                errorProvider.SetError(addressTB, "Only alphanumeric are allowed");
-
-            // Clears the error
-            else
-                errorProvider.SetError(addressTB, null);
+            isValid[3] = false;
+            if (validationHelper.textBoxValidation_Alpha(addressTB, "Address", errorProvider))
+                isValid[3] = true;
         }
 
         private void cityTB_Validating(object sender, CancelEventArgs e)
         {
-            //Checks if its empty
-            if (userInterfaceHelper.checkFieldBlank(cityTB.Text))
-                errorProvider.SetError(cityTB, "Please don't leave a blank message");
-
-            // Checks if its alpha only
-            else if (!userInterfaceHelper.checkFieldAlpha(cityTB.Text))
-                errorProvider.SetError(cityTB, "Symbols and numbers are not allowed");
-
-            // Clears the error
-            else
-                errorProvider.SetError(cityTB, null);
+            isValid[4] = false;
+            if (validationHelper.textBoxValidation_Alpha(cityTB, "City", errorProvider))
+                isValid[4] = true;
         }
 
         private void stateTB_Validating(object sender, CancelEventArgs e)
         {
-            //Checks if its empty
-            if (userInterfaceHelper.checkFieldBlank(stateTB.Text))
-                errorProvider.SetError(stateTB, "Please don't leave a blank message");
-
-            // Checks if its alpha only
-            else if (!userInterfaceHelper.checkFieldAlpha(stateTB.Text))
-                errorProvider.SetError(stateTB, "Symbols and numbers are not allowed");
-
-            // Clears the error
-            else
-                errorProvider.SetError(stateTB, null);
+            isValid[5] = false;
+            if (validationHelper.textBoxValidation_Alpha(stateTB, "State", errorProvider))
+                isValid[5] = true;
         }
 
         private void postalTB_Validating(object sender, CancelEventArgs e)
         {
-            //Checks if its empty
-            if (userInterfaceHelper.checkFieldBlank(postalTB.Text))
-                errorProvider.SetError(postalTB, "Please don't leave a blank message");
+            isValid[6] = false;
+            if (validationHelper.textBoxValidation_Numeric(postalTB, "Postal", errorProvider))
+                isValid[6] = true;
+        }
 
-            // Checks if its numeric only
-            else if (!userInterfaceHelper.checkFieldNumeric(postalTB.Text))
-                errorProvider.SetError(postalTB, "Only numbers are allowed");
-            // Clears the error
-            else
-                errorProvider.SetError(postalTB, null);
+        private void page1_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < isValid.Length; i++)
+            {
+                isValid[i] = false;
+            }
         }
     }
 }

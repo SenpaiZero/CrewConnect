@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.Helper;
 
 namespace WinFormsApp1
 {
@@ -20,9 +21,24 @@ namespace WinFormsApp1
             this.BackColor = Color.Transparent;
         }
 
-        private void mainsPanel_Paint(object sender, PaintEventArgs e)
+        private void attendance_Load(object sender, EventArgs e)
         {
+            cameraHelper.qrcode = true;
+            cameraHelper.camListCB = camListCB;
+            cameraHelper.selfPic = camera;
+            cameraHelper.onLoad();
+        }
 
+        private void attendance_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SuspendLayout();
+            cameraHelper.closeForm();
+            ResumeLayout();
+        }
+
+        private void scanBtn_Click(object sender, EventArgs e)
+        {
+            cameraHelper.start(camListCB.SelectedIndex);
         }
     }
 }

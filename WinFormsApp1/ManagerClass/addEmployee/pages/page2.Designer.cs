@@ -61,6 +61,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(page2));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.mainsPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.religionCB = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -81,7 +82,9 @@
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.mainsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -128,6 +131,7 @@
             // religionCB
             // 
             this.religionCB.BackColor = System.Drawing.Color.Transparent;
+            this.religionCB.BorderThickness = 5;
             this.religionCB.CustomizableEdges = customizableEdges1;
             this.religionCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.religionCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -140,11 +144,14 @@
             this.religionCB.Name = "religionCB";
             this.religionCB.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.religionCB.Size = new System.Drawing.Size(243, 46);
+            this.religionCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.religionCB.TabIndex = 38;
+            this.religionCB.SelectedValueChanged += new System.EventHandler(this.religionCB_SelectedValueChanged);
             // 
             // statusCB
             // 
             this.statusCB.BackColor = System.Drawing.Color.Transparent;
+            this.statusCB.BorderThickness = 5;
             this.statusCB.CustomizableEdges = customizableEdges3;
             this.statusCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.statusCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -157,11 +164,12 @@
             this.statusCB.Name = "statusCB";
             this.statusCB.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.statusCB.Size = new System.Drawing.Size(243, 46);
+            this.statusCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.statusCB.TabIndex = 37;
+            this.statusCB.SelectedValueChanged += new System.EventHandler(this.statusCB_SelectedValueChanged);
             // 
             // prevBtn
             // 
-            this.prevBtn.Animated = true;
             this.prevBtn.BorderRadius = 25;
             this.prevBtn.CustomizableEdges = customizableEdges5;
             this.prevBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -182,6 +190,7 @@
             // nationalityCB
             // 
             this.nationalityCB.BackColor = System.Drawing.Color.Transparent;
+            this.nationalityCB.BorderThickness = 5;
             this.nationalityCB.CustomizableEdges = customizableEdges7;
             this.nationalityCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.nationalityCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -194,11 +203,14 @@
             this.nationalityCB.Name = "nationalityCB";
             this.nationalityCB.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.nationalityCB.Size = new System.Drawing.Size(243, 46);
+            this.nationalityCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.nationalityCB.TabIndex = 35;
+            this.nationalityCB.SelectedValueChanged += new System.EventHandler(this.nationalityCB_SelectedValueChanged);
             // 
             // genderCB
             // 
             this.genderCB.BackColor = System.Drawing.Color.Transparent;
+            this.genderCB.BorderThickness = 5;
             this.genderCB.CustomizableEdges = customizableEdges9;
             this.genderCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.genderCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -211,11 +223,14 @@
             this.genderCB.Name = "genderCB";
             this.genderCB.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.genderCB.Size = new System.Drawing.Size(243, 46);
+            this.genderCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.genderCB.TabIndex = 34;
+            this.genderCB.SelectedValueChanged += new System.EventHandler(this.genderCB_SelectedValueChanged);
             // 
             // bloodTypeCB
             // 
             this.bloodTypeCB.BackColor = System.Drawing.Color.Transparent;
+            this.bloodTypeCB.BorderThickness = 5;
             this.bloodTypeCB.CustomizableEdges = customizableEdges11;
             this.bloodTypeCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.bloodTypeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -228,7 +243,9 @@
             this.bloodTypeCB.Name = "bloodTypeCB";
             this.bloodTypeCB.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.bloodTypeCB.Size = new System.Drawing.Size(243, 46);
+            this.bloodTypeCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.bloodTypeCB.TabIndex = 33;
+            this.bloodTypeCB.SelectedValueChanged += new System.EventHandler(this.bloodTypeCB_SelectedValueChanged);
             // 
             // guna2HtmlLabel5
             // 
@@ -244,6 +261,7 @@
             // yearCB
             // 
             this.yearCB.BackColor = System.Drawing.Color.Transparent;
+            this.yearCB.BorderThickness = 5;
             this.yearCB.CustomizableEdges = customizableEdges13;
             this.yearCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.yearCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -256,12 +274,15 @@
             this.yearCB.Name = "yearCB";
             this.yearCB.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.yearCB.Size = new System.Drawing.Size(243, 46);
+            this.yearCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.yearCB.TabIndex = 28;
             this.yearCB.SelectedIndexChanged += new System.EventHandler(this.yearCB_SelectedIndexChanged);
+            this.yearCB.SelectedValueChanged += new System.EventHandler(this.yearCB_SelectedValueChanged);
             // 
             // monthCB
             // 
             this.monthCB.BackColor = System.Drawing.Color.Transparent;
+            this.monthCB.BorderThickness = 5;
             this.monthCB.CustomizableEdges = customizableEdges15;
             this.monthCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.monthCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -274,12 +295,15 @@
             this.monthCB.Name = "monthCB";
             this.monthCB.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.monthCB.Size = new System.Drawing.Size(243, 46);
+            this.monthCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.monthCB.TabIndex = 27;
             this.monthCB.SelectedIndexChanged += new System.EventHandler(this.monthCB_SelectedIndexChanged);
+            this.monthCB.SelectedValueChanged += new System.EventHandler(this.monthCB_SelectedValueChanged);
             // 
             // dayCB
             // 
             this.dayCB.BackColor = System.Drawing.Color.Transparent;
+            this.dayCB.BorderThickness = 5;
             this.dayCB.CustomizableEdges = customizableEdges17;
             this.dayCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.dayCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -292,8 +316,10 @@
             this.dayCB.Name = "dayCB";
             this.dayCB.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.dayCB.Size = new System.Drawing.Size(243, 46);
+            this.dayCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.dayCB.TabIndex = 26;
             this.dayCB.SelectedIndexChanged += new System.EventHandler(this.dayCB_SelectedIndexChanged);
+            this.dayCB.SelectedValueChanged += new System.EventHandler(this.dayCB_SelectedValueChanged);
             // 
             // ageTB
             // 
@@ -345,7 +371,6 @@
             // 
             // nextBtn
             // 
-            this.nextBtn.Animated = true;
             this.nextBtn.BorderRadius = 25;
             this.nextBtn.CustomizableEdges = customizableEdges21;
             this.nextBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -427,6 +452,13 @@
             this.guna2Button2.Size = new System.Drawing.Size(134, 12);
             this.guna2Button2.TabIndex = 3;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            this.errorProvider1.RightToLeft = true;
+            // 
             // page2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -441,6 +473,7 @@
             this.Load += new System.EventHandler(this.page2_Load);
             this.mainsPanel.ResumeLayout(false);
             this.mainsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -467,5 +500,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2ComboBox religionCB;
         private Guna.UI2.WinForms.Guna2ComboBox statusCB;
+        private ErrorProvider errorProvider1;
     }
 }

@@ -59,13 +59,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(page4));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.mainsPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.contractCB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.salaryTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.bsbTB = new Guna.UI2.WinForms.Guna2TextBox();
+            this.accountNumTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.companyNameTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.companyAddTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.branchTB = new Guna.UI2.WinForms.Guna2TextBox();
@@ -78,7 +79,9 @@
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.mainsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -96,8 +99,8 @@
             this.mainsPanel.Controls.Add(this.contractCB);
             this.mainsPanel.Controls.Add(this.guna2HtmlLabel5);
             this.mainsPanel.Controls.Add(this.salaryTB);
-            this.mainsPanel.Controls.Add(this.guna2TextBox2);
-            this.mainsPanel.Controls.Add(this.guna2TextBox1);
+            this.mainsPanel.Controls.Add(this.bsbTB);
+            this.mainsPanel.Controls.Add(this.accountNumTB);
             this.mainsPanel.Controls.Add(this.companyNameTB);
             this.mainsPanel.Controls.Add(this.companyAddTB);
             this.mainsPanel.Controls.Add(this.branchTB);
@@ -137,6 +140,7 @@
             this.contractCB.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.contractCB.Size = new System.Drawing.Size(296, 46);
             this.contractCB.TabIndex = 46;
+            this.contractCB.SelectedValueChanged += new System.EventHandler(this.contractCB_SelectedValueChanged);
             // 
             // guna2HtmlLabel5
             // 
@@ -172,54 +176,57 @@
             this.salaryTB.Size = new System.Drawing.Size(428, 45);
             this.salaryTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.salaryTB.TabIndex = 44;
+            this.salaryTB.Validating += new System.ComponentModel.CancelEventHandler(this.salaryTB_Validating);
             // 
-            // guna2TextBox2
+            // bsbTB
             // 
-            this.guna2TextBox2.CustomizableEdges = customizableEdges5;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Location = new System.Drawing.Point(58, 374);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.guna2TextBox2.PlaceholderText = "BSB";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.guna2TextBox2.Size = new System.Drawing.Size(211, 45);
-            this.guna2TextBox2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox2.TabIndex = 43;
+            this.bsbTB.CustomizableEdges = customizableEdges5;
+            this.bsbTB.DefaultText = "";
+            this.bsbTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.bsbTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.bsbTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.bsbTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.bsbTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.bsbTB.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.bsbTB.ForeColor = System.Drawing.Color.DimGray;
+            this.bsbTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.bsbTB.Location = new System.Drawing.Point(58, 374);
+            this.bsbTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bsbTB.Name = "bsbTB";
+            this.bsbTB.PasswordChar = '\0';
+            this.bsbTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.bsbTB.PlaceholderText = "BSB";
+            this.bsbTB.SelectedText = "";
+            this.bsbTB.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.bsbTB.Size = new System.Drawing.Size(211, 45);
+            this.bsbTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.bsbTB.TabIndex = 43;
+            this.bsbTB.Validating += new System.ComponentModel.CancelEventHandler(this.bsbTB_Validating);
             // 
-            // guna2TextBox1
+            // accountNumTB
             // 
-            this.guna2TextBox1.CustomizableEdges = customizableEdges7;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(287, 374);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.guna2TextBox1.PlaceholderText = "ACCOUNT NUMBER";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.guna2TextBox1.Size = new System.Drawing.Size(532, 45);
-            this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox1.TabIndex = 42;
+            this.accountNumTB.CustomizableEdges = customizableEdges7;
+            this.accountNumTB.DefaultText = "";
+            this.accountNumTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.accountNumTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.accountNumTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.accountNumTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.accountNumTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.accountNumTB.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.accountNumTB.ForeColor = System.Drawing.Color.DimGray;
+            this.accountNumTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.accountNumTB.Location = new System.Drawing.Point(287, 374);
+            this.accountNumTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.accountNumTB.Name = "accountNumTB";
+            this.accountNumTB.PasswordChar = '\0';
+            this.accountNumTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.accountNumTB.PlaceholderText = "ACCOUNT NUMBER";
+            this.accountNumTB.SelectedText = "";
+            this.accountNumTB.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.accountNumTB.Size = new System.Drawing.Size(532, 45);
+            this.accountNumTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.accountNumTB.TabIndex = 42;
+            this.accountNumTB.Validating += new System.ComponentModel.CancelEventHandler(this.accountNumTB_Validating);
             // 
             // companyNameTB
             // 
@@ -244,6 +251,7 @@
             this.companyNameTB.Size = new System.Drawing.Size(761, 45);
             this.companyNameTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.companyNameTB.TabIndex = 41;
+            this.companyNameTB.Validating += new System.ComponentModel.CancelEventHandler(this.companyNameTB_Validating);
             // 
             // companyAddTB
             // 
@@ -268,6 +276,7 @@
             this.companyAddTB.Size = new System.Drawing.Size(761, 45);
             this.companyAddTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.companyAddTB.TabIndex = 40;
+            this.companyAddTB.Validating += new System.ComponentModel.CancelEventHandler(this.companyAddTB_Validating);
             // 
             // branchTB
             // 
@@ -292,6 +301,7 @@
             this.branchTB.Size = new System.Drawing.Size(334, 45);
             this.branchTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.branchTB.TabIndex = 39;
+            this.branchTB.Validating += new System.ComponentModel.CancelEventHandler(this.branchTB_Validating);
             // 
             // guna2HtmlLabel4
             // 
@@ -327,6 +337,7 @@
             this.bankNameTB.Size = new System.Drawing.Size(409, 45);
             this.bankNameTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.bankNameTB.TabIndex = 37;
+            this.bankNameTB.Validating += new System.ComponentModel.CancelEventHandler(this.bankNameTB_Validating);
             // 
             // prevBtn
             // 
@@ -443,6 +454,13 @@
             this.guna2Button2.Size = new System.Drawing.Size(134, 12);
             this.guna2Button2.TabIndex = 3;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            this.errorProvider1.RightToLeft = true;
+            // 
             // page4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -457,6 +475,7 @@
             this.Load += new System.EventHandler(this.page4_Load);
             this.mainsPanel.ResumeLayout(false);
             this.mainsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -482,5 +501,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2TextBox bsbTB;
+        private Guna.UI2.WinForms.Guna2TextBox accountNumTB;
+        private ErrorProvider errorProvider1;
     }
 }

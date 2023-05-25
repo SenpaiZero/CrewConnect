@@ -15,12 +15,12 @@ using WinFormsApp1.ManagerClass.addEmployee.pages;
 
 namespace WinFormsApp1.ManagerClass
 {
-    public partial class managerAddEmployee : Form
+    public partial class adminPanel : Form
     {
         private static String name, role, idNum;
         private static Bitmap photo, qrPhoto;
         public static Guna2Panel panel;
-        public managerAddEmployee()
+        public adminPanel()
         {
             InitializeComponent();
         }
