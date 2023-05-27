@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheArtOfDevHtmlRenderer.Adapters;
+using WinFormsApp1.Helper;
 
 namespace WinFormsApp1.ManagerClass
 {
@@ -25,12 +26,14 @@ namespace WinFormsApp1.ManagerClass
             width = this.Width;
             height= this.Height;
 
-            nameLabel.Text = adminPanel.Name;
-            roleLabel.Text = adminPanel.Role;
-            employeeLabel.Text = adminPanel.Id;
+            nameLabel.Text = $"{globalVariables.lastname}, {globalVariables.firstname} " +
+                $"{globalVariables.middlename}".ToUpper();
 
-            employeePhoto.Image = adminPanel.Photo;
-            qrPhoto.Image = adminPanel.QRPhoto;
+            roleLabel.Text = globalVariables.contract;
+            employeeLabel.Text = globalVariables.idNum;
+
+            employeePhoto.Image = globalVariables.selfPic;
+            qrPhoto.Image = globalVariables.qrCodePic;
 
             saveID();
         }

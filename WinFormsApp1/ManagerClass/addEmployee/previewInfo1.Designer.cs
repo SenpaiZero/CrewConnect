@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -44,7 +44,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2HtmlLabel34 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -66,7 +66,6 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.mainsPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
             this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.email2Label = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -98,12 +97,12 @@
             this.guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.guna2ImageButton4 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.guna2HtmlLabel33 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel32 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel31 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel30 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel29 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel28 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.accountNumLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.bsbLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.accountNameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.companyAddLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.branchLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.bankNameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel27 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel26 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel25 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -113,6 +112,7 @@
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.prevBtn = new Guna.UI2.WinForms.Guna2Button();
             this.finishBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
             this.guna2ShadowPanel1.SuspendLayout();
             this.mainsPanel.SuspendLayout();
             this.guna2ShadowPanel4.SuspendLayout();
@@ -180,7 +180,7 @@
             this.guna2ImageButton1.Location = new System.Drawing.Point(293, 27);
             this.guna2ImageButton1.Name = "guna2ImageButton1";
             this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            this.guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges13;
             this.guna2ImageButton1.Size = new System.Drawing.Size(40, 40);
             this.guna2ImageButton1.TabIndex = 43;
             // 
@@ -405,8 +405,6 @@
             this.mainsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.mainsPanel.BackColor = System.Drawing.Color.Transparent;
             this.mainsPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(72)))), ((int)(((byte)(93)))));
-            this.mainsPanel.BorderRadius = 20;
-            this.mainsPanel.Controls.Add(this.guna2Shapes2);
             this.mainsPanel.Controls.Add(this.guna2Shapes1);
             this.mainsPanel.Controls.Add(this.guna2ShadowPanel4);
             this.mainsPanel.Controls.Add(this.guna2ShadowPanel3);
@@ -415,6 +413,7 @@
             this.mainsPanel.Controls.Add(this.finishBtn);
             this.mainsPanel.Controls.Add(this.guna2ShadowPanel1);
             this.mainsPanel.Controls.Add(this.guna2HtmlLabel1);
+            this.mainsPanel.Controls.Add(this.guna2Shapes2);
             this.mainsPanel.CustomizableEdges = customizableEdges15;
             this.mainsPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(72)))), ((int)(((byte)(93)))));
             this.mainsPanel.Location = new System.Drawing.Point(0, 0);
@@ -426,23 +425,6 @@
             this.mainsPanel.UseTransparentBackground = true;
             this.mainsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainsPanel_Paint);
             // 
-            // guna2Shapes2
-            // 
-            this.guna2Shapes2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
-            this.guna2Shapes2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
-            this.guna2Shapes2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
-            this.guna2Shapes2.Location = new System.Drawing.Point(66, 126);
-            this.guna2Shapes2.Name = "guna2Shapes2";
-            this.guna2Shapes2.PolygonSkip = 1;
-            this.guna2Shapes2.Rotate = 0F;
-            this.guna2Shapes2.RoundedEdges = customizableEdges1;
-            this.guna2Shapes2.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
-            this.guna2Shapes2.Size = new System.Drawing.Size(968, 694);
-            this.guna2Shapes2.TabIndex = 43;
-            this.guna2Shapes2.Text = "guna2Shapes2";
-            this.guna2Shapes2.UseTransparentBackground = true;
-            this.guna2Shapes2.Zoom = 80;
-            // 
             // guna2Shapes1
             // 
             this.guna2Shapes1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
@@ -451,7 +433,7 @@
             this.guna2Shapes1.Name = "guna2Shapes1";
             this.guna2Shapes1.PolygonSkip = 1;
             this.guna2Shapes1.Rotate = 0F;
-            this.guna2Shapes1.RoundedEdges = customizableEdges2;
+            this.guna2Shapes1.RoundedEdges = customizableEdges1;
             this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
             this.guna2Shapes1.Size = new System.Drawing.Size(968, 250);
             this.guna2Shapes1.TabIndex = 42;
@@ -626,26 +608,28 @@
             // qrCodePic
             // 
             this.qrCodePic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.qrCodePic.CustomizableEdges = customizableEdges3;
+            this.qrCodePic.CustomizableEdges = customizableEdges2;
             this.qrCodePic.FillColor = System.Drawing.Color.Wheat;
             this.qrCodePic.ImageRotate = 0F;
             this.qrCodePic.Location = new System.Drawing.Point(14, 195);
             this.qrCodePic.Name = "qrCodePic";
-            this.qrCodePic.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.qrCodePic.ShadowDecoration.CustomizableEdges = customizableEdges3;
             this.qrCodePic.Size = new System.Drawing.Size(125, 125);
+            this.qrCodePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.qrCodePic.TabIndex = 58;
             this.qrCodePic.TabStop = false;
             // 
             // personPic
             // 
             this.personPic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.personPic.CustomizableEdges = customizableEdges5;
+            this.personPic.CustomizableEdges = customizableEdges4;
             this.personPic.FillColor = System.Drawing.Color.Wheat;
             this.personPic.ImageRotate = 0F;
             this.personPic.Location = new System.Drawing.Point(14, 64);
             this.personPic.Name = "personPic";
-            this.personPic.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.personPic.ShadowDecoration.CustomizableEdges = customizableEdges5;
             this.personPic.Size = new System.Drawing.Size(125, 125);
+            this.personPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.personPic.TabIndex = 57;
             this.personPic.TabStop = false;
             // 
@@ -661,7 +645,7 @@
             this.guna2ImageButton3.Location = new System.Drawing.Point(293, 18);
             this.guna2ImageButton3.Name = "guna2ImageButton3";
             this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            this.guna2ImageButton3.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.guna2ImageButton3.Size = new System.Drawing.Size(40, 40);
             this.guna2ImageButton3.TabIndex = 56;
             // 
@@ -851,7 +835,7 @@
             this.guna2ImageButton2.Location = new System.Drawing.Point(309, 25);
             this.guna2ImageButton2.Name = "guna2ImageButton2";
             this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.guna2ImageButton2.ShadowDecoration.CustomizableEdges = customizableEdges7;
             this.guna2ImageButton2.Size = new System.Drawing.Size(40, 40);
             this.guna2ImageButton2.TabIndex = 52;
             // 
@@ -871,12 +855,12 @@
             // 
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel2.Controls.Add(this.guna2ImageButton4);
-            this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel33);
-            this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel32);
-            this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel31);
-            this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel30);
-            this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel29);
-            this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel28);
+            this.guna2ShadowPanel2.Controls.Add(this.accountNumLabel);
+            this.guna2ShadowPanel2.Controls.Add(this.bsbLabel);
+            this.guna2ShadowPanel2.Controls.Add(this.accountNameLabel);
+            this.guna2ShadowPanel2.Controls.Add(this.companyAddLabel);
+            this.guna2ShadowPanel2.Controls.Add(this.branchLabel);
+            this.guna2ShadowPanel2.Controls.Add(this.bankNameLabel);
             this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel27);
             this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel26);
             this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel25);
@@ -903,99 +887,99 @@
             this.guna2ImageButton4.Location = new System.Drawing.Point(309, 16);
             this.guna2ImageButton4.Name = "guna2ImageButton4";
             this.guna2ImageButton4.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton4.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            this.guna2ImageButton4.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.guna2ImageButton4.Size = new System.Drawing.Size(40, 40);
             this.guna2ImageButton4.TabIndex = 71;
             // 
-            // guna2HtmlLabel33
+            // accountNumLabel
             // 
-            this.guna2HtmlLabel33.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2HtmlLabel33.AutoSize = false;
-            this.guna2HtmlLabel33.AutoSizeHeightOnly = true;
-            this.guna2HtmlLabel33.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel33.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel33.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel33.Location = new System.Drawing.Point(179, 243);
-            this.guna2HtmlLabel33.Name = "guna2HtmlLabel33";
-            this.guna2HtmlLabel33.Size = new System.Drawing.Size(310, 23);
-            this.guna2HtmlLabel33.TabIndex = 70;
-            this.guna2HtmlLabel33.Text = "odbngosidfngsd";
-            this.guna2HtmlLabel33.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.accountNumLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.accountNumLabel.AutoSize = false;
+            this.accountNumLabel.AutoSizeHeightOnly = true;
+            this.accountNumLabel.BackColor = System.Drawing.Color.Transparent;
+            this.accountNumLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.accountNumLabel.ForeColor = System.Drawing.Color.Black;
+            this.accountNumLabel.Location = new System.Drawing.Point(179, 243);
+            this.accountNumLabel.Name = "accountNumLabel";
+            this.accountNumLabel.Size = new System.Drawing.Size(310, 23);
+            this.accountNumLabel.TabIndex = 70;
+            this.accountNumLabel.Text = "odbngosidfngsd";
+            this.accountNumLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // guna2HtmlLabel32
+            // bsbLabel
             // 
-            this.guna2HtmlLabel32.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2HtmlLabel32.AutoSize = false;
-            this.guna2HtmlLabel32.AutoSizeHeightOnly = true;
-            this.guna2HtmlLabel32.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel32.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel32.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel32.Location = new System.Drawing.Point(179, 216);
-            this.guna2HtmlLabel32.Name = "guna2HtmlLabel32";
-            this.guna2HtmlLabel32.Size = new System.Drawing.Size(310, 23);
-            this.guna2HtmlLabel32.TabIndex = 69;
-            this.guna2HtmlLabel32.Text = "odbngosidfngsd";
-            this.guna2HtmlLabel32.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bsbLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bsbLabel.AutoSize = false;
+            this.bsbLabel.AutoSizeHeightOnly = true;
+            this.bsbLabel.BackColor = System.Drawing.Color.Transparent;
+            this.bsbLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bsbLabel.ForeColor = System.Drawing.Color.Black;
+            this.bsbLabel.Location = new System.Drawing.Point(179, 216);
+            this.bsbLabel.Name = "bsbLabel";
+            this.bsbLabel.Size = new System.Drawing.Size(310, 23);
+            this.bsbLabel.TabIndex = 69;
+            this.bsbLabel.Text = "odbngosidfngsd";
+            this.bsbLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // guna2HtmlLabel31
+            // accountNameLabel
             // 
-            this.guna2HtmlLabel31.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2HtmlLabel31.AutoSize = false;
-            this.guna2HtmlLabel31.AutoSizeHeightOnly = true;
-            this.guna2HtmlLabel31.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel31.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel31.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel31.Location = new System.Drawing.Point(179, 187);
-            this.guna2HtmlLabel31.Name = "guna2HtmlLabel31";
-            this.guna2HtmlLabel31.Size = new System.Drawing.Size(310, 23);
-            this.guna2HtmlLabel31.TabIndex = 68;
-            this.guna2HtmlLabel31.Text = "odbngosidfngsd";
-            this.guna2HtmlLabel31.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.accountNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.accountNameLabel.AutoSize = false;
+            this.accountNameLabel.AutoSizeHeightOnly = true;
+            this.accountNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.accountNameLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.accountNameLabel.ForeColor = System.Drawing.Color.Black;
+            this.accountNameLabel.Location = new System.Drawing.Point(179, 187);
+            this.accountNameLabel.Name = "accountNameLabel";
+            this.accountNameLabel.Size = new System.Drawing.Size(310, 23);
+            this.accountNameLabel.TabIndex = 68;
+            this.accountNameLabel.Text = "odbngosidfngsd";
+            this.accountNameLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // guna2HtmlLabel30
+            // companyAddLabel
             // 
-            this.guna2HtmlLabel30.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2HtmlLabel30.AutoSize = false;
-            this.guna2HtmlLabel30.AutoSizeHeightOnly = true;
-            this.guna2HtmlLabel30.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel30.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel30.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel30.Location = new System.Drawing.Point(179, 158);
-            this.guna2HtmlLabel30.Name = "guna2HtmlLabel30";
-            this.guna2HtmlLabel30.Size = new System.Drawing.Size(310, 23);
-            this.guna2HtmlLabel30.TabIndex = 67;
-            this.guna2HtmlLabel30.Text = "odbngosidfngsd";
-            this.guna2HtmlLabel30.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.companyAddLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.companyAddLabel.AutoSize = false;
+            this.companyAddLabel.AutoSizeHeightOnly = true;
+            this.companyAddLabel.BackColor = System.Drawing.Color.Transparent;
+            this.companyAddLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.companyAddLabel.ForeColor = System.Drawing.Color.Black;
+            this.companyAddLabel.Location = new System.Drawing.Point(179, 158);
+            this.companyAddLabel.Name = "companyAddLabel";
+            this.companyAddLabel.Size = new System.Drawing.Size(310, 23);
+            this.companyAddLabel.TabIndex = 67;
+            this.companyAddLabel.Text = "odbngosidfngsd";
+            this.companyAddLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // guna2HtmlLabel29
+            // branchLabel
             // 
-            this.guna2HtmlLabel29.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2HtmlLabel29.AutoSize = false;
-            this.guna2HtmlLabel29.AutoSizeHeightOnly = true;
-            this.guna2HtmlLabel29.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel29.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel29.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel29.Location = new System.Drawing.Point(179, 128);
-            this.guna2HtmlLabel29.Name = "guna2HtmlLabel29";
-            this.guna2HtmlLabel29.Size = new System.Drawing.Size(310, 23);
-            this.guna2HtmlLabel29.TabIndex = 66;
-            this.guna2HtmlLabel29.Text = "odbngosidfngsd";
-            this.guna2HtmlLabel29.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.branchLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.branchLabel.AutoSize = false;
+            this.branchLabel.AutoSizeHeightOnly = true;
+            this.branchLabel.BackColor = System.Drawing.Color.Transparent;
+            this.branchLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.branchLabel.ForeColor = System.Drawing.Color.Black;
+            this.branchLabel.Location = new System.Drawing.Point(179, 128);
+            this.branchLabel.Name = "branchLabel";
+            this.branchLabel.Size = new System.Drawing.Size(310, 23);
+            this.branchLabel.TabIndex = 66;
+            this.branchLabel.Text = "odbngosidfngsd";
+            this.branchLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // guna2HtmlLabel28
+            // bankNameLabel
             // 
-            this.guna2HtmlLabel28.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2HtmlLabel28.AutoSize = false;
-            this.guna2HtmlLabel28.AutoSizeHeightOnly = true;
-            this.guna2HtmlLabel28.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel28.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel28.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel28.Location = new System.Drawing.Point(179, 101);
-            this.guna2HtmlLabel28.Name = "guna2HtmlLabel28";
-            this.guna2HtmlLabel28.Size = new System.Drawing.Size(310, 23);
-            this.guna2HtmlLabel28.TabIndex = 65;
-            this.guna2HtmlLabel28.Text = "odbngosidfngsd";
-            this.guna2HtmlLabel28.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bankNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bankNameLabel.AutoSize = false;
+            this.bankNameLabel.AutoSizeHeightOnly = true;
+            this.bankNameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.bankNameLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bankNameLabel.ForeColor = System.Drawing.Color.Black;
+            this.bankNameLabel.Location = new System.Drawing.Point(179, 101);
+            this.bankNameLabel.Name = "bankNameLabel";
+            this.bankNameLabel.Size = new System.Drawing.Size(310, 23);
+            this.bankNameLabel.TabIndex = 65;
+            this.bankNameLabel.Text = "odbngosidfngsd";
+            this.bankNameLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2HtmlLabel27
             // 
@@ -1091,7 +1075,7 @@
             // 
             this.prevBtn.Animated = true;
             this.prevBtn.BorderRadius = 25;
-            this.prevBtn.CustomizableEdges = customizableEdges10;
+            this.prevBtn.CustomizableEdges = customizableEdges9;
             this.prevBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.prevBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.prevBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -1101,7 +1085,7 @@
             this.prevBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.prevBtn.Location = new System.Drawing.Point(288, 840);
             this.prevBtn.Name = "prevBtn";
-            this.prevBtn.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            this.prevBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.prevBtn.Size = new System.Drawing.Size(225, 56);
             this.prevBtn.TabIndex = 38;
             this.prevBtn.Text = "CANCEL";
@@ -1110,7 +1094,7 @@
             // 
             this.finishBtn.Animated = true;
             this.finishBtn.BorderRadius = 25;
-            this.finishBtn.CustomizableEdges = customizableEdges12;
+            this.finishBtn.CustomizableEdges = customizableEdges11;
             this.finishBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.finishBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.finishBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -1120,11 +1104,28 @@
             this.finishBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.finishBtn.Location = new System.Drawing.Point(583, 840);
             this.finishBtn.Name = "finishBtn";
-            this.finishBtn.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            this.finishBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.finishBtn.Size = new System.Drawing.Size(225, 56);
             this.finishBtn.TabIndex = 37;
             this.finishBtn.Text = "SAVE";
             this.finishBtn.Click += new System.EventHandler(this.finishBtn_Click);
+            // 
+            // guna2Shapes2
+            // 
+            this.guna2Shapes2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
+            this.guna2Shapes2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
+            this.guna2Shapes2.LineOrientation = System.Windows.Forms.Orientation.Vertical;
+            this.guna2Shapes2.Location = new System.Drawing.Point(66, 126);
+            this.guna2Shapes2.Name = "guna2Shapes2";
+            this.guna2Shapes2.PolygonSkip = 1;
+            this.guna2Shapes2.Rotate = 0F;
+            this.guna2Shapes2.RoundedEdges = customizableEdges14;
+            this.guna2Shapes2.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
+            this.guna2Shapes2.Size = new System.Drawing.Size(968, 694);
+            this.guna2Shapes2.TabIndex = 43;
+            this.guna2Shapes2.Text = "guna2Shapes2";
+            this.guna2Shapes2.UseTransparentBackground = true;
+            this.guna2Shapes2.Zoom = 80;
             // 
             // previewInfo1
             // 
@@ -1194,12 +1195,12 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel21;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel33;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel32;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel31;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel30;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel29;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel28;
+        private Guna.UI2.WinForms.Guna2HtmlLabel accountNumLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel bsbLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel accountNameLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel companyAddLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel branchLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel bankNameLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel27;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel26;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel25;

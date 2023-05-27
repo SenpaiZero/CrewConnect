@@ -245,7 +245,7 @@
             this.companyNameTB.Name = "companyNameTB";
             this.companyNameTB.PasswordChar = '\0';
             this.companyNameTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.companyNameTB.PlaceholderText = "COMPANY NAME";
+            this.companyNameTB.PlaceholderText = "ACCOUNT NAME";
             this.companyNameTB.SelectedText = "";
             this.companyNameTB.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.companyNameTB.Size = new System.Drawing.Size(761, 45);

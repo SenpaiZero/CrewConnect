@@ -49,6 +49,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             };
             contractCB.Items.Clear();
             userInterfaceHelper.comboBoxValue(contractCB, contacts);
+            contractCB.SelectedIndex = -1;
 
             validationHelper.comboBoxFirstLoad = false;
 
@@ -59,7 +60,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             pageHelper.loading();
             previewInfo1 prev = new previewInfo1();
             String[] data = { bankNameTB.Text, branchTB.Text, companyAddTB.Text, companyNameTB.Text,
-                bsbTB.Text, accountNumTB.Text, contractCB.Text};
+                bsbTB.Text, accountNumTB.Text, contractCB.Text, salaryTB.Text};
 
             // Debuggin Purposes
             if (globalVariables.isDebuging)
@@ -72,10 +73,11 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 globalVariables.bankName = data[0];
                 globalVariables.branch = data[1];
                 globalVariables.companyAdd = data[2];
-                globalVariables.companyName = data[3];
+                globalVariables.accountName = data[3];
                 globalVariables.BSB = data[4];
                 globalVariables.accountNum = data[5];
                 globalVariables.contract = data[5];
+                globalVariables.salary = data[6];
                 prev.ShowDialog();
             }
             else

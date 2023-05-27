@@ -1,6 +1,8 @@
 ﻿using AForge.Video;
 using AForge.Video.DirectShow;
 using Guna.UI2.WinForms;
+using System.Drawing.Imaging;
+using System.Drawing;
 using ZXing;
 using ZXing.Common;
 using ZXing.QrCode;
@@ -126,7 +128,6 @@ namespace WinFormsApp1.Helper
 
             return squareImage;
         }
-
         public static Guna2ComboBox camListCB { get; set; }
         public static Guna2PictureBox selfPic { get; set; }
         public static bool qrcode { get; set; }

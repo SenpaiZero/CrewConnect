@@ -54,7 +54,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 globalVariables.permAdd = permAddCheckBox.Checked;
 
                 if (string.IsNullOrWhiteSpace(address2TB.Text))
-                    globalVariables.streetAdd2 = " ";
+                    globalVariables.streetAdd2 = "NONE";
                 else
                     globalVariables.streetAdd2 = address2TB.Text;
                 pageHelper.changePage(new page2(), adminPanel.panel, 500);
@@ -66,7 +66,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 validationHelper.textBoxValidation_Alpha(surnameTB, "Surname", errorProvider);
                 validationHelper.textBoxValidation_Alpha(firstnameTB, "First Name", errorProvider);
                 validationHelper.textBoxValidation_Alpha(middlenameTB, "Middle Name", errorProvider);
-                validationHelper.textBoxValidation_Alpha(addressTB, "Address", errorProvider);
+                validationHelper.textBoxValidation_Address(addressTB, "Address", errorProvider);
                 validationHelper.textBoxValidation_Alpha(cityTB, "City", errorProvider);
                 validationHelper.textBoxValidation_Alpha(stateTB, "State", errorProvider);
                 validationHelper.textBoxValidation_Numeric(postalTB, "Postal", errorProvider);
@@ -100,7 +100,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         private void addressTB_Validating(object sender, CancelEventArgs e)
         {
             isValid[3] = false;
-            if (validationHelper.textBoxValidation_Alpha(addressTB, "Address", errorProvider))
+            if (validationHelper.textBoxValidation_Address(addressTB, "Address", errorProvider))
                 isValid[3] = true;
         }
 

@@ -87,6 +87,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
             idNumTB.Text = randomizedId;
             Bitmap img = qrCodeHelper.generateQrCode(randomizedId);
+            globalVariables.qrCodePic = img; 
             qrPic.Image = img;
             // img.Save($"C:\\Users\\Xeb\\Desktop\\{randomizedId}.png", ImageFormat.Png);
         }
@@ -164,7 +165,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         private void emailTB_Validating(object sender, CancelEventArgs e)
         {
             isValid[1] = false;
-            if (validationHelper.textBoxValidation_Alpha(emailTB, "Email", errorProvider1))
+            if (validationHelper.textBoxValidation_Email(emailTB, "Email", errorProvider1))
                 isValid[1] = true;
         }
 
@@ -177,6 +178,11 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             isValid[2] = false;
             if(validationHelper.comboBoxValidation(positionCB, "POSITION", errorProvider1))
                 isValid[2] = true;
+        }
+
+        private void emailTB_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

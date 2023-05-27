@@ -1,6 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -118,9 +119,7 @@ namespace WinFormsApp1.Helper
         public static bool checkFieldBlank(String tb)
         {
             if (string.IsNullOrEmpty(tb))
-            {
                 return true;
-            }
             return false;
         }
 
@@ -128,19 +127,83 @@ namespace WinFormsApp1.Helper
         public static bool checkFieldAlpha(String tb)
         {
             if (Regex.IsMatch(tb, "^[a-zA-Z\\s]+$"))
-            {
                 return true;
-            }
             return false;
+        }
+
+        // Checks if user entered correct address
+        public static bool IsValidAddress(string address)
+        {
+            string pattern = @"^\d+\s+([a-zA-Z]+\s*)+$";
+            if (Regex.IsMatch(address, pattern))
+                return true;
+            return false;
+        }
+        public static bool textBoxValidation_Address(Guna2TextBox tb, String name, ErrorProvider errorProvider)
+        {
+            String nullField = "is required. Please complete this field to continue";
+            String symNumNotAllowed = "is invalid (Symbols and numbers are not allowed)";
+            tb.BorderColor = Color.IndianRed;
+            tb.BorderThickness = 5;
+
+            //Checks if its empty
+            if (validationHelper.checkFieldBlank(tb.Text))
+            {
+                errorProvider.SetError(tb, $"{name} {nullField}");
+                return false;
+            }
+            // Checks if its alpha only
+            else if (!validationHelper.IsValidAddress(tb.Text))
+            {
+                errorProvider.SetError(tb, $"{name} {symNumNotAllowed}");
+                return false;
+            }
+            // Clears the error
+            tb.BorderThickness = 1;
+            tb.BorderColor = Color.FromArgb(213, 218, 223);
+            errorProvider.SetError(tb, null);
+            return true;
+        }
+        // Checks if user entered correct email
+        public static bool IsValidEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+            if(Regex.IsMatch(email, pattern))
+                return true;
+            return false;
+        }
+
+        public static bool textBoxValidation_Email(Guna2TextBox tb, String name, ErrorProvider errorProvider)
+        {
+            String nullField = "is required. Please complete this field to continue";
+            String symNumNotAllowed = "is invalid (Symbols and numbers are not allowed)";
+            tb.BorderColor = Color.IndianRed;
+            tb.BorderThickness = 5;
+
+            //Checks if its empty
+            if (validationHelper.checkFieldBlank(tb.Text))
+            {
+                errorProvider.SetError(tb, $"{name} {nullField}");
+                return false;
+            }
+            // Checks if its alpha only
+            else if (!validationHelper.IsValidEmail(tb.Text))
+            {
+                errorProvider.SetError(tb, $"{name} {symNumNotAllowed}");
+                return false;
+            }
+            // Clears the error
+            tb.BorderThickness = 1;
+            tb.BorderColor = Color.FromArgb(213, 218, 223);
+            errorProvider.SetError(tb, null);
+            return true;
         }
 
         // Checks if user entered alphabets and numbers only
         public static bool checkFieldAlphaNumeric(String tb)
         {
             if (Regex.IsMatch(tb, "^[a-zA-Z0-9\\s]+$"))
-            {
                 return true;
-            }
             return false;
         }
 
@@ -148,10 +211,18 @@ namespace WinFormsApp1.Helper
         public static bool checkFieldNumeric(String tb)
         {
             if (Regex.IsMatch(tb, "^[0-9]+$"))
-            {
                 return true;
-            }
             return false;
+        }
+
+        // Converting Bitmap to byte
+        public static byte[] convertBitmapToByte(Bitmap bm)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                bm.Save(ms, ImageFormat.Jpeg); // Assuming you want to save it as JPEG format
+                return ms.ToArray();
+            }
         }
     }
 }

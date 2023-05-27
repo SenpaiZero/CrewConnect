@@ -324,6 +324,7 @@
             this.emailTB.Size = new System.Drawing.Size(746, 45);
             this.emailTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.emailTB.TabIndex = 41;
+            this.emailTB.TextChanged += new System.EventHandler(this.emailTB_TextChanged);
             this.emailTB.Validating += new System.ComponentModel.CancelEventHandler(this.emailTB_Validating);
             // 
             // phoneNumTB
