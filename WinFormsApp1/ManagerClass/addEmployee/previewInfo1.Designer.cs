@@ -1089,6 +1089,7 @@
             this.prevBtn.Size = new System.Drawing.Size(225, 56);
             this.prevBtn.TabIndex = 38;
             this.prevBtn.Text = "CANCEL";
+            this.prevBtn.Click += new System.EventHandler(this.prevBtn_Click);
             // 
             // finishBtn
             // 

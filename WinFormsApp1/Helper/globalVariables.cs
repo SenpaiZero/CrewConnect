@@ -11,14 +11,14 @@ namespace WinFormsApp1.Helper
     {
 
         // Insert commands for sql for whole table.  - Just add concat VALUES (values of each table)
-        public static string cmd_insert_announcement = "INSERT INTO announcement (Id, message, date)";
+        public static string cmd_insert_announcement = "INSERT INTO announcement (Id, message, date)"; 
         public static string cmd_insert_bank = "INSERT INTO bank (Id, username, bankName, branch, companyAddress, accountName, BSB, accountNum)";
         public static string cmd_insert_contact = "INSERT INTO contact (Id, username, phoneNumber, emailAddress, emailadress2, address, address2)";
         public static string cmd_insert_fulltime = "INSERT INTO fulltime (Id, username, name, salary)";
         public static string cmd_insert_parttime = "INSERT INTO parttime (Id, username, name, salary)";
         public static string cmd_insert_identity = "INSERT INTO identities (Id, username, personalPhoto, qrCodePhoto)";
         public static string cmd_insert_job = "INSERT INTO job (Id, username, position, contract)";
-        public static string cmd_insert_personal = "INSERT INTO personal (Id, username, name, birthday, age, bloodType, status, religion)";
+        public static string cmd_insert_personal = "INSERT INTO personal (Id, username, name, birthday, age, bloodType, status, religion, gender)";
         public static string cmd_insert_system = "INSERT INTO system (Id, position, control)";
         public static string cmd_insert_Users = "INSERT INTO Users (Id, username, password, position)";
 
@@ -26,6 +26,8 @@ namespace WinFormsApp1.Helper
             "Persist Security Info=False;User ID=crewconnect;Password=123sti_bsit;MultipleActiveResultSets=False;" +
             "Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
+        // ID
+        public static Bitmap idPic { set; get; }
 
         // Debuging purposes
         public static bool isDebuging { get; set; }

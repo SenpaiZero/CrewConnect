@@ -15,7 +15,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 {
     public partial class page1 : Form
     {
-        static bool[] isValid = new bool[7];
+        static bool[] isValid = new bool[8];
         public page1()
         {
             InitializeComponent();
@@ -67,6 +67,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 validationHelper.textBoxValidation_Alpha(firstnameTB, "First Name", errorProvider);
                 validationHelper.textBoxValidation_Alpha(middlenameTB, "Middle Name", errorProvider);
                 validationHelper.textBoxValidation_Address(addressTB, "Address", errorProvider);
+                validationHelper.textBoxValidation_Address_optional(address2TB, "Address", errorProvider, true);
                 validationHelper.textBoxValidation_Alpha(cityTB, "City", errorProvider);
                 validationHelper.textBoxValidation_Alpha(stateTB, "State", errorProvider);
                 validationHelper.textBoxValidation_Numeric(postalTB, "Postal", errorProvider);
@@ -131,6 +132,13 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             {
                 isValid[i] = false;
             }
+        }
+
+        private void address2TB_Validating(object sender, CancelEventArgs e)
+        {
+            isValid[7] = false;
+            if (validationHelper.textBoxValidation_Address_optional(address2TB, "Address", errorProvider, true))
+                isValid[7] = true;
         }
     }
 }

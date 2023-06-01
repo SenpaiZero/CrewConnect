@@ -125,17 +125,27 @@ namespace WinFormsApp1.ManagerClass.addEmployee
                 // job Table
                 $"{globalVariables.cmd_insert_job} VALUES (@Id, @username, @position, @contract);" +
                 // Users Table
-                $"{globalVariables.cmd_insert_Users} VALUES (@Id, @username, @password, @position);"; 
+                $"{globalVariables.cmd_insert_Users} VALUES (@Id, @username, @password, @position);" +
+                // Personal Table
+                $"{globalVariables.cmd_insert_personal} VALUES (@Id, @username, @name, @birthday, @age," +
+                $" @bloodType, @status, @religion, @gender)";
 
                 String name = (globalVariables.lastname + ", " + globalVariables.firstname + " " + globalVariables.middlename).ToUpper();
                 using (SqlCommand command = new SqlCommand(query, con))
                 {
-                    int id = int.Parse(globalVariables.idNum);
+                    DateTime bday = new DateTime((int)globalVariables.year, (int)globalVariables.month, (int)globalVariables.day);
+                    int id_ = int.Parse(globalVariables.idNum);
                     command.Parameters.AddWithValue("@username", globalVariables.username);
                     command.Parameters.AddWithValue("@employeeID", globalVariables.idNum);
                     command.Parameters.AddWithValue("@password", globalVariables.username);
                     command.Parameters.AddWithValue("@name", name);
-                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@status", globalVariables.status);
+                    command.Parameters.AddWithValue("@religion", globalVariables.religion);
+                    command.Parameters.AddWithValue("@gender", globalVariables.gender);
+                    command.Parameters.AddWithValue("@birthday", bday);
+                    command.Parameters.AddWithValue("@age", globalVariables.age);
+                    command.Parameters.AddWithValue("@bloodType", globalVariables.bloodType);
+                    command.Parameters.AddWithValue("@Id", id_);
                     command.Parameters.AddWithValue("@position", globalVariables.position);
                     command.Parameters.AddWithValue("@contract", globalVariables.contract);
                     command.Parameters.AddWithValue("@salary", globalVariables.salary);
@@ -159,6 +169,9 @@ namespace WinFormsApp1.ManagerClass.addEmployee
                     // Execute the query
                     command.ExecuteNonQuery();
                 }
+                this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                employeeID id = new employeeID();
+                id.Show();
                 ResumeLayout();
                 con.Close();
                 this.Close();
@@ -168,6 +181,11 @@ namespace WinFormsApp1.ManagerClass.addEmployee
         private void mainsPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void prevBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

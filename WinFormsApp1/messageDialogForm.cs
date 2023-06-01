@@ -15,6 +15,9 @@ namespace WinFormsApp1
         public messageDialogForm()
         {
             InitializeComponent();
+            KeyDown += messageDialogForm_KeyDown;
+            KeyDown += bodyLabel_KeyDown;
+            KeyDown += titleLabel_KeyDown;
         }
         public String title { get; set; }
         public String message { get; set; }
@@ -27,6 +30,24 @@ namespace WinFormsApp1
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void messageDialogForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                this.Close();
+        }
+
+        private void titleLabel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                this.Close();
+        }
+
+        private void bodyLabel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                this.Close();
         }
     }
 }

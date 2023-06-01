@@ -308,6 +308,7 @@
             this.address2TB.Size = new System.Drawing.Size(787, 45);
             this.address2TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.address2TB.TabIndex = 5;
+            this.address2TB.Validating += new System.ComponentModel.CancelEventHandler(this.address2TB_Validating);
             // 
             // addressTB
             // 

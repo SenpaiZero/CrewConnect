@@ -134,7 +134,7 @@ namespace WinFormsApp1.Helper
         // Checks if user entered correct address
         public static bool IsValidAddress(string address)
         {
-            string pattern = @"^\d+\s+([a-zA-Z]+\s*)+$";
+            string pattern = "^[a-zA-Z0-9., ]+$";
             if (Regex.IsMatch(address, pattern))
                 return true;
             return false;
@@ -142,7 +142,7 @@ namespace WinFormsApp1.Helper
         public static bool textBoxValidation_Address(Guna2TextBox tb, String name, ErrorProvider errorProvider)
         {
             String nullField = "is required. Please complete this field to continue";
-            String symNumNotAllowed = "is invalid (Symbols and numbers are not allowed)";
+            String symNumNotAllowed = "is invalid (Please enter a valid address)";
             tb.BorderColor = Color.IndianRed;
             tb.BorderThickness = 5;
 
@@ -152,9 +152,36 @@ namespace WinFormsApp1.Helper
                 errorProvider.SetError(tb, $"{name} {nullField}");
                 return false;
             }
-            // Checks if its alpha only
             else if (!validationHelper.IsValidAddress(tb.Text))
             {
+                errorProvider.SetError(tb, $"{name} {symNumNotAllowed}");
+                return false;
+            }
+            // Clears the error
+            tb.BorderThickness = 1;
+            tb.BorderColor = Color.FromArgb(213, 218, 223);
+            errorProvider.SetError(tb, null);
+            return true;
+        }
+        public static bool textBoxValidation_Address_optional(Guna2TextBox tb, String name, ErrorProvider errorProvider, bool acceptEmpty)
+        {
+            String nullField = "is required. Please complete this field to continue";
+            String symNumNotAllowed = "is invalid (Please enter a valid address)";
+            tb.BorderColor = Color.IndianRed;
+            tb.BorderThickness = 5;
+
+            //Checks if its empty
+            if (validationHelper.checkFieldBlank(tb.Text))
+            {
+                if (!acceptEmpty)
+                {
+                    errorProvider.SetError(tb, $"{name} {nullField}");
+                    return false;
+                }
+            }
+            else if (!validationHelper.IsValidAddress(tb.Text))
+            {
+                
                 errorProvider.SetError(tb, $"{name} {symNumNotAllowed}");
                 return false;
             }

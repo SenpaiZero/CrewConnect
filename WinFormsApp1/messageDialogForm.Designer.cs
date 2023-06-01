@@ -56,10 +56,11 @@
             this.titleLabel.IsSelectionEnabled = false;
             this.titleLabel.Location = new System.Drawing.Point(12, 74);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(582, 51);
+            this.titleLabel.Size = new System.Drawing.Size(582, 50);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "TITLE";
             this.titleLabel.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.titleLabel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.titleLabel_KeyDown);
             // 
             // bodyLabel
             // 
@@ -76,6 +77,7 @@
             this.bodyLabel.TabIndex = 1;
             this.bodyLabel.Text = "MESSAGE";
             this.bodyLabel.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.bodyLabel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.bodyLabel_KeyDown);
             // 
             // guna2Button1
             // 
@@ -113,6 +115,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "messageDialog";
             this.Load += new System.EventHandler(this.messageDialog_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messageDialogForm_KeyDown);
             this.ResumeLayout(false);
 
         }

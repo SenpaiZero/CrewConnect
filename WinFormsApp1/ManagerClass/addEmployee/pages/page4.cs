@@ -76,9 +76,10 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 globalVariables.accountName = data[3];
                 globalVariables.BSB = data[4];
                 globalVariables.accountNum = data[5];
-                globalVariables.contract = data[5];
-                globalVariables.salary = data[6];
-                prev.ShowDialog();
+                globalVariables.contract = data[6];
+                globalVariables.salary = data[7];
+                if(prev.ShowDialog() == DialogResult.OK)
+                    pageHelper.changePage(new page1(), adminPanel.panel);
             }
             else
             {

@@ -72,10 +72,11 @@
             this.guna2Shapes1.Rotate = 0F;
             this.guna2Shapes1.RoundedEdges = customizableEdges10;
             this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse;
-            this.guna2Shapes1.Size = new System.Drawing.Size(636, 385);
+            this.guna2Shapes1.Size = new System.Drawing.Size(625, 385);
             this.guna2Shapes1.TabIndex = 0;
             this.guna2Shapes1.Text = "guna2Shapes1";
             this.guna2Shapes1.Zoom = 80;
+            this.guna2Shapes1.Click += new System.EventHandler(this.guna2Shapes1_Click);
             // 
             // employeePhoto
             // 
@@ -108,31 +109,43 @@
             // 
             // roleLabel
             // 
+            this.roleLabel.AutoSize = false;
+            this.roleLabel.AutoSizeHeightOnly = true;
             this.roleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.roleLabel.Location = new System.Drawing.Point(157, 290);
+            this.roleLabel.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.roleLabel.Location = new System.Drawing.Point(-1, 323);
             this.roleLabel.Name = "roleLabel";
-            this.roleLabel.Size = new System.Drawing.Size(61, 22);
+            this.roleLabel.Size = new System.Drawing.Size(365, 28);
             this.roleLabel.TabIndex = 3;
             this.roleLabel.Text = "JANITOR";
             this.roleLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // nameLabel
             // 
+            this.nameLabel.AutoSize = false;
+            this.nameLabel.AutoSizeHeightOnly = true;
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.nameLabel.Location = new System.Drawing.Point(121, 262);
+            this.nameLabel.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nameLabel.Location = new System.Drawing.Point(-1, 262);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(127, 22);
+            this.nameLabel.Size = new System.Drawing.Size(365, 28);
             this.nameLabel.TabIndex = 4;
             this.nameLabel.Text = "ARQUIO, KYLA LIM";
+            this.nameLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nameLabel.Click += new System.EventHandler(this.nameLabel_Click);
             // 
             // employeeLabel
             // 
+            this.employeeLabel.AutoSize = false;
+            this.employeeLabel.AutoSizeHeightOnly = true;
             this.employeeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.employeeLabel.Location = new System.Drawing.Point(114, 318);
+            this.employeeLabel.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.employeeLabel.Location = new System.Drawing.Point(-1, 292);
             this.employeeLabel.Name = "employeeLabel";
-            this.employeeLabel.Size = new System.Drawing.Size(150, 22);
+            this.employeeLabel.Size = new System.Drawing.Size(365, 28);
             this.employeeLabel.TabIndex = 5;
             this.employeeLabel.Text = "Employee # 20021385";
+            this.employeeLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Shapes2
             // 
@@ -199,7 +212,6 @@
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.qrPhoto)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

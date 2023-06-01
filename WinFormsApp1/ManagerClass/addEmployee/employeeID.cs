@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheArtOfDevHtmlRenderer.Adapters;
 using WinFormsApp1.Helper;
+using WinFormsApp1.Helper.email;
 
 namespace WinFormsApp1.ManagerClass
 {
@@ -26,16 +27,32 @@ namespace WinFormsApp1.ManagerClass
             width = this.Width;
             height= this.Height;
 
-            nameLabel.Text = $"{globalVariables.lastname}, {globalVariables.firstname} " +
+            if (globalVariables.isDebuging)
+            {
+                nameLabel.Text = $"SANTOS, YGI MARTIN" +
+                    $"BORLONGAN".ToUpper();
+
+                roleLabel.Text = "PERMANENT";
+                employeeLabel.Text = "EMPLOYEE # 100045013";
+
+                employeePhoto.Image = Image.FromFile("C:\\Users\\Xeb\\Pictures\\Roblox\\RobloxScreenShot20230219_195725941.png");
+                qrPhoto.Image = Image.FromFile("C:\\Users\\Xeb\\Downloads\\qr.png");
+            }
+            else
+            {
+                nameLabel.Text = $"{globalVariables.lastname}, {globalVariables.firstname} ".ToUpper() +
                 $"{globalVariables.middlename}".ToUpper();
 
-            roleLabel.Text = globalVariables.contract;
-            employeeLabel.Text = globalVariables.idNum;
+                roleLabel.Text = globalVariables.position;
+                employeeLabel.Text = "EMPLOYEE # " + globalVariables.idNum;
 
-            employeePhoto.Image = globalVariables.selfPic;
-            qrPhoto.Image = globalVariables.qrCodePic;
+                employeePhoto.Image = globalVariables.selfPic;
+                qrPhoto.Image = globalVariables.qrCodePic;
+            }
 
+            
             saveID();
+            this.Close();
         }
         public static int width
         {
@@ -89,16 +106,34 @@ namespace WinFormsApp1.ManagerClass
             }
 
             // Save the bitmap as a file
-            bmp.Save("C:\\Users\\Xeb\\Desktop\\system]\\id.png", ImageFormat.Png);
+            string directoryPath = "..\\..\\..\\Helper\\email\\images\\";
+            Directory.CreateDirectory(directoryPath);
+            bmp.Save(directoryPath + "id.png", ImageFormat.Png);
+            globalVariables.idPic = bmp;
 
             // Dispose of the bitmap
             bmp.Dispose();
             panel1Bmp.Dispose();
             panel2Bmp.Dispose();
 
+            if (globalVariables.isDebuging)
+                emailHelper.sendEmail("ygisantos@gmail.com", true);
+            else
+                emailHelper.sendEmail(globalVariables.email);
+
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Shapes1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameLabel_Click(object sender, EventArgs e)
         {
 
         }

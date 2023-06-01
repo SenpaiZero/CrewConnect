@@ -70,7 +70,7 @@ namespace WinFormsApp1
                 loadingForm.ShowDialog();
                 con.Open();
                 adminPanel ad = new adminPanel();
-                cmd = new SqlCommand($"SELECT * FROM Users WHERE username = '{username}' AND password = '{password}'", con);
+                cmd = new SqlCommand($"SELECT * FROM Users WHERE username COLLATE Latin1_General_CS_AS = '{username}' AND password COLLATE Latin1_General_CS_AS = '{password}'", con);
                 dr = cmd.ExecuteReader();
 
                 if (dr.Read())
@@ -176,6 +176,12 @@ namespace WinFormsApp1
         {
             if(con.State == System.Data.ConnectionState.Open)
                 con.Close(); 
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            employeeID id = new employeeID();
+            id.Show();
         }
     }
 }
