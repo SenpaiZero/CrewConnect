@@ -32,6 +32,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void prevBtn_Click(object sender, EventArgs e)
         {
+            pageHelper.f.Close();
             pageHelper.changePage(new page3(), adminPanel.panel);
         }
 
@@ -78,8 +79,11 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 globalVariables.accountNum = data[5];
                 globalVariables.contract = data[6];
                 globalVariables.salary = data[7];
-                if(prev.ShowDialog() == DialogResult.OK)
+                if (prev.ShowDialog() == DialogResult.OK)
+                {
+                    pageHelper.f.Close();
                     pageHelper.changePage(new page1(), adminPanel.panel);
+                }
             }
             else
             {

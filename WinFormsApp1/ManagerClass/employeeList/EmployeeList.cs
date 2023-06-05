@@ -22,24 +22,46 @@ namespace WinFormsApp1.ManagerClass
         static SqlConnection con;
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            if (!validationHelper.internetAvailability())
+                return;
+
+            if (string.IsNullOrWhiteSpace(searchTB.Text))
+            {
+                showData();
+                return;
+            }
+
             int i;
             bool result = int.TryParse(searchTB.Text,out i);
-            
+            SqlCommand cmd;
             con.Open();
 
-            if (result)
+            if (result) 
             {
-                SqlCommand cmd = new SqlCommand("SELECT personal.Id, personal.name, personal.age, contact.emailAddress," +
+                cmd = new SqlCommand("SELECT personal.Id, personal.name, personal.age, contact.emailAddress," +
                     " contact.phoneNumber, job.position, job.contract FROM personal INNER JOIN contact ON " +
-                    "personal.Id = contact.Id JOIN job ON personal.Id = job.Id", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                listTable.DataSource = dt;
+                    $"personal.Id = contact.Id JOIN job ON personal.Id = job.Id WHERE personal.Id LIKE '{searchTB.Text}'", con);
             }
+            else
+            {
+                cmd = new SqlCommand("SELECT personal.Id, personal.name, personal.age, contact.emailAddress," +
+                    " contact.phoneNumber, job.position, job.contract FROM personal INNER JOIN contact ON " +
+                    $"personal.Id = contact.Id JOIN job ON personal.Id = job.Id WHERE personal.name LIKE '{searchTB.Text}'", con);
+            }
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            listTable.DataSource = dt;
         }
 
         private void EmployeeList_Load(object sender, EventArgs e)
+        {
+            if (!validationHelper.internetAvailability())
+                return;
+            showData();
+        }
+
+        void showData()
         {
             con = new SqlConnection(globalVariables.server);
             SqlCommand cmd = new SqlCommand("SELECT personal.Id, personal.name, personal.age, contact.emailAddress," +
@@ -48,20 +70,36 @@ namespace WinFormsApp1.ManagerClass
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            listTable.DataSource = dt;
 
+            var loadingForm = new loadingForm();
+            loadingForm.StartPosition = FormStartPosition.CenterParent;
+            loadingForm.loadingTime = 1000;
+            loadingForm.ShowDialog();
+
+            listTable.DataSource = dt;
         }
 
         private void openSelectedBtn_Click(object sender, EventArgs e)
         {
-            if (listTable.SelectedRows.Count > 0)
+            var loadingForm = new loadingForm();
+            loadingForm.StartPosition = FormStartPosition.CenterParent;
+            loadingForm.loadingTime = 1200;
+            loadingForm.ShowDialog();
+
+            if (listTable.Rows.Count > 0)
             {
                 DataGridViewRow selectedRow = listTable.SelectedRows[0];
                 selectedID = selectedRow.Cells[0].Value.ToString();
 
+                MessageBox.Show(selectedID);
                 showEmployee empl = new showEmployee();
                 empl.Show();
             }
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            showData();
         }
     }
 }

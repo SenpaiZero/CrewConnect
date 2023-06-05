@@ -124,10 +124,14 @@
             // 
             // selfPic
             // 
-            this.selfPic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.selfPic.BorderRadius = 25;
+            customizableEdges53.BottomLeft = false;
+            customizableEdges53.BottomRight = false;
+            customizableEdges53.TopRight = false;
             this.selfPic.CustomizableEdges = customizableEdges53;
+            this.selfPic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(156)))));
             this.selfPic.ImageRotate = 0F;
-            this.selfPic.Location = new System.Drawing.Point(12, 12);
+            this.selfPic.Location = new System.Drawing.Point(64, 38);
             this.selfPic.Name = "selfPic";
             this.selfPic.ShadowDecoration.CustomizableEdges = customizableEdges54;
             this.selfPic.Size = new System.Drawing.Size(250, 250);
@@ -138,18 +142,22 @@
             // id1
             // 
             this.id1.CustomizableEdges = customizableEdges51;
-            this.id1.DefaultText = "id";
+            this.id1.DefaultText = "";
             this.id1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.id1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.id1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.id1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.id1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.id1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.id1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.id1.ForeColor = System.Drawing.Color.White;
             this.id1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.id1.Location = new System.Drawing.Point(12, 268);
+            this.id1.Location = new System.Drawing.Point(64, 294);
             this.id1.Name = "id1";
             this.id1.PasswordChar = '\0';
+            this.id1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.id1.PlaceholderText = "";
+            this.id1.ReadOnly = true;
             this.id1.SelectedText = "";
             this.id1.ShadowDecoration.CustomizableEdges = customizableEdges52;
             this.id1.Size = new System.Drawing.Size(250, 45);
@@ -159,18 +167,22 @@
             // name1
             // 
             this.name1.CustomizableEdges = customizableEdges49;
-            this.name1.DefaultText = "name";
+            this.name1.DefaultText = "";
             this.name1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.name1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.name1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.name1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.name1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.name1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.name1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.name1.ForeColor = System.Drawing.Color.White;
             this.name1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.name1.Location = new System.Drawing.Point(268, 12);
+            this.name1.Location = new System.Drawing.Point(320, 38);
             this.name1.Name = "name1";
             this.name1.PasswordChar = '\0';
+            this.name1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.name1.PlaceholderText = "";
+            this.name1.ReadOnly = true;
             this.name1.SelectedText = "";
             this.name1.ShadowDecoration.CustomizableEdges = customizableEdges50;
             this.name1.Size = new System.Drawing.Size(324, 45);
@@ -180,17 +192,20 @@
             // salary1
             // 
             this.salary1.CustomizableEdges = customizableEdges47;
-            this.salary1.DefaultText = "salary";
+            this.salary1.DefaultText = "";
             this.salary1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.salary1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.salary1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.salary1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.salary1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.salary1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.salary1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.salary1.ForeColor = System.Drawing.Color.White;
             this.salary1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.salary1.Location = new System.Drawing.Point(12, 472);
+            this.salary1.Location = new System.Drawing.Point(64, 498);
             this.salary1.Name = "salary1";
             this.salary1.PasswordChar = '\0';
+            this.salary1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.salary1.PlaceholderText = "";
             this.salary1.SelectedText = "";
             this.salary1.ShadowDecoration.CustomizableEdges = customizableEdges48;
@@ -201,17 +216,20 @@
             // contract1
             // 
             this.contract1.CustomizableEdges = customizableEdges45;
-            this.contract1.DefaultText = "contract";
+            this.contract1.DefaultText = "";
             this.contract1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.contract1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.contract1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.contract1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.contract1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.contract1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.contract1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.contract1.ForeColor = System.Drawing.Color.White;
             this.contract1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.contract1.Location = new System.Drawing.Point(12, 421);
+            this.contract1.Location = new System.Drawing.Point(64, 447);
             this.contract1.Name = "contract1";
             this.contract1.PasswordChar = '\0';
+            this.contract1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.contract1.PlaceholderText = "";
             this.contract1.SelectedText = "";
             this.contract1.ShadowDecoration.CustomizableEdges = customizableEdges46;
@@ -222,17 +240,20 @@
             // position1
             // 
             this.position1.CustomizableEdges = customizableEdges43;
-            this.position1.DefaultText = "position";
+            this.position1.DefaultText = "";
             this.position1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.position1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.position1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.position1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.position1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.position1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.position1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.position1.ForeColor = System.Drawing.Color.White;
             this.position1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.position1.Location = new System.Drawing.Point(12, 370);
+            this.position1.Location = new System.Drawing.Point(64, 396);
             this.position1.Name = "position1";
             this.position1.PasswordChar = '\0';
+            this.position1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.position1.PlaceholderText = "";
             this.position1.SelectedText = "";
             this.position1.ShadowDecoration.CustomizableEdges = customizableEdges44;
@@ -243,18 +264,22 @@
             // username1
             // 
             this.username1.CustomizableEdges = customizableEdges41;
-            this.username1.DefaultText = "username";
+            this.username1.DefaultText = "";
             this.username1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.username1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.username1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.username1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.username1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.username1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.username1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.username1.ForeColor = System.Drawing.Color.White;
             this.username1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.username1.Location = new System.Drawing.Point(12, 319);
+            this.username1.Location = new System.Drawing.Point(64, 345);
             this.username1.Name = "username1";
             this.username1.PasswordChar = '\0';
+            this.username1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.username1.PlaceholderText = "";
+            this.username1.ReadOnly = true;
             this.username1.SelectedText = "";
             this.username1.ShadowDecoration.CustomizableEdges = customizableEdges42;
             this.username1.Size = new System.Drawing.Size(250, 45);
@@ -264,143 +289,164 @@
             // bday1
             // 
             this.bday1.CustomizableEdges = customizableEdges39;
-            this.bday1.DefaultText = "birthday";
+            this.bday1.DefaultText = "";
             this.bday1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.bday1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.bday1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.bday1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.bday1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.bday1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.bday1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bday1.ForeColor = System.Drawing.Color.White;
             this.bday1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.bday1.Location = new System.Drawing.Point(598, 267);
+            this.bday1.Location = new System.Drawing.Point(320, 345);
             this.bday1.Name = "bday1";
             this.bday1.PasswordChar = '\0';
+            this.bday1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.bday1.PlaceholderText = "";
             this.bday1.SelectedText = "";
             this.bday1.ShadowDecoration.CustomizableEdges = customizableEdges40;
-            this.bday1.Size = new System.Drawing.Size(160, 45);
+            this.bday1.Size = new System.Drawing.Size(157, 45);
             this.bday1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.bday1.TabIndex = 7;
             // 
             // gender1
             // 
             this.gender1.CustomizableEdges = customizableEdges37;
-            this.gender1.DefaultText = "gender";
+            this.gender1.DefaultText = "";
             this.gender1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.gender1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.gender1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.gender1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.gender1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.gender1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.gender1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.gender1.ForeColor = System.Drawing.Color.White;
             this.gender1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.gender1.Location = new System.Drawing.Point(764, 369);
+            this.gender1.Location = new System.Drawing.Point(487, 447);
             this.gender1.Name = "gender1";
             this.gender1.PasswordChar = '\0';
+            this.gender1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.gender1.PlaceholderText = "";
             this.gender1.SelectedText = "";
             this.gender1.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            this.gender1.Size = new System.Drawing.Size(84, 45);
+            this.gender1.Size = new System.Drawing.Size(157, 45);
             this.gender1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.gender1.TabIndex = 8;
             // 
             // status1
             // 
             this.status1.CustomizableEdges = customizableEdges35;
-            this.status1.DefaultText = "status";
+            this.status1.DefaultText = "";
             this.status1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.status1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.status1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.status1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.status1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.status1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.status1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.status1.ForeColor = System.Drawing.Color.White;
             this.status1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.status1.Location = new System.Drawing.Point(598, 370);
+            this.status1.Location = new System.Drawing.Point(320, 448);
             this.status1.Name = "status1";
             this.status1.PasswordChar = '\0';
+            this.status1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.status1.PlaceholderText = "";
             this.status1.SelectedText = "";
             this.status1.ShadowDecoration.CustomizableEdges = customizableEdges36;
-            this.status1.Size = new System.Drawing.Size(160, 45);
+            this.status1.Size = new System.Drawing.Size(157, 45);
             this.status1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.status1.TabIndex = 9;
             // 
             // bloodtype1
             // 
             this.bloodtype1.CustomizableEdges = customizableEdges33;
-            this.bloodtype1.DefaultText = "bloodtype";
+            this.bloodtype1.DefaultText = "";
             this.bloodtype1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.bloodtype1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.bloodtype1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.bloodtype1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.bloodtype1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.bloodtype1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.bloodtype1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bloodtype1.ForeColor = System.Drawing.Color.White;
             this.bloodtype1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.bloodtype1.Location = new System.Drawing.Point(764, 318);
+            this.bloodtype1.Location = new System.Drawing.Point(487, 396);
             this.bloodtype1.Name = "bloodtype1";
             this.bloodtype1.PasswordChar = '\0';
+            this.bloodtype1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.bloodtype1.PlaceholderText = "";
             this.bloodtype1.SelectedText = "";
             this.bloodtype1.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            this.bloodtype1.Size = new System.Drawing.Size(84, 45);
+            this.bloodtype1.Size = new System.Drawing.Size(157, 45);
             this.bloodtype1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.bloodtype1.TabIndex = 10;
             // 
             // age1
             // 
             this.age1.CustomizableEdges = customizableEdges31;
-            this.age1.DefaultText = "age";
+            this.age1.DefaultText = "";
             this.age1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.age1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.age1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.age1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.age1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.age1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.age1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.age1.ForeColor = System.Drawing.Color.White;
             this.age1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.age1.Location = new System.Drawing.Point(764, 267);
+            this.age1.Location = new System.Drawing.Point(487, 345);
             this.age1.Name = "age1";
             this.age1.PasswordChar = '\0';
+            this.age1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.age1.PlaceholderText = "";
             this.age1.SelectedText = "";
             this.age1.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            this.age1.Size = new System.Drawing.Size(84, 45);
+            this.age1.Size = new System.Drawing.Size(157, 45);
             this.age1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.age1.TabIndex = 11;
             // 
             // religion1
             // 
             this.religion1.CustomizableEdges = customizableEdges29;
-            this.religion1.DefaultText = "religion";
+            this.religion1.DefaultText = "";
             this.religion1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.religion1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.religion1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.religion1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.religion1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.religion1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.religion1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.religion1.ForeColor = System.Drawing.Color.White;
             this.religion1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.religion1.Location = new System.Drawing.Point(598, 319);
+            this.religion1.Location = new System.Drawing.Point(320, 397);
             this.religion1.Name = "religion1";
             this.religion1.PasswordChar = '\0';
+            this.religion1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.religion1.PlaceholderText = "";
             this.religion1.SelectedText = "";
             this.religion1.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            this.religion1.Size = new System.Drawing.Size(160, 45);
+            this.religion1.Size = new System.Drawing.Size(157, 45);
             this.religion1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.religion1.TabIndex = 12;
             // 
             // email1
             // 
             this.email1.CustomizableEdges = customizableEdges27;
-            this.email1.DefaultText = "email";
+            this.email1.DefaultText = "";
             this.email1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.email1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.email1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.email1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.email1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.email1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.email1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.email1.ForeColor = System.Drawing.Color.White;
             this.email1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.email1.Location = new System.Drawing.Point(268, 63);
+            this.email1.Location = new System.Drawing.Point(320, 89);
             this.email1.Name = "email1";
             this.email1.PasswordChar = '\0';
+            this.email1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.email1.PlaceholderText = "";
             this.email1.SelectedText = "";
             this.email1.ShadowDecoration.CustomizableEdges = customizableEdges28;
@@ -411,17 +457,20 @@
             // email2
             // 
             this.email2.CustomizableEdges = customizableEdges25;
-            this.email2.DefaultText = "email2";
+            this.email2.DefaultText = "";
             this.email2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.email2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.email2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.email2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.email2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.email2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.email2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.email2.ForeColor = System.Drawing.Color.White;
             this.email2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.email2.Location = new System.Drawing.Point(268, 114);
+            this.email2.Location = new System.Drawing.Point(320, 140);
             this.email2.Name = "email2";
             this.email2.PasswordChar = '\0';
+            this.email2.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.email2.PlaceholderText = "";
             this.email2.SelectedText = "";
             this.email2.ShadowDecoration.CustomizableEdges = customizableEdges26;
@@ -432,17 +481,20 @@
             // phoneNum1
             // 
             this.phoneNum1.CustomizableEdges = customizableEdges23;
-            this.phoneNum1.DefaultText = "phonenum";
+            this.phoneNum1.DefaultText = "";
             this.phoneNum1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.phoneNum1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.phoneNum1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.phoneNum1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.phoneNum1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.phoneNum1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phoneNum1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.phoneNum1.ForeColor = System.Drawing.Color.White;
             this.phoneNum1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.phoneNum1.Location = new System.Drawing.Point(268, 165);
+            this.phoneNum1.Location = new System.Drawing.Point(320, 191);
             this.phoneNum1.Name = "phoneNum1";
             this.phoneNum1.PasswordChar = '\0';
+            this.phoneNum1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.phoneNum1.PlaceholderText = "";
             this.phoneNum1.SelectedText = "";
             this.phoneNum1.ShadowDecoration.CustomizableEdges = customizableEdges24;
@@ -453,17 +505,20 @@
             // address1
             // 
             this.address1.CustomizableEdges = customizableEdges21;
-            this.address1.DefaultText = "address";
+            this.address1.DefaultText = "";
             this.address1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.address1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.address1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.address1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.address1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.address1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.address1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.address1.ForeColor = System.Drawing.Color.White;
             this.address1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.address1.Location = new System.Drawing.Point(268, 216);
+            this.address1.Location = new System.Drawing.Point(320, 242);
             this.address1.Name = "address1";
             this.address1.PasswordChar = '\0';
+            this.address1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.address1.PlaceholderText = "";
             this.address1.SelectedText = "";
             this.address1.ShadowDecoration.CustomizableEdges = customizableEdges22;
@@ -474,17 +529,20 @@
             // address2
             // 
             this.address2.CustomizableEdges = customizableEdges19;
-            this.address2.DefaultText = "address2";
+            this.address2.DefaultText = "";
             this.address2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.address2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.address2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.address2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.address2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.address2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.address2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.address2.ForeColor = System.Drawing.Color.White;
             this.address2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.address2.Location = new System.Drawing.Point(268, 268);
+            this.address2.Location = new System.Drawing.Point(320, 294);
             this.address2.Name = "address2";
             this.address2.PasswordChar = '\0';
+            this.address2.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.address2.PlaceholderText = "";
             this.address2.SelectedText = "";
             this.address2.ShadowDecoration.CustomizableEdges = customizableEdges20;
@@ -495,80 +553,92 @@
             // bankname1
             // 
             this.bankname1.CustomizableEdges = customizableEdges17;
-            this.bankname1.DefaultText = "bankname";
+            this.bankname1.DefaultText = "";
             this.bankname1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.bankname1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.bankname1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.bankname1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.bankname1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.bankname1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.bankname1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bankname1.ForeColor = System.Drawing.Color.White;
             this.bankname1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.bankname1.Location = new System.Drawing.Point(268, 319);
+            this.bankname1.Location = new System.Drawing.Point(650, 294);
             this.bankname1.Name = "bankname1";
             this.bankname1.PasswordChar = '\0';
+            this.bankname1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.bankname1.PlaceholderText = "";
             this.bankname1.SelectedText = "";
             this.bankname1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            this.bankname1.Size = new System.Drawing.Size(324, 45);
+            this.bankname1.Size = new System.Drawing.Size(250, 45);
             this.bankname1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.bankname1.TabIndex = 18;
             // 
             // branch1
             // 
             this.branch1.CustomizableEdges = customizableEdges15;
-            this.branch1.DefaultText = "branch";
+            this.branch1.DefaultText = "";
             this.branch1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.branch1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.branch1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.branch1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.branch1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.branch1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.branch1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.branch1.ForeColor = System.Drawing.Color.White;
             this.branch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.branch1.Location = new System.Drawing.Point(268, 421);
+            this.branch1.Location = new System.Drawing.Point(650, 396);
             this.branch1.Name = "branch1";
             this.branch1.PasswordChar = '\0';
+            this.branch1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.branch1.PlaceholderText = "";
             this.branch1.SelectedText = "";
             this.branch1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            this.branch1.Size = new System.Drawing.Size(324, 45);
+            this.branch1.Size = new System.Drawing.Size(250, 45);
             this.branch1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.branch1.TabIndex = 19;
             // 
             // companyAdd1
             // 
             this.companyAdd1.CustomizableEdges = customizableEdges13;
-            this.companyAdd1.DefaultText = "compayAdd";
+            this.companyAdd1.DefaultText = "";
             this.companyAdd1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.companyAdd1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.companyAdd1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.companyAdd1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.companyAdd1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.companyAdd1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.companyAdd1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.companyAdd1.ForeColor = System.Drawing.Color.White;
             this.companyAdd1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.companyAdd1.Location = new System.Drawing.Point(268, 370);
+            this.companyAdd1.Location = new System.Drawing.Point(650, 345);
             this.companyAdd1.Name = "companyAdd1";
             this.companyAdd1.PasswordChar = '\0';
+            this.companyAdd1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.companyAdd1.PlaceholderText = "";
             this.companyAdd1.SelectedText = "";
             this.companyAdd1.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            this.companyAdd1.Size = new System.Drawing.Size(324, 45);
+            this.companyAdd1.Size = new System.Drawing.Size(250, 45);
             this.companyAdd1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.companyAdd1.TabIndex = 20;
             // 
             // accountName1
             // 
             this.accountName1.CustomizableEdges = customizableEdges11;
-            this.accountName1.DefaultText = "accountName";
+            this.accountName1.DefaultText = "";
             this.accountName1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.accountName1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.accountName1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.accountName1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.accountName1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.accountName1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.accountName1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.accountName1.ForeColor = System.Drawing.Color.White;
             this.accountName1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.accountName1.Location = new System.Drawing.Point(598, 421);
+            this.accountName1.Location = new System.Drawing.Point(650, 447);
             this.accountName1.Name = "accountName1";
             this.accountName1.PasswordChar = '\0';
+            this.accountName1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.accountName1.PlaceholderText = "";
             this.accountName1.SelectedText = "";
             this.accountName1.ShadowDecoration.CustomizableEdges = customizableEdges12;
@@ -579,17 +649,20 @@
             // bsb1
             // 
             this.bsb1.CustomizableEdges = customizableEdges9;
-            this.bsb1.DefaultText = "BSB";
+            this.bsb1.DefaultText = "";
             this.bsb1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.bsb1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.bsb1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.bsb1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.bsb1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(176)))));
             this.bsb1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.bsb1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bsb1.ForeColor = System.Drawing.Color.White;
             this.bsb1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.bsb1.Location = new System.Drawing.Point(598, 472);
+            this.bsb1.Location = new System.Drawing.Point(650, 498);
             this.bsb1.Name = "bsb1";
             this.bsb1.PasswordChar = '\0';
+            this.bsb1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
             this.bsb1.PlaceholderText = "";
             this.bsb1.SelectedText = "";
             this.bsb1.ShadowDecoration.CustomizableEdges = customizableEdges10;
@@ -599,14 +672,18 @@
             // 
             // qrPic_pic
             // 
-            this.qrPic_pic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.qrPic_pic.BorderRadius = 25;
+            customizableEdges7.BottomLeft = false;
+            customizableEdges7.BottomRight = false;
+            customizableEdges7.TopLeft = false;
             this.qrPic_pic.CustomizableEdges = customizableEdges7;
+            this.qrPic_pic.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(136)))), ((int)(((byte)(156)))));
             this.qrPic_pic.ImageRotate = 0F;
-            this.qrPic_pic.Location = new System.Drawing.Point(598, 11);
+            this.qrPic_pic.Location = new System.Drawing.Point(650, 37);
             this.qrPic_pic.Name = "qrPic_pic";
             this.qrPic_pic.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.qrPic_pic.Size = new System.Drawing.Size(250, 250);
-            this.qrPic_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.qrPic_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.qrPic_pic.TabIndex = 23;
             this.qrPic_pic.TabStop = false;
             // 
@@ -619,12 +696,13 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(268, 472);
+            this.guna2Button1.Location = new System.Drawing.Point(320, 498);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.guna2Button1.Size = new System.Drawing.Size(157, 45);
             this.guna2Button1.TabIndex = 24;
             this.guna2Button1.Text = "UPDATE";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2Button2
             // 
@@ -635,12 +713,13 @@
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(435, 472);
+            this.guna2Button2.Location = new System.Drawing.Point(487, 498);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.guna2Button2.Size = new System.Drawing.Size(157, 45);
             this.guna2Button2.TabIndex = 25;
             this.guna2Button2.Text = "DELETE";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button3
             // 
@@ -653,7 +732,7 @@
             this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.guna2Button3.ForeColor = System.Drawing.Color.IndianRed;
-            this.guna2Button3.Location = new System.Drawing.Point(380, 523);
+            this.guna2Button3.Location = new System.Drawing.Point(432, 549);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.guna2Button3.Size = new System.Drawing.Size(99, 27);
@@ -666,7 +745,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 576);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(72)))), ((int)(((byte)(93)))));
+            this.ClientSize = new System.Drawing.Size(973, 585);
             this.Controls.Add(this.guna2Button3);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);

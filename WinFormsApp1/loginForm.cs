@@ -5,6 +5,7 @@ using System.Drawing.Imaging;
 using System.Windows.Forms;
 using WinFormsApp1.ManagerClass;
 using WinFormsApp1.Helper;
+using WinFormsApp1.EmployeeClass;
 
 namespace WinFormsApp1
 {
@@ -58,40 +59,53 @@ namespace WinFormsApp1
         //Login btn
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            if (!validationHelper.internetAvailability())
+                return;
             SuspendLayout();
 
             String username, password;
             username = userNameTB.Text;
             password = passwordTB.Text;
 
-                var loadingForm = new loadingForm();
-                loadingForm.StartPosition = FormStartPosition.CenterParent;
-                loadingForm.loadingTime = 2500;
-                loadingForm.ShowDialog();
-                con.Open();
-                adminPanel ad = new adminPanel();
-                cmd = new SqlCommand($"SELECT * FROM Users WHERE username COLLATE Latin1_General_CS_AS = '{username}' AND password COLLATE Latin1_General_CS_AS = '{password}'", con);
-                dr = cmd.ExecuteReader();
+            var loadingForm = new loadingForm();
+            loadingForm.StartPosition = FormStartPosition.CenterParent;
+            loadingForm.loadingTime = 2500;
+            loadingForm.ShowDialog();
+            con.Open();
+            adminPanel ad = new adminPanel();
+            EmployeePanel em = new EmployeePanel();
+            cmd = new SqlCommand($"SELECT * FROM Users WHERE username COLLATE Latin1_General_CS_AS = '{username}' AND password COLLATE Latin1_General_CS_AS = '{password}'", con);
+            dr = cmd.ExecuteReader();
 
-                if (dr.Read())
+            if (dr.Read())
+            {
+                string[] adminList_ = { "OWNER", "ADMIN", "MANAGER" };
+                globalVariables.userPosition = dr.GetString(3).ToUpper();
+                globalVariables.username = dr.GetString(1).ToUpper();
+
+                this.Hide();
+                if (adminList_.Any(item => item.Contains(dr.GetString(3).ToUpper())))
                 {
-                        globalVariables.userPosition = dr.GetString(3).ToUpper();
-                        globalVariables.username = dr.GetString(1).ToUpper();
-                        dr.Close();
-
-                        this.Hide();
-                        ad.StartPosition = FormStartPosition.CenterParent;
-                        ad.ShowDialog();
-                        this.Close();
+                    ad.StartPosition = FormStartPosition.CenterParent;
+                    ad.ShowDialog();
                 }
                 else
                 {
-                    dr.Close();
-                    messageDialogForm msg = new messageDialogForm();
-                    msg.message = "You have entered an invalid username or password\n" +
-                        "Please ensure that you check the capitalization and other details accurately.";
-                    msg.ShowDialog();
+                    em.StartPosition = FormStartPosition.CenterParent;
+                    em.ShowDialog();
                 }
+
+                dr.Close();
+                this.Close();
+            }
+            else
+            {
+                dr.Close();
+                messageDialogForm msg = new messageDialogForm();
+                msg.message = "You have entered an invalid username or password\n" +
+                    "Please ensure that you check the capitalization and other details accurately.";
+                msg.ShowDialog();
+            }
             con.Close();
             ResumeLayout();
         }

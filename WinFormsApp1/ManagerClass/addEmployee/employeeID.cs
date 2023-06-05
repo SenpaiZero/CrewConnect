@@ -137,5 +137,10 @@ namespace WinFormsApp1.ManagerClass
         {
 
         }
+
+        private void employeeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

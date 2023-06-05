@@ -43,8 +43,6 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 genderCB.Text != "GENDER" && nationalityCB.Text != "NATIONALITY" &&
                 statusCB.Text != "STATUS" && religionCB.Text != "RELIGION") )
             {
-                pageHelper.changePage(new page3(), adminPanel.panel);
-
                 globalVariables.year = Convert.ToInt32(yearCB.Text);
                 globalVariables.day = Convert.ToInt32(dayCB.Text);
                 globalVariables.month = monthCB.SelectedIndex;
@@ -55,6 +53,10 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 globalVariables.status = statusCB.Text;
                 globalVariables.religion = religionCB.Text;
                 globalVariables.age = Convert.ToInt32(ageTB.Text);
+
+                pageHelper.f.Close();
+                pageHelper.changePage(new page3(), adminPanel.panel);
+
             }
             else
             {
@@ -74,6 +76,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void prevBtn_Click(object sender, EventArgs e)
         {
+            pageHelper.f.Close();
             pageHelper.changePage(new page1(), adminPanel.panel);
         }
 

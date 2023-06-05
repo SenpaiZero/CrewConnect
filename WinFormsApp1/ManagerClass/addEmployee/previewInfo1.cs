@@ -117,13 +117,10 @@ namespace WinFormsApp1.ManagerClass.addEmployee
                 // Contact Table
                 $"{globalVariables.cmd_insert_contact} VALUES (@Id, @username, @phoneNumber," +
                 $"@emailAddress, @emailAddress2, @address, @adress2);" +
-                // Parttime and fulltime Table
-                $"{globalVariables.cmd_insert_fulltime} VALUES (@Id, @username, @name, @salary);" +
-                $"{globalVariables.cmd_insert_parttime} VALUES (@Id, @username, @name, @salary);" +
                 // Identity Table
                 $"{globalVariables.cmd_insert_identity} VALUES (@Id, @username, @personalPhoto, @qrCodePhoto);" +
                 // job Table
-                $"{globalVariables.cmd_insert_job} VALUES (@Id, @username, @position, @contract);" +
+                $"{globalVariables.cmd_insert_job} VALUES (@Id, @username, @position, @contract, @salary);" +
                 // Users Table
                 $"{globalVariables.cmd_insert_Users} VALUES (@Id, @username, @password, @position);" +
                 // Personal Table
@@ -135,9 +132,9 @@ namespace WinFormsApp1.ManagerClass.addEmployee
                 {
                     DateTime bday = new DateTime((int)globalVariables.year, (int)globalVariables.month, (int)globalVariables.day);
                     int id_ = int.Parse(globalVariables.idNum);
-                    command.Parameters.AddWithValue("@username", globalVariables.username);
+                    command.Parameters.AddWithValue("@username", globalVariables.username.Replace(" ", "_"));
                     command.Parameters.AddWithValue("@employeeID", globalVariables.idNum);
-                    command.Parameters.AddWithValue("@password", globalVariables.username);
+                    command.Parameters.AddWithValue("@password", globalVariables.username.Replace(" ", "_"));
                     command.Parameters.AddWithValue("@name", name);
                     command.Parameters.AddWithValue("@status", globalVariables.status);
                     command.Parameters.AddWithValue("@religion", globalVariables.religion);

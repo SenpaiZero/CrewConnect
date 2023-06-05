@@ -146,6 +146,7 @@
             this.employeeLabel.TabIndex = 5;
             this.employeeLabel.Text = "Employee # 20021385";
             this.employeeLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.employeeLabel.Click += new System.EventHandler(this.employeeLabel_Click);
             // 
             // guna2Shapes2
             // 

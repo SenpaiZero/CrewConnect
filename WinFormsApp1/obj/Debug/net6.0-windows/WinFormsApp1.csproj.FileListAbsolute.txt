@@ -78,3 +78,5 @@ C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsA
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.adminPanel.resources
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.EmployeeList.resources
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.showEmployee.resources
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.adminSetting.resources
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.EmployeeClass.EmployeePanel.resources

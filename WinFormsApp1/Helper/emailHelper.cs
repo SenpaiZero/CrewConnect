@@ -73,7 +73,11 @@ namespace WinFormsApp1.Helper
                 smtp.Send(msg);
                 msg.Dispose();
                 smtp.Dispose();
-                MessageBox.Show("Your Email Has Been Sent!");
+
+                messageDialogForm dia = new messageDialogForm();
+                dia.isOkDialog = false;
+                dia.message = "Your Email Has Been Sent!";
+                dia.ShowDialog();
             }
             catch (Exception ex)
             {

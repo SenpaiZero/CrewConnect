@@ -6,6 +6,8 @@ using System.Drawing;
 using ZXing;
 using ZXing.Common;
 using ZXing.QrCode;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace WinFormsApp1.Helper
 {
@@ -16,6 +18,9 @@ namespace WinFormsApp1.Helper
         private static bool capturing = false; // Indicates if we are currently capturing
         private static QRCodeReader barcodeReader;
         private static Bitmap frame;
+
+        public static bool isValid = false;
+        public static string fullName, idNum, dateString, timeString;
         public static void closeForm()
         {
             if (videoSource != null && videoSource.IsRunning)
@@ -66,7 +71,23 @@ namespace WinFormsApp1.Helper
                 {
                     // Display the decoded QR code value
                     string qrCodeValue = result.Text;
-                    MessageBox.Show("ID NUM CONFIRM: " + qrCodeValue);
+                    DateOnly date_ = DateOnly.FromDateTime(DateTime.Now);
+                    TimeOnly time_ = TimeOnly.FromDateTime(DateTime.Now);
+
+                    idNum = qrCodeValue;
+                    dateString = date_.ToLongDateString();
+                    timeString = time_.ToLongTimeString();
+                    fullName = getName(id);
+
+                    if(name == "home")
+                    {
+                        attendance.att.setData(idNum, dateString, timeString, fullName);
+                    }
+                    else
+                    {
+
+                    }
+
                     if (videoSource != null && videoSource.IsRunning)
                     {
                         videoSource.SignalToStop();
@@ -128,8 +149,40 @@ namespace WinFormsApp1.Helper
 
             return squareImage;
         }
+
+        static string getName(string id)
+        {
+            string query = $"SELECT name FROM personal WHERE Id = '{idNum}';";
+            using (SqlConnection con = new SqlConnection(globalVariables.server))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    if(dr.Read())
+                    {
+                        isValid = true;
+                        return dr.GetString(0);
+                    }
+                    else
+                    {
+                        isValid= false;
+                        messageDialogForm msg = new messageDialogForm();
+                        msg.isOkDialog = false;
+                        msg.title = "";
+                        msg.message = $"The {idNum} Employee Number Does not Exist";
+                        msg.StartPosition = FormStartPosition.CenterScreen;
+                        msg.ShowDialog();
+                    }
+                }
+            }
+            return "";
+        }
         public static Guna2ComboBox camListCB { get; set; }
         public static Guna2PictureBox selfPic { get; set; }
         public static bool qrcode { get; set; }
+        public static string id { get; set; }
+        public static string name { get; set; }
     }
 }

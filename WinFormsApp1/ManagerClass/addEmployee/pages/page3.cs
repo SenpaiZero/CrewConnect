@@ -60,7 +60,8 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                     else
                         globalVariables.email2 = guardianTB.Text;
 
-                    pageHelper.changePage(new page4(), adminPanel.panel);
+                pageHelper.f.Close();
+                pageHelper.changePage(new page4(), adminPanel.panel);
                 }
             else
             {
@@ -75,6 +76,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void prevBtn_Click(object sender, EventArgs e)
         {
+            pageHelper.f.Close();
             pageHelper.changePage(new page2(), adminPanel.panel);
         }
 
@@ -104,6 +106,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             {
                 isValid[i] = false;
             }
+
             using (SqlConnection con = new SqlConnection(globalVariables.server))
             {
                 con.Open();

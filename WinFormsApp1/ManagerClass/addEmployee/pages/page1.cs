@@ -57,7 +57,9 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                     globalVariables.streetAdd2 = "NONE";
                 else
                     globalVariables.streetAdd2 = address2TB.Text;
-                pageHelper.changePage(new page2(), adminPanel.panel, 500);
+
+                pageHelper.f.Close();
+                pageHelper.changePage(new page2(), adminPanel.panel);
             }
             else 
             {

@@ -49,10 +49,14 @@ namespace WinFormsApp1.ManagerClass
         {
             if (whatBtn != "add" && whatBtn != "")
             {
+                SuspendLayout();
                 whatBtn = "add";
+                pageHelper.f.Close();
                 listBtn.FillColor = Color.FromArgb(51, 52, 78);
                 addBtn.FillColor = Color.FromArgb(39, 72, 93);
+                settingBtn.FillColor = Color.FromArgb(51, 52, 78);
                 pageHelper.changePage(new page1(), panel);
+                ResumeLayout();
             }
         }
 
@@ -96,10 +100,29 @@ namespace WinFormsApp1.ManagerClass
         {
             if (whatBtn != "list")
             {
+                SuspendLayout();
+                pageHelper.f.Close();
                 whatBtn = "list";
                 addBtn.FillColor = Color.FromArgb(51, 52, 78);
                 listBtn.FillColor = Color.FromArgb(39, 72, 93);
+                settingBtn.FillColor = Color.FromArgb(51, 52, 78);
                 pageHelper.changePage(new EmployeeList(), panel);
+                ResumeLayout();
+            }
+        }
+
+        private void settingBtn_Click(object sender, EventArgs e)
+        {
+            if (whatBtn != "setting")
+            {
+                SuspendLayout();
+                pageHelper.f.Close();
+                whatBtn = "setting";
+                addBtn.FillColor = Color.FromArgb(51, 52, 78);
+                listBtn.FillColor = Color.FromArgb(51, 52, 78);
+                settingBtn.FillColor = Color.FromArgb(39, 72, 93);
+                pageHelper.changePage(new adminSetting(), panel);
+                ResumeLayout();
             }
         }
     }
