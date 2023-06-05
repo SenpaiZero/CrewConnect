@@ -145,10 +145,6 @@ namespace WinFormsApp1
             Application.Exit();
         }
 
-        private void closeBtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
         private void passwordTB_KeyDown(object sender, KeyEventArgs e)
         {
@@ -174,28 +170,10 @@ namespace WinFormsApp1
             con = new SqlConnection(globalVariables.server);
         }
 
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-            globalVariables.isDebuging = true;
-            MessageBox.Show("Debugging turned on!");
-        }
-
-        private void guna2Button3_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void loginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(con.State == System.Data.ConnectionState.Open)
                 con.Close(); 
-        }
-
-        private void guna2Button4_Click(object sender, EventArgs e)
-        {
-            employeeID id = new employeeID();
-            id.Show();
         }
     }
 }

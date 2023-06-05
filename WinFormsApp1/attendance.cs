@@ -23,6 +23,15 @@ namespace WinFormsApp1
             this.BackColor = Color.Transparent;
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParams = base.CreateParams;
+                handleParams.ExStyle |= 0x02000000;
+                return handleParams;
+            }
+        }
         private void attendance_Load(object sender, EventArgs e)
         {
             att = this;

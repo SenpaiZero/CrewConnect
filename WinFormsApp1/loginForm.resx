@@ -115,88 +115,6 @@
         d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAPwAAAAAL
 </value>
   </data>
-  <data name="guna2Button4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="guna2Button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 23</value>
-  </data>
-  <data name="guna2Button4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 56</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="guna2Button4.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="guna2Button4.Text" xml:space="preserve">
-    <value>TEST EMAIL</value>
-  </data>
-  <data name="&gt;&gt;guna2Button4.Name" xml:space="preserve">
-    <value>guna2Button4</value>
-  </data>
-  <data name="&gt;&gt;guna2Button4.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;guna2Button4.Parent" xml:space="preserve">
-    <value>mainsPanel</value>
-  </data>
-  <data name="&gt;&gt;guna2Button4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="guna2Button3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="guna2Button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 27</value>
-  </data>
-  <data name="guna2Button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 52</value>
-  </data>
-  <data name="guna2Button3.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="guna2Button3.Text" xml:space="preserve">
-    <value>TEST GENERATE QR CODE</value>
-  </data>
-  <data name="&gt;&gt;guna2Button3.Name" xml:space="preserve">
-    <value>guna2Button3</value>
-  </data>
-  <data name="&gt;&gt;guna2Button3.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;guna2Button3.Parent" xml:space="preserve">
-    <value>mainsPanel</value>
-  </data>
-  <data name="&gt;&gt;guna2Button3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="guna2Button1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="guna2Button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 27</value>
-  </data>
-  <data name="guna2Button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 52</value>
-  </data>
-  <data name="guna2Button1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="guna2Button1.Text" xml:space="preserve">
-    <value>ACTIVATE DEBUG MODE</value>
-  </data>
-  <data name="&gt;&gt;guna2Button1.Name" xml:space="preserve">
-    <value>guna2Button1</value>
-  </data>
-  <data name="&gt;&gt;guna2Button1.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;guna2Button1.Parent" xml:space="preserve">
-    <value>mainsPanel</value>
-  </data>
-  <data name="&gt;&gt;guna2Button1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="guna2Button2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
@@ -206,6 +124,7 @@
   <data name="guna2Button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 56</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="guna2Button2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -222,7 +141,7 @@
     <value>mainsPanel</value>
   </data>
   <data name="&gt;&gt;guna2Button2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="guna2HtmlLabel2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Symbol, 48pt</value>
@@ -249,7 +168,7 @@
     <value>mainsPanel</value>
   </data>
   <data name="&gt;&gt;guna2HtmlLabel2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>1</value>
   </data>
   <data name="userNameTB.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -276,7 +195,7 @@
     <value>mainsPanel</value>
   </data>
   <data name="&gt;&gt;userNameTB.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>2</value>
   </data>
   <data name="passwordTB.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -303,7 +222,7 @@
     <value>mainsPanel</value>
   </data>
   <data name="&gt;&gt;passwordTB.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>3</value>
   </data>
   <data name="mainsPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>217, 38</value>
@@ -450,36 +369,6 @@
   <data name="&gt;&gt;guna2Panel4.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="attendanceBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="attendanceBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Historic, 12pt, style=Bold</value>
-  </data>
-  <data name="attendanceBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 267</value>
-  </data>
-  <data name="attendanceBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 65</value>
-  </data>
-  <data name="attendanceBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="attendanceBtn.Text" xml:space="preserve">
-    <value>ATTENDANCE</value>
-  </data>
-  <data name="&gt;&gt;attendanceBtn.Name" xml:space="preserve">
-    <value>attendanceBtn</value>
-  </data>
-  <data name="&gt;&gt;attendanceBtn.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
-  </data>
-  <data name="&gt;&gt;attendanceBtn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;attendanceBtn.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="loginBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
@@ -508,6 +397,36 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;loginBtn.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="attendanceBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="attendanceBtn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Historic, 12pt, style=Bold</value>
+  </data>
+  <data name="attendanceBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 267</value>
+  </data>
+  <data name="attendanceBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 65</value>
+  </data>
+  <data name="attendanceBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="attendanceBtn.Text" xml:space="preserve">
+    <value>ATTENDANCE</value>
+  </data>
+  <data name="&gt;&gt;attendanceBtn.Name" xml:space="preserve">
+    <value>attendanceBtn</value>
+  </data>
+  <data name="&gt;&gt;attendanceBtn.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
+  </data>
+  <data name="&gt;&gt;attendanceBtn.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;attendanceBtn.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">

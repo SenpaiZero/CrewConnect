@@ -32,6 +32,17 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void prevBtn_Click(object sender, EventArgs e)
         {
+            if (globalVariables.isEdit)
+            {
+                pageHelper.changePage(new page4(), adminPanel.panel);
+                previewInfo1 prev = new previewInfo1();
+                if (prev.ShowDialog() == DialogResult.OK)
+                {
+                    pageHelper.changePage(new page1(), adminPanel.panel);
+                }
+                return;
+            }
+            pageHelper.loading();
             pageHelper.f.Close();
             pageHelper.changePage(new page3(), adminPanel.panel);
         }
@@ -39,9 +50,13 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         private void page4_Load(object sender, EventArgs e)
         {
             validationHelper.comboBoxFirstLoad = true;
+
             for (int i = 0; i < isValid.Length; i++)
             {
-                isValid[i] = false;
+                if(!globalVariables.isEdit)
+                    isValid[i] = false;
+                else
+                    isValid[i] = true;
             }
 
             String[] contacts =
@@ -50,8 +65,21 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             };
             contractCB.Items.Clear();
             userInterfaceHelper.comboBoxValue(contractCB, contacts);
-            contractCB.SelectedIndex = -1;
+            contractCB.SelectedIndex = 0;
 
+            if(globalVariables.isEdit)
+            {
+                contractCB.SelectedIndex = contractCB.Items.IndexOf(contractCB.SelectedItem);
+                bankNameTB.Text = globalVariables.bankName;
+                branchTB.Text = globalVariables.branch;
+                companyAddTB.Text = globalVariables.companyAdd;
+                companyNameTB.Text = globalVariables.accountName;
+                accountNumTB.Text = globalVariables.accountNum;
+                bsbTB.Text = globalVariables.BSB;
+                salaryTB.Text = globalVariables.salary;
+            }
+
+            errorProvider1.Clear();
             validationHelper.comboBoxFirstLoad = false;
 
         }
@@ -63,11 +91,6 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             String[] data = { bankNameTB.Text, branchTB.Text, companyAddTB.Text, companyNameTB.Text,
                 bsbTB.Text, accountNumTB.Text, contractCB.Text, salaryTB.Text};
 
-            // Debuggin Purposes
-            if (globalVariables.isDebuging)
-                prev.ShowDialog();
-            else
-            // End of debugging 
 
             if (!data.Any(string.IsNullOrWhiteSpace) && !isValid.Contains(false))
             {
@@ -81,7 +104,6 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 globalVariables.salary = data[7];
                 if (prev.ShowDialog() == DialogResult.OK)
                 {
-                    pageHelper.f.Close();
                     pageHelper.changePage(new page1(), adminPanel.panel);
                 }
             }
@@ -95,7 +117,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 validationHelper.textBoxValidation_Numeric(salaryTB, "Salary", errorProvider1);
                 validationHelper.textBoxValidation_Numeric(accountNumTB, "Account Number", errorProvider1);
                 validationHelper.textBoxValidation_Numeric(bsbTB, "BSB", errorProvider1);
-                validationHelper.comboBoxValidation(contractCB, "CONTRACT", errorProvider1);
+                validationHelper.comboBoxValidation(contractCB, "CONTRACTS", errorProvider1);
                 pageHelper.errorDetails();
             }
 
@@ -153,7 +175,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         private void contractCB_SelectedValueChanged(object sender, EventArgs e)
         {
             isValid[7] = false;
-            if (validationHelper.comboBoxValidation(contractCB, "CONTRACT", errorProvider1))
+            if (validationHelper.comboBoxValidation(contractCB, "CONTRACTS", errorProvider1))
                 isValid[7] = true;
         }
     }

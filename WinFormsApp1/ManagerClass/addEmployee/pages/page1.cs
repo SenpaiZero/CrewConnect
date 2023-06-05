@@ -37,10 +37,6 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         {
             String[] data = { firstnameTB.Text, middlenameTB.Text, surnameTB.Text, addressTB.Text,
                             cityTB.Text, postalTB.Text, stateTB.Text};
-            // Debugging purposes
-            if (globalVariables.isDebuging)
-                pageHelper.changePage(new page2(), adminPanel.panel);
-            // End of debugging
 
             if(!isValid.Contains(false))
             {
@@ -51,7 +47,6 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 globalVariables.city = cityTB.Text;
                 globalVariables.postal = postalTB.Text;
                 globalVariables.state = stateTB.Text;
-                globalVariables.permAdd = permAddCheckBox.Checked;
 
                 if (string.IsNullOrWhiteSpace(address2TB.Text))
                     globalVariables.streetAdd2 = "NONE";
@@ -59,7 +54,18 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                     globalVariables.streetAdd2 = address2TB.Text;
 
                 pageHelper.f.Close();
+                if(globalVariables.isEdit)
+                {
+                    pageHelper.changePage(new page4(), adminPanel.panel);
+                    previewInfo1 prev = new previewInfo1();
+                    if (prev.ShowDialog() == DialogResult.OK)
+                    {
+                        pageHelper.changePage(new page1(), adminPanel.panel);
+                    }
+                    return;
+                }
                 pageHelper.changePage(new page2(), adminPanel.panel);
+
             }
             else 
             {
@@ -69,7 +75,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 validationHelper.textBoxValidation_Alpha(firstnameTB, "First Name", errorProvider);
                 validationHelper.textBoxValidation_Alpha(middlenameTB, "Middle Name", errorProvider);
                 validationHelper.textBoxValidation_Address(addressTB, "Address", errorProvider);
-                validationHelper.textBoxValidation_Address_optional(address2TB, "Address", errorProvider, true);
+                validationHelper.textBoxValidation_Address_optional(address2TB, "Address", errorProvider);
                 validationHelper.textBoxValidation_Alpha(cityTB, "City", errorProvider);
                 validationHelper.textBoxValidation_Alpha(stateTB, "State", errorProvider);
                 validationHelper.textBoxValidation_Numeric(postalTB, "Postal", errorProvider);
@@ -130,17 +136,40 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void page1_Load(object sender, EventArgs e)
         {
+
             for (int i = 0; i < isValid.Length; i++)
             {
-                isValid[i] = false;
+                if(!globalVariables.isEdit)
+                    isValid[i] = false;
+                else
+                    isValid[i] = true;
+            }
+            isValid[7] = true;
+
+            if(globalVariables.isEdit)
+            {
+                surnameTB.Text = globalVariables.lastname;
+                firstnameTB.Text = globalVariables.firstname;
+                middlenameTB.Text = globalVariables.middlename;
+                addressTB.Text = globalVariables.streetAdd;
+                address2TB.Text = globalVariables.streetAdd2;
+                cityTB.Text = globalVariables.city;
+                postalTB.Text = globalVariables.postal;
+                stateTB.Text = globalVariables.state;
             }
         }
+
 
         private void address2TB_Validating(object sender, CancelEventArgs e)
         {
             isValid[7] = false;
-            if (validationHelper.textBoxValidation_Address_optional(address2TB, "Address", errorProvider, true))
+            if (validationHelper.textBoxValidation_Address_optional(address2TB, "Address", errorProvider))
                 isValid[7] = true;
+        }
+
+        private void mainsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

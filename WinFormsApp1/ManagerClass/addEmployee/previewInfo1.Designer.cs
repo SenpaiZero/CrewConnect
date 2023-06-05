@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -43,12 +43,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2HtmlLabel34 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.page1edit = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -58,7 +57,6 @@
             this.postalLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cityLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.stateLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.permAddCB = new Guna.UI2.WinForms.Guna2CheckBox();
             this.add2Label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.addLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.fullNameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -66,7 +64,6 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.mainsPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.email2Label = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.emailLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -80,7 +77,7 @@
             this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.qrCodePic = new Guna.UI2.WinForms.Guna2PictureBox();
             this.personPic = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.page3edit = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel23 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.nationalityLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -93,10 +90,12 @@
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.page2edit = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2ImageButton4 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2HtmlLabel28 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.salaryLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.page4edit = new Guna.UI2.WinForms.Guna2ImageButton();
             this.accountNumLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.bsbLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.accountNameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -112,6 +111,7 @@
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.prevBtn = new Guna.UI2.WinForms.Guna2Button();
             this.finishBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
             this.guna2ShadowPanel1.SuspendLayout();
             this.mainsPanel.SuspendLayout();
@@ -132,8 +132,7 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.guna2HtmlLabel34);
-            this.guna2ShadowPanel1.Controls.Add(this.guna2ImageButton1);
+            this.guna2ShadowPanel1.Controls.Add(this.page1edit);
             this.guna2ShadowPanel1.Controls.Add(this.guna2HtmlLabel8);
             this.guna2ShadowPanel1.Controls.Add(this.guna2HtmlLabel7);
             this.guna2ShadowPanel1.Controls.Add(this.guna2HtmlLabel6);
@@ -143,7 +142,6 @@
             this.guna2ShadowPanel1.Controls.Add(this.postalLabel);
             this.guna2ShadowPanel1.Controls.Add(this.cityLabel);
             this.guna2ShadowPanel1.Controls.Add(this.stateLabel);
-            this.guna2ShadowPanel1.Controls.Add(this.permAddCB);
             this.guna2ShadowPanel1.Controls.Add(this.add2Label);
             this.guna2ShadowPanel1.Controls.Add(this.addLabel);
             this.guna2ShadowPanel1.Controls.Add(this.fullNameLabel);
@@ -155,34 +153,22 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(510, 339);
             this.guna2ShadowPanel1.TabIndex = 20;
             // 
-            // guna2HtmlLabel34
+            // page1edit
             // 
-            this.guna2HtmlLabel34.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2HtmlLabel34.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel34.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel34.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel34.Location = new System.Drawing.Point(17, 263);
-            this.guna2HtmlLabel34.Name = "guna2HtmlLabel34";
-            this.guna2HtmlLabel34.Size = new System.Drawing.Size(84, 22);
-            this.guna2HtmlLabel34.TabIndex = 44;
-            this.guna2HtmlLabel34.Text = "PERM ADD:";
-            this.guna2HtmlLabel34.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // guna2ImageButton1
-            // 
-            this.guna2ImageButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Image = global::WinFormsApp1.Properties.Resources.edit;
-            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(293, 27);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton1.TabIndex = 43;
+            this.page1edit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.page1edit.CheckedState.ImageSize = new System.Drawing.Size(45, 45);
+            this.page1edit.HoverState.ImageSize = new System.Drawing.Size(42, 42);
+            this.page1edit.Image = global::WinFormsApp1.Properties.Resources.edit;
+            this.page1edit.ImageOffset = new System.Drawing.Point(0, 0);
+            this.page1edit.ImageRotate = 0F;
+            this.page1edit.ImageSize = new System.Drawing.Size(32, 32);
+            this.page1edit.Location = new System.Drawing.Point(293, 27);
+            this.page1edit.Name = "page1edit";
+            this.page1edit.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.page1edit.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.page1edit.Size = new System.Drawing.Size(40, 40);
+            this.page1edit.TabIndex = 43;
+            this.page1edit.Click += new System.EventHandler(this.page1edit_Click);
             // 
             // guna2HtmlLabel8
             // 
@@ -302,27 +288,6 @@
             this.stateLabel.Text = "asoidhaosd asduhasdun";
             this.stateLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // permAddCB
-            // 
-            this.permAddCB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.permAddCB.AutoSize = true;
-            this.permAddCB.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.permAddCB.CheckedState.BorderRadius = 0;
-            this.permAddCB.CheckedState.BorderThickness = 0;
-            this.permAddCB.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.permAddCB.Enabled = false;
-            this.permAddCB.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.permAddCB.ForeColor = System.Drawing.Color.Black;
-            this.permAddCB.Location = new System.Drawing.Point(116, 268);
-            this.permAddCB.Name = "permAddCB";
-            this.permAddCB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.permAddCB.Size = new System.Drawing.Size(18, 17);
-            this.permAddCB.TabIndex = 33;
-            this.permAddCB.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.permAddCB.UncheckedState.BorderRadius = 0;
-            this.permAddCB.UncheckedState.BorderThickness = 0;
-            this.permAddCB.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
             // add2Label
             // 
             this.add2Label.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -405,7 +370,6 @@
             this.mainsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.mainsPanel.BackColor = System.Drawing.Color.Transparent;
             this.mainsPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(72)))), ((int)(((byte)(93)))));
-            this.mainsPanel.Controls.Add(this.guna2Shapes1);
             this.mainsPanel.Controls.Add(this.guna2ShadowPanel4);
             this.mainsPanel.Controls.Add(this.guna2ShadowPanel3);
             this.mainsPanel.Controls.Add(this.guna2ShadowPanel2);
@@ -413,6 +377,7 @@
             this.mainsPanel.Controls.Add(this.finishBtn);
             this.mainsPanel.Controls.Add(this.guna2ShadowPanel1);
             this.mainsPanel.Controls.Add(this.guna2HtmlLabel1);
+            this.mainsPanel.Controls.Add(this.guna2Shapes1);
             this.mainsPanel.Controls.Add(this.guna2Shapes2);
             this.mainsPanel.CustomizableEdges = customizableEdges15;
             this.mainsPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(72)))), ((int)(((byte)(93)))));
@@ -424,22 +389,6 @@
             this.mainsPanel.TabIndex = 6;
             this.mainsPanel.UseTransparentBackground = true;
             this.mainsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainsPanel_Paint);
-            // 
-            // guna2Shapes1
-            // 
-            this.guna2Shapes1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
-            this.guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
-            this.guna2Shapes1.Location = new System.Drawing.Point(59, 346);
-            this.guna2Shapes1.Name = "guna2Shapes1";
-            this.guna2Shapes1.PolygonSkip = 1;
-            this.guna2Shapes1.Rotate = 0F;
-            this.guna2Shapes1.RoundedEdges = customizableEdges1;
-            this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
-            this.guna2Shapes1.Size = new System.Drawing.Size(968, 250);
-            this.guna2Shapes1.TabIndex = 42;
-            this.guna2Shapes1.Text = "guna2Shapes1";
-            this.guna2Shapes1.UseTransparentBackground = true;
-            this.guna2Shapes1.Zoom = 80;
             // 
             // guna2ShadowPanel4
             // 
@@ -456,7 +405,7 @@
             this.guna2ShadowPanel4.Controls.Add(this.guna2HtmlLabel15);
             this.guna2ShadowPanel4.Controls.Add(this.qrCodePic);
             this.guna2ShadowPanel4.Controls.Add(this.personPic);
-            this.guna2ShadowPanel4.Controls.Add(this.guna2ImageButton3);
+            this.guna2ShadowPanel4.Controls.Add(this.page3edit);
             this.guna2ShadowPanel4.Controls.Add(this.guna2HtmlLabel23);
             this.guna2ShadowPanel4.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel4.Location = new System.Drawing.Point(32, 484);
@@ -608,12 +557,12 @@
             // qrCodePic
             // 
             this.qrCodePic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.qrCodePic.CustomizableEdges = customizableEdges2;
+            this.qrCodePic.CustomizableEdges = customizableEdges1;
             this.qrCodePic.FillColor = System.Drawing.Color.Wheat;
             this.qrCodePic.ImageRotate = 0F;
             this.qrCodePic.Location = new System.Drawing.Point(14, 195);
             this.qrCodePic.Name = "qrCodePic";
-            this.qrCodePic.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            this.qrCodePic.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.qrCodePic.Size = new System.Drawing.Size(125, 125);
             this.qrCodePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.qrCodePic.TabIndex = 58;
@@ -622,32 +571,33 @@
             // personPic
             // 
             this.personPic.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.personPic.CustomizableEdges = customizableEdges4;
+            this.personPic.CustomizableEdges = customizableEdges3;
             this.personPic.FillColor = System.Drawing.Color.Wheat;
             this.personPic.ImageRotate = 0F;
             this.personPic.Location = new System.Drawing.Point(14, 64);
             this.personPic.Name = "personPic";
-            this.personPic.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            this.personPic.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.personPic.Size = new System.Drawing.Size(125, 125);
             this.personPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.personPic.TabIndex = 57;
             this.personPic.TabStop = false;
             // 
-            // guna2ImageButton3
+            // page3edit
             // 
-            this.guna2ImageButton3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2ImageButton3.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.Image = global::WinFormsApp1.Properties.Resources.edit;
-            this.guna2ImageButton3.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton3.ImageRotate = 0F;
-            this.guna2ImageButton3.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton3.Location = new System.Drawing.Point(293, 18);
-            this.guna2ImageButton3.Name = "guna2ImageButton3";
-            this.guna2ImageButton3.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton3.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.guna2ImageButton3.Size = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton3.TabIndex = 56;
+            this.page3edit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.page3edit.CheckedState.ImageSize = new System.Drawing.Size(45, 45);
+            this.page3edit.HoverState.ImageSize = new System.Drawing.Size(42, 42);
+            this.page3edit.Image = global::WinFormsApp1.Properties.Resources.edit;
+            this.page3edit.ImageOffset = new System.Drawing.Point(0, 0);
+            this.page3edit.ImageRotate = 0F;
+            this.page3edit.ImageSize = new System.Drawing.Size(32, 32);
+            this.page3edit.Location = new System.Drawing.Point(293, 18);
+            this.page3edit.Name = "page3edit";
+            this.page3edit.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.page3edit.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            this.page3edit.Size = new System.Drawing.Size(40, 40);
+            this.page3edit.TabIndex = 56;
+            this.page3edit.Click += new System.EventHandler(this.page3edit_Click);
             // 
             // guna2HtmlLabel23
             // 
@@ -674,7 +624,7 @@
             this.guna2ShadowPanel3.Controls.Add(this.guna2HtmlLabel12);
             this.guna2ShadowPanel3.Controls.Add(this.guna2HtmlLabel11);
             this.guna2ShadowPanel3.Controls.Add(this.guna2HtmlLabel10);
-            this.guna2ShadowPanel3.Controls.Add(this.guna2ImageButton2);
+            this.guna2ShadowPanel3.Controls.Add(this.page2edit);
             this.guna2ShadowPanel3.Controls.Add(this.guna2HtmlLabel21);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel3.Location = new System.Drawing.Point(560, 121);
@@ -823,21 +773,22 @@
             this.guna2HtmlLabel10.Text = "BIRTHDAY:";
             this.guna2HtmlLabel10.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2ImageButton2
+            // page2edit
             // 
-            this.guna2ImageButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2ImageButton2.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.Image = global::WinFormsApp1.Properties.Resources.edit;
-            this.guna2ImageButton2.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton2.ImageRotate = 0F;
-            this.guna2ImageButton2.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(309, 25);
-            this.guna2ImageButton2.Name = "guna2ImageButton2";
-            this.guna2ImageButton2.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton2.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            this.guna2ImageButton2.Size = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton2.TabIndex = 52;
+            this.page2edit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.page2edit.CheckedState.ImageSize = new System.Drawing.Size(45, 45);
+            this.page2edit.HoverState.ImageSize = new System.Drawing.Size(42, 42);
+            this.page2edit.Image = global::WinFormsApp1.Properties.Resources.edit;
+            this.page2edit.ImageOffset = new System.Drawing.Point(0, 0);
+            this.page2edit.ImageRotate = 0F;
+            this.page2edit.ImageSize = new System.Drawing.Size(32, 32);
+            this.page2edit.Location = new System.Drawing.Point(309, 25);
+            this.page2edit.Name = "page2edit";
+            this.page2edit.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.page2edit.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.page2edit.Size = new System.Drawing.Size(40, 40);
+            this.page2edit.TabIndex = 52;
+            this.page2edit.Click += new System.EventHandler(this.page2edit_Click);
             // 
             // guna2HtmlLabel21
             // 
@@ -854,7 +805,9 @@
             // guna2ShadowPanel2
             // 
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel2.Controls.Add(this.guna2ImageButton4);
+            this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel28);
+            this.guna2ShadowPanel2.Controls.Add(this.salaryLabel);
+            this.guna2ShadowPanel2.Controls.Add(this.page4edit);
             this.guna2ShadowPanel2.Controls.Add(this.accountNumLabel);
             this.guna2ShadowPanel2.Controls.Add(this.bsbLabel);
             this.guna2ShadowPanel2.Controls.Add(this.accountNameLabel);
@@ -875,21 +828,50 @@
             this.guna2ShadowPanel2.Size = new System.Drawing.Size(510, 339);
             this.guna2ShadowPanel2.TabIndex = 39;
             // 
-            // guna2ImageButton4
+            // guna2HtmlLabel28
             // 
-            this.guna2ImageButton4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2ImageButton4.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton4.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton4.Image = global::WinFormsApp1.Properties.Resources.edit;
-            this.guna2ImageButton4.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton4.ImageRotate = 0F;
-            this.guna2ImageButton4.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2ImageButton4.Location = new System.Drawing.Point(309, 16);
-            this.guna2ImageButton4.Name = "guna2ImageButton4";
-            this.guna2ImageButton4.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton4.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.guna2ImageButton4.Size = new System.Drawing.Size(40, 40);
-            this.guna2ImageButton4.TabIndex = 71;
+            this.guna2HtmlLabel28.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2HtmlLabel28.AutoSize = false;
+            this.guna2HtmlLabel28.AutoSizeHeightOnly = true;
+            this.guna2HtmlLabel28.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel28.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.guna2HtmlLabel28.ForeColor = System.Drawing.Color.Black;
+            this.guna2HtmlLabel28.Location = new System.Drawing.Point(179, 272);
+            this.guna2HtmlLabel28.Name = "guna2HtmlLabel28";
+            this.guna2HtmlLabel28.Size = new System.Drawing.Size(310, 23);
+            this.guna2HtmlLabel28.TabIndex = 73;
+            this.guna2HtmlLabel28.Text = "odbngosidfngsd";
+            this.guna2HtmlLabel28.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // salaryLabel
+            // 
+            this.salaryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.salaryLabel.BackColor = System.Drawing.Color.Transparent;
+            this.salaryLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.salaryLabel.ForeColor = System.Drawing.Color.Black;
+            this.salaryLabel.Location = new System.Drawing.Point(24, 273);
+            this.salaryLabel.Name = "salaryLabel";
+            this.salaryLabel.Size = new System.Drawing.Size(63, 22);
+            this.salaryLabel.TabIndex = 72;
+            this.salaryLabel.Text = "SALARY:";
+            this.salaryLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // page4edit
+            // 
+            this.page4edit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.page4edit.CheckedState.ImageSize = new System.Drawing.Size(45, 45);
+            this.page4edit.HoverState.ImageSize = new System.Drawing.Size(42, 42);
+            this.page4edit.Image = global::WinFormsApp1.Properties.Resources.edit;
+            this.page4edit.ImageOffset = new System.Drawing.Point(0, 0);
+            this.page4edit.ImageRotate = 0F;
+            this.page4edit.ImageSize = new System.Drawing.Size(32, 32);
+            this.page4edit.Location = new System.Drawing.Point(309, 16);
+            this.page4edit.Name = "page4edit";
+            this.page4edit.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.page4edit.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            this.page4edit.Size = new System.Drawing.Size(40, 40);
+            this.page4edit.TabIndex = 71;
+            this.page4edit.Click += new System.EventHandler(this.page4edit_Click);
             // 
             // accountNumLabel
             // 
@@ -1075,7 +1057,7 @@
             // 
             this.prevBtn.Animated = true;
             this.prevBtn.BorderRadius = 25;
-            this.prevBtn.CustomizableEdges = customizableEdges9;
+            this.prevBtn.CustomizableEdges = customizableEdges8;
             this.prevBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.prevBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.prevBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -1085,7 +1067,7 @@
             this.prevBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.prevBtn.Location = new System.Drawing.Point(288, 840);
             this.prevBtn.Name = "prevBtn";
-            this.prevBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.prevBtn.ShadowDecoration.CustomizableEdges = customizableEdges9;
             this.prevBtn.Size = new System.Drawing.Size(225, 56);
             this.prevBtn.TabIndex = 38;
             this.prevBtn.Text = "CANCEL";
@@ -1095,7 +1077,7 @@
             // 
             this.finishBtn.Animated = true;
             this.finishBtn.BorderRadius = 25;
-            this.finishBtn.CustomizableEdges = customizableEdges11;
+            this.finishBtn.CustomizableEdges = customizableEdges10;
             this.finishBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.finishBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.finishBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -1105,11 +1087,27 @@
             this.finishBtn.ForeColor = System.Drawing.Color.Gainsboro;
             this.finishBtn.Location = new System.Drawing.Point(583, 840);
             this.finishBtn.Name = "finishBtn";
-            this.finishBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.finishBtn.ShadowDecoration.CustomizableEdges = customizableEdges11;
             this.finishBtn.Size = new System.Drawing.Size(225, 56);
             this.finishBtn.TabIndex = 37;
             this.finishBtn.Text = "SAVE";
             this.finishBtn.Click += new System.EventHandler(this.finishBtn_Click);
+            // 
+            // guna2Shapes1
+            // 
+            this.guna2Shapes1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
+            this.guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
+            this.guna2Shapes1.Location = new System.Drawing.Point(59, 346);
+            this.guna2Shapes1.Name = "guna2Shapes1";
+            this.guna2Shapes1.PolygonSkip = 1;
+            this.guna2Shapes1.Rotate = 0F;
+            this.guna2Shapes1.RoundedEdges = customizableEdges13;
+            this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
+            this.guna2Shapes1.Size = new System.Drawing.Size(968, 250);
+            this.guna2Shapes1.TabIndex = 42;
+            this.guna2Shapes1.Text = "guna2Shapes1";
+            this.guna2Shapes1.UseTransparentBackground = true;
+            this.guna2Shapes1.Zoom = 80;
             // 
             // guna2Shapes2
             // 
@@ -1179,7 +1177,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
         private Guna.UI2.WinForms.Guna2PictureBox qrCodePic;
         private Guna.UI2.WinForms.Guna2PictureBox personPic;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
+        private Guna.UI2.WinForms.Guna2ImageButton page3edit;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel23;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel nationalityLabel;
@@ -1192,10 +1190,10 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
+        private Guna.UI2.WinForms.Guna2ImageButton page2edit;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel21;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton4;
+        private Guna.UI2.WinForms.Guna2ImageButton page4edit;
         private Guna.UI2.WinForms.Guna2HtmlLabel accountNumLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel bsbLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel accountNameLabel;
@@ -1209,8 +1207,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel22;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel20;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel34;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
+        private Guna.UI2.WinForms.Guna2ImageButton page1edit;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
@@ -1220,12 +1217,13 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel postalLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel cityLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel stateLabel;
-        private Guna.UI2.WinForms.Guna2CheckBox permAddCB;
         private Guna.UI2.WinForms.Guna2HtmlLabel add2Label;
         private Guna.UI2.WinForms.Guna2HtmlLabel addLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel fullNameLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes2;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel28;
+        private Guna.UI2.WinForms.Guna2HtmlLabel salaryLabel;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,24 @@ namespace WinFormsApp1.ManagerClass
             positionLabel.Text = globalVariables.userPosition;
             panel = this.mainPanel;
             pageHelper.changePage(new page1(), panel);
+
+            using (SqlConnection con = new SqlConnection(globalVariables.server))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand($"SELECT name FROM personal WHERE username = '{globalVariables.username}'", con))
+                {   
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                        nameLabel.Text = dr.GetString(0);
+                    }
+                    else
+                    {
+                        nameLabel.Text = "ADMIN";
+                    }
+                }
+            }
         }
 
         private void header_Paint(object sender, PaintEventArgs e)
@@ -100,6 +119,7 @@ namespace WinFormsApp1.ManagerClass
         {
             if (whatBtn != "list")
             {
+                globalVariables.isEdit = false;
                 SuspendLayout();
                 pageHelper.f.Close();
                 whatBtn = "list";
@@ -115,6 +135,7 @@ namespace WinFormsApp1.ManagerClass
         {
             if (whatBtn != "setting")
             {
+                globalVariables.isEdit = false;
                 SuspendLayout();
                 pageHelper.f.Close();
                 whatBtn = "setting";
@@ -124,6 +145,21 @@ namespace WinFormsApp1.ManagerClass
                 pageHelper.changePage(new adminSetting(), panel);
                 ResumeLayout();
             }
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            globalVariables.isEdit = false;
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+            globalVariables.isEdit = false;
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

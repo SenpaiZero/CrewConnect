@@ -115,6 +115,7 @@ namespace WinFormsApp1.Helper
             }
             return text;
         }
+
         private void userInterfaceHelper_Load(object sender, EventArgs e)
         {
 

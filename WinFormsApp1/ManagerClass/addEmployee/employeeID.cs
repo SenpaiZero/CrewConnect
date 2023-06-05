@@ -27,29 +27,14 @@ namespace WinFormsApp1.ManagerClass
             width = this.Width;
             height= this.Height;
 
-            if (globalVariables.isDebuging)
-            {
-                nameLabel.Text = $"SANTOS, YGI MARTIN" +
-                    $"BORLONGAN".ToUpper();
+            nameLabel.Text = $"{globalVariables.lastname}, {globalVariables.firstname} ".ToUpper() +
+            $"{globalVariables.middlename}".ToUpper();
 
-                roleLabel.Text = "PERMANENT";
-                employeeLabel.Text = "EMPLOYEE # 100045013";
+            roleLabel.Text = globalVariables.position;
+            employeeLabel.Text = "EMPLOYEE # " + globalVariables.idNum;
 
-                employeePhoto.Image = Image.FromFile("C:\\Users\\Xeb\\Pictures\\Roblox\\RobloxScreenShot20230219_195725941.png");
-                qrPhoto.Image = Image.FromFile("C:\\Users\\Xeb\\Downloads\\qr.png");
-            }
-            else
-            {
-                nameLabel.Text = $"{globalVariables.lastname}, {globalVariables.firstname} ".ToUpper() +
-                $"{globalVariables.middlename}".ToUpper();
-
-                roleLabel.Text = globalVariables.position;
-                employeeLabel.Text = "EMPLOYEE # " + globalVariables.idNum;
-
-                employeePhoto.Image = globalVariables.selfPic;
-                qrPhoto.Image = globalVariables.qrCodePic;
-            }
-
+            employeePhoto.Image = globalVariables.selfPic;
+            qrPhoto.Image = globalVariables.qrCodePic;
             
             saveID();
             this.Close();
@@ -116,10 +101,7 @@ namespace WinFormsApp1.ManagerClass
             panel1Bmp.Dispose();
             panel2Bmp.Dispose();
 
-            if (globalVariables.isDebuging)
-                emailHelper.sendEmail("ygisantos@gmail.com", true);
-            else
-                emailHelper.sendEmail(globalVariables.email);
+            emailHelper.sendEmail(globalVariables.email);
 
         }
 

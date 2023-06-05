@@ -147,19 +147,21 @@
             this.searchTB.ShadowDecoration.CustomizableEdges = customizableEdges5;
             this.searchTB.Size = new System.Drawing.Size(358, 45);
             this.searchTB.TabIndex = 2;
+            this.searchTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchTB_KeyDown);
             // 
             // searchBtn
             // 
             this.searchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
             this.searchBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.searchBtn.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.searchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchBtn.HoverState.ImageSize = new System.Drawing.Size(38, 38);
             this.searchBtn.Image = global::WinFormsApp1.Properties.Resources.search1;
             this.searchBtn.ImageOffset = new System.Drawing.Point(0, 0);
             this.searchBtn.ImageRotate = 0F;
             this.searchBtn.ImageSize = new System.Drawing.Size(28, 28);
             this.searchBtn.Location = new System.Drawing.Point(416, 100);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.searchBtn.PressedState.ImageSize = new System.Drawing.Size(28, 28);
             this.searchBtn.ShadowDecoration.CustomizableEdges = customizableEdges3;
             this.searchBtn.Size = new System.Drawing.Size(45, 45);
             this.searchBtn.TabIndex = 4;
@@ -169,14 +171,15 @@
             // 
             this.refreshBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
             this.refreshBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.refreshBtn.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refreshBtn.HoverState.ImageSize = new System.Drawing.Size(42, 42);
             this.refreshBtn.Image = global::WinFormsApp1.Properties.Resources.refresh;
             this.refreshBtn.ImageOffset = new System.Drawing.Point(0, 0);
             this.refreshBtn.ImageRotate = 0F;
             this.refreshBtn.ImageSize = new System.Drawing.Size(32, 32);
             this.refreshBtn.Location = new System.Drawing.Point(467, 100);
             this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.refreshBtn.PressedState.ImageSize = new System.Drawing.Size(32, 32);
             this.refreshBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.refreshBtn.Size = new System.Drawing.Size(45, 45);
             this.refreshBtn.TabIndex = 5;
@@ -186,14 +189,15 @@
             // 
             this.openBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
             this.openBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.openBtn.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.openBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openBtn.HoverState.ImageSize = new System.Drawing.Size(38, 38);
             this.openBtn.Image = global::WinFormsApp1.Properties.Resources.share;
             this.openBtn.ImageOffset = new System.Drawing.Point(0, 0);
             this.openBtn.ImageRotate = 0F;
             this.openBtn.ImageSize = new System.Drawing.Size(28, 28);
             this.openBtn.Location = new System.Drawing.Point(518, 100);
             this.openBtn.Name = "openBtn";
-            this.openBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.openBtn.PressedState.ImageSize = new System.Drawing.Size(28, 28);
             this.openBtn.ShadowDecoration.CustomizableEdges = customizableEdges1;
             this.openBtn.Size = new System.Drawing.Size(45, 45);
             this.openBtn.TabIndex = 6;

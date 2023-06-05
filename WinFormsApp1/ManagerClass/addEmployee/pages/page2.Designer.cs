@@ -127,6 +127,7 @@
             this.mainsPanel.Size = new System.Drawing.Size(885, 652);
             this.mainsPanel.TabIndex = 5;
             this.mainsPanel.UseTransparentBackground = true;
+            this.mainsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainsPanel_Paint_1);
             // 
             // religionCB
             // 

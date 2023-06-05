@@ -23,12 +23,9 @@ namespace WinFormsApp1.Helper
         public static string server = "Server=tcp:crewconnect.database.windows.net,1433;Initial Catalog=CrewConnectDB;" +
             "Persist Security Info=False;User ID=crewconnect;Password=123sti_bsit;MultipleActiveResultSets=False;" +
             "Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-
+        public static bool isEdit { get; set; }
         // ID
         public static Bitmap idPic { set; get; }
-
-        // Debuging purposes
-        public static bool isDebuging { get; set; }
 
         // Persistence Data for adding employee
         // Page 1
@@ -67,7 +64,6 @@ namespace WinFormsApp1.Helper
         // Page 4
         public static string? bankName { get; set; }
         public static string? companyAdd { get; set; }
-        public static string? companyName { get; set; }
         public static string? accountName { get; set; }
         public static string? branch { get; set; }
         public static string? BSB { get; set; }

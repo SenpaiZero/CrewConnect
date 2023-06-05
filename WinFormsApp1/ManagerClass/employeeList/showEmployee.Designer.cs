@@ -776,6 +776,8 @@
             this.Controls.Add(this.selfPic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "showEmployee";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "showEmployee";
             this.Load += new System.EventHandler(this.showEmployee_Load);
             ((System.ComponentModel.ISupportInitialize)(this.selfPic)).EndInit();

@@ -18,7 +18,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
     
     public partial class page3 : Form
     {
-        static bool[] isValid = new bool[3];
+        static bool[] isValid = new bool[4];
         public page3()
         {
             InitializeComponent();
@@ -40,34 +40,40 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         {
             pageHelper.loading();
             String[] data = { idNumTB.Text, phoneNumTB.Text, emailTB.Text };
-            // Debuging purposes
-            if (globalVariables.isDebuging)
-                pageHelper.changePage(new page4(), adminPanel.panel);
-            else
-                // End of debugging
 
-                if ((personalPic.Image != null && qrPic.Image != null) &&
-                !isValid.Contains(false) && !data.Any(string.IsNullOrWhiteSpace)
-                    && positionCB.Text != "POSTION")
-                {
-                    globalVariables.position = positionCB.Text;
-                    globalVariables.email = emailTB.Text;
-                    globalVariables.phoneNumber = phoneNumTB.Text;
-                    globalVariables.idNum = idNumTB.Text;
+            if ((personalPic.Image != null && qrPic.Image != null) &&
+            !isValid.Contains(false) && !data.Any(string.IsNullOrWhiteSpace)
+                && positionCB.Text != "POSTION")
+            {
+                globalVariables.position = positionCB.Text;
+                globalVariables.email = emailTB.Text;
+                globalVariables.phoneNumber = phoneNumTB.Text;
+                globalVariables.idNum = idNumTB.Text;
 
-                    if (string.IsNullOrWhiteSpace(guardianTB.Text))
-                        globalVariables.email2 = "NONE";
-                    else
-                        globalVariables.email2 = guardianTB.Text;
+                if (string.IsNullOrWhiteSpace(guardianTB.Text))
+                    globalVariables.email2 = "NONE";
+                else
+                    globalVariables.email2 = guardianTB.Text;
 
                 pageHelper.f.Close();
-                pageHelper.changePage(new page4(), adminPanel.panel);
+                if (globalVariables.isEdit)
+                {
+                    pageHelper.changePage(new page4(), adminPanel.panel);
+                    previewInfo1 prev = new previewInfo1();
+                    if (prev.ShowDialog() == DialogResult.OK)
+                    {
+                        pageHelper.changePage(new page1(), adminPanel.panel);
+                    }
+                    return;
                 }
+                pageHelper.changePage(new page4(), adminPanel.panel);
+            }
             else
             {
 
+                validationHelper.textBoxValidation_Email_option(guardianTB, "Email", errorProvider1);
                 validationHelper.textBoxValidation_Numeric(phoneNumTB, "Phone Number", errorProvider1);
-                validationHelper.textBoxValidation_Alpha(emailTB, "Email", errorProvider1);
+                validationHelper.textBoxValidation_Email(emailTB, "Email", errorProvider1);
                 validationHelper.comboBoxValidation(positionCB, "POSITION", errorProvider1);
 
                 pageHelper.errorDetails();
@@ -76,6 +82,17 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void prevBtn_Click(object sender, EventArgs e)
         {
+            if (globalVariables.isEdit)
+            {
+                pageHelper.changePage(new page4(), adminPanel.panel);
+                previewInfo1 prev = new previewInfo1();
+                if (prev.ShowDialog() == DialogResult.OK)
+                {
+                    pageHelper.changePage(new page1(), adminPanel.panel);
+                }
+                return;
+            }
+            pageHelper.loading();
             pageHelper.f.Close();
             pageHelper.changePage(new page2(), adminPanel.panel);
         }
@@ -104,9 +121,12 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             validationHelper.comboBoxFirstLoad = true;
             for (int i = 0; i < isValid.Length; i++)
             {
-                isValid[i] = false;
+                if(!globalVariables.isEdit)
+                    isValid[i] = false;
+                else
+                    isValid[i] = true;
             }
-
+            isValid[3] = true;
             using (SqlConnection con = new SqlConnection(globalVariables.server))
             {
                 con.Open();
@@ -126,9 +146,20 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                     // Bind the data to the ComboBox
                     positionCB.DataSource = dataTable; 
                     positionCB.DisplayMember = "position";
-                    positionCB.ValueMember = "position";
                     reader.Close();
                 }
+            }
+            positionCB.SelectedIndex = 0;
+
+            if(globalVariables.isEdit)
+            {
+                positionCB.Text = globalVariables.position;
+                personalPic.Image = globalVariables.selfPic;
+                qrPic.Image = globalVariables.qrCodePic;
+                phoneNumTB.Text = globalVariables.phoneNumber;
+                emailTB.Text = globalVariables.email;
+                guardianTB.Text = globalVariables.email2;
+                idNumTB.Text = globalVariables.idNum;
             }
 
             errorProvider1.Clear();
@@ -174,6 +205,9 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void guardianTB_Validating(object sender, CancelEventArgs e)
         {
+            isValid[3] = false;
+            if (validationHelper.textBoxValidation_Email_option(guardianTB, "Email", errorProvider1))
+                isValid[3] = true;
         }
 
         private void positionCB_SelectedValueChanged(object sender, EventArgs e)

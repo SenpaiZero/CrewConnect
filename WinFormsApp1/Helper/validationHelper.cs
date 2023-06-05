@@ -118,7 +118,7 @@ namespace WinFormsApp1.Helper
         // Checking if user entered a value in required field
         public static bool checkFieldBlank(String tb)
         {
-            if (string.IsNullOrEmpty(tb))
+            if (string.IsNullOrEmpty(tb) || string.IsNullOrWhiteSpace(tb))
                 return true;
             return false;
         }
@@ -163,7 +163,7 @@ namespace WinFormsApp1.Helper
             errorProvider.SetError(tb, null);
             return true;
         }
-        public static bool textBoxValidation_Address_optional(Guna2TextBox tb, String name, ErrorProvider errorProvider, bool acceptEmpty)
+        public static bool textBoxValidation_Address_optional(Guna2TextBox tb, String name, ErrorProvider errorProvider)
         {
             String nullField = "is required. Please complete this field to continue";
             String symNumNotAllowed = "is invalid (Please enter a valid address)";
@@ -173,11 +173,11 @@ namespace WinFormsApp1.Helper
             //Checks if its empty
             if (validationHelper.checkFieldBlank(tb.Text))
             {
-                if (!acceptEmpty)
-                {
-                    errorProvider.SetError(tb, $"{name} {nullField}");
-                    return false;
-                }
+                // Clears the error
+                tb.BorderThickness = 1;
+                tb.BorderColor = Color.FromArgb(213, 218, 223);
+                errorProvider.SetError(tb, null);
+                return true;
             }
             else if (!validationHelper.IsValidAddress(tb.Text))
             {
@@ -225,7 +225,32 @@ namespace WinFormsApp1.Helper
             errorProvider.SetError(tb, null);
             return true;
         }
+        public static bool textBoxValidation_Email_option(Guna2TextBox tb, String name, ErrorProvider errorProvider)
+        {
+            String symNumNotAllowed = "is invalid (Symbols and numbers are not allowed)";
+            tb.BorderColor = Color.IndianRed;
+            tb.BorderThickness = 5;
 
+            //Checks if its empty
+            if (validationHelper.checkFieldBlank(tb.Text))
+            {
+                tb.BorderThickness = 1;
+                tb.BorderColor = Color.FromArgb(213, 218, 223);
+                errorProvider.SetError(tb, null);
+                return true;
+            }
+            // Checks if its alpha only
+            else if (!validationHelper.IsValidEmail(tb.Text))
+            {
+                errorProvider.SetError(tb, $"{name} {symNumNotAllowed}");
+                return false;
+            }
+            // Clears the error
+            tb.BorderThickness = 1;
+            tb.BorderColor = Color.FromArgb(213, 218, 223);
+            errorProvider.SetError(tb, null);
+            return true;
+        }
         // Checks if user entered alphabets and numbers only
         public static bool checkFieldAlphaNumeric(String tb)
         {

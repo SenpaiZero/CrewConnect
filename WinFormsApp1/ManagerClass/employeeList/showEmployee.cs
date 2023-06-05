@@ -20,6 +20,16 @@ namespace WinFormsApp1.ManagerClass
             InitializeComponent();
         }
         static int selectedID;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParams = base.CreateParams;
+                handleParams.ExStyle |= 0x02000000;
+                return handleParams;
+            }
+        }
         private void showEmployee_Load(object sender, EventArgs e)
         {
             //

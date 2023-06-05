@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Guna.UI2.WinForms;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,6 +32,11 @@ namespace WinFormsApp1.ManagerClass
                 return;
             }
 
+            var loadingForm = new loadingForm();
+            loadingForm.StartPosition = FormStartPosition.CenterParent;
+            loadingForm.loadingTime = 1000;
+            loadingForm.ShowDialog();
+
             int i;
             bool result = int.TryParse(searchTB.Text,out i);
             SqlCommand cmd;
@@ -40,18 +46,21 @@ namespace WinFormsApp1.ManagerClass
             {
                 cmd = new SqlCommand("SELECT personal.Id, personal.name, personal.age, contact.emailAddress," +
                     " contact.phoneNumber, job.position, job.contract FROM personal INNER JOIN contact ON " +
-                    $"personal.Id = contact.Id JOIN job ON personal.Id = job.Id WHERE personal.Id LIKE '{searchTB.Text}'", con);
+                    $"personal.Id = contact.Id JOIN job ON personal.Id = job.Id WHERE personal.Id LIKE '%{searchTB.Text}%'", con);
+
+                MessageBox.Show(searchTB.Text);
             }
             else
             {
                 cmd = new SqlCommand("SELECT personal.Id, personal.name, personal.age, contact.emailAddress," +
                     " contact.phoneNumber, job.position, job.contract FROM personal INNER JOIN contact ON " +
-                    $"personal.Id = contact.Id JOIN job ON personal.Id = job.Id WHERE personal.name LIKE '{searchTB.Text}'", con);
+                    $"personal.Id = contact.Id JOIN job ON personal.Id = job.Id WHERE personal.name LIKE '%{searchTB.Text}%'", con);
             }
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             listTable.DataSource = dt;
+            con.Close();
         }
 
         private void EmployeeList_Load(object sender, EventArgs e)
@@ -93,13 +102,23 @@ namespace WinFormsApp1.ManagerClass
 
                 MessageBox.Show(selectedID);
                 showEmployee empl = new showEmployee();
+                empl.Owner = this;
                 empl.Show();
             }
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
+            searchTB.Text = "";
             showData();
+        }
+
+        private void searchTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchBtn.PerformClick();
+            }
         }
     }
 }

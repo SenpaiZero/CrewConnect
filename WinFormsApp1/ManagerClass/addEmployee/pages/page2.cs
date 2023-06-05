@@ -33,11 +33,6 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         private void nextBtn_Click(object sender, EventArgs e)
         {
             pageHelper.loading();
-            // Debuging purposes
-            if (globalVariables.isDebuging)
-                pageHelper.changePage(new page3(), adminPanel.panel);
-            else
-            // end of debugging 
             if ((yearCB.Text != "YEAR" && monthCB.Text != "MONTH" &&
                 dayCB.Text != "DAY" && bloodTypeCB.Text != "BLOOD TYPE" &&
                 genderCB.Text != "GENDER" && nationalityCB.Text != "NATIONALITY" &&
@@ -55,6 +50,17 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 globalVariables.age = Convert.ToInt32(ageTB.Text);
 
                 pageHelper.f.Close();
+
+                if (globalVariables.isEdit)
+                {
+                    pageHelper.changePage(new page4(), adminPanel.panel);
+                    previewInfo1 prev = new previewInfo1();
+                    if (prev.ShowDialog() == DialogResult.OK)
+                    {
+                        pageHelper.changePage(new page1(), adminPanel.panel);
+                    }
+                    return;
+                }
                 pageHelper.changePage(new page3(), adminPanel.panel);
 
             }
@@ -76,6 +82,17 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void prevBtn_Click(object sender, EventArgs e)
         {
+            if (globalVariables.isEdit)
+            {
+                pageHelper.changePage(new page4(), adminPanel.panel);
+                previewInfo1 prev = new previewInfo1();
+                if (prev.ShowDialog() == DialogResult.OK)
+                {
+                    pageHelper.changePage(new page1(), adminPanel.panel);
+                }
+                return;
+            }
+            pageHelper.loading();
             pageHelper.f.Close();
             pageHelper.changePage(new page1(), adminPanel.panel);
         }
@@ -149,6 +166,20 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
             userInterfaceHelper.comboBoxValue(religionCB, religionsInPh);
             religionCB.SelectedIndex = 0;
+
+
+            if(globalVariables.isEdit)
+            {
+                genderCB.SelectedIndex = genderCB.Items.IndexOf(globalVariables.gender);
+                nationalityCB.SelectedIndex = nationalityCB.Items.IndexOf(globalVariables.nationality);
+                bloodTypeCB.SelectedIndex = bloodTypeCB.Items.IndexOf(globalVariables.bloodType);
+                statusCB.SelectedIndex = statusCB.Items.IndexOf(globalVariables.status);
+                religionCB.SelectedIndex = religionCB.Items.IndexOf(globalVariables.religion);
+
+                monthCB.SelectedIndex = (int)globalVariables.month;
+                dayCB.SelectedIndex = (int)globalVariables.day;
+                yearCB.SelectedIndex = yearCB.Items.IndexOf(globalVariables.year.ToString());
+            }
 
             errorProvider1.Clear();
             validationHelper.comboBoxFirstLoad = false;
@@ -246,6 +277,11 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         private void religionCB_SelectedValueChanged(object sender, EventArgs e)
         {
             validationHelper.comboBoxValidation(religionCB, "RELIGION", errorProvider1);
+        }
+
+        private void mainsPanel_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
