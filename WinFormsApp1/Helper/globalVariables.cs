@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using AForge.Math;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,6 +77,8 @@ namespace WinFormsApp1.Helper
         //
         public static string? username { get; set; }
         public static string? userPosition { get; set; }
+        public static string? userID { get; set; }
+        public static string? userFullName { get; set; }
 
 
     }

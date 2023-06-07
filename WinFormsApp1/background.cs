@@ -31,7 +31,8 @@ namespace WinFormsApp1
         {
             log = new loginForm();
             log.Owner = this;
-            log.ShowDialog();
+            if (!log.InvokeRequired)
+                log.ShowDialog();
         }
 
         private void background_FormClosing(object sender, FormClosingEventArgs e)

@@ -90,6 +90,12 @@ namespace WinFormsApp1
                     string[] adminList_ = { "OWNER", "ADMIN", "MANAGER" };
                     globalVariables.userPosition = dr.GetString(3).ToUpper();
                     globalVariables.username = dr.GetString(1).ToUpper();
+                    globalVariables.userID = dr.GetString(0);
+
+                    cmd = new SqlCommand($"SELECT name FROM personal WHERE Id = '{globalVariables.userID}'", con);
+                    dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                        globalVariables.userFullName = dr.GetString(0).ToUpper();
 
                     this.Hide();
                     if (adminList_.Any(item => item.Contains(dr.GetString(3).ToUpper())))

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormsApp1.Helper;
+using WinFormsApp1.ManagerClass;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace WinFormsApp1
@@ -51,12 +53,106 @@ namespace WinFormsApp1
 
         private void scanBtn_Click(object sender, EventArgs e)
         {
+            if (cameraHelper.isDetect == false)
+                return;
+
+            loadingForm load = new loadingForm();
+            load.loadingTime = 1200;
+            load.StartPosition = FormStartPosition.Manual;
+
+            Point listTableLocationOnForm = mainsPanel.Parent.PointToScreen(mainsPanel.Location);
+            int loadingFormX = listTableLocationOnForm.X + (mainsPanel.Width - load.Width) / 2;
+            int loadingFormY = listTableLocationOnForm.Y + (mainsPanel.Height - load.Height) / 2;
+            load.Location = new Point(loadingFormX, loadingFormY);
+            load.ShowDialog();
+
             cameraHelper.start(camListCB.SelectedIndex);
+            cameraHelper.isDetect = false;
             CheckForIllegalCrossThreadCalls = false;
             att.nameTB.Text = "";
             att.idTB.Text = "";
             att.dateTB.Text = "";
             att.timeTB.Text = "";
+            setAttendance();
+        }
+
+        void setAttendance()
+        {
+            DateOnly currentDate = DateOnly.FromDateTime(DateTime.Today);
+            DateTime currentTime = DateTime.Now;
+            string formattedTime = currentTime.ToString("HH:mm:ss"); // e.g., 15:30:00
+            string formattedDate = currentDate.ToShortDateString(); // e.g., 2023-06-08
+
+            try
+            {
+                // This 
+                string query = $"" +
+                    $"SELECT outTime " +
+                    $"FROM attendance " +
+                    $"WHERE Id = @id " +
+                    $"AND date = @date " +
+                    $"ORDER BY date DESC";
+                using (SqlConnection con = new SqlConnection(globalVariables.server))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", Convert.ToInt32(cameraHelper.idNum));
+                        cmd.Parameters.AddWithValue("@date", formattedDate);
+                        SqlDataReader dr = cmd.ExecuteReader();
+
+                        // Check if the user is already in
+                        if(dr.Read())
+                        {
+                            // Checks if the user is already done (kung nag out na)
+                            if(dr.IsDBNull(0))
+                            {
+                                dr.Close();
+                                string query2 = $"" +
+                                    $"UPDATE attendance " +
+                                    $"SET outTime = @out " +
+                                    $"WHERE Id = @id ";
+                                using (SqlCommand cmd2 = new SqlCommand(query2, con))
+                                {
+                                    cmd2.Parameters.AddWithValue("@out", formattedTime);
+                                    cmd2.Parameters.AddWithValue("@id", Convert.ToInt32(cameraHelper.idNum));
+                                    cmd2.ExecuteNonQuery();
+                                }
+                            }
+                            else
+                            {
+                                messageDialogForm msg = new messageDialogForm();
+                                msg.title = "ATTENDANCE COMPLETED";
+                                msg.message = "You already checked in and out today!";
+                                msg.ShowDialog();
+                            }
+                        }
+                        else
+                        {
+                            dr.Close();
+                            // Creates a row for in time
+                            string query2 = $"" +
+                                $"INSERT INTO attendance (Id, name, date, inTime) " +
+                                $"VALUES (@id, @name, @date, @inTime)";
+                            using (SqlCommand cmd2 = new SqlCommand(query2, con))
+                            {
+                                cmd2.Parameters.AddWithValue("@id", Convert.ToInt32(cameraHelper.idNum));
+                                cmd2.Parameters.AddWithValue("@name", cameraHelper.fullName);
+                                cmd2.Parameters.AddWithValue("@date", cameraHelper.dateString);
+                                cmd2.Parameters.AddWithValue("@inTime", formattedTime);
+                                cmd2.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                messageDialogForm msg = new messageDialogForm();
+                msg.title = "AN ERROR HAS OCCURED";
+                msg.message = ex.Message;
+                msg.ShowDialog();
+            }
         }
 
         public void setData(string id, string date, string time, string name)
@@ -70,6 +166,30 @@ namespace WinFormsApp1
             att.dateTB.Text = date;
             att.timeTB.Text = time;
 
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            if (cameraHelper.isDetect == false)
+                return;
+
+            loadingForm load = new loadingForm();
+            load.loadingTime = 1200;
+            load.StartPosition = FormStartPosition.Manual;
+
+            Point listTableLocationOnForm = mainsPanel.Parent.PointToScreen(mainsPanel.Location);
+            int loadingFormX = listTableLocationOnForm.X + (mainsPanel.Width - load.Width) / 2;
+            int loadingFormY = listTableLocationOnForm.Y + (mainsPanel.Height - load.Height) / 2;
+            load.Location = new Point(loadingFormX, loadingFormY);
+            load.ShowDialog();
+
+            cameraHelper.start(camListCB.SelectedIndex);
+            cameraHelper.isDetect = false;
+            CheckForIllegalCrossThreadCalls = false;
+            att.nameTB.Text = "";
+            att.idTB.Text = "";
+            att.dateTB.Text = "";
+            att.timeTB.Text = "";
         }
     }
 }

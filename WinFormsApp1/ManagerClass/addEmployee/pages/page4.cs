@@ -178,5 +178,10 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             if (validationHelper.comboBoxValidation(contractCB, "CONTRACTS", errorProvider1))
                 isValid[7] = true;
         }
+
+        private void mainsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

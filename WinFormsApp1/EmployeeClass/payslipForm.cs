@@ -17,6 +17,8 @@ namespace WinFormsApp1.EmployeeClass
         public payslipForm()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.BackColor = Color.Transparent;
         }
 
         private void payslipForm_Load(object sender, EventArgs e)
@@ -49,6 +51,43 @@ namespace WinFormsApp1.EmployeeClass
                 msg.message = ex.Message;
                 msg.ShowDialog();
             }
+        }
+
+        string current = "current";
+        private void changeBtn_Click(object sender, EventArgs e)
+        {
+            loadingForm load = new loadingForm();
+            load.loadingTime = 1000;
+            load.StartPosition = FormStartPosition.Manual;
+
+            Point listTableLocationOnForm = mainPanel.Parent.PointToScreen(mainPanel.Location);
+            int loadingFormX = listTableLocationOnForm.X + (mainPanel.Width - load.Width) / 2;
+            int loadingFormY = listTableLocationOnForm.Y + (mainPanel.Height - load.Height) / 2;
+            load.Location = new Point(loadingFormX, loadingFormY);
+            load.ShowDialog();
+
+            if (current == "current")
+            {
+                loadPrevious();
+                changeBtn.Text = "PREVIOUS";
+                current = "previous";
+            }
+            else
+            {
+                loadCurrent();
+                changeBtn.Text = "CURRENT";
+                current = "current";
+            }
+        }
+
+        void loadCurrent()
+        {
+
+        }
+
+        void loadPrevious()
+        {
+
         }
     }
 }

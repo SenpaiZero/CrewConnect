@@ -75,10 +75,10 @@ namespace WinFormsApp1.Helper
                     TimeOnly time_ = TimeOnly.FromDateTime(DateTime.Now);
 
                     idNum = qrCodeValue;
-                    dateString = date_.ToLongDateString();
-                    timeString = time_.ToLongTimeString();
+                    dateString = date_.ToShortDateString();
+                    timeString = time_.ToShortTimeString();
                     fullName = getName(id);
-
+                    isDetect = true;
                     if(name == "home")
                     {
                         attendance.att.setData(idNum, dateString, timeString, fullName);
@@ -152,30 +152,41 @@ namespace WinFormsApp1.Helper
 
         static string getName(string id)
         {
-            string query = $"SELECT name FROM personal WHERE Id = '{idNum}';";
-            using (SqlConnection con = new SqlConnection(globalVariables.server))
+            try
             {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                string query = $"SELECT name FROM personal WHERE Id = '{idNum}';";
+                using (SqlConnection con = new SqlConnection(globalVariables.server))
                 {
-                    SqlDataReader dr = cmd.ExecuteReader();
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        SqlDataReader dr = cmd.ExecuteReader();
 
-                    if(dr.Read())
-                    {
-                        isValid = true;
-                        return dr.GetString(0);
-                    }
-                    else
-                    {
-                        isValid= false;
-                        messageDialogForm msg = new messageDialogForm();
-                        msg.isOkDialog = false;
-                        msg.title = "";
-                        msg.message = $"The {idNum} Employee Number Does not Exist";
-                        msg.StartPosition = FormStartPosition.CenterScreen;
-                        msg.ShowDialog();
+                        if (dr.Read())
+                        {
+                            isValid = true;
+                            return dr.GetString(0);
+                        }
+                        else
+                        {
+                            isValid = false;
+                            messageDialogForm msg = new messageDialogForm();
+                            msg.isOkDialog = false;
+                            msg.title = "";
+                            msg.message = $"The {idNum} Employee Number Does not Exist";
+                            msg.StartPosition = FormStartPosition.CenterScreen;
+                            msg.ShowDialog();
+
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                messageDialogForm msg = new messageDialogForm();
+                msg.title = "AN ERROR HAS OCCURED";
+                msg.message = ex.Message;
+                msg.ShowDialog();
             }
             return "";
         }
@@ -184,5 +195,6 @@ namespace WinFormsApp1.Helper
         public static bool qrcode { get; set; }
         public static string id { get; set; }
         public static string name { get; set; }
+        public static bool isDetect { get; set; }
     }
 }
