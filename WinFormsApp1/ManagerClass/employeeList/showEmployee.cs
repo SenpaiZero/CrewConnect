@@ -109,32 +109,40 @@ namespace WinFormsApp1.ManagerClass
             if (!validationHelper.internetAvailability())
                 return;
 
-            string[] query = { $"DELETE FROM bank WHERE Id = '{selectedID}'",
-            $"DELETE FROM contact WHERE Id = '{selectedID}'",
-            $"DELETE FROM identities WHERE Id = '{selectedID}'",
-            $"DELETE FROM job WHERE Id = '{selectedID}'",
-            $"DELETE FROM personal WHERE Id = '{selectedID}'",
-            $"DELETE FROM Users WHERE Id = '{selectedID}'"};
             messageDialogForm msg = new messageDialogForm();
-            msg.isOkDialog = true;
-            msg.title = "ARE YOU SURE?";
-            msg.message = "You can't undo what you are about to do";
-
-            if (msg.ShowDialog() != DialogResult.OK)
-                return;
-
-            SuspendLayout();
-            SqlConnection con = new SqlConnection(globalVariables.server);
-            con.Open();
-
-            foreach (var item in query)
+            try
             {
-                using (SqlCommand cmd = new SqlCommand(item, con))
+                string[] query = { $"DELETE FROM bank WHERE Id = '{selectedID}'",
+                $"DELETE FROM contact WHERE Id = '{selectedID}'",
+                $"DELETE FROM identities WHERE Id = '{selectedID}'",
+                $"DELETE FROM job WHERE Id = '{selectedID}'",
+                $"DELETE FROM personal WHERE Id = '{selectedID}'",
+                $"DELETE FROM Users WHERE Id = '{selectedID}'"};
+                msg.isOkDialog = true;
+                msg.title = "ARE YOU SURE?";
+                msg.message = "You can't undo what you are about to do";
+
+                if (msg.ShowDialog() != DialogResult.OK)
+                    return;
+
+                SuspendLayout();
+                SqlConnection con = new SqlConnection(globalVariables.server);
+                con.Open();
+
+                foreach (var item in query)
                 {
-                    cmd.ExecuteNonQuery();
+                    using (SqlCommand cmd = new SqlCommand(item, con))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
                 }
             }
-            
+            catch (Exception ex)
+            {
+                msg.title = "AN ERROR HAS OCCURED";
+                msg.message = ex.Message;
+                msg.ShowDialog();
+            }
             ResumeLayout();
             msg.isOkDialog = false;
             msg.title = "";
@@ -197,14 +205,20 @@ namespace WinFormsApp1.ManagerClass
                         catch (Exception ex)
                         {
                             trans.Rollback();
-                            MessageBox.Show("An error has occurred: " + ex.Message);
+                            messageDialogForm msg = new messageDialogForm();
+                            msg.title = "AN ERROR HAS OCCURED";
+                            msg.message = ex.Message;
+                            msg.ShowDialog();
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error has occurred: " + ex.Message);
+                messageDialogForm msg = new messageDialogForm();
+                msg.title = "AN ERROR HAS OCCURED";
+                msg.message = ex.Message;
+                msg.ShowDialog();
             }
         }
         void updateData(Guna2TextBox tb, string table, string column, SqlCommand cmd)

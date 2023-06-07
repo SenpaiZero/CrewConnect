@@ -40,22 +40,32 @@ namespace WinFormsApp1.ManagerClass
             panel = this.mainPanel;
             pageHelper.changePage(new page1(), panel);
 
-            using (SqlConnection con = new SqlConnection(globalVariables.server))
-            {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand($"SELECT name FROM personal WHERE username = '{globalVariables.username}'", con))
-                {   
-                    SqlDataReader dr = cmd.ExecuteReader();
+            try
+            {            
+                using (SqlConnection con = new SqlConnection(globalVariables.server))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand($"SELECT name FROM personal WHERE username = '{globalVariables.username}'", con))
+                    {   
+                        SqlDataReader dr = cmd.ExecuteReader();
 
-                    if (dr.Read())
-                    {
-                        nameLabel.Text = dr.GetString(0);
-                    }
-                    else
-                    {
-                        nameLabel.Text = "ADMIN";
+                        if (dr.Read())
+                        {
+                            nameLabel.Text = dr.GetString(0);
+                        }
+                        else
+                        {
+                            nameLabel.Text = "ADMIN";
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                messageDialogForm msg = new messageDialogForm();
+                msg.title = "AN ERROR HAS OCCURED";
+                msg.message = ex.Message;
+                msg.ShowDialog();
             }
         }
 
@@ -77,18 +87,6 @@ namespace WinFormsApp1.ManagerClass
                 pageHelper.changePage(new page1(), panel);
                 ResumeLayout();
             }
-        }
-
-        private void addEmployeeBtn_Click(object sender, EventArgs e)
-        {
-            employeeID id = new employeeID();
-            id.Show();
-        }
-
-        private void guna2Button1_Click_1(object sender, EventArgs e)
-        {
-            employeeID id = new employeeID();
-            id.saveID();
         }
 
         private void adminPanel_MouseDown(object sender, MouseEventArgs e)

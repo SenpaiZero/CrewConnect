@@ -32,7 +32,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
-            pageHelper.loading();
+            pageHelper.loading(mainsPanel);
             if ((yearCB.Text != "YEAR" && monthCB.Text != "MONTH" &&
                 dayCB.Text != "DAY" && bloodTypeCB.Text != "BLOOD TYPE" &&
                 genderCB.Text != "GENDER" && nationalityCB.Text != "NATIONALITY" &&
@@ -92,7 +92,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 }
                 return;
             }
-            pageHelper.loading();
+            pageHelper.loading(mainsPanel);
             pageHelper.f.Close();
             pageHelper.changePage(new page1(), adminPanel.panel);
         }

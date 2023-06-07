@@ -38,11 +38,16 @@ namespace WinFormsApp1.Helper
             f.BringToFront();
         }
 
-        public static void loading()
+        public static void loading(Control parentControl)
         {
             loadingForm load = new loadingForm();
             load.loadingTime = 500;
-            load.StartPosition = FormStartPosition.CenterParent;
+            load.StartPosition = FormStartPosition.Manual;
+
+            Point listTableLocationOnForm = parentControl.Parent.PointToScreen(parentControl.Location);
+            int loadingFormX = listTableLocationOnForm.X + (parentControl.Width - load.Width) / 2;
+            int loadingFormY = listTableLocationOnForm.Y + (parentControl.Height - load.Height) / 2;
+            load.Location = new Point(loadingFormX, loadingFormY);
             load.ShowDialog();
         }
 

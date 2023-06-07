@@ -38,7 +38,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
-            pageHelper.loading();
+            pageHelper.loading(mainsPanel);
             String[] data = { idNumTB.Text, phoneNumTB.Text, emailTB.Text };
 
             if ((personalPic.Image != null && qrPic.Image != null) &&
@@ -92,7 +92,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 }
                 return;
             }
-            pageHelper.loading();
+            pageHelper.loading(mainsPanel);
             pageHelper.f.Close();
             pageHelper.changePage(new page2(), adminPanel.panel);
         }

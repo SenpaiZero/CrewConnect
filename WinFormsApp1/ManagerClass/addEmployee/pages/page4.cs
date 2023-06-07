@@ -42,7 +42,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 }
                 return;
             }
-            pageHelper.loading();
+            pageHelper.loading(mainsPanel);
             pageHelper.f.Close();
             pageHelper.changePage(new page3(), adminPanel.panel);
         }
@@ -86,7 +86,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
         private void finishBtn_Click(object sender, EventArgs e)
         {
-            pageHelper.loading();
+            pageHelper.loading(mainsPanel);
             previewInfo1 prev = new previewInfo1();
             String[] data = { bankNameTB.Text, branchTB.Text, companyAddTB.Text, companyNameTB.Text,
                 bsbTB.Text, accountNumTB.Text, contractCB.Text, salaryTB.Text};

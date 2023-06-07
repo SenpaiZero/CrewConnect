@@ -35,6 +35,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         }
         private void nextBtn_Click(object sender, EventArgs e)
         {
+            pageHelper.loading(mainsPanel);
             String[] data = { firstnameTB.Text, middlenameTB.Text, surnameTB.Text, addressTB.Text,
                             cityTB.Text, postalTB.Text, stateTB.Text};
 
@@ -69,7 +70,6 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             }
             else 
             {
-                pageHelper.loading();
 
                 validationHelper.textBoxValidation_Alpha(surnameTB, "Surname", errorProvider);
                 validationHelper.textBoxValidation_Alpha(firstnameTB, "First Name", errorProvider);

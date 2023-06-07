@@ -68,45 +68,61 @@ namespace WinFormsApp1
             password = passwordTB.Text;
 
             var loadingForm = new loadingForm();
-            loadingForm.StartPosition = FormStartPosition.CenterParent;
+            loadingForm.StartPosition = FormStartPosition.Manual;
+
+            Point listTableLocationOnForm = mainsPanel.Parent.PointToScreen(mainsPanel.Location);
+            int loadingFormX = listTableLocationOnForm.X + (mainsPanel.Width - loadingForm.Width) / 2;
+            int loadingFormY = listTableLocationOnForm.Y + (mainsPanel.Height - loadingForm.Height) / 2;
+            loadingForm.Location = new Point(loadingFormX, loadingFormY);
+
             loadingForm.loadingTime = 2500;
             loadingForm.ShowDialog();
-            con.Open();
-            adminPanel ad = new adminPanel();
-            EmployeePanel em = new EmployeePanel();
-            cmd = new SqlCommand($"SELECT * FROM Users WHERE username COLLATE Latin1_General_CS_AS = '{username}' AND password COLLATE Latin1_General_CS_AS = '{password}'", con);
-            dr = cmd.ExecuteReader();
-
-            if (dr.Read())
+            try
             {
-                string[] adminList_ = { "OWNER", "ADMIN", "MANAGER" };
-                globalVariables.userPosition = dr.GetString(3).ToUpper();
-                globalVariables.username = dr.GetString(1).ToUpper();
+                con.Open();
+                adminPanel ad = new adminPanel();
+                EmployeePanel em = new EmployeePanel();
+                cmd = new SqlCommand($"SELECT * FROM Users WHERE username COLLATE Latin1_General_CS_AS = '{username}' AND password COLLATE Latin1_General_CS_AS = '{password}'", con);
+                dr = cmd.ExecuteReader();
 
-                this.Hide();
-                if (adminList_.Any(item => item.Contains(dr.GetString(3).ToUpper())))
+                if (dr.Read())
                 {
-                    ad.StartPosition = FormStartPosition.CenterParent;
-                    ad.ShowDialog();
+                    string[] adminList_ = { "OWNER", "ADMIN", "MANAGER" };
+                    globalVariables.userPosition = dr.GetString(3).ToUpper();
+                    globalVariables.username = dr.GetString(1).ToUpper();
+
+                    this.Hide();
+                    if (adminList_.Any(item => item.Contains(dr.GetString(3).ToUpper())))
+                    {
+                        ad.StartPosition = FormStartPosition.CenterParent;
+                        ad.ShowDialog();
+                    }
+                    else
+                    {
+                        em.StartPosition = FormStartPosition.CenterParent;
+                        em.ShowDialog();
+                    }
+
+                    dr.Close();
+                    this.Close();
                 }
                 else
                 {
-                    em.StartPosition = FormStartPosition.CenterParent;
-                    em.ShowDialog();
+                    dr.Close();
+                    messageDialogForm msg = new messageDialogForm();
+                    msg.title = "INCORRECT INFORMATION";
+                    msg.message = "You have entered an invalid username or password\n" +
+                        "Please ensure that you check the capitalization and other details accurately.";
+                    msg.ShowDialog();
                 }
-
-                dr.Close();
-                this.Close();
-            }
-            else
+                con.Close();
+            } catch(Exception ex)
             {
-                dr.Close();
                 messageDialogForm msg = new messageDialogForm();
-                msg.message = "You have entered an invalid username or password\n" +
-                    "Please ensure that you check the capitalization and other details accurately.";
+                msg.title = "AN ERROR HAS OCCURED";
+                msg.message = ex.Message;
                 msg.ShowDialog();
             }
-            con.Close();
             ResumeLayout();
         }
 

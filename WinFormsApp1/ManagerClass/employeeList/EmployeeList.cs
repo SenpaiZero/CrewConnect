@@ -47,8 +47,6 @@ namespace WinFormsApp1.ManagerClass
                 cmd = new SqlCommand("SELECT personal.Id, personal.name, personal.age, contact.emailAddress," +
                     " contact.phoneNumber, job.position, job.contract FROM personal INNER JOIN contact ON " +
                     $"personal.Id = contact.Id JOIN job ON personal.Id = job.Id WHERE personal.Id LIKE '%{searchTB.Text}%'", con);
-
-                MessageBox.Show(searchTB.Text);
             }
             else
             {
@@ -81,9 +79,16 @@ namespace WinFormsApp1.ManagerClass
             da.Fill(dt);
 
             var loadingForm = new loadingForm();
-            loadingForm.StartPosition = FormStartPosition.CenterParent;
+            loadingForm.StartPosition = FormStartPosition.Manual;
+
+            Point listTableLocationOnForm = listTable.Parent.PointToScreen(listTable.Location);
+            int loadingFormX = listTableLocationOnForm.X + (listTable.Width - loadingForm.Width) / 2;
+            int loadingFormY = listTableLocationOnForm.Y + (listTable.Height - loadingForm.Height) / 2;
+            loadingForm.Location = new Point(loadingFormX, loadingFormY);
+
             loadingForm.loadingTime = 1000;
             loadingForm.ShowDialog();
+
 
             listTable.DataSource = dt;
         }
@@ -100,7 +105,6 @@ namespace WinFormsApp1.ManagerClass
                 DataGridViewRow selectedRow = listTable.SelectedRows[0];
                 selectedID = selectedRow.Cells[0].Value.ToString();
 
-                MessageBox.Show(selectedID);
                 showEmployee empl = new showEmployee();
                 empl.Owner = this;
                 empl.Show();
