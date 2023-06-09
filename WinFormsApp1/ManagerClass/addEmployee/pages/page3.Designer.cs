@@ -143,7 +143,7 @@
             customizableEdges1.TopLeft = false;
             customizableEdges1.TopRight = false;
             this.guna2TextBox1.CustomizableEdges = customizableEdges1;
-            this.guna2TextBox1.DefaultText = "ewan pa";
+            this.guna2TextBox1.DefaultText = "‎ ";
             this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));

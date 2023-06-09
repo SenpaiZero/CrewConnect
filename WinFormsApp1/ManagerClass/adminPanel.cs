@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheArtOfDevHtmlRenderer.Adapters;
 using WinFormsApp1.Helper;
+using WinFormsApp1.ManagerClass.addEmployee;
 using WinFormsApp1.ManagerClass.addEmployee.pages;
 
 namespace WinFormsApp1.ManagerClass
@@ -84,6 +85,7 @@ namespace WinFormsApp1.ManagerClass
                 listBtn.FillColor = Color.FromArgb(51, 52, 78);
                 addBtn.FillColor = Color.FromArgb(39, 72, 93);
                 settingBtn.FillColor = Color.FromArgb(51, 52, 78);
+                announcementBtn.FillColor = Color.FromArgb(51, 52, 78);
                 pageHelper.changePage(new page1(), panel);
                 ResumeLayout();
             }
@@ -124,6 +126,7 @@ namespace WinFormsApp1.ManagerClass
                 addBtn.FillColor = Color.FromArgb(51, 52, 78);
                 listBtn.FillColor = Color.FromArgb(39, 72, 93);
                 settingBtn.FillColor = Color.FromArgb(51, 52, 78);
+                announcementBtn.FillColor = Color.FromArgb(51, 52, 78);
                 pageHelper.changePage(new EmployeeList(), panel);
                 ResumeLayout();
             }
@@ -140,6 +143,7 @@ namespace WinFormsApp1.ManagerClass
                 addBtn.FillColor = Color.FromArgb(51, 52, 78);
                 listBtn.FillColor = Color.FromArgb(51, 52, 78);
                 settingBtn.FillColor = Color.FromArgb(39, 72, 93);
+                announcementBtn.FillColor = Color.FromArgb(51, 52, 78);
                 pageHelper.changePage(new adminSetting(), panel);
                 ResumeLayout();
             }
@@ -147,7 +151,19 @@ namespace WinFormsApp1.ManagerClass
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            globalVariables.isEdit = false;
+            if (whatBtn != "announcement")
+            {
+                globalVariables.isEdit = false;
+                SuspendLayout();
+                pageHelper.f.Close();
+                whatBtn = "announcement";
+                addBtn.FillColor = Color.FromArgb(51, 52, 78);
+                listBtn.FillColor = Color.FromArgb(51, 52, 78);
+                listBtn.FillColor = Color.FromArgb(51, 52, 78);
+                announcementBtn.FillColor = Color.FromArgb(39, 72, 93);
+                pageHelper.changePage(new addAnnouncement(), panel);
+                ResumeLayout();
+            }
         }
 
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)

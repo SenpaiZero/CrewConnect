@@ -220,6 +220,7 @@
             this.guna2Button5.Text = "ANNOUNCEMENT";
             this.guna2Button5.TextOffset = new System.Drawing.Point(15, 0);
             this.guna2Button5.UseTransparentBackground = true;
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // settingBtn
             // 

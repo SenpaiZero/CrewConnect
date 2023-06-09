@@ -77,5 +77,10 @@ namespace WinFormsApp1.EmployeeClass
         private void listBtn_Click(object sender, EventArgs e)
         {
         }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            pageHelper.changePage(new announcementView(), mainPanel);
+        }
     }
 }

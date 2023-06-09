@@ -133,7 +133,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee
                         int id_ = int.Parse(globalVariables.idNum);
                         command.Parameters.AddWithValue("@username", globalVariables.username.Replace(" ", "_"));
                         command.Parameters.AddWithValue("@employeeID", globalVariables.idNum);
-                        command.Parameters.AddWithValue("@password", globalVariables.username.Replace(" ", "_"));
+                        command.Parameters.AddWithValue("@password", securityHelper.HashPassword(globalVariables.username.Replace(" ", "_")));
                         command.Parameters.AddWithValue("@name", name.Trim());
                         command.Parameters.AddWithValue("@status", globalVariables.status.Trim());
                         command.Parameters.AddWithValue("@religion", globalVariables.religion.Trim());
@@ -164,6 +164,12 @@ namespace WinFormsApp1.ManagerClass.addEmployee
 
                         // Execute the query
                         command.ExecuteNonQuery();
+
+
+                        messageDialogForm msg = new messageDialogForm();
+                        msg.title = "EMPLOYEE HAS BEEN SAVED";
+                        msg.message = "YOU'VE SUCCESSFULLY ADDED A NEW AMPLOYEE!";
+                        msg.ShowDialog();
                     }
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;
                     employeeID id = new employeeID();

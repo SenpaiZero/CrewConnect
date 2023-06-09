@@ -61,7 +61,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
             String[] contacts =
             {
-                "CONTRACTS", "PERMANENT", "PART-TIME"
+                "CONTRACTS", "FULLTIME", "PART-TIME"
             };
             contractCB.Items.Clear();
             userInterfaceHelper.comboBoxValue(contractCB, contacts);

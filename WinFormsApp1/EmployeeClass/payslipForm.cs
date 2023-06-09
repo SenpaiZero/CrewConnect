@@ -20,6 +20,15 @@ namespace WinFormsApp1.EmployeeClass
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.BackColor = Color.Transparent;
         }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParams = base.CreateParams;
+                handleParams.ExStyle |= 0x02000000;
+                return handleParams;
+            }
+        }
 
         private void payslipForm_Load(object sender, EventArgs e)
         {
@@ -82,10 +91,65 @@ namespace WinFormsApp1.EmployeeClass
 
         void loadCurrent()
         {
+            string query = $"SELECT job.Id, job.contract, job.salary, attendance.date, attendance.inTime, attendance.outTime " +
+                $"FROM job " +
+                $"JOIN attendance ON job.Id = attendance.Id " +
+                $"WHERE job.Id = '{globalVariables.userID}'";
+            //job.Id = 0
+            //job.contract = 1
+            //job.salary = 2
+            //attendance.date = 3
+            //attendance.inTime = 4
+            //attendance.outTime = 5
+            string id = "", contract = "", salary = "";
+            DateOnly date;
+            TimeOnly inTime, outTime;
+            int totalHours = 0;
+            int totalDays = 0;
+            using (SqlConnection con = new SqlConnection(globalVariables.server))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while(dr.Read())
+                    {
+                        salary = dr.GetSqlMoney(2).ToString();
+                        contract = dr.GetString(1);
+                        id = dr.GetInt32(0).ToString();
 
+                        if (contract == "FULLTIME")
+                        {
+                            totalDays++;
+                            DateTime dateValue = (DateTime)dr["date"];
+                            date = new DateOnly(dateValue.Year, dateValue.Month, dateValue.Day);
+                        }
+                        else
+                        {
+                            TimeSpan inTimeSpan = (TimeSpan)dr["inTime"];
+                            TimeSpan outTimeSpan = (TimeSpan)dr["outTime"];
+                            inTime = TimeOnly.FromTimeSpan(inTimeSpan);
+                            outTime = TimeOnly.FromTimeSpan(outTimeSpan);
+                            if (!dr.IsDBNull(5))
+                                totalHours = inTime.Hour - outTime.Hour;
+                        }
+
+                    }
+                    dr.Close();
+
+                    daysLabel.Text = totalDays.ToString() + " DAYS";
+                    totalHoursLabel.Text = totalHours.ToString() + " HOURS";
+                    basicPayLabel.Text = (Convert.ToDecimal(salary) * totalDays).ToString();
+                }
+            }
         }
 
         void loadPrevious()
+        {
+
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -81,3 +81,5 @@ C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsA
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.adminSetting.resources
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.EmployeeClass.EmployeePanel.resources
 C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.EmployeeClass.payslipForm.resources
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.ManagerClass.addEmployee.addAnnouncement.resources
+C:\Users\Xeb\Desktop\CrewConnect\WinFormsApp1\obj\Debug\net6.0-windows\WinFormsApp1.EmployeeClass.announcementView.resources

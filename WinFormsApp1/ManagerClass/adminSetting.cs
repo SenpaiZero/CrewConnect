@@ -178,11 +178,11 @@ namespace WinFormsApp1.ManagerClass
 
                         if (storedPassword == oldPass.Text && newPass.Text == newPass2.Text)
                         {
-                            dr.Close(); // Close the SqlDataReader before executing the UPDATE command
+                            dr.Close(); 
 
                             string updatePass = "UPDATE Users SET password = @newPass WHERE username = @username";
                             SqlCommand cmd2 = new SqlCommand(updatePass, con);
-                            cmd2.Parameters.AddWithValue("@newPass", newPass.Text);
+                            cmd2.Parameters.AddWithValue("@newPass", securityHelper.HashPassword(newPass.Text));
                             cmd2.Parameters.AddWithValue("@username", globalVariables.username);
                             cmd2.ExecuteNonQuery();
 
@@ -196,7 +196,7 @@ namespace WinFormsApp1.ManagerClass
                         }
                     }
 
-                    dr.Close(); // Close the SqlDataReader if the condition doesn't match or after the if block
+                    dr.Close();
                 }
             }
         }

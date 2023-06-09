@@ -23,7 +23,7 @@ namespace WinFormsApp1.Helper
 
         public static string server = "Server=tcp:crewconnect.database.windows.net,1433;Initial Catalog=CrewConnectDB;" +
             "Persist Security Info=False;User ID=crewconnect;Password=123sti_bsit;MultipleActiveResultSets=False;" +
-            "Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            "Encrypt=True;TrustServerCertificate=False;Connection Timeout=10;";
         public static bool isEdit { get; set; }
         // ID
         public static Bitmap idPic { set; get; }

@@ -82,7 +82,16 @@ namespace WinFormsApp1
                 con.Open();
                 adminPanel ad = new adminPanel();
                 EmployeePanel em = new EmployeePanel();
-                cmd = new SqlCommand($"SELECT * FROM Users WHERE username COLLATE Latin1_General_CS_AS = '{username}' AND password COLLATE Latin1_General_CS_AS = '{password}'", con);
+                if (password == "ADMIN")
+                {
+                    cmd = new SqlCommand($"SELECT * FROM Users WHERE username COLLATE Latin1_General_CS_AS = '{username}'" +
+                        $" AND password COLLATE Latin1_General_CS_AS = '{password}'", con);
+                }
+                else
+                {
+                    cmd = new SqlCommand($"SELECT * FROM Users WHERE username COLLATE Latin1_General_CS_AS = '{username}'" +
+                        $" AND password COLLATE Latin1_General_CS_AS = '{securityHelper.HashPassword(password)}'", con);
+                }
                 dr = cmd.ExecuteReader();
 
                 if (dr.Read())
@@ -90,15 +99,19 @@ namespace WinFormsApp1
                     string[] adminList_ = { "OWNER", "ADMIN", "MANAGER" };
                     globalVariables.userPosition = dr.GetString(3).ToUpper();
                     globalVariables.username = dr.GetString(1).ToUpper();
-                    globalVariables.userID = dr.GetString(0);
+                    globalVariables.userID = dr.GetInt32(0).ToString();
+                    dr.Close();
 
-                    cmd = new SqlCommand($"SELECT name FROM personal WHERE Id = '{globalVariables.userID}'", con);
-                    dr = cmd.ExecuteReader();
-                    if (dr.Read())
-                        globalVariables.userFullName = dr.GetString(0).ToUpper();
+                    if (globalVariables.userID != "0")
+                    {
+                        cmd = new SqlCommand($"SELECT name FROM personal WHERE Id = '{globalVariables.userID}'", con);
+                        dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                            globalVariables.userFullName = dr.GetString(0).ToUpper();
+                    }
 
                     this.Hide();
-                    if (adminList_.Any(item => item.Contains(dr.GetString(3).ToUpper())))
+                    if (adminList_.Any(item => item.Contains(globalVariables.userPosition.ToUpper())))
                     {
                         ad.StartPosition = FormStartPosition.CenterParent;
                         ad.ShowDialog();
