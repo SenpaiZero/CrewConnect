@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.loading = new Guna.UI2.WinForms.Guna2WinProgressIndicator();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -42,6 +42,7 @@
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.DragForm = false;
+            this.guna2BorderlessForm1.ResizeForm = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // loading
@@ -51,7 +52,7 @@
             this.loading.Location = new System.Drawing.Point(114, 61);
             this.loading.Name = "loading";
             this.loading.ProgressColor = System.Drawing.Color.IndianRed;
-            this.loading.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.loading.ShadowDecoration.CustomizableEdges = customizableEdges1;
             this.loading.Size = new System.Drawing.Size(63, 61);
             this.loading.TabIndex = 1;
             // 

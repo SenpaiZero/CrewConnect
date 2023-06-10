@@ -155,8 +155,14 @@ namespace WinFormsApp1.ManagerClass
         void loading()
         {
             var loadingForm = new loadingForm();
-            loadingForm.StartPosition = FormStartPosition.CenterParent;
-            loadingForm.loadingTime = 2500;
+            loadingForm.StartPosition = FormStartPosition.Manual;
+
+            Point listTableLocationOnForm = bgPanel.Parent.PointToScreen(bgPanel.Location);
+            int loadingFormX = listTableLocationOnForm.X + (bgPanel.Width - loadingForm.Width) / 2;
+            int loadingFormY = listTableLocationOnForm.Y + (bgPanel.Height - loadingForm.Height) / 2;
+            loadingForm.Location = new Point(loadingFormX, loadingFormY);
+
+            loadingForm.loadingTime = 1000;
             loadingForm.ShowDialog();
         }
 
@@ -169,7 +175,7 @@ namespace WinFormsApp1.ManagerClass
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@password", oldPass.Text);
+                    cmd.Parameters.AddWithValue("@password", securityHelper.HashPassword(oldPass.Text));
                     SqlDataReader dr = cmd.ExecuteReader();
 
                     if (dr.Read())
@@ -194,6 +200,20 @@ namespace WinFormsApp1.ManagerClass
                             newPass.Text = "";
                             newPass2.Text = "";
                         }
+                        else
+                        {
+                            messageDialogForm msg = new messageDialogForm();
+                            msg.title = "NEW PASSWORD MUST BE THE SAME";
+                            msg.message = "PLEASE DOUBLE CHECK THE CAPITALIZATIONS";
+                            msg.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        messageDialogForm msg = new messageDialogForm();
+                        msg.title = "INCORECT CURRENT PASSWORD";
+                        msg.message = "PLEASE DOUBLE CHECK THE CAPITALIZATIONS";
+                        msg.ShowDialog();
                     }
 
                     dr.Close();
@@ -209,6 +229,110 @@ namespace WinFormsApp1.ManagerClass
         private void religionTB_Validating(object sender, CancelEventArgs e)
         {
             validationHelper.textBoxValidation_Alpha(religionTB, "religion", errorProvider1);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            messageDialogForm msg = new messageDialogForm();
+            msg.title = "ARE YOU SURE?";
+            msg.message = "YOU ARE ABOUT TO RESET ALL ATTENDANCE";
+            msg.isOkDialog = true;
+
+            if (msg.ShowDialog() == DialogResult.OK)
+            {
+                try
+                { 
+                    using (SqlConnection connection = new SqlConnection(globalVariables.server))
+                    {
+                        connection.Open();
+
+                        string dropTableQuery = "IF OBJECT_ID('attendance_prev', 'U') IS NOT NULL DROP TABLE attendance_prev";
+                        using (SqlCommand dropTableCommand = new SqlCommand(dropTableQuery, connection))
+                        {
+                            dropTableCommand.ExecuteNonQuery();
+                        }
+
+                        string createTableQuery = "SELECT * INTO attendance_prev FROM attendance WHERE 1 = 0";
+                        using (SqlCommand createTableCommand = new SqlCommand(createTableQuery, connection))
+                        {
+                            createTableCommand.ExecuteNonQuery();
+                        }
+
+                        string enableIdentityInsertQuery = "SET IDENTITY_INSERT attendance_prev ON";
+                        using (SqlCommand enableIdentityInsertCommand = new SqlCommand(enableIdentityInsertQuery, connection))
+                        {
+                            enableIdentityInsertCommand.ExecuteNonQuery();
+                        }
+
+                        string copyDataQuery = "INSERT INTO attendance_prev (attId, Id, name, date, inTime, outTime) SELECT attId, Id, name, date, inTime, outTime FROM attendance";
+                        using (SqlCommand copyDataCommand = new SqlCommand(copyDataQuery, connection))
+                        {
+                            copyDataCommand.ExecuteNonQuery();
+                        }
+
+                        string disableIdentityInsertQuery = "SET IDENTITY_INSERT attendance_prev OFF";
+                        using (SqlCommand disableIdentityInsertCommand = new SqlCommand(disableIdentityInsertQuery, connection))
+                        {
+                            disableIdentityInsertCommand.ExecuteNonQuery();
+                        }
+
+                        string deleteQuery = "DELETE FROM attendance";
+                        using (SqlCommand deleteCommand = new SqlCommand(deleteQuery, connection))
+                        {
+                            deleteCommand.ExecuteNonQuery();
+                        }
+
+                        connection.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    msg = new messageDialogForm();
+                    msg.isOkDialog = false;
+                    msg.title = "AN ERROR HAS OCCURED";
+                    msg.message = ex.Message;
+                    msg.ShowDialog();
+                }
+
+
+            }
+
+        }
+
+        private void oldPass_IconRightClick(object sender, EventArgs e)
+        {
+            if (oldPass.PasswordChar.ToString() == "●")
+            {
+                oldPass.PasswordChar = '\0';
+            }
+            else
+            {
+                oldPass.PasswordChar = '●';
+            }
+        }
+
+        private void newPass_IconRightClick(object sender, EventArgs e)
+        {
+            if (newPass.PasswordChar.ToString() == "●")
+            {
+                newPass.PasswordChar = '\0';
+            }
+            else
+            {
+                newPass.PasswordChar = '●';
+            }
+        }
+
+        private void newPass2_IconRightClick(object sender, EventArgs e)
+        {
+            if (newPass2.PasswordChar.ToString() == "●")
+            {
+                newPass2.PasswordChar = '\0';
+            }
+            else
+            {
+                newPass2.PasswordChar = '●';
+            }
         }
     }
 }

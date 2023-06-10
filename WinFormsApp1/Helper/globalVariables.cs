@@ -10,6 +10,9 @@ namespace WinFormsApp1.Helper
 {
     public class globalVariables
     {
+        // Admins list
+
+        public static string[] adminList = { "OWNER", "ADMIN", "MANAGER", "ACCOUNTANT" };
 
         // Insert commands for sql for whole table.  - Just add concat VALUES (values of each table)
         public static string cmd_insert_announcement = "INSERT INTO announcement (Id, message, date)"; 
@@ -71,6 +74,7 @@ namespace WinFormsApp1.Helper
         public static string? accountNum { get; set; }
         public static string? contract { get; set; }
         public static string? salary { get; set; }
+        public static string? usernameNew { get; set; }
 
         //
         // Persistence data for login

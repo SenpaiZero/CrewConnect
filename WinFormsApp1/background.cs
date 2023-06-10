@@ -8,6 +8,8 @@ using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1.Helper;
+using System.Runtime.InteropServices;
 
 namespace WinFormsApp1
 {
@@ -33,11 +35,12 @@ namespace WinFormsApp1
             log.Owner = this;
             if (!log.InvokeRequired)
                 log.ShowDialog();
+
         }
 
         private void background_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            e.Cancel = true;
         }
     }
 }

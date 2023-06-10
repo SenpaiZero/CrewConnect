@@ -30,7 +30,18 @@ namespace WinFormsApp1.EmployeeClass
         }
         private void announcementView_Load(object sender, EventArgs e)
         {
-            string query = $"SELECT message, date FROM announcement";
+            var loadingForm = new loadingForm();
+            loadingForm.StartPosition = FormStartPosition.Manual;
+
+            Point listTableLocationOnForm = mainPanel.Parent.PointToScreen(mainPanel.Location);
+            int loadingFormX = listTableLocationOnForm.X + (mainPanel.Width - loadingForm.Width) / 2;
+            int loadingFormY = listTableLocationOnForm.Y + (mainPanel.Height - loadingForm.Height) / 2;
+            loadingForm.Location = new Point(loadingFormX, loadingFormY);
+
+            loadingForm.loadingTime = 1000;
+            loadingForm.ShowDialog();
+
+            string query = $"SELECT message, date FROM announcement ORDER BY date DESC";
             using (SqlConnection con = new SqlConnection(globalVariables.server))
             {
                 con.Open();
@@ -49,6 +60,7 @@ namespace WinFormsApp1.EmployeeClass
 
         void addNewLabel(string left, string right, bool isHeader)
         {
+            DateTime date = DateTime.Today;
             // Create a new label instance
             Label leftLabel = new Label();
             Label rightLabel = new Label();
@@ -63,8 +75,15 @@ namespace WinFormsApp1.EmployeeClass
             }
             else
             {
-                leftLabel.Font = new Font("Segoe UI Variable Display Semib", 12, FontStyle.Regular);
-                leftLabel.ForeColor = Color.Gainsboro;
+                if (right == date.ToShortDateString())
+                {
+                    leftLabel.ForeColor = Color.YellowGreen;
+                }
+                else
+                {
+                    leftLabel.Font = new Font("Segoe UI Variable Display Semib", 12, FontStyle.Regular);
+                    leftLabel.ForeColor = Color.Gainsboro;
+                }
             }
 
             leftLabel.AutoSize = true;
@@ -82,8 +101,15 @@ namespace WinFormsApp1.EmployeeClass
             }
             else
             {
-                rightLabel.Font = new Font("Segoe UI Variable Display Semib", 12, FontStyle.Regular);
-                rightLabel.ForeColor = Color.Gainsboro;
+                if (right == date.ToShortDateString())
+                {
+                    rightLabel.ForeColor = Color.YellowGreen;
+                }
+                else
+                {
+                    rightLabel.Font = new Font("Segoe UI Variable Display Semib", 12, FontStyle.Regular);
+                    rightLabel.ForeColor = Color.Gainsboro;
+                }
             }
             rightLabel.AutoSize = true;
             rightLabel.Margin = new Padding(0, 0, 0, 15);

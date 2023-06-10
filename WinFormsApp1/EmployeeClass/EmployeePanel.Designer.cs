@@ -34,16 +34,15 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeePanel));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.header = new Guna.UI2.WinForms.Guna2Panel();
@@ -53,11 +52,10 @@
             this.exitBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.announcementBtn = new Guna.UI2.WinForms.Guna2Button();
             this.settingBtn = new Guna.UI2.WinForms.Guna2Button();
             this.mainPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.payslipBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.attendanceBtn = new Guna.UI2.WinForms.Guna2Button();
             this.header.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +64,7 @@
             this.guna2BorderlessForm1.BorderRadius = 25;
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.ResizeForm = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // guna2BorderlessForm2
@@ -169,7 +168,8 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Salmon;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(98, 675);
+            this.guna2HtmlLabel2.IsSelectionEnabled = false;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(101, 668);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(61, 22);
             this.guna2HtmlLabel2.TabIndex = 23;
@@ -180,47 +180,46 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = false;
-            this.nameLabel.AutoSizeHeightOnly = true;
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
             this.nameLabel.Font = new System.Drawing.Font("Segoe UI Symbol", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nameLabel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.nameLabel.Location = new System.Drawing.Point(27, 650);
+            this.nameLabel.Location = new System.Drawing.Point(23, 609);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(209, 26);
+            this.nameLabel.Size = new System.Drawing.Size(212, 60);
             this.nameLabel.TabIndex = 22;
             this.nameLabel.Text = "Santos, Ygi Martin";
-            this.nameLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nameLabel.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // guna2Button5
+            // announcementBtn
             // 
-            this.guna2Button5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.guna2Button5.AutoRoundedCorners = true;
-            this.guna2Button5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button5.BorderRadius = 39;
-            this.guna2Button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            customizableEdges8.BottomRight = false;
-            customizableEdges8.TopRight = false;
-            this.guna2Button5.CustomizableEdges = customizableEdges8;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2Button5.ForeColor = System.Drawing.Color.White;
-            this.guna2Button5.Image = global::WinFormsApp1.Properties.Resources.megaphone;
-            this.guna2Button5.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button5.ImageOffset = new System.Drawing.Point(10, 0);
-            this.guna2Button5.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2Button5.Location = new System.Drawing.Point(11, 529);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            this.guna2Button5.Size = new System.Drawing.Size(261, 81);
-            this.guna2Button5.TabIndex = 20;
-            this.guna2Button5.Text = "ANNOUNCEMENT";
-            this.guna2Button5.TextOffset = new System.Drawing.Point(15, 0);
-            this.guna2Button5.UseTransparentBackground = true;
-            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
+            this.announcementBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.announcementBtn.AutoRoundedCorners = true;
+            this.announcementBtn.BackColor = System.Drawing.Color.Transparent;
+            this.announcementBtn.BorderRadius = 39;
+            this.announcementBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            customizableEdges12.BottomRight = false;
+            customizableEdges12.TopRight = false;
+            this.announcementBtn.CustomizableEdges = customizableEdges12;
+            this.announcementBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.announcementBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.announcementBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.announcementBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.announcementBtn.FillColor = System.Drawing.Color.Transparent;
+            this.announcementBtn.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.announcementBtn.ForeColor = System.Drawing.Color.White;
+            this.announcementBtn.Image = global::WinFormsApp1.Properties.Resources.megaphone;
+            this.announcementBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.announcementBtn.ImageOffset = new System.Drawing.Point(10, 0);
+            this.announcementBtn.ImageSize = new System.Drawing.Size(32, 32);
+            this.announcementBtn.Location = new System.Drawing.Point(12, 295);
+            this.announcementBtn.Name = "announcementBtn";
+            this.announcementBtn.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            this.announcementBtn.Size = new System.Drawing.Size(261, 81);
+            this.announcementBtn.TabIndex = 20;
+            this.announcementBtn.Text = "ANNOUNCEMENT";
+            this.announcementBtn.TextOffset = new System.Drawing.Point(15, 0);
+            this.announcementBtn.UseTransparentBackground = true;
+            this.announcementBtn.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // settingBtn
             // 
@@ -239,17 +238,18 @@
             this.settingBtn.FillColor = System.Drawing.Color.Transparent;
             this.settingBtn.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.settingBtn.ForeColor = System.Drawing.Color.White;
-            this.settingBtn.Image = global::WinFormsApp1.Properties.Resources.quote_request;
+            this.settingBtn.Image = global::WinFormsApp1.Properties.Resources.setting;
             this.settingBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.settingBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.settingBtn.ImageSize = new System.Drawing.Size(32, 32);
-            this.settingBtn.Location = new System.Drawing.Point(11, 327);
+            this.settingBtn.Location = new System.Drawing.Point(11, 208);
             this.settingBtn.Name = "settingBtn";
             this.settingBtn.ShadowDecoration.CustomizableEdges = customizableEdges11;
             this.settingBtn.Size = new System.Drawing.Size(261, 81);
             this.settingBtn.TabIndex = 18;
             this.settingBtn.Text = "SETTINGS";
             this.settingBtn.UseTransparentBackground = true;
+            this.settingBtn.Click += new System.EventHandler(this.settingBtn_Click);
             // 
             // mainPanel
             // 
@@ -264,7 +264,7 @@
             this.mainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.mainPanel.Size = new System.Drawing.Size(885, 652);
+            this.mainPanel.Size = new System.Drawing.Size(885, 645);
             this.mainPanel.TabIndex = 15;
             this.mainPanel.UseTransparentBackground = true;
             // 
@@ -275,9 +275,9 @@
             this.payslipBtn.BackColor = System.Drawing.Color.Transparent;
             this.payslipBtn.BorderRadius = 39;
             this.payslipBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            customizableEdges12.BottomRight = false;
-            customizableEdges12.TopRight = false;
-            this.payslipBtn.CustomizableEdges = customizableEdges12;
+            customizableEdges8.BottomRight = false;
+            customizableEdges8.TopRight = false;
+            this.payslipBtn.CustomizableEdges = customizableEdges8;
             this.payslipBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.payslipBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.payslipBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -291,43 +291,13 @@
             this.payslipBtn.ImageSize = new System.Drawing.Size(32, 32);
             this.payslipBtn.Location = new System.Drawing.Point(11, 121);
             this.payslipBtn.Name = "payslipBtn";
-            this.payslipBtn.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            this.payslipBtn.ShadowDecoration.CustomizableEdges = customizableEdges9;
             this.payslipBtn.Size = new System.Drawing.Size(261, 81);
             this.payslipBtn.TabIndex = 16;
             this.payslipBtn.Text = "PAYSLIP";
             this.payslipBtn.TextOffset = new System.Drawing.Point(15, 0);
             this.payslipBtn.UseTransparentBackground = true;
-            // 
-            // attendanceBtn
-            // 
-            this.attendanceBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.attendanceBtn.AutoRoundedCorners = true;
-            this.attendanceBtn.BackColor = System.Drawing.Color.Transparent;
-            this.attendanceBtn.BorderRadius = 39;
-            this.attendanceBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            customizableEdges14.BottomRight = false;
-            customizableEdges14.TopRight = false;
-            this.attendanceBtn.CustomizableEdges = customizableEdges14;
-            this.attendanceBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.attendanceBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.attendanceBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.attendanceBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.attendanceBtn.FillColor = System.Drawing.Color.Transparent;
-            this.attendanceBtn.Font = new System.Drawing.Font("Segoe UI Historic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.attendanceBtn.ForeColor = System.Drawing.Color.White;
-            this.attendanceBtn.Image = global::WinFormsApp1.Properties.Resources.remove;
-            this.attendanceBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.attendanceBtn.ImageOffset = new System.Drawing.Point(10, 0);
-            this.attendanceBtn.ImageSize = new System.Drawing.Size(32, 32);
-            this.attendanceBtn.Location = new System.Drawing.Point(11, 227);
-            this.attendanceBtn.Name = "attendanceBtn";
-            this.attendanceBtn.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            this.attendanceBtn.Size = new System.Drawing.Size(261, 81);
-            this.attendanceBtn.TabIndex = 17;
-            this.attendanceBtn.Text = "ATTENDACE";
-            this.attendanceBtn.TextOffset = new System.Drawing.Point(15, 0);
-            this.attendanceBtn.UseTransparentBackground = true;
-            this.attendanceBtn.Click += new System.EventHandler(this.listBtn_Click);
+            this.payslipBtn.Click += new System.EventHandler(this.payslipBtn_Click);
             // 
             // EmployeePanel
             // 
@@ -339,13 +309,14 @@
             this.Controls.Add(this.header);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.guna2Button5);
-            this.Controls.Add(this.settingBtn);
             this.Controls.Add(this.payslipBtn);
-            this.Controls.Add(this.attendanceBtn);
+            this.Controls.Add(this.settingBtn);
+            this.Controls.Add(this.announcementBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EmployeePanel";
             this.Text = "EmployeePanel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmployeePanel_FormClosing);
             this.Load += new System.EventHandler(this.EmployeePanel_Load);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
@@ -365,13 +336,12 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel nameLabel;
         private Guna.UI2.WinForms.Guna2ImageButton closeBtn;
-        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button announcementBtn;
         private Guna.UI2.WinForms.Guna2Button settingBtn;
         private Guna.UI2.WinForms.Guna2Panel mainPanel;
         private Guna.UI2.WinForms.Guna2Button addBtn;
         private Guna.UI2.WinForms.Guna2Button listBtn;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm2;
         private Guna.UI2.WinForms.Guna2Button payslipBtn;
-        private Guna.UI2.WinForms.Guna2Button attendanceBtn;
     }
 }

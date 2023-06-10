@@ -96,7 +96,6 @@ namespace WinFormsApp1
 
                 if (dr.Read())
                 {
-                    string[] adminList_ = { "OWNER", "ADMIN", "MANAGER" };
                     globalVariables.userPosition = dr.GetString(3).ToUpper();
                     globalVariables.username = dr.GetString(1).ToUpper();
                     globalVariables.userID = dr.GetInt32(0).ToString();
@@ -111,7 +110,7 @@ namespace WinFormsApp1
                     }
 
                     this.Hide();
-                    if (adminList_.Any(item => item.Contains(globalVariables.userPosition.ToUpper())))
+                    if (globalVariables.adminList.Any(item => item.Contains(globalVariables.userPosition.ToUpper())))
                     {
                         ad.StartPosition = FormStartPosition.CenterParent;
                         ad.ShowDialog();
@@ -169,18 +168,6 @@ namespace WinFormsApp1
                 this.WindowState = FormWindowState.Normal;
             }
         }
-
-        private void minimiseBtn_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void exitBtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-
         private void passwordTB_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
@@ -203,12 +190,21 @@ namespace WinFormsApp1
         private void loginForm_Load(object sender, EventArgs e)
         {
             con = new SqlConnection(globalVariables.server);
+            DateTime date = DateTime.Today;
+            dateLabel.Text = date.ToShortDateString();
         }
 
         private void loginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(con.State == System.Data.ConnectionState.Open)
-                con.Close(); 
+                con.Close();
+
+            e.Cancel = true;
+        }
+
+        private void passwordTB_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

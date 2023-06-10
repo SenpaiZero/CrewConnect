@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,9 +30,24 @@ namespace WinFormsApp1.EmployeeClass
                 return handleParams;
             }
         }
+        void loading()
+        {
+            var loadingForm = new loadingForm();
+            loadingForm.StartPosition = FormStartPosition.Manual;
+
+            Point listTableLocationOnForm = center.Parent.PointToScreen(center.Location);
+            int loadingFormX = listTableLocationOnForm.X + (center.Width - loadingForm.Width) / 2;
+            int loadingFormY = listTableLocationOnForm.Y + (center.Height - loadingForm.Height) / 2;
+            loadingForm.Location = new Point(loadingFormX, loadingFormY);
+
+            loadingForm.loadingTime = 1000;
+            loadingForm.ShowDialog();
+        }
 
         private void payslipForm_Load(object sender, EventArgs e)
         {
+            SuspendLayout();
+            loadCurrent("attendance");
             positionLabel.Text = globalVariables.userPosition;
             try
             {
@@ -60,95 +76,146 @@ namespace WinFormsApp1.EmployeeClass
                 msg.message = ex.Message;
                 msg.ShowDialog();
             }
+            ResumeLayout();
         }
 
         string current = "current";
         private void changeBtn_Click(object sender, EventArgs e)
         {
-            loadingForm load = new loadingForm();
-            load.loadingTime = 1000;
-            load.StartPosition = FormStartPosition.Manual;
-
-            Point listTableLocationOnForm = mainPanel.Parent.PointToScreen(mainPanel.Location);
-            int loadingFormX = listTableLocationOnForm.X + (mainPanel.Width - load.Width) / 2;
-            int loadingFormY = listTableLocationOnForm.Y + (mainPanel.Height - load.Height) / 2;
-            load.Location = new Point(loadingFormX, loadingFormY);
-            load.ShowDialog();
-
             if (current == "current")
             {
-                loadPrevious();
+                loadCurrent("attendance_prev");
                 changeBtn.Text = "PREVIOUS";
                 current = "previous";
             }
             else
             {
-                loadCurrent();
+                loadCurrent("attendance");
                 changeBtn.Text = "CURRENT";
                 current = "current";
             }
         }
 
-        void loadCurrent()
+        void loadCurrent(string table)
         {
-            string query = $"SELECT job.Id, job.contract, job.salary, attendance.date, attendance.inTime, attendance.outTime " +
+            loading();
+            string query = $"SELECT job.Id, job.contract, job.salary, {table}.date, {table}.inTime, {table}.outTime " +
                 $"FROM job " +
-                $"JOIN attendance ON job.Id = attendance.Id " +
+                $"JOIN {table} ON job.Id = {table}.Id " +
                 $"WHERE job.Id = '{globalVariables.userID}'";
+
+            string id = "", contract = "", salary = "";
+            DateOnly date;
+            TimeOnly inTime, outTime;
+            int totalHours = 0;
+            int totalDays = 0;
+            double otHours = 0;
+            double otPay = 0;
+            double basicIncome = 0;
+            double allowance = 2000;
+            double others = 0;
+            double grossPay = 0;
+            Boolean isValid = false;
+
             //job.Id = 0
             //job.contract = 1
             //job.salary = 2
             //attendance.date = 3
             //attendance.inTime = 4
             //attendance.outTime = 5
-            string id = "", contract = "", salary = "";
-            DateOnly date;
-            TimeOnly inTime, outTime;
-            int totalHours = 0;
-            int totalDays = 0;
             using (SqlConnection con = new SqlConnection(globalVariables.server))
             {
                 con.Open();
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     SqlDataReader dr = cmd.ExecuteReader();
+                    SuspendLayout();
                     while(dr.Read())
                     {
                         salary = dr.GetSqlMoney(2).ToString();
                         contract = dr.GetString(1);
                         id = dr.GetInt32(0).ToString();
+                        TimeSpan inTimeSpan = (TimeSpan)dr["inTime"];
+                        TimeSpan outTimeSpan = (TimeSpan)dr["outTime"];
 
+                        inTime = TimeOnly.FromTimeSpan(inTimeSpan);
+                        outTime = TimeOnly.FromTimeSpan(outTimeSpan);
                         if (contract == "FULLTIME")
                         {
                             totalDays++;
                             DateTime dateValue = (DateTime)dr["date"];
                             date = new DateOnly(dateValue.Year, dateValue.Month, dateValue.Day);
+
+
+                            // overtime
+                            if (!dr.IsDBNull(5))
+                            {
+                                TimeSpan timeDiff = (TimeSpan.FromHours(inTime.Hour) - TimeSpan.FromHours(outTime.Hour)).Duration();
+                                if (timeDiff.TotalHours > 8)
+                                    otHours += timeDiff.TotalHours - 8;
+                            }
                         }
                         else
                         {
-                            TimeSpan inTimeSpan = (TimeSpan)dr["inTime"];
-                            TimeSpan outTimeSpan = (TimeSpan)dr["outTime"];
-                            inTime = TimeOnly.FromTimeSpan(inTimeSpan);
-                            outTime = TimeOnly.FromTimeSpan(outTimeSpan);
                             if (!dr.IsDBNull(5))
-                                totalHours = inTime.Hour - outTime.Hour;
+                                totalHours += inTime.Hour - outTime.Hour;
                         }
-
+                        isValid = true;
                     }
                     dr.Close();
+                    ResumeLayout();
 
-                    daysLabel.Text = totalDays.ToString() + " DAYS";
-                    totalHoursLabel.Text = totalHours.ToString() + " HOURS";
-                    basicPayLabel.Text = (Convert.ToDecimal(salary) * totalDays).ToString();
+
+                    if (contract == "FULLTIME")
+                    {
+                        hoursLabel.Text = "OVERTIME HOURS";
+                        numDayLabel.Visible = true;
+                        daysLabel.Visible = true;
+
+                        if (isValid)
+                        {
+                            basicIncome = (double)Convert.ToDecimal(salary) * Math.Abs(totalDays);
+                            otPay = Math.Ceiling(otHours * 100);
+
+                        }
+                        else
+                        {
+                            basicIncome = 0.00;
+                            otPay = 0.00;
+                        }
+
+                        totalHoursLabel.Text = Math.Ceiling(otHours).ToString() + " HOURS";
+                        daysLabel.Text = totalDays.ToString() + " DAYS";
+                        otPayLabel.Text = Math.Abs(otPay).ToString();
+                    }
+                    else
+                    {
+                        hoursLabel.Text = "NO. OF HOURS";
+                        numDayLabel.Visible = false;
+                        daysLabel.Visible = false;
+                        otPay = 0.00;
+
+                        if (isValid)
+                        {
+                            basicIncome = (double)Convert.ToDecimal(salary) * Math.Abs(totalHours);
+                        }
+                        else
+                        {
+                            basicIncome = 0.00;
+                        }
+                        totalHoursLabel.Text = Math.Abs(totalHours).ToString() + " HOURS";
+
+                    }
+
+                    grossPay = Math.Abs(basicIncome + allowance + others + otPay);
+                    otPayLabel.Text = otPay.ToString();
+                    allowanceLabel.Text = allowance.ToString();
+                    basicPayLabel.Text = basicIncome.ToString();
+                    grossPayLabel.Text = grossPay.ToString();
+
                 }
             }
         }
-
-        void loadPrevious()
-        {
-
-        }
-
         private void mainPanel_Paint(object sender, PaintEventArgs e)
         {
 

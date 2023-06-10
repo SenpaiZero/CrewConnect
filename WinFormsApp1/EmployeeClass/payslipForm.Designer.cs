@@ -47,7 +47,7 @@
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.hoursLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.basicPayLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.otPayLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -59,8 +59,9 @@
             this.nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.changeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.mainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.center = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.daysLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.numDayLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +69,7 @@
             // 
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.ResizeForm = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // guna2HtmlLabel1
@@ -208,16 +210,16 @@
             this.guna2HtmlLabel9.TabIndex = 13;
             this.guna2HtmlLabel9.Text = "OTHERS";
             // 
-            // guna2HtmlLabel10
+            // hoursLabel
             // 
-            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel10.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(86, 339);
-            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
-            this.guna2HtmlLabel10.Size = new System.Drawing.Size(105, 22);
-            this.guna2HtmlLabel10.TabIndex = 14;
-            this.guna2HtmlLabel10.Text = "NO. OF HOURS";
+            this.hoursLabel.BackColor = System.Drawing.Color.Transparent;
+            this.hoursLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.hoursLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.hoursLabel.Location = new System.Drawing.Point(86, 339);
+            this.hoursLabel.Name = "hoursLabel";
+            this.hoursLabel.Size = new System.Drawing.Size(105, 22);
+            this.hoursLabel.TabIndex = 14;
+            this.hoursLabel.Text = "NO. OF HOURS";
             // 
             // guna2HtmlLabel11
             // 
@@ -239,7 +241,7 @@
             this.basicPayLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.basicPayLabel.Location = new System.Drawing.Point(557, 264);
             this.basicPayLabel.Name = "basicPayLabel";
-            this.basicPayLabel.Size = new System.Drawing.Size(231, 22);
+            this.basicPayLabel.Size = new System.Drawing.Size(231, 20);
             this.basicPayLabel.TabIndex = 16;
             this.basicPayLabel.Text = "0.00";
             this.basicPayLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -253,7 +255,7 @@
             this.otPayLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.otPayLabel.Location = new System.Drawing.Point(557, 283);
             this.otPayLabel.Name = "otPayLabel";
-            this.otPayLabel.Size = new System.Drawing.Size(231, 22);
+            this.otPayLabel.Size = new System.Drawing.Size(231, 20);
             this.otPayLabel.TabIndex = 17;
             this.otPayLabel.Text = "0.00";
             this.otPayLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -267,7 +269,7 @@
             this.allowanceLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.allowanceLabel.Location = new System.Drawing.Point(557, 302);
             this.allowanceLabel.Name = "allowanceLabel";
-            this.allowanceLabel.Size = new System.Drawing.Size(231, 22);
+            this.allowanceLabel.Size = new System.Drawing.Size(231, 20);
             this.allowanceLabel.TabIndex = 18;
             this.allowanceLabel.Text = "0.00";
             this.allowanceLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -281,7 +283,7 @@
             this.othersLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.othersLabel.Location = new System.Drawing.Point(557, 320);
             this.othersLabel.Name = "othersLabel";
-            this.othersLabel.Size = new System.Drawing.Size(231, 22);
+            this.othersLabel.Size = new System.Drawing.Size(231, 20);
             this.othersLabel.TabIndex = 19;
             this.othersLabel.Text = "0.00";
             this.othersLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -295,19 +297,21 @@
             this.totalHoursLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.totalHoursLabel.Location = new System.Drawing.Point(544, 339);
             this.totalHoursLabel.Name = "totalHoursLabel";
-            this.totalHoursLabel.Size = new System.Drawing.Size(244, 22);
+            this.totalHoursLabel.Size = new System.Drawing.Size(244, 20);
             this.totalHoursLabel.TabIndex = 20;
             this.totalHoursLabel.Text = "0 HRS";
             this.totalHoursLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // grossPayLabel
             // 
+            this.grossPayLabel.AutoSize = false;
+            this.grossPayLabel.AutoSizeHeightOnly = true;
             this.grossPayLabel.BackColor = System.Drawing.Color.Transparent;
             this.grossPayLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.grossPayLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.grossPayLabel.Location = new System.Drawing.Point(757, 405);
+            this.grossPayLabel.Location = new System.Drawing.Point(602, 405);
             this.grossPayLabel.Name = "grossPayLabel";
-            this.grossPayLabel.Size = new System.Drawing.Size(31, 22);
+            this.grossPayLabel.Size = new System.Drawing.Size(186, 20);
             this.grossPayLabel.TabIndex = 21;
             this.grossPayLabel.Text = "0.00";
             this.grossPayLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -363,8 +367,9 @@
             // mainPanel
             // 
             this.mainPanel.BorderRadius = 20;
+            this.mainPanel.Controls.Add(this.center);
             this.mainPanel.Controls.Add(this.daysLabel);
-            this.mainPanel.Controls.Add(this.guna2HtmlLabel13);
+            this.mainPanel.Controls.Add(this.numDayLabel);
             this.mainPanel.Controls.Add(this.grossPayLabel);
             this.mainPanel.Controls.Add(this.guna2HtmlLabel11);
             this.mainPanel.Controls.Add(this.guna2HtmlLabel5);
@@ -378,6 +383,18 @@
             this.mainPanel.Size = new System.Drawing.Size(885, 652);
             this.mainPanel.TabIndex = 32;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            // 
+            // center
+            // 
+            this.center.AutoSize = false;
+            this.center.BackColor = System.Drawing.Color.Transparent;
+            this.center.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.center.ForeColor = System.Drawing.Color.Transparent;
+            this.center.Location = new System.Drawing.Point(384, 312);
+            this.center.Name = "center";
+            this.center.Size = new System.Drawing.Size(116, 29);
+            this.center.TabIndex = 24;
+            this.center.Text = "‎ ";
             // 
             // daysLabel
             // 
@@ -393,16 +410,16 @@
             this.daysLabel.Text = "0 DAYS";
             this.daysLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // guna2HtmlLabel13
+            // numDayLabel
             // 
-            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel13.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2HtmlLabel13.Location = new System.Drawing.Point(86, 360);
-            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
-            this.guna2HtmlLabel13.Size = new System.Drawing.Size(94, 22);
-            this.guna2HtmlLabel13.TabIndex = 22;
-            this.guna2HtmlLabel13.Text = "NO. OF DAYS";
+            this.numDayLabel.BackColor = System.Drawing.Color.Transparent;
+            this.numDayLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.numDayLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.numDayLabel.Location = new System.Drawing.Point(86, 360);
+            this.numDayLabel.Name = "numDayLabel";
+            this.numDayLabel.Size = new System.Drawing.Size(94, 22);
+            this.numDayLabel.TabIndex = 22;
+            this.numDayLabel.Text = "NO. OF DAYS";
             // 
             // payslipForm
             // 
@@ -418,7 +435,7 @@
             this.Controls.Add(this.allowanceLabel);
             this.Controls.Add(this.otPayLabel);
             this.Controls.Add(this.basicPayLabel);
-            this.Controls.Add(this.guna2HtmlLabel10);
+            this.Controls.Add(this.hoursLabel);
             this.Controls.Add(this.guna2HtmlLabel9);
             this.Controls.Add(this.guna2HtmlLabel8);
             this.Controls.Add(this.guna2HtmlLabel7);
@@ -467,5 +484,8 @@
         private Guna.UI2.WinForms.Guna2Panel mainPanel;
         private Guna.UI2.WinForms.Guna2HtmlLabel daysLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel13;
+        private Guna.UI2.WinForms.Guna2HtmlLabel hoursLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel numDayLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel center;
     }
 }

@@ -45,6 +45,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminPanel));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.header = new Guna.UI2.WinForms.Guna2Panel();
             this.positionLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -58,7 +59,7 @@
             this.announcementBtn = new Guna.UI2.WinForms.Guna2Button();
             this.closeBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.logoutBtn = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.header.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +68,7 @@
             this.guna2BorderlessForm1.BorderRadius = 25;
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.ResizeForm = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // header
@@ -172,7 +174,7 @@
             this.mainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            this.mainPanel.Size = new System.Drawing.Size(885, 652);
+            this.mainPanel.Size = new System.Drawing.Size(885, 646);
             this.mainPanel.TabIndex = 4;
             this.mainPanel.UseTransparentBackground = true;
             // 
@@ -258,7 +260,7 @@
             this.settingBtn.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.settingBtn.ForeColor = System.Drawing.Color.White;
             this.settingBtn.HoverState.Font = new System.Drawing.Font("Segoe UI Historic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.settingBtn.Image = global::WinFormsApp1.Properties.Resources.quote_request;
+            this.settingBtn.Image = global::WinFormsApp1.Properties.Resources.setting;
             this.settingBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.settingBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.settingBtn.ImageSize = new System.Drawing.Size(32, 32);
@@ -306,45 +308,49 @@
             // closeBtn
             // 
             this.closeBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeBtn.HoverState.ImageSize = new System.Drawing.Size(35, 35);
             this.closeBtn.Image = global::WinFormsApp1.Properties.Resources.exit;
             this.closeBtn.ImageOffset = new System.Drawing.Point(0, 0);
             this.closeBtn.ImageRotate = 0F;
-            this.closeBtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.closeBtn.Location = new System.Drawing.Point(11, 646);
+            this.closeBtn.ImageSize = new System.Drawing.Size(30, 30);
+            this.closeBtn.Location = new System.Drawing.Point(11, 627);
+            this.closeBtn.Margin = new System.Windows.Forms.Padding(0);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.closeBtn.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            this.closeBtn.Size = new System.Drawing.Size(49, 46);
+            this.closeBtn.Size = new System.Drawing.Size(65, 65);
             this.closeBtn.TabIndex = 10;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = false;
-            this.nameLabel.AutoSizeHeightOnly = true;
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
             this.nameLabel.Font = new System.Drawing.Font("Segoe UI Symbol", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nameLabel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.nameLabel.Location = new System.Drawing.Point(55, 646);
+            this.nameLabel.IsSelectionEnabled = false;
+            this.nameLabel.Location = new System.Drawing.Point(75, 601);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(209, 26);
+            this.nameLabel.Size = new System.Drawing.Size(164, 65);
             this.nameLabel.TabIndex = 12;
             this.nameLabel.Text = "Santos, Ygi Martin";
-            this.nameLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nameLabel.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // guna2HtmlLabel2
+            // logoutBtn
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Salmon;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(126, 671);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(61, 22);
-            this.guna2HtmlLabel2.TabIndex = 13;
-            this.guna2HtmlLabel2.Text = "LOGOUT";
-            this.guna2HtmlLabel2.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
-            this.guna2HtmlLabel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2HtmlLabel2_MouseDown);
+            this.logoutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.logoutBtn.ForeColor = System.Drawing.Color.Salmon;
+            this.logoutBtn.IsSelectionEnabled = false;
+            this.logoutBtn.Location = new System.Drawing.Point(126, 665);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(61, 22);
+            this.logoutBtn.TabIndex = 13;
+            this.logoutBtn.Text = "LOGOUT";
+            this.logoutBtn.UseSystemCursors = true;
+            this.logoutBtn.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
+            this.logoutBtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2HtmlLabel2_MouseDown);
             // 
             // adminPanel
             // 
@@ -352,7 +358,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
             this.ClientSize = new System.Drawing.Size(1162, 701);
-            this.Controls.Add(this.guna2HtmlLabel2);
+            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.mainPanel);
@@ -362,9 +368,11 @@
             this.Controls.Add(this.settingBtn);
             this.Controls.Add(this.announcementBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "adminPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "managerAddEmployee";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.adminPanel_FormClosing);
             this.Load += new System.EventHandler(this.managerAddEmployee_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.adminPanel_MouseDown);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.adminPanel_MouseUp);
@@ -392,5 +400,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel nameLabel;
         private Guna.UI2.WinForms.Guna2Panel mainPanel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel logoutBtn;
     }
 }

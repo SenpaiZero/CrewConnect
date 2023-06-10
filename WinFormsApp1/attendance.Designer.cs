@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -45,10 +47,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.mainsPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.nameTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.idTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.dateTB = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,7 +58,6 @@
             this.camListCB = new Guna.UI2.WinForms.Guna2ComboBox();
             this.scanBtn = new Guna.UI2.WinForms.Guna2Button();
             this.camera = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.cancelBtn = new Guna.UI2.WinForms.Guna2Button();
             this.mainsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.camera)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,7 @@
             this.guna2BorderlessForm1.AnimateWindow = true;
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.ResizeForm = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // mainsPanel
@@ -95,9 +96,30 @@
             this.mainsPanel.TabIndex = 4;
             this.mainsPanel.UseTransparentBackground = true;
             // 
+            // cancelBtn
+            // 
+            this.cancelBtn.CustomizableEdges = customizableEdges1;
+            this.cancelBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.cancelBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.cancelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.cancelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.cancelBtn.FillColor = System.Drawing.Color.Transparent;
+            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cancelBtn.ForeColor = System.Drawing.Color.IndianRed;
+            this.cancelBtn.Location = new System.Drawing.Point(396, 383);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.cancelBtn.Size = new System.Drawing.Size(99, 23);
+            this.cancelBtn.TabIndex = 9;
+            this.cancelBtn.Text = "CANCEL";
+            this.cancelBtn.UseTransparentBackground = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
             // nameTB
             // 
+            this.nameTB.BackColor = System.Drawing.Color.Transparent;
             this.nameTB.BorderRadius = 25;
+            this.nameTB.BorderThickness = 0;
             customizableEdges3.BottomLeft = false;
             customizableEdges3.BottomRight = false;
             customizableEdges3.TopLeft = false;
@@ -109,10 +131,12 @@
             this.nameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.nameTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.nameTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nameTB.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.nameTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.nameTB.Location = new System.Drawing.Point(371, 77);
             this.nameTB.Name = "nameTB";
             this.nameTB.PasswordChar = '\0';
+            this.nameTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.nameTB.PlaceholderText = "NAME";
             this.nameTB.ReadOnly = true;
             this.nameTB.SelectedText = "";
@@ -123,6 +147,8 @@
             // 
             // idTB
             // 
+            this.idTB.BackColor = System.Drawing.Color.Transparent;
+            this.idTB.BorderThickness = 0;
             this.idTB.CustomizableEdges = customizableEdges5;
             this.idTB.DefaultText = "";
             this.idTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -131,10 +157,12 @@
             this.idTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.idTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.idTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.idTB.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.idTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.idTB.Location = new System.Drawing.Point(371, 128);
             this.idTB.Name = "idTB";
             this.idTB.PasswordChar = '\0';
+            this.idTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.idTB.PlaceholderText = "ID NUMBER";
             this.idTB.ReadOnly = true;
             this.idTB.SelectedText = "";
@@ -145,6 +173,8 @@
             // 
             // dateTB
             // 
+            this.dateTB.BackColor = System.Drawing.Color.Transparent;
+            this.dateTB.BorderThickness = 0;
             this.dateTB.CustomizableEdges = customizableEdges7;
             this.dateTB.DefaultText = "";
             this.dateTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -153,10 +183,12 @@
             this.dateTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.dateTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.dateTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTB.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.dateTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.dateTB.Location = new System.Drawing.Point(371, 179);
             this.dateTB.Name = "dateTB";
             this.dateTB.PasswordChar = '\0';
+            this.dateTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.dateTB.PlaceholderText = "DATE";
             this.dateTB.ReadOnly = true;
             this.dateTB.SelectedText = "";
@@ -167,6 +199,8 @@
             // 
             // timeTB
             // 
+            this.timeTB.BackColor = System.Drawing.Color.Transparent;
+            this.timeTB.BorderThickness = 0;
             this.timeTB.CustomizableEdges = customizableEdges9;
             this.timeTB.DefaultText = "";
             this.timeTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -175,10 +209,12 @@
             this.timeTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.timeTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.timeTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.timeTB.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.timeTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.timeTB.Location = new System.Drawing.Point(371, 230);
             this.timeTB.Name = "timeTB";
             this.timeTB.PasswordChar = '\0';
+            this.timeTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.timeTB.PlaceholderText = "TIME";
             this.timeTB.ReadOnly = true;
             this.timeTB.SelectedText = "";
@@ -252,25 +288,7 @@
             this.camera.Size = new System.Drawing.Size(300, 300);
             this.camera.TabIndex = 0;
             this.camera.TabStop = false;
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.CustomizableEdges = customizableEdges1;
-            this.cancelBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.cancelBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.cancelBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.cancelBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.cancelBtn.FillColor = System.Drawing.Color.Transparent;
-            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cancelBtn.ForeColor = System.Drawing.Color.IndianRed;
-            this.cancelBtn.Location = new System.Drawing.Point(396, 383);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.cancelBtn.Size = new System.Drawing.Size(99, 23);
-            this.cancelBtn.TabIndex = 9;
-            this.cancelBtn.Text = "CANCEL";
-            this.cancelBtn.UseTransparentBackground = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.camera.UseTransparentBackground = true;
             // 
             // attendance
             // 

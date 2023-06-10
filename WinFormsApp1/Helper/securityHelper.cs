@@ -11,6 +11,7 @@ namespace WinFormsApp1.Helper
     {
         public static string HashPassword(string password)
         {
+            // SHA-256 (Secure Hash Algorithm 256-bit)
             using (SHA256 sha256 = SHA256.Create())
             {
                 byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));

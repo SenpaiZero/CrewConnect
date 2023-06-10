@@ -73,6 +73,12 @@ namespace WinFormsApp1
             att.idTB.Text = "";
             att.dateTB.Text = "";
             att.timeTB.Text = "";
+
+            nameTB.FillColor = Color.White;
+            idTB.FillColor = Color.White;
+            dateTB.FillColor = Color.White;
+            timeTB.FillColor = Color.White;
+
             setAttendance();
         }
 
@@ -166,6 +172,10 @@ namespace WinFormsApp1
             att.dateTB.Text = date;
             att.timeTB.Text = time;
 
+            nameTB.FillColor = Color.Green;
+            idTB.FillColor = Color.Green;
+            dateTB.FillColor = Color.Green;
+            timeTB.FillColor = Color.Green;
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
@@ -190,6 +200,12 @@ namespace WinFormsApp1
             att.idTB.Text = "";
             att.dateTB.Text = "";
             att.timeTB.Text = "";
+
+            nameTB.FillColor = Color.White;
+            idTB.FillColor = Color.White;
+            dateTB.FillColor = Color.White;
+            timeTB.FillColor = Color.White;
         }
+
     }
 }

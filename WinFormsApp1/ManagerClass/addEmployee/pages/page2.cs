@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -146,12 +147,29 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                 "STATUS", "SINGLE", "MARRIED", "WIDOWED", "DIVORCED", "SEPARATED"
             };
 
-            String[] religionsInPh = 
+            using (SqlConnection con = new SqlConnection(globalVariables.server))
             {
-                "RELIGION", "Roman Catholicism", "Islam", "Iglesia ni Cristo",
-                "Protestantism",  "Buddhism", "Hinduism", "Judaism", "Bahá'í Faith",
-                "Aglipayanism", "Anitism", "Other indigenous beliefs"
-            };
+                con.Open();
+                SqlCommand cmd = new SqlCommand($"SELECT religion FROM religion", con);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // Store the data in a DataTable
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+
+                    DataRow positionRow = dataTable.NewRow();
+                    positionRow["religion"] = "religion";
+                    dataTable.Rows.InsertAt(positionRow, 0);
+
+                    // Bind the data to the ComboBox
+                    religionCB.DataSource = dataTable;
+                    religionCB.DisplayMember = "religion".ToUpper();
+                    religionCB.ValueMember = "religion".ToUpper();
+                    reader.Close();
+                }
+            }
             userInterfaceHelper.comboBoxValue(genderCB, genders);
             genderCB.SelectedIndex = 0;
 
@@ -163,10 +181,6 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
 
             userInterfaceHelper.comboBoxValue(statusCB, status);
             statusCB.SelectedIndex = 0;
-
-            userInterfaceHelper.comboBoxValue(religionCB, religionsInPh);
-            religionCB.SelectedIndex = 0;
-
 
             if(globalVariables.isEdit)
             {
@@ -226,7 +240,6 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
                     ageTB.Text = userInterfaceHelper.calculateAge(year, month, day);
                 }
             }
-
         }
 
         private void dayCB_SelectedIndexChanged(object sender, EventArgs e)

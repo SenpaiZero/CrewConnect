@@ -75,6 +75,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee
             phoneNumLabel.Text = globalVariables.phoneNumber;
             emailLabel.Text = globalVariables.email;
             email2Label.Text = globalVariables.email2;
+            contractLabel.Text = globalVariables.contract;
         }
 
         void page4LoadData()
@@ -90,7 +91,24 @@ namespace WinFormsApp1.ManagerClass.addEmployee
 
         void createUsername()
         {
-            globalVariables.username = globalVariables.firstname.ToUpper() + "_" + globalVariables.lastname.ToUpper();
+            string user = (globalVariables.firstname.ToUpper() + "_" + globalVariables.lastname.ToUpper()).Replace(" ", "_");
+            string query = $"SELECT username FROM personal WHERE username = '{user}'";
+            using (SqlConnection con = new SqlConnection(globalVariables.server))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if(dr.Read())
+                    {
+                        Random random = new Random();
+                        int randomDigits = random.Next(0, 10);
+                        user += randomDigits.ToString();
+                    }
+                    dr.Close();
+                }
+            }
+                globalVariables.usernameNew = user.Trim();
         }
 
         
@@ -131,9 +149,9 @@ namespace WinFormsApp1.ManagerClass.addEmployee
                     {
                         DateTime bday = new DateTime((int)globalVariables.year, (int)globalVariables.month, (int)globalVariables.day);
                         int id_ = int.Parse(globalVariables.idNum);
-                        command.Parameters.AddWithValue("@username", globalVariables.username.Replace(" ", "_"));
+                        command.Parameters.AddWithValue("@username", globalVariables.usernameNew.Trim());
                         command.Parameters.AddWithValue("@employeeID", globalVariables.idNum);
-                        command.Parameters.AddWithValue("@password", securityHelper.HashPassword(globalVariables.username.Replace(" ", "_")));
+                        command.Parameters.AddWithValue("@password", securityHelper.HashPassword(globalVariables.usernameNew.Trim()));
                         command.Parameters.AddWithValue("@name", name.Trim());
                         command.Parameters.AddWithValue("@status", globalVariables.status.Trim());
                         command.Parameters.AddWithValue("@religion", globalVariables.religion.Trim());

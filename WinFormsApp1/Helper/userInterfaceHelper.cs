@@ -63,7 +63,14 @@ namespace WinFormsApp1.Helper
                 cb.Items.Add((i+1).ToString());
             }
         }
-
+        public static void comboBoxValue(Guna2ComboBox cb, int values)
+        {
+            cb.Items.Clear();
+            for (int i = 0; i < values; i++)
+            {
+                cb.Items.Add((i + 1).ToString());
+            }
+        }
         // Adding value to combo box (GUNA UI) - INT WITH SPECIFIC
         public static void comboBoxValue(Guna2ComboBox cb, int start, int end, String title)
         {
@@ -73,6 +80,14 @@ namespace WinFormsApp1.Helper
                 cb.Items.Add((i + 1).ToString());
             }
             cb.Items.Add(title);
+        }
+        public static void comboBoxValue(Guna2ComboBox cb, int start, int end)
+        {
+            cb.Items.Clear();
+            for (int i = start; i < end; i++)
+            {
+                cb.Items.Add((i + 1).ToString());
+            }
         }
 
         // Calculating date

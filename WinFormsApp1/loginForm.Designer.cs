@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -43,17 +45,19 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginForm));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.minimiseBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.maximiseBtn = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.exitBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.exitBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.mainsPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -62,9 +66,11 @@
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.loginBtn = new Guna.UI2.WinForms.Guna2Button();
             this.attendanceBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.dateLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tooltip = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.guna2Panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.mainsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,23 +82,27 @@
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.ResizeForm = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // guna2Panel4
             // 
+            resources.ApplyResources(this.guna2Panel4, "guna2Panel4");
             this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(38)))), ((int)(((byte)(60)))));
             this.guna2Panel4.Controls.Add(this.minimiseBtn);
+            this.guna2Panel4.Controls.Add(this.guna2PictureBox1);
             this.guna2Panel4.Controls.Add(this.maximiseBtn);
-            this.guna2Panel4.Controls.Add(this.exitBtn);
             this.guna2Panel4.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2Panel4.CustomizableEdges = customizableEdges12;
+            this.guna2Panel4.Controls.Add(this.exitBtn);
+            this.guna2Panel4.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2Panel4.CustomizableEdges = customizableEdges14;
             this.guna2Transition1.SetDecoration(this.guna2Panel4, Guna.UI2.AnimatorNS.DecorationType.None);
-            resources.ApplyResources(this.guna2Panel4, "guna2Panel4");
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            this.guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges15;
             // 
             // minimiseBtn
             // 
+            resources.ApplyResources(this.minimiseBtn, "minimiseBtn");
             this.minimiseBtn.BackColor = System.Drawing.Color.Transparent;
             this.minimiseBtn.BorderColor = System.Drawing.Color.GreenYellow;
             this.minimiseBtn.BorderThickness = 2;
@@ -102,17 +112,29 @@
             this.minimiseBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.minimiseBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.minimiseBtn.FillColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.minimiseBtn, "minimiseBtn");
             this.minimiseBtn.ForeColor = System.Drawing.Color.White;
             this.minimiseBtn.Name = "minimiseBtn";
             this.minimiseBtn.ShadowDecoration.CustomizableEdges = customizableEdges9;
             this.minimiseBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.minimiseBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.minimiseBtn.UseTransparentBackground = true;
-            this.minimiseBtn.Click += new System.EventHandler(this.minimiseBtn_Click);
+            // 
+            // guna2PictureBox1
+            // 
+            resources.ApplyResources(this.guna2PictureBox1, "guna2PictureBox1");
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.CustomizableEdges = customizableEdges10;
+            this.guna2Transition1.SetDecoration(this.guna2PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2PictureBox1.Image = global::WinFormsApp1.Properties.Resources.logoCC;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // maximiseBtn
             // 
+            resources.ApplyResources(this.maximiseBtn, "maximiseBtn");
             this.maximiseBtn.BackColor = System.Drawing.Color.Transparent;
             this.maximiseBtn.BorderColor = System.Drawing.Color.GreenYellow;
             this.maximiseBtn.BorderThickness = 2;
@@ -122,17 +144,25 @@
             this.maximiseBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.maximiseBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.maximiseBtn.FillColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.maximiseBtn, "maximiseBtn");
             this.maximiseBtn.ForeColor = System.Drawing.Color.White;
             this.maximiseBtn.Name = "maximiseBtn";
-            this.maximiseBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.maximiseBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.maximiseBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.maximiseBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.maximiseBtn.UseTransparentBackground = true;
-            this.maximiseBtn.Click += new System.EventHandler(this.maximiseBtn_Click);
+            // 
+            // guna2HtmlLabel1
+            // 
+            resources.ApplyResources(this.guna2HtmlLabel1, "guna2HtmlLabel1");
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.guna2HtmlLabel1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(133)))), ((int)(((byte)(173)))));
+            this.guna2HtmlLabel1.IsSelectionEnabled = false;
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             // 
             // exitBtn
             // 
+            resources.ApplyResources(this.exitBtn, "exitBtn");
             this.exitBtn.BackColor = System.Drawing.Color.Transparent;
             this.exitBtn.BorderColor = System.Drawing.Color.GreenYellow;
             this.exitBtn.BorderThickness = 2;
@@ -142,22 +172,21 @@
             this.exitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.exitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.exitBtn.FillColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.exitBtn, "exitBtn");
             this.exitBtn.ForeColor = System.Drawing.Color.White;
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            this.exitBtn.ShadowDecoration.CustomizableEdges = customizableEdges13;
             this.exitBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.exitBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.exitBtn.UseTransparentBackground = true;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
-            // guna2HtmlLabel1
+            // guna2HtmlLabel3
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Transition1.SetDecoration(this.guna2HtmlLabel1, Guna.UI2.AnimatorNS.DecorationType.None);
-            resources.ApplyResources(this.guna2HtmlLabel1, "guna2HtmlLabel1");
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            resources.ApplyResources(this.guna2HtmlLabel3, "guna2HtmlLabel3");
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.guna2HtmlLabel3, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(159)))), ((int)(((byte)(193)))));
+            this.guna2HtmlLabel3.IsSelectionEnabled = false;
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             // 
             // mainsPanel
             // 
@@ -178,6 +207,7 @@
             // 
             // guna2Button2
             // 
+            resources.ApplyResources(this.guna2Button2, "guna2Button2");
             this.guna2Button2.Animated = true;
             this.guna2Button2.BorderColor = System.Drawing.Color.IndianRed;
             this.guna2Button2.BorderRadius = 25;
@@ -190,7 +220,6 @@
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button2.FillColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.guna2Button2, "guna2Button2");
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -198,20 +227,21 @@
             // 
             // guna2HtmlLabel2
             // 
+            resources.ApplyResources(this.guna2HtmlLabel2, "guna2HtmlLabel2");
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2Transition1.SetDecoration(this.guna2HtmlLabel2, Guna.UI2.AnimatorNS.DecorationType.None);
-            resources.ApplyResources(this.guna2HtmlLabel2, "guna2HtmlLabel2");
             this.guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.guna2HtmlLabel2.IsSelectionEnabled = false;
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             // 
             // userNameTB
             // 
+            resources.ApplyResources(this.userNameTB, "userNameTB");
             this.userNameTB.Animated = true;
             this.userNameTB.AutoRoundedCorners = true;
-            resources.ApplyResources(this.userNameTB, "userNameTB");
             this.userNameTB.BackColor = System.Drawing.Color.Transparent;
             this.userNameTB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.userNameTB.BorderRadius = 25;
+            this.userNameTB.BorderRadius = 24;
             this.userNameTB.CustomizableEdges = customizableEdges3;
             this.guna2Transition1.SetDecoration(this.userNameTB, Guna.UI2.AnimatorNS.DecorationType.None);
             this.userNameTB.DefaultText = "";
@@ -234,12 +264,12 @@
             // passwordTB
             // 
             this.passwordTB.AcceptsReturn = true;
+            resources.ApplyResources(this.passwordTB, "passwordTB");
             this.passwordTB.Animated = true;
             this.passwordTB.AutoRoundedCorners = true;
-            resources.ApplyResources(this.passwordTB, "passwordTB");
             this.passwordTB.BackColor = System.Drawing.Color.Transparent;
             this.passwordTB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.passwordTB.BorderRadius = 25;
+            this.passwordTB.BorderRadius = 24;
             this.passwordTB.CustomizableEdges = customizableEdges5;
             this.guna2Transition1.SetDecoration(this.passwordTB, Guna.UI2.AnimatorNS.DecorationType.None);
             this.passwordTB.DefaultText = "";
@@ -262,6 +292,7 @@
             this.passwordTB.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.passwordTB.WordWrap = false;
             this.passwordTB.IconRightClick += new System.EventHandler(this.guna2TextBox2_IconRightClick);
+            this.passwordTB.TextChanged += new System.EventHandler(this.passwordTB_TextChanged);
             this.passwordTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTB_KeyDown);
             // 
             // guna2Transition1
@@ -292,9 +323,9 @@
             this.loginBtn.AutoRoundedCorners = true;
             this.loginBtn.BorderRadius = 31;
             this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            customizableEdges14.BottomRight = false;
-            customizableEdges14.TopRight = false;
-            this.loginBtn.CustomizableEdges = customizableEdges14;
+            customizableEdges16.BottomRight = false;
+            customizableEdges16.TopRight = false;
+            this.loginBtn.CustomizableEdges = customizableEdges16;
             this.guna2Transition1.SetDecoration(this.loginBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.loginBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.loginBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -308,7 +339,7 @@
             this.loginBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.loginBtn.ImageSize = new System.Drawing.Size(32, 32);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            this.loginBtn.ShadowDecoration.CustomizableEdges = customizableEdges17;
             this.loginBtn.TextOffset = new System.Drawing.Point(5, 0);
             this.loginBtn.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
@@ -318,9 +349,9 @@
             this.attendanceBtn.AutoRoundedCorners = true;
             this.attendanceBtn.BorderRadius = 31;
             this.attendanceBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            customizableEdges16.BottomRight = false;
-            customizableEdges16.TopRight = false;
-            this.attendanceBtn.CustomizableEdges = customizableEdges16;
+            customizableEdges18.BottomRight = false;
+            customizableEdges18.TopRight = false;
+            this.attendanceBtn.CustomizableEdges = customizableEdges18;
             this.guna2Transition1.SetDecoration(this.attendanceBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.attendanceBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.attendanceBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -334,9 +365,20 @@
             this.attendanceBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.attendanceBtn.ImageSize = new System.Drawing.Size(32, 32);
             this.attendanceBtn.Name = "attendanceBtn";
-            this.attendanceBtn.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            this.attendanceBtn.ShadowDecoration.CustomizableEdges = customizableEdges19;
             this.attendanceBtn.TextOffset = new System.Drawing.Point(15, 0);
             this.attendanceBtn.Click += new System.EventHandler(this.attendanceBtn_Click);
+            // 
+            // dateLabel
+            // 
+            resources.ApplyResources(this.dateLabel, "dateLabel");
+            this.dateLabel.AutoSizeHeightOnly = true;
+            this.dateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.dateLabel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.dateLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dateLabel.IsSelectionEnabled = false;
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tooltip
             // 
@@ -351,6 +393,7 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
+            this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.mainsPanel);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.loginBtn);
@@ -364,6 +407,7 @@
             this.Shown += new System.EventHandler(this.loginForm_Shown);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.mainsPanel.ResumeLayout(false);
             this.mainsPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -385,12 +429,15 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.Timer timer1;
         private Guna.UI2.WinForms.Guna2HtmlToolTip tooltip;
-        private Guna.UI2.WinForms.Guna2CircleButton maximiseBtn;
-        private Guna.UI2.WinForms.Guna2CircleButton exitBtn;
-        private Guna.UI2.WinForms.Guna2CircleButton minimiseBtn;
         private Guna.UI2.WinForms.Guna2ImageButton closeBtn;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel dateLabel;
+        private Guna.UI2.WinForms.Guna2CircleButton minimiseBtn;
+        private Guna.UI2.WinForms.Guna2CircleButton maximiseBtn;
+        private Guna.UI2.WinForms.Guna2CircleButton exitBtn;
     }
 }

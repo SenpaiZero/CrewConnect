@@ -72,7 +72,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             {
 
                 validationHelper.textBoxValidation_Email_option(guardianTB, "Email", errorProvider1);
-                validationHelper.textBoxValidation_Numeric(phoneNumTB, "Phone Number", errorProvider1);
+                validationHelper.textBoxValidation_PhoneNumber(phoneNumTB, "Phone Number", errorProvider1);
                 validationHelper.textBoxValidation_Email(emailTB, "Email", errorProvider1);
                 validationHelper.comboBoxValidation(positionCB, "POSITION", errorProvider1);
 
@@ -103,6 +103,22 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
             int baseId = 1000;
             int randomDigits = random.Next(10000, 99999); // Generates a 5-digit random number
             String randomizedId = (baseId * 100000 + randomDigits).ToString();
+
+            string query = $"SELECT Id FROM personal WHERE Id = {randomizedId}";
+            using (SqlConnection con = new SqlConnection(globalVariables.server))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        generateBtn.PerformClick();
+                        return;
+                    }
+                    dr.Close();
+                }
+            }
 
             idNumTB.Text = randomizedId;
             Bitmap img = qrCodeHelper.generateQrCode(randomizedId);
@@ -192,7 +208,7 @@ namespace WinFormsApp1.ManagerClass.addEmployee.pages
         private void phoneNumTB_Validating(object sender, CancelEventArgs e)
         {
             isValid[0] = false;
-            if (validationHelper.textBoxValidation_Numeric(phoneNumTB, "Phone Number", errorProvider1))
+            if(validationHelper.textBoxValidation_PhoneNumber(phoneNumTB, "Phone Number", errorProvider1))
                 isValid[0] = true;
         }
 

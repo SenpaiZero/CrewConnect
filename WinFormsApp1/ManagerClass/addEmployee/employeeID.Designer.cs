@@ -59,6 +59,7 @@
             // 
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.ResizeForm = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // guna2Shapes1
@@ -66,13 +67,13 @@
             this.guna2Shapes1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Shapes1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2Shapes1.BorderThickness = 5;
-            this.guna2Shapes1.Location = new System.Drawing.Point(-125, -144);
+            this.guna2Shapes1.Location = new System.Drawing.Point(-138, -144);
             this.guna2Shapes1.Name = "guna2Shapes1";
             this.guna2Shapes1.PolygonSkip = 1;
             this.guna2Shapes1.Rotate = 0F;
             this.guna2Shapes1.RoundedEdges = customizableEdges10;
             this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Ellipse;
-            this.guna2Shapes1.Size = new System.Drawing.Size(625, 385);
+            this.guna2Shapes1.Size = new System.Drawing.Size(624, 385);
             this.guna2Shapes1.TabIndex = 0;
             this.guna2Shapes1.Text = "guna2Shapes1";
             this.guna2Shapes1.Zoom = 80;
@@ -99,7 +100,7 @@
             this.guna2Panel1.BorderThickness = 5;
             this.guna2Panel1.Controls.Add(this.employeePhoto);
             this.guna2Panel1.CustomizableEdges = customizableEdges8;
-            this.guna2Panel1.Location = new System.Drawing.Point(88, 80);
+            this.guna2Panel1.Location = new System.Drawing.Point(72, 80);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Padding = new System.Windows.Forms.Padding(5);
             this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges9;
@@ -113,9 +114,9 @@
             this.roleLabel.AutoSizeHeightOnly = true;
             this.roleLabel.BackColor = System.Drawing.Color.Transparent;
             this.roleLabel.Font = new System.Drawing.Font("Segoe UI Variable Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.roleLabel.Location = new System.Drawing.Point(-1, 323);
+            this.roleLabel.Location = new System.Drawing.Point(12, 341);
             this.roleLabel.Name = "roleLabel";
-            this.roleLabel.Size = new System.Drawing.Size(365, 28);
+            this.roleLabel.Size = new System.Drawing.Size(312, 28);
             this.roleLabel.TabIndex = 3;
             this.roleLabel.Text = "JANITOR";
             this.roleLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -125,12 +126,12 @@
             this.nameLabel.AutoSize = false;
             this.nameLabel.AutoSizeHeightOnly = true;
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
-            this.nameLabel.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.nameLabel.Location = new System.Drawing.Point(-1, 262);
+            this.nameLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.nameLabel.Location = new System.Drawing.Point(-2, 271);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(365, 28);
+            this.nameLabel.Size = new System.Drawing.Size(337, 28);
             this.nameLabel.TabIndex = 4;
-            this.nameLabel.Text = "ARQUIO, KYLA LIM";
+            this.nameLabel.Text = "SANTOS, YGI MARTIN ";
             this.nameLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.nameLabel.Click += new System.EventHandler(this.nameLabel_Click);
             // 
@@ -140,9 +141,9 @@
             this.employeeLabel.AutoSizeHeightOnly = true;
             this.employeeLabel.BackColor = System.Drawing.Color.Transparent;
             this.employeeLabel.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.employeeLabel.Location = new System.Drawing.Point(-1, 292);
+            this.employeeLabel.Location = new System.Drawing.Point(-2, 314);
             this.employeeLabel.Name = "employeeLabel";
-            this.employeeLabel.Size = new System.Drawing.Size(365, 28);
+            this.employeeLabel.Size = new System.Drawing.Size(337, 28);
             this.employeeLabel.TabIndex = 5;
             this.employeeLabel.Text = "Employee # 20021385";
             this.employeeLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -153,7 +154,7 @@
             this.guna2Shapes2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2Shapes2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2Shapes2.BorderThickness = 5;
-            this.guna2Shapes2.Location = new System.Drawing.Point(-125, 403);
+            this.guna2Shapes2.Location = new System.Drawing.Point(-138, 403);
             this.guna2Shapes2.Name = "guna2Shapes2";
             this.guna2Shapes2.PolygonSkip = 1;
             this.guna2Shapes2.Rotate = 0F;
@@ -170,7 +171,7 @@
             this.guna2Panel2.BorderThickness = 5;
             this.guna2Panel2.Controls.Add(this.qrPhoto);
             this.guna2Panel2.CustomizableEdges = customizableEdges3;
-            this.guna2Panel2.Location = new System.Drawing.Point(127, 368);
+            this.guna2Panel2.Location = new System.Drawing.Point(109, 370);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Padding = new System.Windows.Forms.Padding(5);
             this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -196,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 510);
+            this.ClientSize = new System.Drawing.Size(336, 510);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Shapes2);
             this.Controls.Add(this.employeeLabel);

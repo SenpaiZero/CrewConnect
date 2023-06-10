@@ -93,8 +93,10 @@
             this.page2edit = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2HtmlLabel28 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.contractLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.asdasyu = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.salaryLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.asdasd = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.page4edit = new Guna.UI2.WinForms.Guna2ImageButton();
             this.accountNumLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.bsbLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -127,6 +129,7 @@
             this.guna2BorderlessForm1.BorderRadius = 25;
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.ResizeForm = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // guna2ShadowPanel1
@@ -805,8 +808,10 @@
             // guna2ShadowPanel2
             // 
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel2.Controls.Add(this.guna2HtmlLabel28);
+            this.guna2ShadowPanel2.Controls.Add(this.contractLabel);
+            this.guna2ShadowPanel2.Controls.Add(this.asdasyu);
             this.guna2ShadowPanel2.Controls.Add(this.salaryLabel);
+            this.guna2ShadowPanel2.Controls.Add(this.asdasd);
             this.guna2ShadowPanel2.Controls.Add(this.page4edit);
             this.guna2ShadowPanel2.Controls.Add(this.accountNumLabel);
             this.guna2ShadowPanel2.Controls.Add(this.bsbLabel);
@@ -828,33 +833,61 @@
             this.guna2ShadowPanel2.Size = new System.Drawing.Size(510, 339);
             this.guna2ShadowPanel2.TabIndex = 39;
             // 
-            // guna2HtmlLabel28
+            // contractLabel
             // 
-            this.guna2HtmlLabel28.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.guna2HtmlLabel28.AutoSize = false;
-            this.guna2HtmlLabel28.AutoSizeHeightOnly = true;
-            this.guna2HtmlLabel28.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel28.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.guna2HtmlLabel28.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel28.Location = new System.Drawing.Point(179, 272);
-            this.guna2HtmlLabel28.Name = "guna2HtmlLabel28";
-            this.guna2HtmlLabel28.Size = new System.Drawing.Size(310, 23);
-            this.guna2HtmlLabel28.TabIndex = 73;
-            this.guna2HtmlLabel28.Text = "odbngosidfngsd";
-            this.guna2HtmlLabel28.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.contractLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.contractLabel.AutoSize = false;
+            this.contractLabel.AutoSizeHeightOnly = true;
+            this.contractLabel.BackColor = System.Drawing.Color.Transparent;
+            this.contractLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.contractLabel.ForeColor = System.Drawing.Color.Black;
+            this.contractLabel.Location = new System.Drawing.Point(177, 288);
+            this.contractLabel.Name = "contractLabel";
+            this.contractLabel.Size = new System.Drawing.Size(310, 23);
+            this.contractLabel.TabIndex = 75;
+            this.contractLabel.Text = "odbngosidfngsd";
+            this.contractLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // asdasyu
+            // 
+            this.asdasyu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.asdasyu.BackColor = System.Drawing.Color.Transparent;
+            this.asdasyu.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.asdasyu.ForeColor = System.Drawing.Color.Black;
+            this.asdasyu.Location = new System.Drawing.Point(22, 289);
+            this.asdasyu.Name = "asdasyu";
+            this.asdasyu.Size = new System.Drawing.Size(90, 22);
+            this.asdasyu.TabIndex = 74;
+            this.asdasyu.Text = "CONTRACT:";
+            this.asdasyu.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // salaryLabel
             // 
             this.salaryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.salaryLabel.AutoSize = false;
+            this.salaryLabel.AutoSizeHeightOnly = true;
             this.salaryLabel.BackColor = System.Drawing.Color.Transparent;
-            this.salaryLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.salaryLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.salaryLabel.ForeColor = System.Drawing.Color.Black;
-            this.salaryLabel.Location = new System.Drawing.Point(24, 273);
+            this.salaryLabel.Location = new System.Drawing.Point(177, 260);
             this.salaryLabel.Name = "salaryLabel";
-            this.salaryLabel.Size = new System.Drawing.Size(63, 22);
-            this.salaryLabel.TabIndex = 72;
-            this.salaryLabel.Text = "SALARY:";
-            this.salaryLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.salaryLabel.Size = new System.Drawing.Size(310, 23);
+            this.salaryLabel.TabIndex = 73;
+            this.salaryLabel.Text = "odbngosidfngsd";
+            this.salaryLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // asdasd
+            // 
+            this.asdasd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.asdasd.BackColor = System.Drawing.Color.Transparent;
+            this.asdasd.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.asdasd.ForeColor = System.Drawing.Color.Black;
+            this.asdasd.Location = new System.Drawing.Point(22, 261);
+            this.asdasd.Name = "asdasd";
+            this.asdasd.Size = new System.Drawing.Size(63, 22);
+            this.asdasd.TabIndex = 72;
+            this.asdasd.Text = "SALARY:";
+            this.asdasd.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // page4edit
             // 
@@ -881,7 +914,7 @@
             this.accountNumLabel.BackColor = System.Drawing.Color.Transparent;
             this.accountNumLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.accountNumLabel.ForeColor = System.Drawing.Color.Black;
-            this.accountNumLabel.Location = new System.Drawing.Point(179, 243);
+            this.accountNumLabel.Location = new System.Drawing.Point(177, 231);
             this.accountNumLabel.Name = "accountNumLabel";
             this.accountNumLabel.Size = new System.Drawing.Size(310, 23);
             this.accountNumLabel.TabIndex = 70;
@@ -896,7 +929,7 @@
             this.bsbLabel.BackColor = System.Drawing.Color.Transparent;
             this.bsbLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bsbLabel.ForeColor = System.Drawing.Color.Black;
-            this.bsbLabel.Location = new System.Drawing.Point(179, 216);
+            this.bsbLabel.Location = new System.Drawing.Point(177, 204);
             this.bsbLabel.Name = "bsbLabel";
             this.bsbLabel.Size = new System.Drawing.Size(310, 23);
             this.bsbLabel.TabIndex = 69;
@@ -911,7 +944,7 @@
             this.accountNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.accountNameLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.accountNameLabel.ForeColor = System.Drawing.Color.Black;
-            this.accountNameLabel.Location = new System.Drawing.Point(179, 187);
+            this.accountNameLabel.Location = new System.Drawing.Point(177, 175);
             this.accountNameLabel.Name = "accountNameLabel";
             this.accountNameLabel.Size = new System.Drawing.Size(310, 23);
             this.accountNameLabel.TabIndex = 68;
@@ -926,7 +959,7 @@
             this.companyAddLabel.BackColor = System.Drawing.Color.Transparent;
             this.companyAddLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.companyAddLabel.ForeColor = System.Drawing.Color.Black;
-            this.companyAddLabel.Location = new System.Drawing.Point(179, 158);
+            this.companyAddLabel.Location = new System.Drawing.Point(177, 146);
             this.companyAddLabel.Name = "companyAddLabel";
             this.companyAddLabel.Size = new System.Drawing.Size(310, 23);
             this.companyAddLabel.TabIndex = 67;
@@ -941,7 +974,7 @@
             this.branchLabel.BackColor = System.Drawing.Color.Transparent;
             this.branchLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.branchLabel.ForeColor = System.Drawing.Color.Black;
-            this.branchLabel.Location = new System.Drawing.Point(179, 128);
+            this.branchLabel.Location = new System.Drawing.Point(177, 116);
             this.branchLabel.Name = "branchLabel";
             this.branchLabel.Size = new System.Drawing.Size(310, 23);
             this.branchLabel.TabIndex = 66;
@@ -956,7 +989,7 @@
             this.bankNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.bankNameLabel.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bankNameLabel.ForeColor = System.Drawing.Color.Black;
-            this.bankNameLabel.Location = new System.Drawing.Point(179, 101);
+            this.bankNameLabel.Location = new System.Drawing.Point(177, 89);
             this.bankNameLabel.Name = "bankNameLabel";
             this.bankNameLabel.Size = new System.Drawing.Size(310, 23);
             this.bankNameLabel.TabIndex = 65;
@@ -969,7 +1002,7 @@
             this.guna2HtmlLabel27.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel27.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel27.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel27.Location = new System.Drawing.Point(24, 243);
+            this.guna2HtmlLabel27.Location = new System.Drawing.Point(22, 231);
             this.guna2HtmlLabel27.Name = "guna2HtmlLabel27";
             this.guna2HtmlLabel27.Size = new System.Drawing.Size(123, 22);
             this.guna2HtmlLabel27.TabIndex = 64;
@@ -982,7 +1015,7 @@
             this.guna2HtmlLabel26.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel26.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel26.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel26.Location = new System.Drawing.Point(24, 215);
+            this.guna2HtmlLabel26.Location = new System.Drawing.Point(22, 203);
             this.guna2HtmlLabel26.Name = "guna2HtmlLabel26";
             this.guna2HtmlLabel26.Size = new System.Drawing.Size(34, 22);
             this.guna2HtmlLabel26.TabIndex = 63;
@@ -995,7 +1028,7 @@
             this.guna2HtmlLabel25.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel25.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel25.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel25.Location = new System.Drawing.Point(24, 187);
+            this.guna2HtmlLabel25.Location = new System.Drawing.Point(22, 175);
             this.guna2HtmlLabel25.Name = "guna2HtmlLabel25";
             this.guna2HtmlLabel25.Size = new System.Drawing.Size(130, 22);
             this.guna2HtmlLabel25.TabIndex = 62;
@@ -1008,7 +1041,7 @@
             this.guna2HtmlLabel24.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel24.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel24.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel24.Location = new System.Drawing.Point(24, 159);
+            this.guna2HtmlLabel24.Location = new System.Drawing.Point(22, 147);
             this.guna2HtmlLabel24.Name = "guna2HtmlLabel24";
             this.guna2HtmlLabel24.Size = new System.Drawing.Size(119, 22);
             this.guna2HtmlLabel24.TabIndex = 61;
@@ -1021,7 +1054,7 @@
             this.guna2HtmlLabel22.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel22.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel22.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel22.Location = new System.Drawing.Point(24, 131);
+            this.guna2HtmlLabel22.Location = new System.Drawing.Point(22, 119);
             this.guna2HtmlLabel22.Name = "guna2HtmlLabel22";
             this.guna2HtmlLabel22.Size = new System.Drawing.Size(70, 22);
             this.guna2HtmlLabel22.TabIndex = 60;
@@ -1034,7 +1067,7 @@
             this.guna2HtmlLabel20.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel20.Font = new System.Drawing.Font("Segoe UI Variable Display", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel20.ForeColor = System.Drawing.Color.Black;
-            this.guna2HtmlLabel20.Location = new System.Drawing.Point(24, 101);
+            this.guna2HtmlLabel20.Location = new System.Drawing.Point(22, 89);
             this.guna2HtmlLabel20.Name = "guna2HtmlLabel20";
             this.guna2HtmlLabel20.Size = new System.Drawing.Size(96, 22);
             this.guna2HtmlLabel20.TabIndex = 59;
@@ -1225,5 +1258,8 @@
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel28;
         private Guna.UI2.WinForms.Guna2HtmlLabel salaryLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel asdasd;
+        private Guna.UI2.WinForms.Guna2HtmlLabel contractLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel asdasyu;
     }
 }

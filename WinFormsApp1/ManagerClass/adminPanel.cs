@@ -21,6 +21,7 @@ namespace WinFormsApp1.ManagerClass
     {
         string whatBtn = "";
         public static Guna2Panel panel;
+        private Boolean isCancelExit = true;
         public adminPanel()
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace WinFormsApp1.ManagerClass
 
         private void managerAddEmployee_Load(object sender, EventArgs e)
         {
+            logoutBtn.Cursor = Cursors.Hand;
             positionLabel.Text = globalVariables.userPosition;
             panel = this.mainPanel;
             pageHelper.changePage(new page1(), panel);
@@ -159,7 +161,7 @@ namespace WinFormsApp1.ManagerClass
                 whatBtn = "announcement";
                 addBtn.FillColor = Color.FromArgb(51, 52, 78);
                 listBtn.FillColor = Color.FromArgb(51, 52, 78);
-                listBtn.FillColor = Color.FromArgb(51, 52, 78);
+                settingBtn.FillColor = Color.FromArgb(51, 52, 78);
                 announcementBtn.FillColor = Color.FromArgb(39, 72, 93);
                 pageHelper.changePage(new addAnnouncement(), panel);
                 ResumeLayout();
@@ -173,7 +175,19 @@ namespace WinFormsApp1.ManagerClass
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var loadingForm = new loadingForm();
+            loginForm log = new loginForm();
+            loadingForm.StartPosition = FormStartPosition.CenterParent;
+            loadingForm.loadingTime = 2500;
+            loadingForm.ShowDialog();
+
+            isCancelExit = false;
+            Environment.Exit(0);
+        }
+
+        private void adminPanel_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = isCancelExit;
         }
     }
 }

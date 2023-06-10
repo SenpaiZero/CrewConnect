@@ -60,6 +60,31 @@ namespace WinFormsApp1.Helper
             return true;
         }
 
+        public static bool textBoxValidation_Alpha_optional(Guna2TextBox tb, String name, ErrorProvider errorProvider)
+        {
+            String symNumNotAllowed = "is invalid (Symbols and numbers are not allowed)";
+            tb.BorderColor = Color.IndianRed;
+            tb.BorderThickness = 5;
+            if (validationHelper.checkFieldBlank(tb.Text))
+            {
+                // Clears the error
+                tb.BorderThickness = 1;
+                tb.BorderColor = Color.FromArgb(213, 218, 223);
+                errorProvider.SetError(tb, null);
+                return true;
+            }
+            if (!validationHelper.checkFieldAlpha(tb.Text))
+            {
+                errorProvider.SetError(tb, $"{name} {symNumNotAllowed}");
+                return false;
+            }
+            // Clears the error
+            tb.BorderThickness = 1;
+            tb.BorderColor = Color.FromArgb(213, 218, 223);
+            errorProvider.SetError(tb, null);
+            return true;
+        }
+
         // Checks guna2combobox if it user changed the value
         public static bool comboBoxValidation(Guna2ComboBox cb, String validation, ErrorProvider ep)
         {
@@ -102,7 +127,28 @@ namespace WinFormsApp1.Helper
             errorProvider.SetError(tb, null);
             return true;
         }
-
+        public static bool textBoxValidation_Numeric_optional(Guna2TextBox tb, String name, ErrorProvider errorProvider)
+        {
+            String symLetter = "is invalid (Only numbers are allowed)";
+            tb.BorderColor = Color.IndianRed;
+            if (validationHelper.checkFieldBlank(tb.Text))
+            {
+                // Clears the error
+                tb.BorderThickness = 1;
+                tb.BorderColor = Color.FromArgb(213, 218, 223);
+                errorProvider.SetError(tb, null);
+                return true;
+            }
+            if (!validationHelper.checkFieldNumeric(tb.Text))
+            {
+                errorProvider.SetError(tb, $"{name} {symLetter}");
+                return false;
+            }
+            // Clears the error
+            tb.BorderColor = Color.FromArgb(213, 218, 223);
+            errorProvider.SetError(tb, null);
+            return true;
+        }
 
         //Checks if user changed combobox value
         public static bool comboBoxCheck(String value, Guna2ComboBox cb)
@@ -200,6 +246,58 @@ namespace WinFormsApp1.Helper
             return false;
         }
 
+        public static bool textBoxValidation_PhoneNumber(Guna2TextBox tb, string name, ErrorProvider errorProvider)
+        {
+            String nullField = "is required. Please complete this field to continue";
+            String symNumNotAllowed = "is invalid (Symbols and numbers are not allowed)";
+            tb.BorderColor = Color.IndianRed;
+            tb.BorderThickness = 5;
+
+            //Checks if its empty
+            if (validationHelper.checkFieldBlank(tb.Text))
+            {
+                errorProvider.SetError(tb, $"{name} {nullField}");
+                return false;
+            }
+            // Checks if its alpha only
+            else if (!Regex.IsMatch(tb.Text, @"^09\d{9}$"))
+            {
+                errorProvider.SetError(tb, $"{name} {symNumNotAllowed}");
+                return false;
+            }
+            // Clears the error
+            tb.BorderThickness = 1;
+            tb.BorderColor = Color.FromArgb(213, 218, 223);
+            errorProvider.SetError(tb, null);
+            return true;
+        }
+
+        public static bool textBoxValidation_PhoneNumber_optional(Guna2TextBox tb, string name, ErrorProvider errorProvider)
+        {
+            String symNumNotAllowed = "is invalid (Symbols and numbers are not allowed)";
+            tb.BorderColor = Color.IndianRed;
+            tb.BorderThickness = 5;
+
+            if (validationHelper.checkFieldBlank(tb.Text))
+            {
+                // Clears the error
+                tb.BorderThickness = 1;
+                tb.BorderColor = Color.FromArgb(213, 218, 223);
+                errorProvider.SetError(tb, null);
+                return true;
+            }
+
+            if (!Regex.IsMatch(tb.Text, @"^09\d{9}$"))
+            {
+                errorProvider.SetError(tb, $"{name} {symNumNotAllowed}");
+                return false;
+            }
+            // Clears the error
+            tb.BorderThickness = 1;
+            tb.BorderColor = Color.FromArgb(213, 218, 223);
+            errorProvider.SetError(tb, null);
+            return true;
+        }
         public static bool textBoxValidation_Email(Guna2TextBox tb, String name, ErrorProvider errorProvider)
         {
             String nullField = "is required. Please complete this field to continue";

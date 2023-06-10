@@ -83,10 +83,6 @@ namespace WinFormsApp1.Helper
                     {
                         attendance.att.setData(idNum, dateString, timeString, fullName);
                     }
-                    else
-                    {
-
-                    }
 
                     if (videoSource != null && videoSource.IsRunning)
                     {
