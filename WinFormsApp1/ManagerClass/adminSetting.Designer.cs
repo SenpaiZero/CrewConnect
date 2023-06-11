@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.ManagerClass
+﻿namespace CrewConnect.ManagerClass
 {
     partial class adminSetting
     {
@@ -446,7 +446,7 @@
             this.newPass2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.newPass2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.newPass2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.newPass2.IconRight = global::WinFormsApp1.Properties.Resources.hide;
+            this.newPass2.IconRight = global::CrewConnect.Properties.Resources.hide;
             this.newPass2.IconRightOffset = new System.Drawing.Point(5, 0);
             this.newPass2.Location = new System.Drawing.Point(58, 262);
             this.newPass2.Name = "newPass2";
@@ -472,7 +472,7 @@
             this.newPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.newPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.newPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.newPass.IconRight = global::WinFormsApp1.Properties.Resources.hide;
+            this.newPass.IconRight = global::CrewConnect.Properties.Resources.hide;
             this.newPass.IconRightOffset = new System.Drawing.Point(5, 0);
             this.newPass.Location = new System.Drawing.Point(58, 211);
             this.newPass.Name = "newPass";
@@ -498,7 +498,7 @@
             this.oldPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.oldPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.oldPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.oldPass.IconRight = global::WinFormsApp1.Properties.Resources.hide;
+            this.oldPass.IconRight = global::CrewConnect.Properties.Resources.hide;
             this.oldPass.IconRightOffset = new System.Drawing.Point(5, 0);
             this.oldPass.Location = new System.Drawing.Point(58, 160);
             this.oldPass.Name = "oldPass";

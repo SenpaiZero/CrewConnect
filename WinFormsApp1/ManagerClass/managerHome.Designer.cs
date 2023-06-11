@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.ManagerClass
+﻿namespace CrewConnect.ManagerClass
 {
     partial class managerHome
     {

@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.ManagerClass
+﻿namespace CrewConnect.ManagerClass
 {
     partial class adminPanel
     {
@@ -196,7 +196,7 @@
             this.addBtn.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.addBtn.ForeColor = System.Drawing.Color.White;
             this.addBtn.HoverState.Font = new System.Drawing.Font("Segoe UI Historic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addBtn.Image = global::WinFormsApp1.Properties.Resources.add;
+            this.addBtn.Image = global::CrewConnect.Properties.Resources.add;
             this.addBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.addBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.addBtn.ImageSize = new System.Drawing.Size(32, 32);
@@ -228,7 +228,7 @@
             this.listBtn.Font = new System.Drawing.Font("Segoe UI Historic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.listBtn.ForeColor = System.Drawing.Color.White;
             this.listBtn.HoverState.Font = new System.Drawing.Font("Segoe UI Historic", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.listBtn.Image = global::WinFormsApp1.Properties.Resources.remove;
+            this.listBtn.Image = global::CrewConnect.Properties.Resources.list1;
             this.listBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.listBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.listBtn.ImageSize = new System.Drawing.Size(32, 32);
@@ -260,7 +260,7 @@
             this.settingBtn.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.settingBtn.ForeColor = System.Drawing.Color.White;
             this.settingBtn.HoverState.Font = new System.Drawing.Font("Segoe UI Historic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.settingBtn.Image = global::WinFormsApp1.Properties.Resources.setting;
+            this.settingBtn.Image = global::CrewConnect.Properties.Resources.setting;
             this.settingBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.settingBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.settingBtn.ImageSize = new System.Drawing.Size(32, 32);
@@ -291,7 +291,7 @@
             this.announcementBtn.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.announcementBtn.ForeColor = System.Drawing.Color.White;
             this.announcementBtn.HoverState.Font = new System.Drawing.Font("Segoe UI Historic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.announcementBtn.Image = global::WinFormsApp1.Properties.Resources.megaphone;
+            this.announcementBtn.Image = global::CrewConnect.Properties.Resources.megaphone;
             this.announcementBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.announcementBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.announcementBtn.ImageSize = new System.Drawing.Size(32, 32);
@@ -310,7 +310,7 @@
             this.closeBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.closeBtn.HoverState.ImageSize = new System.Drawing.Size(35, 35);
-            this.closeBtn.Image = global::WinFormsApp1.Properties.Resources.exit;
+            this.closeBtn.Image = global::CrewConnect.Properties.Resources.exit;
             this.closeBtn.ImageOffset = new System.Drawing.Point(0, 0);
             this.closeBtn.ImageRotate = 0F;
             this.closeBtn.ImageSize = new System.Drawing.Size(30, 30);

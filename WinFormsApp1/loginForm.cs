@@ -3,11 +3,11 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
-using WinFormsApp1.ManagerClass;
-using WinFormsApp1.Helper;
-using WinFormsApp1.EmployeeClass;
+using CrewConnect.ManagerClass;
+using CrewConnect.Helper;
+using CrewConnect.EmployeeClass;
 
-namespace WinFormsApp1
+namespace CrewConnect
 {
     public partial class loginForm : Form
     {

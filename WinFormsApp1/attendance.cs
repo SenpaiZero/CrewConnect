@@ -8,11 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp1.Helper;
-using WinFormsApp1.ManagerClass;
+using CrewConnect.Helper;
+using CrewConnect.ManagerClass;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
-namespace WinFormsApp1
+namespace CrewConnect
 {
     public partial class attendance : Form
     {
@@ -23,6 +23,8 @@ namespace WinFormsApp1
 
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.BackColor = Color.Transparent;
+
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         protected override CreateParams CreateParams
@@ -36,12 +38,15 @@ namespace WinFormsApp1
         }
         private void attendance_Load(object sender, EventArgs e)
         {
+            Task.Run(() =>
+            {
+                cameraHelper.qrcode = true;
+                cameraHelper.camListCB = camListCB;
+                cameraHelper.selfPic = camera;
+                cameraHelper.name = "home";
+                cameraHelper.onLoad();
+            });
             att = this;
-            cameraHelper.qrcode = true;
-            cameraHelper.camListCB = camListCB;
-            cameraHelper.selfPic = camera;
-            cameraHelper.name = "home";
-            cameraHelper.onLoad();
         }
 
         private void attendance_FormClosing(object sender, FormClosingEventArgs e)
@@ -56,6 +61,12 @@ namespace WinFormsApp1
             if (cameraHelper.isDetect == false)
                 return;
 
+            cameraHelper.start(camListCB.SelectedIndex);
+            cameraHelper.isDetect = false;
+
+            if (!cameraHelper.isValid)
+                return;
+
             loadingForm load = new loadingForm();
             load.loadingTime = 1200;
             load.StartPosition = FormStartPosition.Manual;
@@ -66,8 +77,6 @@ namespace WinFormsApp1
             load.Location = new Point(loadingFormX, loadingFormY);
             load.ShowDialog();
 
-            cameraHelper.start(camListCB.SelectedIndex);
-            cameraHelper.isDetect = false;
             CheckForIllegalCrossThreadCalls = false;
             att.nameTB.Text = "";
             att.idTB.Text = "";

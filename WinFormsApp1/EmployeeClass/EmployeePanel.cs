@@ -9,10 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
-using WinFormsApp1.Helper;
-using WinFormsApp1.ManagerClass.addEmployee.pages;
+using CrewConnect.Helper;
+using CrewConnect.ManagerClass.addEmployee.pages;
 
-namespace WinFormsApp1.EmployeeClass
+namespace CrewConnect.EmployeeClass
 {
     public partial class EmployeePanel : Form
     {

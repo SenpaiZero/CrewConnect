@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using WinFormsApp1.Helper;
+using CrewConnect.Helper;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace WinFormsApp1.ManagerClass.addEmployee.pages
+namespace CrewConnect.ManagerClass.addEmployee.pages
 {
     
     public partial class page3 : Form

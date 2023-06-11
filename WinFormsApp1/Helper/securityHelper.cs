@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 
-namespace WinFormsApp1.Helper
+namespace CrewConnect.Helper
 {
     public class securityHelper
     {

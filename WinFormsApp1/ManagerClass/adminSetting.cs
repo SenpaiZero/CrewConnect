@@ -11,10 +11,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp1.Helper;
+using CrewConnect.Helper;
 using ZXing;
 
-namespace WinFormsApp1.ManagerClass
+namespace CrewConnect.ManagerClass
 {
     public partial class adminSetting : Form
     {

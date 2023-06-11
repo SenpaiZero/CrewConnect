@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.ManagerClass.addEmployee
+﻿namespace CrewConnect.ManagerClass.addEmployee
 {
     partial class capturePicture
     {

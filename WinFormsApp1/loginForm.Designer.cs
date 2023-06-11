@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1
+﻿namespace CrewConnect
 {
     partial class loginForm
     {
@@ -125,7 +125,7 @@
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.CustomizableEdges = customizableEdges10;
             this.guna2Transition1.SetDecoration(this.guna2PictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2PictureBox1.Image = global::WinFormsApp1.Properties.Resources.logoCC;
+            this.guna2PictureBox1.Image = global::CrewConnect.Properties.Resources.logoCC;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges11;
@@ -251,7 +251,7 @@
             this.userNameTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.userNameTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.userNameTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.userNameTB.IconLeft = global::WinFormsApp1.Properties.Resources.user;
+            this.userNameTB.IconLeft = global::CrewConnect.Properties.Resources.user;
             this.userNameTB.IconLeftSize = new System.Drawing.Size(32, 32);
             this.userNameTB.Name = "userNameTB";
             this.userNameTB.PasswordChar = '\0';
@@ -279,9 +279,9 @@
             this.passwordTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.passwordTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.passwordTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.passwordTB.IconLeft = global::WinFormsApp1.Properties.Resources.padlock__1_;
+            this.passwordTB.IconLeft = global::CrewConnect.Properties.Resources.padlock__1_;
             this.passwordTB.IconLeftSize = new System.Drawing.Size(32, 32);
-            this.passwordTB.IconRight = global::WinFormsApp1.Properties.Resources.hide;
+            this.passwordTB.IconRight = global::CrewConnect.Properties.Resources.hide;
             this.passwordTB.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.passwordTB.IconRightOffset = new System.Drawing.Point(10, 0);
             this.passwordTB.Name = "passwordTB";
@@ -334,7 +334,7 @@
             this.loginBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(72)))), ((int)(((byte)(93)))));
             this.loginBtn.ForeColor = System.Drawing.Color.White;
             this.loginBtn.HoverState.Font = new System.Drawing.Font("Segoe UI Historic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.loginBtn.Image = global::WinFormsApp1.Properties.Resources.login;
+            this.loginBtn.Image = global::CrewConnect.Properties.Resources.login;
             this.loginBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.loginBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.loginBtn.ImageSize = new System.Drawing.Size(32, 32);
@@ -360,7 +360,7 @@
             this.attendanceBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
             this.attendanceBtn.ForeColor = System.Drawing.Color.White;
             this.attendanceBtn.HoverState.Font = new System.Drawing.Font("Segoe UI Historic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.attendanceBtn.Image = global::WinFormsApp1.Properties.Resources.calendar;
+            this.attendanceBtn.Image = global::CrewConnect.Properties.Resources.calendar;
             this.attendanceBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.attendanceBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.attendanceBtn.ImageSize = new System.Drawing.Size(32, 32);

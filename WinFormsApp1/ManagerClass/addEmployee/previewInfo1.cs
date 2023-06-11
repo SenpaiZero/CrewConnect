@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp1.Helper;
-using WinFormsApp1.ManagerClass.addEmployee.pages;
+using CrewConnect.Helper;
+using CrewConnect.ManagerClass.addEmployee.pages;
 
-namespace WinFormsApp1.ManagerClass.addEmployee
+namespace CrewConnect.ManagerClass.addEmployee
 {
     public partial class previewInfo1 : Form
     {

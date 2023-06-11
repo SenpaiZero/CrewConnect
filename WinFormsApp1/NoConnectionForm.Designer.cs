@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1
+﻿namespace CrewConnect
 {
     partial class NoConnectionForm
     {
@@ -161,7 +161,7 @@
             this.guna2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.CustomizableEdges = customizableEdges13;
-            this.guna2PictureBox1.Image = global::WinFormsApp1.Properties.Resources.no_internet;
+            this.guna2PictureBox1.Image = global::CrewConnect.Properties.Resources.no_internet;
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(85, 39);
             this.guna2PictureBox1.Name = "guna2PictureBox1";

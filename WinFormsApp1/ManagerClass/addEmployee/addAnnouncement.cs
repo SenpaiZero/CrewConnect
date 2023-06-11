@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp1.Helper;
+using CrewConnect.Helper;
 
-namespace WinFormsApp1.ManagerClass.addEmployee
+namespace CrewConnect.ManagerClass.addEmployee
 {
     public partial class addAnnouncement : Form
     {
@@ -140,6 +140,11 @@ namespace WinFormsApp1.ManagerClass.addEmployee
 
             loadingForm.loadingTime = 1000;
             loadingForm.ShowDialog();
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

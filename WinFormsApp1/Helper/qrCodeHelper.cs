@@ -1,7 +1,7 @@
 ﻿using QRCoder;
 
 
-namespace WinFormsApp1.Helper
+namespace CrewConnect.Helper
 {
     internal class qrCodeHelper
     {

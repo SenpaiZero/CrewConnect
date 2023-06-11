@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.ManagerClass
+namespace CrewConnect.ManagerClass
 {
     public partial class managerHome : Form
     {

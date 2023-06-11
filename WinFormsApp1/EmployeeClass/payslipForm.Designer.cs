@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.EmployeeClass
+﻿namespace CrewConnect.EmployeeClass
 {
     partial class payslipForm
     {
@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
@@ -59,6 +62,17 @@
             this.nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.changeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.mainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.emailBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.netpayLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Shapes3 = new Guna.UI2.WinForms.Guna2Shapes();
+            this.totalDeductionLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.philHealthLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.pagIbigLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.sssLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.center = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.daysLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.numDayLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -92,11 +106,11 @@
             this.guna2Shapes2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(33)))), ((int)(((byte)(88)))));
             this.guna2Shapes2.BorderThickness = 0;
             this.guna2Shapes2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(113)))), ((int)(((byte)(147)))));
-            this.guna2Shapes2.Location = new System.Drawing.Point(86, 474);
+            this.guna2Shapes2.Location = new System.Drawing.Point(86, 430);
             this.guna2Shapes2.Name = "guna2Shapes2";
             this.guna2Shapes2.PolygonSkip = 1;
             this.guna2Shapes2.Rotate = 0F;
-            this.guna2Shapes2.RoundedEdges = customizableEdges4;
+            this.guna2Shapes2.RoundedEdges = customizableEdges7;
             this.guna2Shapes2.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
             this.guna2Shapes2.Size = new System.Drawing.Size(702, 20);
             this.guna2Shapes2.TabIndex = 2;
@@ -109,7 +123,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(86, 213);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(86, 189);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(81, 29);
             this.guna2HtmlLabel2.TabIndex = 3;
@@ -120,7 +134,7 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(86, 448);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(86, 404);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(116, 29);
             this.guna2HtmlLabel3.TabIndex = 4;
@@ -132,11 +146,11 @@
             this.guna2Shapes1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(33)))), ((int)(((byte)(88)))));
             this.guna2Shapes1.BorderThickness = 0;
             this.guna2Shapes1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(113)))), ((int)(((byte)(147)))));
-            this.guna2Shapes1.Location = new System.Drawing.Point(86, 238);
+            this.guna2Shapes1.Location = new System.Drawing.Point(86, 214);
             this.guna2Shapes1.Name = "guna2Shapes1";
             this.guna2Shapes1.PolygonSkip = 1;
             this.guna2Shapes1.Rotate = 0F;
-            this.guna2Shapes1.RoundedEdges = customizableEdges3;
+            this.guna2Shapes1.RoundedEdges = customizableEdges6;
             this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
             this.guna2Shapes1.Size = new System.Drawing.Size(702, 20);
             this.guna2Shapes1.TabIndex = 7;
@@ -149,7 +163,7 @@
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(699, 213);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(699, 189);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(89, 29);
             this.guna2HtmlLabel4.TabIndex = 8;
@@ -160,7 +174,7 @@
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(699, 448);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(699, 404);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(89, 29);
             this.guna2HtmlLabel5.TabIndex = 9;
@@ -171,7 +185,7 @@
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(86, 264);
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(86, 240);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(78, 22);
             this.guna2HtmlLabel6.TabIndex = 10;
@@ -182,7 +196,7 @@
             this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(86, 283);
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(86, 259);
             this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             this.guna2HtmlLabel7.Size = new System.Drawing.Size(54, 22);
             this.guna2HtmlLabel7.TabIndex = 11;
@@ -193,7 +207,7 @@
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(86, 302);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(86, 278);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(92, 22);
             this.guna2HtmlLabel8.TabIndex = 12;
@@ -204,7 +218,7 @@
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(86, 320);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(86, 296);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(59, 22);
             this.guna2HtmlLabel9.TabIndex = 13;
@@ -215,7 +229,7 @@
             this.hoursLabel.BackColor = System.Drawing.Color.Transparent;
             this.hoursLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.hoursLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.hoursLabel.Location = new System.Drawing.Point(86, 339);
+            this.hoursLabel.Location = new System.Drawing.Point(86, 315);
             this.hoursLabel.Name = "hoursLabel";
             this.hoursLabel.Size = new System.Drawing.Size(105, 22);
             this.hoursLabel.TabIndex = 14;
@@ -226,7 +240,7 @@
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel11.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(86, 405);
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(86, 367);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             this.guna2HtmlLabel11.Size = new System.Drawing.Size(84, 22);
             this.guna2HtmlLabel11.TabIndex = 15;
@@ -239,7 +253,7 @@
             this.basicPayLabel.BackColor = System.Drawing.Color.Transparent;
             this.basicPayLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.basicPayLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.basicPayLabel.Location = new System.Drawing.Point(557, 264);
+            this.basicPayLabel.Location = new System.Drawing.Point(557, 240);
             this.basicPayLabel.Name = "basicPayLabel";
             this.basicPayLabel.Size = new System.Drawing.Size(231, 20);
             this.basicPayLabel.TabIndex = 16;
@@ -253,7 +267,7 @@
             this.otPayLabel.BackColor = System.Drawing.Color.Transparent;
             this.otPayLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.otPayLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.otPayLabel.Location = new System.Drawing.Point(557, 283);
+            this.otPayLabel.Location = new System.Drawing.Point(557, 259);
             this.otPayLabel.Name = "otPayLabel";
             this.otPayLabel.Size = new System.Drawing.Size(231, 20);
             this.otPayLabel.TabIndex = 17;
@@ -267,7 +281,7 @@
             this.allowanceLabel.BackColor = System.Drawing.Color.Transparent;
             this.allowanceLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.allowanceLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.allowanceLabel.Location = new System.Drawing.Point(557, 302);
+            this.allowanceLabel.Location = new System.Drawing.Point(557, 278);
             this.allowanceLabel.Name = "allowanceLabel";
             this.allowanceLabel.Size = new System.Drawing.Size(231, 20);
             this.allowanceLabel.TabIndex = 18;
@@ -281,7 +295,7 @@
             this.othersLabel.BackColor = System.Drawing.Color.Transparent;
             this.othersLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.othersLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.othersLabel.Location = new System.Drawing.Point(557, 320);
+            this.othersLabel.Location = new System.Drawing.Point(557, 296);
             this.othersLabel.Name = "othersLabel";
             this.othersLabel.Size = new System.Drawing.Size(231, 20);
             this.othersLabel.TabIndex = 19;
@@ -295,7 +309,7 @@
             this.totalHoursLabel.BackColor = System.Drawing.Color.Transparent;
             this.totalHoursLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.totalHoursLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.totalHoursLabel.Location = new System.Drawing.Point(544, 339);
+            this.totalHoursLabel.Location = new System.Drawing.Point(544, 315);
             this.totalHoursLabel.Name = "totalHoursLabel";
             this.totalHoursLabel.Size = new System.Drawing.Size(244, 20);
             this.totalHoursLabel.TabIndex = 20;
@@ -309,7 +323,7 @@
             this.grossPayLabel.BackColor = System.Drawing.Color.Transparent;
             this.grossPayLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.grossPayLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.grossPayLabel.Location = new System.Drawing.Point(602, 405);
+            this.grossPayLabel.Location = new System.Drawing.Point(602, 367);
             this.grossPayLabel.Name = "grossPayLabel";
             this.grossPayLabel.Size = new System.Drawing.Size(186, 20);
             this.grossPayLabel.TabIndex = 21;
@@ -323,7 +337,7 @@
             this.positionLabel.BackColor = System.Drawing.Color.Transparent;
             this.positionLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.positionLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.positionLabel.Location = new System.Drawing.Point(3, 133);
+            this.positionLabel.Location = new System.Drawing.Point(3, 128);
             this.positionLabel.Name = "positionLabel";
             this.positionLabel.Size = new System.Drawing.Size(877, 20);
             this.positionLabel.TabIndex = 29;
@@ -337,9 +351,9 @@
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
             this.nameLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.nameLabel.ForeColor = System.Drawing.Color.Gainsboro;
-            this.nameLabel.Location = new System.Drawing.Point(3, 116);
+            this.nameLabel.Location = new System.Drawing.Point(3, 111);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(877, 20);
+            this.nameLabel.Size = new System.Drawing.Size(885, 20);
             this.nameLabel.TabIndex = 28;
             this.nameLabel.Text = "SANTOS, YGI MARTIN";
             this.nameLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
@@ -347,7 +361,7 @@
             // changeBtn
             // 
             this.changeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.changeBtn.CustomizableEdges = customizableEdges1;
+            this.changeBtn.CustomizableEdges = customizableEdges4;
             this.changeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.changeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.changeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -355,9 +369,9 @@
             this.changeBtn.FillColor = System.Drawing.Color.Transparent;
             this.changeBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.changeBtn.ForeColor = System.Drawing.Color.White;
-            this.changeBtn.Location = new System.Drawing.Point(355, 159);
+            this.changeBtn.Location = new System.Drawing.Point(355, 154);
             this.changeBtn.Name = "changeBtn";
-            this.changeBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.changeBtn.ShadowDecoration.CustomizableEdges = customizableEdges5;
             this.changeBtn.Size = new System.Drawing.Size(178, 39);
             this.changeBtn.TabIndex = 31;
             this.changeBtn.Text = "CURRENT";
@@ -367,6 +381,33 @@
             // mainPanel
             // 
             this.mainPanel.BorderRadius = 20;
+            this.mainPanel.Controls.Add(this.emailBtn);
+            this.mainPanel.Controls.Add(this.netpayLabel);
+            this.mainPanel.Controls.Add(this.guna2Shapes3);
+            this.mainPanel.Controls.Add(this.totalHoursLabel);
+            this.mainPanel.Controls.Add(this.changeBtn);
+            this.mainPanel.Controls.Add(this.othersLabel);
+            this.mainPanel.Controls.Add(this.totalDeductionLabel);
+            this.mainPanel.Controls.Add(this.hoursLabel);
+            this.mainPanel.Controls.Add(this.allowanceLabel);
+            this.mainPanel.Controls.Add(this.guna2HtmlLabel9);
+            this.mainPanel.Controls.Add(this.positionLabel);
+            this.mainPanel.Controls.Add(this.otPayLabel);
+            this.mainPanel.Controls.Add(this.guna2HtmlLabel18);
+            this.mainPanel.Controls.Add(this.basicPayLabel);
+            this.mainPanel.Controls.Add(this.nameLabel);
+            this.mainPanel.Controls.Add(this.philHealthLabel);
+            this.mainPanel.Controls.Add(this.guna2HtmlLabel16);
+            this.mainPanel.Controls.Add(this.guna2HtmlLabel8);
+            this.mainPanel.Controls.Add(this.pagIbigLabel);
+            this.mainPanel.Controls.Add(this.guna2HtmlLabel7);
+            this.mainPanel.Controls.Add(this.guna2HtmlLabel13);
+            this.mainPanel.Controls.Add(this.guna2HtmlLabel6);
+            this.mainPanel.Controls.Add(this.sssLabel);
+            this.mainPanel.Controls.Add(this.guna2HtmlLabel4);
+            this.mainPanel.Controls.Add(this.guna2HtmlLabel14);
+            this.mainPanel.Controls.Add(this.guna2Shapes1);
+            this.mainPanel.Controls.Add(this.guna2HtmlLabel2);
             this.mainPanel.Controls.Add(this.center);
             this.mainPanel.Controls.Add(this.daysLabel);
             this.mainPanel.Controls.Add(this.numDayLabel);
@@ -375,14 +416,168 @@
             this.mainPanel.Controls.Add(this.guna2HtmlLabel5);
             this.mainPanel.Controls.Add(this.guna2Shapes2);
             this.mainPanel.Controls.Add(this.guna2HtmlLabel3);
-            this.mainPanel.CustomizableEdges = customizableEdges5;
+            this.mainPanel.CustomizableEdges = customizableEdges8;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.mainPanel.ShadowDecoration.CustomizableEdges = customizableEdges9;
             this.mainPanel.Size = new System.Drawing.Size(885, 652);
             this.mainPanel.TabIndex = 32;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            // 
+            // emailBtn
+            // 
+            this.emailBtn.BackColor = System.Drawing.Color.Transparent;
+            this.emailBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(185)))), ((int)(((byte)(209)))));
+            this.emailBtn.BorderRadius = 20;
+            this.emailBtn.BorderThickness = 1;
+            this.emailBtn.CustomizableEdges = customizableEdges1;
+            this.emailBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.emailBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.emailBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.emailBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.emailBtn.FillColor = System.Drawing.Color.Transparent;
+            this.emailBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.emailBtn.ForeColor = System.Drawing.Color.White;
+            this.emailBtn.Location = new System.Drawing.Point(315, 601);
+            this.emailBtn.Name = "emailBtn";
+            this.emailBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.emailBtn.Size = new System.Drawing.Size(246, 39);
+            this.emailBtn.TabIndex = 43;
+            this.emailBtn.Text = "EMAIL PAYSLIP";
+            this.emailBtn.UseTransparentBackground = true;
+            this.emailBtn.Click += new System.EventHandler(this.emailBtn_Click);
+            // 
+            // netpayLabel
+            // 
+            this.netpayLabel.AutoSize = false;
+            this.netpayLabel.BackColor = System.Drawing.Color.Transparent;
+            this.netpayLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.netpayLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.netpayLabel.Location = new System.Drawing.Point(12, 569);
+            this.netpayLabel.Name = "netpayLabel";
+            this.netpayLabel.Size = new System.Drawing.Size(861, 23);
+            this.netpayLabel.TabIndex = 42;
+            this.netpayLabel.Text = "TOTAL DEDUCTION";
+            this.netpayLabel.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // guna2Shapes3
+            // 
+            this.guna2Shapes3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Shapes3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(33)))), ((int)(((byte)(88)))));
+            this.guna2Shapes3.BorderThickness = 0;
+            this.guna2Shapes3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(113)))), ((int)(((byte)(147)))));
+            this.guna2Shapes3.Location = new System.Drawing.Point(86, 554);
+            this.guna2Shapes3.Name = "guna2Shapes3";
+            this.guna2Shapes3.PolygonSkip = 1;
+            this.guna2Shapes3.Rotate = 0F;
+            this.guna2Shapes3.RoundedEdges = customizableEdges3;
+            this.guna2Shapes3.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
+            this.guna2Shapes3.Size = new System.Drawing.Size(702, 20);
+            this.guna2Shapes3.TabIndex = 41;
+            this.guna2Shapes3.Text = "guna2Shapes3";
+            this.guna2Shapes3.UseTransparentBackground = true;
+            this.guna2Shapes3.Zoom = 120;
+            // 
+            // totalDeductionLabel
+            // 
+            this.totalDeductionLabel.AutoSize = false;
+            this.totalDeductionLabel.AutoSizeHeightOnly = true;
+            this.totalDeductionLabel.BackColor = System.Drawing.Color.Transparent;
+            this.totalDeductionLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.totalDeductionLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.totalDeductionLabel.Location = new System.Drawing.Point(557, 528);
+            this.totalDeductionLabel.Name = "totalDeductionLabel";
+            this.totalDeductionLabel.Size = new System.Drawing.Size(231, 20);
+            this.totalDeductionLabel.TabIndex = 40;
+            this.totalDeductionLabel.Text = "0.00";
+            this.totalDeductionLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // guna2HtmlLabel18
+            // 
+            this.guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel18.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.guna2HtmlLabel18.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2HtmlLabel18.Location = new System.Drawing.Point(86, 528);
+            this.guna2HtmlLabel18.Name = "guna2HtmlLabel18";
+            this.guna2HtmlLabel18.Size = new System.Drawing.Size(136, 22);
+            this.guna2HtmlLabel18.TabIndex = 39;
+            this.guna2HtmlLabel18.Text = "TOTAL DEDUCTION";
+            // 
+            // philHealthLabel
+            // 
+            this.philHealthLabel.AutoSize = false;
+            this.philHealthLabel.AutoSizeHeightOnly = true;
+            this.philHealthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.philHealthLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.philHealthLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.philHealthLabel.Location = new System.Drawing.Point(557, 491);
+            this.philHealthLabel.Name = "philHealthLabel";
+            this.philHealthLabel.Size = new System.Drawing.Size(231, 20);
+            this.philHealthLabel.TabIndex = 38;
+            this.philHealthLabel.Text = "0.00";
+            this.philHealthLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // guna2HtmlLabel16
+            // 
+            this.guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel16.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.guna2HtmlLabel16.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2HtmlLabel16.Location = new System.Drawing.Point(86, 491);
+            this.guna2HtmlLabel16.Name = "guna2HtmlLabel16";
+            this.guna2HtmlLabel16.Size = new System.Drawing.Size(75, 22);
+            this.guna2HtmlLabel16.TabIndex = 37;
+            this.guna2HtmlLabel16.Text = "PhilHealth";
+            // 
+            // pagIbigLabel
+            // 
+            this.pagIbigLabel.AutoSize = false;
+            this.pagIbigLabel.AutoSizeHeightOnly = true;
+            this.pagIbigLabel.BackColor = System.Drawing.Color.Transparent;
+            this.pagIbigLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.pagIbigLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.pagIbigLabel.Location = new System.Drawing.Point(557, 473);
+            this.pagIbigLabel.Name = "pagIbigLabel";
+            this.pagIbigLabel.Size = new System.Drawing.Size(231, 20);
+            this.pagIbigLabel.TabIndex = 36;
+            this.pagIbigLabel.Text = "0.00";
+            this.pagIbigLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // guna2HtmlLabel13
+            // 
+            this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel13.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.guna2HtmlLabel13.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2HtmlLabel13.Location = new System.Drawing.Point(86, 473);
+            this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
+            this.guna2HtmlLabel13.Size = new System.Drawing.Size(67, 22);
+            this.guna2HtmlLabel13.TabIndex = 35;
+            this.guna2HtmlLabel13.Text = "PAG-IBIG";
+            // 
+            // sssLabel
+            // 
+            this.sssLabel.AutoSize = false;
+            this.sssLabel.AutoSizeHeightOnly = true;
+            this.sssLabel.BackColor = System.Drawing.Color.Transparent;
+            this.sssLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.sssLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.sssLabel.Location = new System.Drawing.Point(557, 456);
+            this.sssLabel.Name = "sssLabel";
+            this.sssLabel.Size = new System.Drawing.Size(231, 20);
+            this.sssLabel.TabIndex = 34;
+            this.sssLabel.Text = "0.00";
+            this.sssLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // guna2HtmlLabel14
+            // 
+            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel14.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.guna2HtmlLabel14.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(86, 456);
+            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
+            this.guna2HtmlLabel14.Size = new System.Drawing.Size(30, 22);
+            this.guna2HtmlLabel14.TabIndex = 33;
+            this.guna2HtmlLabel14.Text = "SSS";
             // 
             // center
             // 
@@ -403,7 +598,7 @@
             this.daysLabel.BackColor = System.Drawing.Color.Transparent;
             this.daysLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.daysLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.daysLabel.Location = new System.Drawing.Point(534, 360);
+            this.daysLabel.Location = new System.Drawing.Point(534, 332);
             this.daysLabel.Name = "daysLabel";
             this.daysLabel.Size = new System.Drawing.Size(254, 20);
             this.daysLabel.TabIndex = 23;
@@ -415,7 +610,7 @@
             this.numDayLabel.BackColor = System.Drawing.Color.Transparent;
             this.numDayLabel.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.numDayLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.numDayLabel.Location = new System.Drawing.Point(86, 360);
+            this.numDayLabel.Location = new System.Drawing.Point(86, 332);
             this.numDayLabel.Name = "numDayLabel";
             this.numDayLabel.Size = new System.Drawing.Size(94, 22);
             this.numDayLabel.TabIndex = 22;
@@ -427,22 +622,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(72)))), ((int)(((byte)(93)))));
             this.ClientSize = new System.Drawing.Size(885, 652);
-            this.Controls.Add(this.changeBtn);
-            this.Controls.Add(this.positionLabel);
-            this.Controls.Add(this.nameLabel);
-            this.Controls.Add(this.totalHoursLabel);
-            this.Controls.Add(this.othersLabel);
-            this.Controls.Add(this.allowanceLabel);
-            this.Controls.Add(this.otPayLabel);
-            this.Controls.Add(this.basicPayLabel);
-            this.Controls.Add(this.hoursLabel);
-            this.Controls.Add(this.guna2HtmlLabel9);
-            this.Controls.Add(this.guna2HtmlLabel8);
-            this.Controls.Add(this.guna2HtmlLabel7);
-            this.Controls.Add(this.guna2HtmlLabel6);
-            this.Controls.Add(this.guna2HtmlLabel4);
-            this.Controls.Add(this.guna2Shapes1);
-            this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -452,7 +631,6 @@
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -467,7 +645,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2HtmlLabel pagIbigLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
@@ -487,5 +665,14 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel hoursLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel numDayLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel center;
+        private Guna.UI2.WinForms.Guna2HtmlLabel sssLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
+        private Guna.UI2.WinForms.Guna2HtmlLabel totalDeductionLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel18;
+        private Guna.UI2.WinForms.Guna2HtmlLabel philHealthLabel;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
+        private Guna.UI2.WinForms.Guna2HtmlLabel netpayLabel;
+        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes3;
+        private Guna.UI2.WinForms.Guna2Button emailBtn;
     }
 }

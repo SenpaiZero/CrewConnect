@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp1.Helper;
+using CrewConnect.Helper;
 
-namespace WinFormsApp1
+namespace CrewConnect
 {
     public partial class NoConnectionForm : Form
     {

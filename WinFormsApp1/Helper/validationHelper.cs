@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsApp1.Helper
+namespace CrewConnect.Helper
 {
     public class validationHelper
     {

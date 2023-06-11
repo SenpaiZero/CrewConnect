@@ -9,7 +9,7 @@ using ZXing.QrCode;
 using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace WinFormsApp1.Helper
+namespace CrewConnect.Helper
 {
     public class cameraHelper
     {

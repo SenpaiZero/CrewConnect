@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1
+﻿namespace CrewConnect
 {
     partial class messageDialogForm
     {

@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp1.Helper;
+using CrewConnect.Helper;
 
-namespace WinFormsApp1.EmployeeClass
+namespace CrewConnect.EmployeeClass
 {
     public partial class employeeSetting : Form
     {

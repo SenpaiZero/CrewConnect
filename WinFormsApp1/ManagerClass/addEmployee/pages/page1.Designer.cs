@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.ManagerClass.addEmployee.pages
+﻿namespace CrewConnect.ManagerClass.addEmployee.pages
 {
     partial class page1
     {

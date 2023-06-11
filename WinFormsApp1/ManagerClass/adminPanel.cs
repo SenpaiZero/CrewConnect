@@ -11,11 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheArtOfDevHtmlRenderer.Adapters;
-using WinFormsApp1.Helper;
-using WinFormsApp1.ManagerClass.addEmployee;
-using WinFormsApp1.ManagerClass.addEmployee.pages;
+using CrewConnect.Helper;
+using CrewConnect.ManagerClass.addEmployee;
+using CrewConnect.ManagerClass.addEmployee.pages;
 
-namespace WinFormsApp1.ManagerClass
+namespace CrewConnect.ManagerClass
 {
     public partial class adminPanel : Form
     {

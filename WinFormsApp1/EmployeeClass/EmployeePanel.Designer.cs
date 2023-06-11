@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.EmployeeClass
+﻿namespace CrewConnect.EmployeeClass
 {
     partial class EmployeePanel
     {
@@ -207,7 +207,7 @@
             this.announcementBtn.FillColor = System.Drawing.Color.Transparent;
             this.announcementBtn.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.announcementBtn.ForeColor = System.Drawing.Color.White;
-            this.announcementBtn.Image = global::WinFormsApp1.Properties.Resources.megaphone;
+            this.announcementBtn.Image = global::CrewConnect.Properties.Resources.megaphone;
             this.announcementBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.announcementBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.announcementBtn.ImageSize = new System.Drawing.Size(32, 32);
@@ -238,7 +238,7 @@
             this.settingBtn.FillColor = System.Drawing.Color.Transparent;
             this.settingBtn.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.settingBtn.ForeColor = System.Drawing.Color.White;
-            this.settingBtn.Image = global::WinFormsApp1.Properties.Resources.setting;
+            this.settingBtn.Image = global::CrewConnect.Properties.Resources.setting;
             this.settingBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.settingBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.settingBtn.ImageSize = new System.Drawing.Size(32, 32);
@@ -285,7 +285,7 @@
             this.payslipBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(72)))), ((int)(((byte)(93)))));
             this.payslipBtn.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.payslipBtn.ForeColor = System.Drawing.Color.White;
-            this.payslipBtn.Image = global::WinFormsApp1.Properties.Resources.add;
+            this.payslipBtn.Image = global::CrewConnect.Properties.Resources.add;
             this.payslipBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.payslipBtn.ImageOffset = new System.Drawing.Point(10, 0);
             this.payslipBtn.ImageSize = new System.Drawing.Size(32, 32);

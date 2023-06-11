@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.ManagerClass
+﻿namespace CrewConnect.ManagerClass
 {
     partial class employeeID
     {
@@ -84,7 +84,7 @@
             this.employeePhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.employeePhoto.CustomizableEdges = customizableEdges6;
             this.employeePhoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.employeePhoto.Image = global::WinFormsApp1.Properties.Resources.padlock__1_;
+            this.employeePhoto.Image = global::CrewConnect.Properties.Resources.padlock__1_;
             this.employeePhoto.ImageRotate = 0F;
             this.employeePhoto.Location = new System.Drawing.Point(5, 5);
             this.employeePhoto.Name = "employeePhoto";
@@ -183,7 +183,7 @@
             this.qrPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.qrPhoto.CustomizableEdges = customizableEdges1;
             this.qrPhoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.qrPhoto.Image = global::WinFormsApp1.Properties.Resources.padlock__1_;
+            this.qrPhoto.Image = global::CrewConnect.Properties.Resources.padlock__1_;
             this.qrPhoto.ImageRotate = 0F;
             this.qrPhoto.Location = new System.Drawing.Point(5, 5);
             this.qrPhoto.Name = "qrPhoto";

@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.ManagerClass.addEmployee
+﻿namespace CrewConnect.ManagerClass.addEmployee
 {
     partial class previewInfo1
     {
@@ -161,7 +161,7 @@
             this.page1edit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.page1edit.CheckedState.ImageSize = new System.Drawing.Size(45, 45);
             this.page1edit.HoverState.ImageSize = new System.Drawing.Size(42, 42);
-            this.page1edit.Image = global::WinFormsApp1.Properties.Resources.edit;
+            this.page1edit.Image = global::CrewConnect.Properties.Resources.edit;
             this.page1edit.ImageOffset = new System.Drawing.Point(0, 0);
             this.page1edit.ImageRotate = 0F;
             this.page1edit.ImageSize = new System.Drawing.Size(32, 32);
@@ -590,7 +590,7 @@
             this.page3edit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.page3edit.CheckedState.ImageSize = new System.Drawing.Size(45, 45);
             this.page3edit.HoverState.ImageSize = new System.Drawing.Size(42, 42);
-            this.page3edit.Image = global::WinFormsApp1.Properties.Resources.edit;
+            this.page3edit.Image = global::CrewConnect.Properties.Resources.edit;
             this.page3edit.ImageOffset = new System.Drawing.Point(0, 0);
             this.page3edit.ImageRotate = 0F;
             this.page3edit.ImageSize = new System.Drawing.Size(32, 32);
@@ -781,7 +781,7 @@
             this.page2edit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.page2edit.CheckedState.ImageSize = new System.Drawing.Size(45, 45);
             this.page2edit.HoverState.ImageSize = new System.Drawing.Size(42, 42);
-            this.page2edit.Image = global::WinFormsApp1.Properties.Resources.edit;
+            this.page2edit.Image = global::CrewConnect.Properties.Resources.edit;
             this.page2edit.ImageOffset = new System.Drawing.Point(0, 0);
             this.page2edit.ImageRotate = 0F;
             this.page2edit.ImageSize = new System.Drawing.Size(32, 32);
@@ -894,7 +894,7 @@
             this.page4edit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.page4edit.CheckedState.ImageSize = new System.Drawing.Size(45, 45);
             this.page4edit.HoverState.ImageSize = new System.Drawing.Size(42, 42);
-            this.page4edit.Image = global::WinFormsApp1.Properties.Resources.edit;
+            this.page4edit.Image = global::CrewConnect.Properties.Resources.edit;
             this.page4edit.ImageOffset = new System.Drawing.Point(0, 0);
             this.page4edit.ImageRotate = 0F;
             this.page4edit.ImageSize = new System.Drawing.Size(32, 32);

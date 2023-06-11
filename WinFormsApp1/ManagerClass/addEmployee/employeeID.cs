@@ -10,10 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheArtOfDevHtmlRenderer.Adapters;
-using WinFormsApp1.Helper;
-using WinFormsApp1.Helper.email;
+using CrewConnect.Helper;
+using CrewConnect.Helper.email;
 
-namespace WinFormsApp1.ManagerClass
+namespace CrewConnect.ManagerClass
 {
     public partial class employeeID : Form
     {

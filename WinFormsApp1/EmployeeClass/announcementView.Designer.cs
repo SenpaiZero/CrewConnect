@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.EmployeeClass
+﻿namespace CrewConnect.EmployeeClass
 {
     partial class announcementView
     {

@@ -10,9 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp1.Helper;
+using CrewConnect.Helper;
 
-namespace WinFormsApp1.ManagerClass
+namespace CrewConnect.ManagerClass
 {
     public partial class showEmployee : Form
     {

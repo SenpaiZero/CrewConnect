@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.ManagerClass.addEmployee
+﻿namespace CrewConnect.ManagerClass.addEmployee
 {
     partial class addAnnouncement
     {
@@ -84,6 +84,7 @@
             this.mainPanel.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.mainPanel.Size = new System.Drawing.Size(885, 652);
             this.mainPanel.TabIndex = 0;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // addBtn
             // 
@@ -91,7 +92,7 @@
             this.addBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.addBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addBtn.HoverState.ImageSize = new System.Drawing.Size(38, 38);
-            this.addBtn.Image = global::WinFormsApp1.Properties.Resources.more;
+            this.addBtn.Image = global::CrewConnect.Properties.Resources.more;
             this.addBtn.ImageOffset = new System.Drawing.Point(0, 0);
             this.addBtn.ImageRotate = 0F;
             this.addBtn.ImageSize = new System.Drawing.Size(28, 28);
@@ -140,7 +141,7 @@
             this.deleteBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteBtn.HoverState.ImageSize = new System.Drawing.Size(38, 38);
-            this.deleteBtn.Image = global::WinFormsApp1.Properties.Resources.delete;
+            this.deleteBtn.Image = global::CrewConnect.Properties.Resources.delete;
             this.deleteBtn.ImageOffset = new System.Drawing.Point(0, 0);
             this.deleteBtn.ImageRotate = 0F;
             this.deleteBtn.ImageSize = new System.Drawing.Size(28, 28);
@@ -158,7 +159,7 @@
             this.refreshBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.refreshBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refreshBtn.HoverState.ImageSize = new System.Drawing.Size(42, 42);
-            this.refreshBtn.Image = global::WinFormsApp1.Properties.Resources.refresh;
+            this.refreshBtn.Image = global::CrewConnect.Properties.Resources.refresh;
             this.refreshBtn.ImageOffset = new System.Drawing.Point(0, 0);
             this.refreshBtn.ImageRotate = 0F;
             this.refreshBtn.ImageSize = new System.Drawing.Size(32, 32);
@@ -176,7 +177,7 @@
             this.searchBtn.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
             this.searchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.searchBtn.HoverState.ImageSize = new System.Drawing.Size(38, 38);
-            this.searchBtn.Image = global::WinFormsApp1.Properties.Resources.search1;
+            this.searchBtn.Image = global::CrewConnect.Properties.Resources.search1;
             this.searchBtn.ImageOffset = new System.Drawing.Point(0, 0);
             this.searchBtn.ImageRotate = 0F;
             this.searchBtn.ImageSize = new System.Drawing.Size(28, 28);

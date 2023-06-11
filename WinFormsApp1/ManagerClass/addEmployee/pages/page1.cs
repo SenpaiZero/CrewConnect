@@ -9,9 +9,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp1.Helper;
+using CrewConnect.Helper;
 
-namespace WinFormsApp1.ManagerClass.addEmployee.pages
+namespace CrewConnect.ManagerClass.addEmployee.pages
 {
     public partial class page1 : Form
     {
