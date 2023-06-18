@@ -14,9 +14,12 @@ namespace CrewConnect.EmployeeClass
 {
     public partial class employeeSetting : Form
     {
+        public static employeeSetting empSet;
         public employeeSetting()
         {
             InitializeComponent();
+            empSet = this;
+            CheckForIllegalCrossThreadCalls = false;
         }
         void loading()
         {
@@ -121,6 +124,49 @@ namespace CrewConnect.EmployeeClass
             {
                 newPass2.PasswordChar = '●';
             }
+        }
+
+        private void oldPass_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                newPass.Focus();
+        }
+
+        private void newPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                newPass2.Focus();
+        }
+
+        private void newPass2_KeyDown(object sender, KeyEventArgs e)
+        {
+            // change pass
+            if(e.KeyCode == Keys.Enter)
+                guna2Button4.PerformClick();
+        }
+
+        private void employeeSetting_Load(object sender, EventArgs e)
+        {
+            empSet = this;
+        }
+
+        public bool isTbFocus()
+        {
+            if (oldPass.Focused || newPass.Focused || newPass2.Focused)
+                return true;
+            else
+                return false;
+        }
+
+
+        private void employeeSetting_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Focus();
         }
     }
 }

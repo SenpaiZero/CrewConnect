@@ -19,8 +19,11 @@ namespace CrewConnect.ManagerClass
         public EmployeeList()
         {
             InitializeComponent();
+
+            CheckForIllegalCrossThreadCalls = false;
         }
         static SqlConnection con;
+        public static EmployeeList empList;
         private void searchBtn_Click(object sender, EventArgs e)
         {
             if (!validationHelper.internetAvailability())
@@ -63,6 +66,8 @@ namespace CrewConnect.ManagerClass
 
         private void EmployeeList_Load(object sender, EventArgs e)
         {
+            EmployeeList.empList = this;
+
             if (!validationHelper.internetAvailability())
                 return;
             showData();
@@ -116,13 +121,31 @@ namespace CrewConnect.ManagerClass
             searchTB.Text = "";
             showData();
         }
-
+        public void focusTB()
+        {
+            searchTB.Focus();
+        }
+        public void refresh()
+        {
+            refreshBtn.PerformClick();
+        }
         private void searchTB_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Control && e.KeyCode == Keys.Space)
+            {
+                this.Parent.Focus();
+            }
+
             if (e.KeyCode == Keys.Enter)
             {
                 searchBtn.PerformClick();
             }
+        }
+
+        private void listTable_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+                openBtn.PerformClick();
         }
     }
 }

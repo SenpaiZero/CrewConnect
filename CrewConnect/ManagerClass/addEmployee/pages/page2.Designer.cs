@@ -148,6 +148,7 @@
             this.religionCB.Size = new System.Drawing.Size(243, 46);
             this.religionCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.religionCB.TabIndex = 38;
+            this.religionCB.TabStop = false;
             this.religionCB.SelectedValueChanged += new System.EventHandler(this.religionCB_SelectedValueChanged);
             // 
             // statusCB
@@ -168,6 +169,7 @@
             this.statusCB.Size = new System.Drawing.Size(243, 46);
             this.statusCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.statusCB.TabIndex = 37;
+            this.statusCB.TabStop = false;
             this.statusCB.SelectedValueChanged += new System.EventHandler(this.statusCB_SelectedValueChanged);
             // 
             // prevBtn
@@ -185,7 +187,7 @@
             this.prevBtn.Name = "prevBtn";
             this.prevBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.prevBtn.Size = new System.Drawing.Size(225, 56);
-            this.prevBtn.TabIndex = 36;
+            this.prevBtn.TabIndex = 2;
             this.prevBtn.Text = "PREVIOUS";
             this.prevBtn.Click += new System.EventHandler(this.prevBtn_Click);
             // 
@@ -207,6 +209,7 @@
             this.nationalityCB.Size = new System.Drawing.Size(243, 46);
             this.nationalityCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.nationalityCB.TabIndex = 35;
+            this.nationalityCB.TabStop = false;
             this.nationalityCB.SelectedValueChanged += new System.EventHandler(this.nationalityCB_SelectedValueChanged);
             // 
             // genderCB
@@ -227,6 +230,7 @@
             this.genderCB.Size = new System.Drawing.Size(243, 46);
             this.genderCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.genderCB.TabIndex = 34;
+            this.genderCB.TabStop = false;
             this.genderCB.SelectedValueChanged += new System.EventHandler(this.genderCB_SelectedValueChanged);
             // 
             // bloodTypeCB
@@ -247,6 +251,7 @@
             this.bloodTypeCB.Size = new System.Drawing.Size(243, 46);
             this.bloodTypeCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.bloodTypeCB.TabIndex = 33;
+            this.bloodTypeCB.TabStop = false;
             this.bloodTypeCB.SelectedValueChanged += new System.EventHandler(this.bloodTypeCB_SelectedValueChanged);
             // 
             // guna2HtmlLabel5
@@ -259,6 +264,7 @@
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(167, 33);
             this.guna2HtmlLabel5.TabIndex = 32;
+            this.guna2HtmlLabel5.TabStop = false;
             this.guna2HtmlLabel5.Text = "INFORMATION";
             // 
             // yearCB
@@ -279,6 +285,7 @@
             this.yearCB.Size = new System.Drawing.Size(243, 46);
             this.yearCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.yearCB.TabIndex = 28;
+            this.yearCB.TabStop = false;
             this.yearCB.SelectedIndexChanged += new System.EventHandler(this.yearCB_SelectedIndexChanged);
             this.yearCB.SelectedValueChanged += new System.EventHandler(this.yearCB_SelectedValueChanged);
             // 
@@ -300,6 +307,7 @@
             this.monthCB.Size = new System.Drawing.Size(243, 46);
             this.monthCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.monthCB.TabIndex = 27;
+            this.monthCB.TabStop = false;
             this.monthCB.SelectedIndexChanged += new System.EventHandler(this.monthCB_SelectedIndexChanged);
             this.monthCB.SelectedValueChanged += new System.EventHandler(this.monthCB_SelectedValueChanged);
             // 
@@ -321,6 +329,7 @@
             this.dayCB.Size = new System.Drawing.Size(243, 46);
             this.dayCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.dayCB.TabIndex = 26;
+            this.dayCB.TabStop = false;
             this.dayCB.SelectedIndexChanged += new System.EventHandler(this.dayCB_SelectedIndexChanged);
             this.dayCB.SelectedValueChanged += new System.EventHandler(this.dayCB_SelectedValueChanged);
             // 
@@ -348,6 +357,7 @@
             this.ageTB.Size = new System.Drawing.Size(243, 46);
             this.ageTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.ageTB.TabIndex = 25;
+            this.ageTB.TabStop = false;
             this.ageTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // guna2HtmlLabel4
@@ -360,6 +370,7 @@
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(135, 33);
             this.guna2HtmlLabel4.TabIndex = 22;
+            this.guna2HtmlLabel4.TabStop = false;
             this.guna2HtmlLabel4.Text = "BIRTH DATE";
             // 
             // guna2HtmlLabel3
@@ -372,6 +383,7 @@
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(93, 38);
             this.guna2HtmlLabel3.TabIndex = 20;
+            this.guna2HtmlLabel3.TabStop = false;
             this.guna2HtmlLabel3.Text = "PAGE 2";
             // 
             // nextBtn
@@ -389,7 +401,7 @@
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.ShadowDecoration.CustomizableEdges = customizableEdges22;
             this.nextBtn.Size = new System.Drawing.Size(225, 56);
-            this.nextBtn.TabIndex = 18;
+            this.nextBtn.TabIndex = 1;
             this.nextBtn.Text = "NEXT";
             this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
             // 
@@ -408,6 +420,7 @@
             this.guna2Button8.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.guna2Button8.Size = new System.Drawing.Size(134, 12);
             this.guna2Button8.TabIndex = 6;
+            this.guna2Button8.TabStop = false;
             // 
             // guna2Button7
             // 
@@ -424,6 +437,7 @@
             this.guna2Button7.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.guna2Button7.Size = new System.Drawing.Size(134, 12);
             this.guna2Button7.TabIndex = 5;
+            this.guna2Button7.TabStop = false;
             // 
             // guna2Button6
             // 
@@ -440,6 +454,7 @@
             this.guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.guna2Button6.Size = new System.Drawing.Size(134, 12);
             this.guna2Button6.TabIndex = 4;
+            this.guna2Button6.TabStop = false;
             // 
             // guna2Button2
             // 
@@ -456,6 +471,7 @@
             this.guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges30;
             this.guna2Button2.Size = new System.Drawing.Size(134, 12);
             this.guna2Button2.TabIndex = 3;
+            this.guna2Button2.TabStop = false;
             // 
             // errorProvider1
             // 
@@ -473,9 +489,11 @@
             this.Controls.Add(this.mainsPanel);
             this.ForeColor = System.Drawing.Color.Transparent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "page2";
             this.Text = "page2";
             this.Load += new System.EventHandler(this.page2_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.page2_KeyDown);
             this.mainsPanel.ResumeLayout(false);
             this.mainsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

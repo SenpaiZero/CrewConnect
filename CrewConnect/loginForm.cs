@@ -11,13 +11,13 @@ namespace CrewConnect
 {
     public partial class loginForm : Form
     {
-        public static bool isDone = false;
 
         static String whatBtn = "";
         static SqlConnection con;
         static SqlCommand cmd;
         static SqlDataReader dr;
 
+        bool isAtt = false;
         public loginForm()
         {
             InitializeComponent();
@@ -59,6 +59,8 @@ namespace CrewConnect
         //Login btn
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            userInterfaceHelper.closeShortcut();
+
             if (!validationHelper.internetAvailability())
                 return;
             SuspendLayout();
@@ -127,10 +129,14 @@ namespace CrewConnect
                 else
                 {
                     dr.Close();
-                    messageDialogForm msg = new messageDialogForm();
-                    msg.title = "INCORRECT INFORMATION";
-                    msg.message = "You have entered an invalid username or password\n" +
-                        "Please ensure that you check the capitalization and other details accurately.";
+                    messageDialogForm msg = new messageDialogForm()
+                    {
+                        StartPosition = FormStartPosition.CenterParent,
+                        title = "INCORRECT INFORMATION",
+                        message = "You have entered an invalid username or password\n" +
+                            "Please ensure that you check the capitalization and other details accurately."
+                    };
+                    
                     msg.ShowDialog();
                 }
                 con.Close();
@@ -170,9 +176,16 @@ namespace CrewConnect
         }
         private void passwordTB_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.Control && e.KeyCode == Keys.Space)
             {
-                guna2Button2.PerformClick();
+                e.SuppressKeyPress = false;
+                mainsPanel.Focus();
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                if(whatBtn != "login")
+                    guna2Button2.PerformClick();
             }
         }
 
@@ -205,6 +218,87 @@ namespace CrewConnect
         private void passwordTB_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            userInterfaceHelper.openScreenKeyboard();
+        }
+
+        public static shortcutForm shortcut;
+        private void shortcutBtn_Click(object sender, EventArgs e)
+        {
+            if (shortcut != null)
+                return;
+            shortcut = new shortcutForm()
+            {
+                Category = new string[]
+                {
+                    "Textbox", "Textbox", "Textbox", "Attendance", "Attendance", "Menu", "Menu"
+                },
+                Names = new string[]
+                {
+                    "Change Focus", "Enter Login", "Unfocus Textbox", "Scan", "Cancel", "Login Menu", "Attendance Menu"
+                },
+                Key = new string[]
+                {
+                    "TAB/ENTER", "ENTER", "CTRL + SPACE", "SPACE BAR", "CTRL + SPACE BAR", "NUM 1", "NUM 2"
+                },
+            };
+
+            Size size = shortcut.Size;
+            shortcut.Size = new Size(size.Width, this.Height);
+            shortcut.showAsSide(this);
+            shortcut.Show();
+        }
+
+        private void loginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (userNameTB.Focused || passwordTB.Focused)
+                return;
+
+            if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
+            {
+                loginBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
+            {
+                attendanceBtn.PerformClick();
+            }
+
+            if (whatBtn == "attendance")
+            {
+                attendance.att.shortCut(e);
+            }
+                
+            Focus();
+        }
+
+        private void userNameTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Space)
+            {
+                e.SuppressKeyPress = false;
+                mainsPanel.Focus();
+            }
+
+            if (e.KeyCode == Keys.Enter)
+                passwordTB.Focus();
+        }
+
+        private void minimiseBtn_Click(object sender, EventArgs e)
+        {
+            detailsForm detail = new detailsForm();
+            detail.StartPosition = FormStartPosition.CenterParent;
+            detail.ShowDialog();
+        }
+
+        private void loginForm_LocationChanged(object sender, EventArgs e)
+        {
+            if(shortcut != null)
+            {
+                shortcut.showAsSide(this);
+            }
         }
     }
 }

@@ -351,31 +351,31 @@
   <data name="&gt;&gt;guna2PictureBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="maximiseBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="shortcutBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="maximiseBtn.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="shortcutBtn.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
-  <data name="maximiseBtn.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="shortcutBtn.Location" type="System.Drawing.Point, System.Drawing">
     <value>738, 10</value>
   </data>
-  <data name="maximiseBtn.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="shortcutBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 20</value>
   </data>
-  <data name="maximiseBtn.TabIndex" type="System.Int32, mscorlib">
+  <data name="shortcutBtn.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;maximiseBtn.Name" xml:space="preserve">
-    <value>maximiseBtn</value>
+  <data name="&gt;&gt;shortcutBtn.Name" xml:space="preserve">
+    <value>shortcutBtn</value>
   </data>
-  <data name="&gt;&gt;maximiseBtn.Type" xml:space="preserve">
+  <data name="&gt;&gt;shortcutBtn.Type" xml:space="preserve">
     <value>Guna.UI2.WinForms.Guna2CircleButton, Guna.UI2, Culture=neutral, PublicKeyToken=8b9d14aa5142e261</value>
   </data>
-  <data name="&gt;&gt;maximiseBtn.Parent" xml:space="preserve">
+  <data name="&gt;&gt;shortcutBtn.Parent" xml:space="preserve">
     <value>guna2Panel4</value>
   </data>
-  <data name="&gt;&gt;maximiseBtn.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;shortcutBtn.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="guna2HtmlLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">

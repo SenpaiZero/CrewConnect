@@ -11,12 +11,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CrewConnect.Helper;
 using CrewConnect.Helper.email;
+using CrewConnect.ManagerClass;
 using static QRCoder.PayloadGenerator.SwissQrCode;
 
 namespace CrewConnect.EmployeeClass
 {
     public partial class payslipForm : Form
     {
+        public static payslipForm payslip;
+        string current = "current";
+
+        public static payslipForm pay;
         public payslipForm()
         {
             InitializeComponent();
@@ -24,6 +29,7 @@ namespace CrewConnect.EmployeeClass
             this.BackColor = Color.Transparent;
 
             CheckForIllegalCrossThreadCalls = false;
+            payslip = this;
         }
         string id = "", contract = "", salary = "", position = "";
         DateOnly date;
@@ -66,6 +72,8 @@ namespace CrewConnect.EmployeeClass
 
         private void payslipForm_Load(object sender, EventArgs e)
         {
+            pay = this;
+
             loadCurrent("attendance");
             positionLabel.Text = globalVariables.userPosition;
             try
@@ -108,7 +116,38 @@ namespace CrewConnect.EmployeeClass
             }
         }
 
-        string current = "current";
+        public void shortcut(KeyEventArgs e)
+        {
+            if (changeBtn.Focused || emailBtn.Focused)
+                return;
+
+            if (e.KeyCode == Keys.Space)
+            {
+                changeBtn.PerformClick();
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                emailBtn.PerformClick();
+            }
+
+            Parent.Focus();
+        }
+        private void payslipForm_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void changeBtn_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void changeBtn_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
+        }
+
         private void changeBtn_Click(object sender, EventArgs e)
         {
             if (current == "current")
@@ -130,7 +169,7 @@ namespace CrewConnect.EmployeeClass
                     }
                 }
 
-                    loadCurrent("attendance_prev");
+                loadCurrent("attendance_prev");
                 changeBtn.Text = "PREVIOUS";
                 current = "previous";
             }
@@ -141,7 +180,7 @@ namespace CrewConnect.EmployeeClass
                 current = "current";
             }
         }
-
+        public static bool isFirstRun = true;
         void loadCurrent(string table)
         {
             Task.Run(
@@ -281,15 +320,22 @@ namespace CrewConnect.EmployeeClass
                 }
             );
 
-            loading();
+            if(isFirstRun)
+            {
+
+                isFirstRun = false;
+                return;
+            }
+                loading();
         }
         private void mainPanel_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void emailBtn_Click(object sender, EventArgs e)
         {
+            loading();
             string email = "";
             string position = "";
             
@@ -318,11 +364,8 @@ namespace CrewConnect.EmployeeClass
                     dr.Close();
                 }
             }
-            emailHelper.sendEmail_payslip(email, contract, totalHours.ToString(), 
-                totalDays.ToString(),
-                globalVariables.userFullName, position,
-                basicIncome, otPay, allowance, others, sssDed,
-                pagIbigDed, philHealthDed, grossPay, deduction, netpay);
+            Bitmap capturedImage = userInterfaceHelper.CapturePanelImage(this);
+            emailHelper.sendEmail_payslip(email, capturedImage);
         }
     }
 }

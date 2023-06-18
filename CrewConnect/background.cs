@@ -15,7 +15,15 @@ namespace CrewConnect
 {
     public partial class background : Form
     {
-        private loginForm log;
+        private static loginForm log;
+        private const int SW_HIDE = 0;
+        private const int SW_SHOW = 1;
+
+        [DllImport("user32.dll")]
+        private static extern int FindWindow(string className, string windowText);
+
+        [DllImport("user32.dll")]
+        private static extern int ShowWindow(int hwnd, int command);
         public background()
         {
             InitializeComponent();
@@ -31,16 +39,43 @@ namespace CrewConnect
         }
         private void background_Load(object sender, EventArgs e)
         {
-            log = new loginForm();
-            log.Owner = this;
-            if (!log.InvokeRequired)
-                log.ShowDialog();
+            try
+            {
+                log = new loginForm();
+                log.Owner = this;
+                if (!log.InvokeRequired)
+                    log.ShowDialog();
+
+                base.OnLoad(e);
+
+                // Find the taskbar window and hide it
+                int hwndTaskbar = FindWindow("Shell_TrayWnd", "");
+                ShowWindow(hwndTaskbar, SW_HIDE);
+            }
+            catch(Exception ex)
+            {
+                messageDialogForm msg = new messageDialogForm();
+                msg.title = "AN ERROR OCCURED";
+                msg.message = ex.Message;
+                msg.StartPosition= FormStartPosition.CenterScreen;
+                msg.ShowDialog();
+            }
+            
 
         }
 
         private void background_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
+        }
+
+        private void background_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+
+            // Show the taskbar again when the form is closed
+            int hwndTaskbar = FindWindow("Shell_TrayWnd", "");
+            ShowWindow(hwndTaskbar, SW_SHOW);
         }
     }
 }

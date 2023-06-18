@@ -51,9 +51,8 @@ namespace CrewConnect
 
         private void attendance_FormClosing(object sender, FormClosingEventArgs e)
         {
-            SuspendLayout();
+            cancelBtn.PerformClick();
             cameraHelper.closeForm();
-            ResumeLayout();
         }
 
         private void scanBtn_Click(object sender, EventArgs e)
@@ -201,7 +200,6 @@ namespace CrewConnect
             int loadingFormY = listTableLocationOnForm.Y + (mainsPanel.Height - load.Height) / 2;
             load.Location = new Point(loadingFormX, loadingFormY);
             load.ShowDialog();
-
             cameraHelper.start(camListCB.SelectedIndex);
             cameraHelper.isDetect = false;
             CheckForIllegalCrossThreadCalls = false;
@@ -216,5 +214,42 @@ namespace CrewConnect
             timeTB.FillColor = Color.White;
         }
 
+        public void shortCut(KeyEventArgs e)
+        {
+
+            if (e.Control)
+                if (e.KeyCode == Keys.Space)
+                    cancelBtn.PerformClick();
+
+            if (!e.Control)
+                if (e.KeyCode == Keys.Space)
+                    scanBtn.PerformClick();
+
+        }
+
+        private void attendance_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void camListCB_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void camListCB_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+        }
+
+        private void camListCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(camListCB.SelectedIndex < 0)
+            {
+                camListCB.SelectedIndex = 0;
+            }
+        }
+
+        private void mainsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,10 +1,14 @@
 ﻿using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CrewConnect.Helper
 {
@@ -131,9 +135,59 @@ namespace CrewConnect.Helper
             return text;
         }
 
+        public static void closeShortcut()
+        {
+            string formNameToClose = "shortcutForm"; // Replace with the name of the form you want to close
+
+            var formsToClose = Application.OpenForms
+                .OfType<Form>()
+                .Where(f => f.Name == formNameToClose)
+                .ToList();
+
+            foreach (var formToClose in formsToClose)
+            {
+                formToClose.Close();
+            }
+        }
         private void userInterfaceHelper_Load(object sender, EventArgs e)
         {
 
         }
+        public static Bitmap CapturePanelImage(Form form)
+        {
+            Bitmap image = new Bitmap(form.Width, form.Height);
+
+            using (Graphics graphics = Graphics.FromImage(image))
+            {
+                form.DrawToBitmap(image, new Rectangle(0, 0, form.Width, form.Height));
+            }
+
+            return image;
+        }
+        public static void openScreenKeyboard()
+        {
+            try
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo
+                {
+                    FileName = "osk.exe",
+                    UseShellExecute = true,
+                    Verb = "runas"
+                };
+
+                Process.Start(startInfo);
+            }
+            catch (Exception ex)
+            {
+                messageDialogForm msg = new messageDialogForm()
+                {
+                    title = "THE ON-SCREEN KEYBOARD COULD NOT BE OPENED",
+                    message = ex.Message,
+                    StartPosition = FormStartPosition.CenterParent
+                };
+                msg.ShowDialog();
+            }
+        }
+    
     }
 }

@@ -18,15 +18,24 @@ namespace CrewConnect.ManagerClass
 {
     public partial class adminSetting : Form
     {
+        public static adminSetting adSet;
         public adminSetting()
         {
             InitializeComponent();
         }
-
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParams = base.CreateParams;
+                handleParams.ExStyle |= 0x02000000;
+                return handleParams;
+            }
+        }
         private void adminSetting_Load(object sender, EventArgs e)
         {
+            adSet = this;
             showData();
-            contrrolCB.SelectedIndex = 0;
         }
 
         void showData()
@@ -121,7 +130,10 @@ namespace CrewConnect.ManagerClass
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@position", positionTB.Text.ToUpper());
-                        cmd.Parameters.AddWithValue("@control", contrrolCB.Text);
+                        if(isAdmin.CheckState.ToString().ToUpper() == "UNCHECKED")
+                            cmd.Parameters.AddWithValue("@control", "FALSE");
+                        else
+                            cmd.Parameters.AddWithValue("@control", "TRUE");
                         cmd.ExecuteNonQuery();
 
                         messageDialogForm msg = new messageDialogForm();
@@ -157,9 +169,12 @@ namespace CrewConnect.ManagerClass
             var loadingForm = new loadingForm();
             loadingForm.StartPosition = FormStartPosition.Manual;
 
-            Point listTableLocationOnForm = bgPanel.Parent.PointToScreen(bgPanel.Location);
-            int loadingFormX = listTableLocationOnForm.X + (bgPanel.Width - loadingForm.Width) / 2;
-            int loadingFormY = listTableLocationOnForm.Y + (bgPanel.Height - loadingForm.Height) / 2;
+            Point listTableLocationOnForm = this.Parent.PointToScreen(Point.Empty);
+
+            int loadingFormX = listTableLocationOnForm.X + (this.Parent.Width - loadingForm.Width) / 2;
+            int loadingFormY = listTableLocationOnForm.Y + (this.Parent.Height - loadingForm.Height) / 2;
+
+            // Set the position of loadingForm
             loadingForm.Location = new Point(loadingFormX, loadingFormY);
 
             loadingForm.loadingTime = 1000;
@@ -332,6 +347,76 @@ namespace CrewConnect.ManagerClass
             else
             {
                 newPass2.PasswordChar = '●';
+            }
+        }
+
+        private void bgPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void systemBtn_Click(object sender, EventArgs e)
+        {
+            titleSys.Visible = true;
+            accountTitle.Visible = false;
+            accountPanel.Size = new Size(50, 415);
+
+            systemPanel.Size = new Size(686, 415);
+
+            systemBtn.Enabled = false;
+            accountBtn.Enabled = true;
+
+            accountPanel.Location = new Point(760, 172);
+            systemPanel.Location = new Point(68, 172);
+
+        }
+
+        private void systemPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void accountBtn_Click(object sender, EventArgs e)
+        {
+            titleSys.Visible = false;
+            accountTitle.Visible = true;
+            accountTitle.BringToFront();
+
+            accountPanel.Size = new Size(682, 415);
+            systemPanel.Size = new Size(50, 415);
+
+            accountBtn.Enabled = false;
+            systemBtn.Enabled = true;
+
+            accountPanel.Location = new Point(128, 172);
+            systemPanel.Location = new Point(68, 172);
+        }
+
+        private void religionTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void positionTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void systemClick()
+        {
+            systemBtn.PerformClick();
+        }
+
+        public void accountClick()
+        {
+            accountBtn.PerformClick();
+        }
+        private void textboxClick(object sender, KeyEventArgs e)
+        {
+
+            if (e.Control && e.KeyCode == Keys.Space)
+            {
+                this.Parent.Focus();
             }
         }
     }

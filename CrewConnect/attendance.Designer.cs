@@ -95,6 +95,7 @@
             this.mainsPanel.Size = new System.Drawing.Size(574, 436);
             this.mainsPanel.TabIndex = 4;
             this.mainsPanel.UseTransparentBackground = true;
+            this.mainsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainsPanel_Paint);
             // 
             // cancelBtn
             // 
@@ -250,6 +251,9 @@
             this.camListCB.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.camListCB.Size = new System.Drawing.Size(150, 36);
             this.camListCB.TabIndex = 2;
+            this.camListCB.SelectedIndexChanged += new System.EventHandler(this.camListCB_SelectedIndexChanged);
+            this.camListCB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.camListCB_KeyDown);
+            this.camListCB.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.camListCB_PreviewKeyDown);
             // 
             // scanBtn
             // 
@@ -300,11 +304,13 @@
             this.Controls.Add(this.mainsPanel);
             this.ForeColor = System.Drawing.Color.Transparent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "attendance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "attendance";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.attendance_FormClosing);
             this.Load += new System.EventHandler(this.attendance_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.attendance_KeyDown);
             this.mainsPanel.ResumeLayout(false);
             this.mainsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.camera)).EndInit();
@@ -318,7 +324,6 @@
         private Guna.UI2.WinForms.Guna2Panel mainsPanel;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2ComboBox camListCB;
-        private Guna.UI2.WinForms.Guna2Button scanBtn;
         private Guna.UI2.WinForms.Guna2PictureBox camera;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2PictureBox lastPic;
@@ -330,6 +335,7 @@
         private Guna.UI2.WinForms.Guna2TextBox idTB;
         private Guna.UI2.WinForms.Guna2TextBox dateTB;
         private Guna.UI2.WinForms.Guna2TextBox timeTB;
-        private Guna.UI2.WinForms.Guna2Button cancelBtn;
+        public Guna.UI2.WinForms.Guna2Button scanBtn;
+        public Guna.UI2.WinForms.Guna2Button cancelBtn;
     }
 }

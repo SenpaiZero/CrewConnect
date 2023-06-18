@@ -15,13 +15,16 @@ namespace CrewConnect.ManagerClass.addEmployee
     public partial class addAnnouncement : Form
     {
         static SqlConnection con;
+        public static addAnnouncement ann;
         public addAnnouncement()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         private void addAnnouncement_Load(object sender, EventArgs e)
         {
+            ann = this;
             if (!validationHelper.internetAvailability())
                 return;
             showData();
@@ -145,6 +148,49 @@ namespace CrewConnect.ManagerClass.addEmployee
         private void mainPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void listTable_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.D)
+                deleteBtn.PerformClick();
+        }
+        public void refresh()
+        {
+            refreshBtn.PerformClick();
+        }
+        public void focusSearch()
+        {
+            searchTB.Focus();
+        }
+        public void focusAdd()
+        {
+            newMsgTB.Focus();
+        }
+        private void searchTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Space)
+            {
+                this.Parent.Focus();
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchBtn.PerformClick();
+            }
+        }
+
+        private void newMsgTB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Space)
+            {
+                this.Parent.Focus();
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                addBtn.PerformClick();
+            }
         }
     }
 }

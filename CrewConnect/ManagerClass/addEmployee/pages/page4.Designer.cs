@@ -141,7 +141,8 @@
             this.contractCB.Name = "contractCB";
             this.contractCB.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.contractCB.Size = new System.Drawing.Size(296, 46);
-            this.contractCB.TabIndex = 46;
+            this.contractCB.TabIndex = 8;
+            this.contractCB.TabStop = false;
             this.contractCB.SelectedValueChanged += new System.EventHandler(this.contractCB_SelectedValueChanged);
             // 
             // guna2HtmlLabel5
@@ -154,6 +155,7 @@
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(89, 33);
             this.guna2HtmlLabel5.TabIndex = 45;
+            this.guna2HtmlLabel5.TabStop = false;
             this.guna2HtmlLabel5.Text = "SALARY";
             // 
             // salaryTB
@@ -178,7 +180,8 @@
             this.salaryTB.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.salaryTB.Size = new System.Drawing.Size(428, 45);
             this.salaryTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.salaryTB.TabIndex = 44;
+            this.salaryTB.TabIndex = 7;
+            this.salaryTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onKeyEnter);
             this.salaryTB.Validating += new System.ComponentModel.CancelEventHandler(this.salaryTB_Validating);
             // 
             // bsbTB
@@ -203,7 +206,8 @@
             this.bsbTB.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.bsbTB.Size = new System.Drawing.Size(211, 45);
             this.bsbTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.bsbTB.TabIndex = 43;
+            this.bsbTB.TabIndex = 5;
+            this.bsbTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onKeyEnter);
             this.bsbTB.Validating += new System.ComponentModel.CancelEventHandler(this.bsbTB_Validating);
             // 
             // accountNumTB
@@ -228,7 +232,8 @@
             this.accountNumTB.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.accountNumTB.Size = new System.Drawing.Size(532, 45);
             this.accountNumTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.accountNumTB.TabIndex = 42;
+            this.accountNumTB.TabIndex = 6;
+            this.accountNumTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onKeyEnter);
             this.accountNumTB.Validating += new System.ComponentModel.CancelEventHandler(this.accountNumTB_Validating);
             // 
             // companyNameTB
@@ -253,7 +258,8 @@
             this.companyNameTB.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.companyNameTB.Size = new System.Drawing.Size(761, 45);
             this.companyNameTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.companyNameTB.TabIndex = 41;
+            this.companyNameTB.TabIndex = 4;
+            this.companyNameTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onKeyEnter);
             this.companyNameTB.Validating += new System.ComponentModel.CancelEventHandler(this.companyNameTB_Validating);
             // 
             // companyAddTB
@@ -278,7 +284,8 @@
             this.companyAddTB.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.companyAddTB.Size = new System.Drawing.Size(761, 45);
             this.companyAddTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.companyAddTB.TabIndex = 40;
+            this.companyAddTB.TabIndex = 3;
+            this.companyAddTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onKeyEnter);
             this.companyAddTB.Validating += new System.ComponentModel.CancelEventHandler(this.companyAddTB_Validating);
             // 
             // branchTB
@@ -303,7 +310,8 @@
             this.branchTB.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.branchTB.Size = new System.Drawing.Size(334, 45);
             this.branchTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.branchTB.TabIndex = 39;
+            this.branchTB.TabIndex = 2;
+            this.branchTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onKeyEnter);
             this.branchTB.Validating += new System.ComponentModel.CancelEventHandler(this.branchTB_Validating);
             // 
             // guna2HtmlLabel4
@@ -316,6 +324,7 @@
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(163, 33);
             this.guna2HtmlLabel4.TabIndex = 38;
+            this.guna2HtmlLabel4.TabStop = false;
             this.guna2HtmlLabel4.Text = "BANK DETAILS";
             // 
             // bankNameTB
@@ -340,7 +349,8 @@
             this.bankNameTB.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.bankNameTB.Size = new System.Drawing.Size(409, 45);
             this.bankNameTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.bankNameTB.TabIndex = 37;
+            this.bankNameTB.TabIndex = 1;
+            this.bankNameTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onKeyEnter);
             this.bankNameTB.Validating += new System.ComponentModel.CancelEventHandler(this.bankNameTB_Validating);
             // 
             // prevBtn
@@ -359,7 +369,7 @@
             this.prevBtn.Name = "prevBtn";
             this.prevBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.prevBtn.Size = new System.Drawing.Size(225, 56);
-            this.prevBtn.TabIndex = 36;
+            this.prevBtn.TabIndex = 10;
             this.prevBtn.Text = "PREVIOUS";
             this.prevBtn.Click += new System.EventHandler(this.prevBtn_Click);
             // 
@@ -374,6 +384,7 @@
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(240, 37);
             this.guna2HtmlLabel3.TabIndex = 20;
+            this.guna2HtmlLabel3.TabStop = false;
             this.guna2HtmlLabel3.Text = "PAGE 4";
             // 
             // finishBtn
@@ -392,7 +403,7 @@
             this.finishBtn.Name = "finishBtn";
             this.finishBtn.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.finishBtn.Size = new System.Drawing.Size(225, 56);
-            this.finishBtn.TabIndex = 18;
+            this.finishBtn.TabIndex = 9;
             this.finishBtn.Text = "FINISH";
             this.finishBtn.Click += new System.EventHandler(this.finishBtn_Click);
             // 
@@ -411,6 +422,7 @@
             this.guna2Button8.ShadowDecoration.CustomizableEdges = customizableEdges22;
             this.guna2Button8.Size = new System.Drawing.Size(134, 12);
             this.guna2Button8.TabIndex = 6;
+            this.guna2Button8.TabStop = false;
             // 
             // guna2Button7
             // 
@@ -427,6 +439,7 @@
             this.guna2Button7.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.guna2Button7.Size = new System.Drawing.Size(134, 12);
             this.guna2Button7.TabIndex = 5;
+            this.guna2Button7.TabStop = false;
             // 
             // guna2Button6
             // 
@@ -443,6 +456,7 @@
             this.guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.guna2Button6.Size = new System.Drawing.Size(134, 12);
             this.guna2Button6.TabIndex = 4;
+            this.guna2Button6.TabStop = false;
             // 
             // guna2Button2
             // 
@@ -459,6 +473,7 @@
             this.guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.guna2Button2.Size = new System.Drawing.Size(134, 12);
             this.guna2Button2.TabIndex = 3;
+            this.guna2Button2.TabStop = false;
             // 
             // errorProvider1
             // 

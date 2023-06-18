@@ -25,6 +25,8 @@ namespace CrewConnect.ManagerClass
         public adminPanel()
         {
             InitializeComponent();
+
+            CheckForIllegalCrossThreadCalls = false;
         }
         protected override CreateParams CreateParams
         {
@@ -105,6 +107,8 @@ namespace CrewConnect.ManagerClass
 
         private void guna2HtmlLabel2_MouseDown(object sender, MouseEventArgs e)
         {
+            userInterfaceHelper.closeShortcut();
+
             var loadingForm = new loadingForm();
             loginForm log = new loginForm();
             loadingForm.StartPosition = FormStartPosition.CenterParent;
@@ -170,24 +174,144 @@ namespace CrewConnect.ManagerClass
 
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
         {
+            userInterfaceHelper.closeShortcut();
             globalVariables.isEdit = false;
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
-            var loadingForm = new loadingForm();
-            loginForm log = new loginForm();
-            loadingForm.StartPosition = FormStartPosition.CenterParent;
-            loadingForm.loadingTime = 2500;
-            loadingForm.ShowDialog();
+            messageDialogForm msg = new messageDialogForm();
+            msg.title = "ARE YOU SURE?";
+            msg.message = "YOU ARE ABOUT TO CLOSE CREWCONNECT";
+            msg.isOkDialog = true;
 
-            isCancelExit = false;
-            Environment.Exit(0);
+            if (msg.ShowDialog() == DialogResult.OK)
+            {
+                var loadingForm = new loadingForm();
+                loginForm log = new loginForm();
+                loadingForm.StartPosition = FormStartPosition.CenterParent;
+                loadingForm.loadingTime = 2000;
+                loadingForm.ShowDialog();
+
+                isCancelExit = false;
+                this.Hide();
+                Environment.Exit(0);
+            }
         }
 
         private void adminPanel_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = isCancelExit;
+        }
+
+        private void kbBtn_Click(object sender, EventArgs e)
+        {
+            userInterfaceHelper.openScreenKeyboard();
+        }
+
+        private void detailBtn_Click(object sender, EventArgs e)
+        {
+            detailsForm detail = new detailsForm();
+            detail.StartPosition = FormStartPosition.CenterParent;
+            detail.ShowDialog();
+        }
+
+        public static shortcutForm shortcut;
+        private void shortcutBtn_Click(object sender, EventArgs e)
+        {
+            if (shortcut != null)
+                return;
+
+            shortcut = new shortcutForm()
+            {
+                Category = new string[]
+                {
+                    "Add Employee", "Add Employee", "Textbox", 
+                    "Search", "Search", "Employee List", "Employee List",
+                    "Setting", "Setting", "Announcement", "Announcement",
+                    "Menu", "Menu", "Menu", "Menu"
+                },
+                Names = new string[]
+                {
+                    "Next Button", "Previous Button", "Stop Textbox Focus", 
+                    "Focus Search Textbox", "Enter Search", "All Refresh", "Open Selected",
+                    "System Tab", "Account Tab", "Delete Selected", "Focus Add Textbox",
+                    "Add Employee", "Employee List", "Settings", "Announcement"
+                },
+                Key = new string[]
+                {
+                    "ENTER", "ESC", "CTRL + SPACE", 
+                    "F", "ENTER", "R", "O",
+                    "Q", "W", "D", "A",
+                    "NUM 1", "NUM 2", "NUM 3", "NUM 4"
+                },
+            };
+
+            Size size = shortcut.Size;
+            shortcut.Size = new Size(size.Width, this.Height);
+            shortcut.showAsSide(this);
+            shortcut.Show();
+        }
+
+        private void adminPanel_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
+                addBtn.PerformClick();
+            if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
+                listBtn.PerformClick();
+            if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+                settingBtn.PerformClick();
+            if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
+                announcementBtn.PerformClick();
+
+            // list
+            if(whatBtn == "list")
+            {
+                if(e.KeyCode == Keys.F)
+                {
+                    EmployeeList.empList.focusTB();
+                }
+                else if(e.KeyCode == Keys.R) 
+                {
+                    EmployeeList.empList.refresh();
+                }
+            }
+
+            if(whatBtn == "setting")
+            {
+                if(e.KeyCode == Keys.Q)
+                {
+                    adminSetting.adSet.systemClick();
+                }
+                else if(e.KeyCode == Keys.W)
+                {
+                    adminSetting.adSet.accountClick();
+                }
+            }
+
+            if(whatBtn == "announcement")
+            {
+                if (e.KeyCode == Keys.F)
+                {
+                    addAnnouncement.ann.focusSearch();
+                }
+                else if (e.KeyCode == Keys.R)
+                {
+                    addAnnouncement.ann.refresh();
+                }
+                else if(e.KeyCode == Keys.A)
+                {
+                    addAnnouncement.ann.focusAdd();
+                }
+            }
+
+            Focus();
+        }
+
+        private void adminPanel_LocationChanged(object sender, EventArgs e)
+        {
+            if(shortcut != null)
+                shortcut.showAsSide(this);
         }
     }
 }

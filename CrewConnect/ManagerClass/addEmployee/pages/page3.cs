@@ -18,6 +18,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
     
     public partial class page3 : Form
     {
+        public static page3 p3;
         static bool[] isValid = new bool[4];
         public page3()
         {
@@ -134,6 +135,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
 
         private void page3_Load(object sender, EventArgs e)
         {
+            p3 = this;
             validationHelper.comboBoxFirstLoad = true;
             for (int i = 0; i < isValid.Length; i++)
             {
@@ -236,6 +238,24 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
         private void emailTB_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void phoneNumTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void enterClick(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Space)
+            {
+                this.Parent.Focus();
+            }
+
+            if (e.KeyCode == Keys.Enter)
+                nextBtn.PerformClick();
+            else if(e.KeyCode == Keys.Escape)
+                prevBtn.PerformClick();
         }
     }
 }

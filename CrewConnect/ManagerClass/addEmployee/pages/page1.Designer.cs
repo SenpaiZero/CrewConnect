@@ -177,6 +177,7 @@
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(72, 33);
             this.guna2HtmlLabel4.TabIndex = 16;
+            this.guna2HtmlLabel4.TabStop = false;
             this.guna2HtmlLabel4.Text = "NAME";
             // 
             // postalTB
@@ -202,6 +203,7 @@
             this.postalTB.Size = new System.Drawing.Size(368, 45);
             this.postalTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.postalTB.TabIndex = 8;
+            this.postalTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterClick);
             this.postalTB.Validating += new System.ComponentModel.CancelEventHandler(this.postalTB_Validating);
             // 
             // stateTB
@@ -227,6 +229,7 @@
             this.stateTB.Size = new System.Drawing.Size(393, 45);
             this.stateTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.stateTB.TabIndex = 7;
+            this.stateTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterClick);
             this.stateTB.Validating += new System.ComponentModel.CancelEventHandler(this.stateTB_Validating);
             // 
             // cityTB
@@ -252,6 +255,7 @@
             this.cityTB.Size = new System.Drawing.Size(368, 45);
             this.cityTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cityTB.TabIndex = 6;
+            this.cityTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterClick);
             this.cityTB.Validating += new System.ComponentModel.CancelEventHandler(this.cityTB_Validating);
             // 
             // address2TB
@@ -277,6 +281,7 @@
             this.address2TB.Size = new System.Drawing.Size(787, 45);
             this.address2TB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.address2TB.TabIndex = 5;
+            this.address2TB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterClick);
             this.address2TB.Validating += new System.ComponentModel.CancelEventHandler(this.address2TB_Validating);
             // 
             // addressTB
@@ -302,6 +307,7 @@
             this.addressTB.Size = new System.Drawing.Size(787, 45);
             this.addressTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.addressTB.TabIndex = 4;
+            this.addressTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterClick);
             this.addressTB.Validating += new System.ComponentModel.CancelEventHandler(this.addressTB_Validating);
             // 
             // middlenameTB
@@ -327,6 +333,7 @@
             this.middlenameTB.Size = new System.Drawing.Size(185, 45);
             this.middlenameTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.middlenameTB.TabIndex = 3;
+            this.middlenameTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterClick);
             this.middlenameTB.Validating += new System.ComponentModel.CancelEventHandler(this.middlenameTB_Validating);
             // 
             // firstnameTB
@@ -352,6 +359,7 @@
             this.firstnameTB.Size = new System.Drawing.Size(263, 45);
             this.firstnameTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.firstnameTB.TabIndex = 2;
+            this.firstnameTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterClick);
             this.firstnameTB.Validating += new System.ComponentModel.CancelEventHandler(this.firstnameTB_Validating);
             // 
             // guna2Button8
@@ -446,6 +454,7 @@
             this.surnameTB.Size = new System.Drawing.Size(286, 45);
             this.surnameTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.surnameTB.TabIndex = 1;
+            this.surnameTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterClick);
             this.surnameTB.Validating += new System.ComponentModel.CancelEventHandler(this.surnameTB_Validating);
             // 
             // errorProvider

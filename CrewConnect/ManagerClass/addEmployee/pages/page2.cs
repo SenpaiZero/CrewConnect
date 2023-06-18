@@ -14,6 +14,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
 {
     public partial class page2 : Form
     {
+        public static page2 p2;
         public page2()
         {
             InitializeComponent();
@@ -105,6 +106,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
 
         private void page2_Load(object sender, EventArgs e)
         {
+            p2 = this;
             validationHelper.comboBoxFirstLoad = true;
             // Birth Day
             String[] monthVal = 
@@ -295,6 +297,18 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
         private void mainsPanel_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void page2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter) 
+            {
+                nextBtn.PerformClick();
+            }
+            else if(e.KeyCode == Keys.Escape) 
+            {
+                prevBtn.PerformClick();
+            }
         }
     }
 }

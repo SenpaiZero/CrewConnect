@@ -162,6 +162,7 @@
             this.guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.guna2TextBox1.Size = new System.Drawing.Size(154, 46);
             this.guna2TextBox1.TabIndex = 48;
+            this.guna2TextBox1.TabStop = false;
             this.guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // positionCB
@@ -182,6 +183,7 @@
             this.positionCB.Size = new System.Drawing.Size(361, 46);
             this.positionCB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.positionCB.TabIndex = 47;
+            this.positionCB.TabStop = false;
             this.positionCB.SelectedValueChanged += new System.EventHandler(this.positionCB_SelectedValueChanged);
             this.positionCB.Validating += new System.ComponentModel.CancelEventHandler(this.positionCB_Validating);
             // 
@@ -209,6 +211,7 @@
             this.idNumTB.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.idNumTB.Size = new System.Drawing.Size(154, 46);
             this.idNumTB.TabIndex = 46;
+            this.idNumTB.TabStop = false;
             this.idNumTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // generateBtn
@@ -230,6 +233,7 @@
             this.generateBtn.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.generateBtn.Size = new System.Drawing.Size(154, 95);
             this.generateBtn.TabIndex = 45;
+            this.generateBtn.TabStop = false;
             this.generateBtn.Text = "GENERATE";
             this.generateBtn.Click += new System.EventHandler(this.generateBtn_Click);
             // 
@@ -252,6 +256,7 @@
             this.captureBtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.captureBtn.Size = new System.Drawing.Size(154, 99);
             this.captureBtn.TabIndex = 44;
+            this.captureBtn.TabStop = false;
             this.captureBtn.Text = "CAPTURE";
             this.captureBtn.Click += new System.EventHandler(this.captureBtn_Click);
             // 
@@ -274,6 +279,7 @@
             this.fileBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.fileBtn.Size = new System.Drawing.Size(154, 95);
             this.fileBtn.TabIndex = 43;
+            this.fileBtn.TabStop = false;
             this.fileBtn.Text = "INSERT PHOTO";
             this.fileBtn.Click += new System.EventHandler(this.fileBtn_Click);
             // 
@@ -299,7 +305,8 @@
             this.guardianTB.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.guardianTB.Size = new System.Drawing.Size(746, 45);
             this.guardianTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guardianTB.TabIndex = 42;
+            this.guardianTB.TabIndex = 3;
+            this.guardianTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterClick);
             this.guardianTB.Validating += new System.ComponentModel.CancelEventHandler(this.guardianTB_Validating);
             // 
             // emailTB
@@ -324,8 +331,9 @@
             this.emailTB.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.emailTB.Size = new System.Drawing.Size(746, 45);
             this.emailTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.emailTB.TabIndex = 41;
+            this.emailTB.TabIndex = 2;
             this.emailTB.TextChanged += new System.EventHandler(this.emailTB_TextChanged);
+            this.emailTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterClick);
             this.emailTB.Validating += new System.ComponentModel.CancelEventHandler(this.emailTB_Validating);
             // 
             // phoneNumTB
@@ -350,7 +358,9 @@
             this.phoneNumTB.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.phoneNumTB.Size = new System.Drawing.Size(365, 45);
             this.phoneNumTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.phoneNumTB.TabIndex = 40;
+            this.phoneNumTB.TabIndex = 1;
+            this.phoneNumTB.TextChanged += new System.EventHandler(this.phoneNumTB_TextChanged);
+            this.phoneNumTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enterClick);
             this.phoneNumTB.Validating += new System.ComponentModel.CancelEventHandler(this.phoneNumTB_Validating);
             // 
             // qrPic
@@ -398,7 +408,7 @@
             this.prevBtn.Name = "prevBtn";
             this.prevBtn.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.prevBtn.Size = new System.Drawing.Size(225, 56);
-            this.prevBtn.TabIndex = 36;
+            this.prevBtn.TabIndex = 5;
             this.prevBtn.Text = "PREVIOUS";
             this.prevBtn.Click += new System.EventHandler(this.prevBtn_Click);
             // 
@@ -412,6 +422,7 @@
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(93, 38);
             this.guna2HtmlLabel3.TabIndex = 20;
+            this.guna2HtmlLabel3.TabStop = false;
             this.guna2HtmlLabel3.Text = "PAGE 3";
             // 
             // nextBtn
@@ -429,7 +440,7 @@
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.nextBtn.Size = new System.Drawing.Size(225, 56);
-            this.nextBtn.TabIndex = 18;
+            this.nextBtn.TabIndex = 4;
             this.nextBtn.Text = "NEXT";
             this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
             // 
@@ -448,6 +459,7 @@
             this.guna2Button8.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.guna2Button8.Size = new System.Drawing.Size(134, 12);
             this.guna2Button8.TabIndex = 6;
+            this.guna2Button8.TabStop = false;
             // 
             // guna2Button7
             // 
@@ -464,6 +476,7 @@
             this.guna2Button7.ShadowDecoration.CustomizableEdges = customizableEdges30;
             this.guna2Button7.Size = new System.Drawing.Size(134, 12);
             this.guna2Button7.TabIndex = 5;
+            this.guna2Button7.TabStop = false;
             // 
             // guna2Button6
             // 
@@ -480,6 +493,7 @@
             this.guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges32;
             this.guna2Button6.Size = new System.Drawing.Size(134, 12);
             this.guna2Button6.TabIndex = 4;
+            this.guna2Button6.TabStop = false;
             // 
             // guna2Button2
             // 
@@ -496,6 +510,7 @@
             this.guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges34;
             this.guna2Button2.Size = new System.Drawing.Size(134, 12);
             this.guna2Button2.TabIndex = 3;
+            this.guna2Button2.TabStop = false;
             // 
             // openFileDialog1
             // 

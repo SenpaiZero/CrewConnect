@@ -118,8 +118,10 @@
             this.minimiseBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.minimiseBtn.Size = new System.Drawing.Size(21, 20);
             this.minimiseBtn.TabIndex = 10;
+            this.minimiseBtn.TabStop = false;
             this.minimiseBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.minimiseBtn.UseTransparentBackground = true;
+            this.minimiseBtn.Click += new System.EventHandler(this.minimiseBtn_Click);
             // 
             // maximiseBtn
             // 
@@ -139,8 +141,10 @@
             this.maximiseBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.maximiseBtn.Size = new System.Drawing.Size(21, 20);
             this.maximiseBtn.TabIndex = 9;
+            this.maximiseBtn.TabStop = false;
             this.maximiseBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.maximiseBtn.UseTransparentBackground = true;
+            this.maximiseBtn.Click += new System.EventHandler(this.maximiseBtn_Click);
             // 
             // exitBtn
             // 
@@ -160,8 +164,10 @@
             this.exitBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.exitBtn.Size = new System.Drawing.Size(21, 20);
             this.exitBtn.TabIndex = 8;
+            this.exitBtn.TabStop = false;
             this.exitBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.exitBtn.UseTransparentBackground = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // guna2HtmlLabel2
             // 
@@ -314,10 +320,13 @@
             this.Controls.Add(this.announcementBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "EmployeePanel";
             this.Text = "EmployeePanel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmployeePanel_FormClosing);
             this.Load += new System.EventHandler(this.EmployeePanel_Load);
+            this.LocationChanged += new System.EventHandler(this.EmployeePanel_LocationChanged);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EmployeePanel_KeyDown);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
             this.ResumeLayout(false);

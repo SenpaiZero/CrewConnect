@@ -54,7 +54,7 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.minimiseBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.maximiseBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.shortcutBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.exitBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -91,7 +91,7 @@
             this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(38)))), ((int)(((byte)(60)))));
             this.guna2Panel4.Controls.Add(this.minimiseBtn);
             this.guna2Panel4.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel4.Controls.Add(this.maximiseBtn);
+            this.guna2Panel4.Controls.Add(this.shortcutBtn);
             this.guna2Panel4.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel4.Controls.Add(this.exitBtn);
             this.guna2Panel4.Controls.Add(this.guna2HtmlLabel3);
@@ -116,8 +116,10 @@
             this.minimiseBtn.Name = "minimiseBtn";
             this.minimiseBtn.ShadowDecoration.CustomizableEdges = customizableEdges9;
             this.minimiseBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.minimiseBtn.TabStop = false;
             this.minimiseBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.minimiseBtn.UseTransparentBackground = true;
+            this.minimiseBtn.Click += new System.EventHandler(this.minimiseBtn_Click);
             // 
             // guna2PictureBox1
             // 
@@ -132,24 +134,26 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
-            // maximiseBtn
+            // shortcutBtn
             // 
-            resources.ApplyResources(this.maximiseBtn, "maximiseBtn");
-            this.maximiseBtn.BackColor = System.Drawing.Color.Transparent;
-            this.maximiseBtn.BorderColor = System.Drawing.Color.GreenYellow;
-            this.maximiseBtn.BorderThickness = 2;
-            this.guna2Transition1.SetDecoration(this.maximiseBtn, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.maximiseBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.maximiseBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.maximiseBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.maximiseBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.maximiseBtn.FillColor = System.Drawing.Color.Transparent;
-            this.maximiseBtn.ForeColor = System.Drawing.Color.White;
-            this.maximiseBtn.Name = "maximiseBtn";
-            this.maximiseBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            this.maximiseBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.maximiseBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.maximiseBtn.UseTransparentBackground = true;
+            resources.ApplyResources(this.shortcutBtn, "shortcutBtn");
+            this.shortcutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.shortcutBtn.BorderColor = System.Drawing.Color.GreenYellow;
+            this.shortcutBtn.BorderThickness = 2;
+            this.guna2Transition1.SetDecoration(this.shortcutBtn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.shortcutBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.shortcutBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.shortcutBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.shortcutBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.shortcutBtn.FillColor = System.Drawing.Color.Transparent;
+            this.shortcutBtn.ForeColor = System.Drawing.Color.White;
+            this.shortcutBtn.Name = "shortcutBtn";
+            this.shortcutBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.shortcutBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.shortcutBtn.TabStop = false;
+            this.shortcutBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.shortcutBtn.UseTransparentBackground = true;
+            this.shortcutBtn.Click += new System.EventHandler(this.shortcutBtn_Click);
             // 
             // guna2HtmlLabel1
             // 
@@ -159,6 +163,7 @@
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(133)))), ((int)(((byte)(173)))));
             this.guna2HtmlLabel1.IsSelectionEnabled = false;
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.TabStop = false;
             // 
             // exitBtn
             // 
@@ -176,8 +181,10 @@
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.ShadowDecoration.CustomizableEdges = customizableEdges13;
             this.exitBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.exitBtn.TabStop = false;
             this.exitBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             this.exitBtn.UseTransparentBackground = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
             // 
             // guna2HtmlLabel3
             // 
@@ -187,6 +194,7 @@
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(159)))), ((int)(((byte)(193)))));
             this.guna2HtmlLabel3.IsSelectionEnabled = false;
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.TabStop = false;
             // 
             // mainsPanel
             // 
@@ -223,6 +231,7 @@
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.guna2Button2.TabStop = false;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2HtmlLabel2
@@ -233,6 +242,7 @@
             this.guna2HtmlLabel2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.guna2HtmlLabel2.IsSelectionEnabled = false;
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.TabStop = false;
             // 
             // userNameTB
             // 
@@ -260,6 +270,7 @@
             this.userNameTB.SelectedText = "";
             this.userNameTB.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.userNameTB.WordWrap = false;
+            this.userNameTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.userNameTB_KeyDown);
             // 
             // passwordTB
             // 
@@ -340,6 +351,7 @@
             this.loginBtn.ImageSize = new System.Drawing.Size(32, 32);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            this.loginBtn.TabStop = false;
             this.loginBtn.TextOffset = new System.Drawing.Point(5, 0);
             this.loginBtn.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
@@ -366,6 +378,7 @@
             this.attendanceBtn.ImageSize = new System.Drawing.Size(32, 32);
             this.attendanceBtn.Name = "attendanceBtn";
             this.attendanceBtn.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            this.attendanceBtn.TabStop = false;
             this.attendanceBtn.TextOffset = new System.Drawing.Point(15, 0);
             this.attendanceBtn.Click += new System.EventHandler(this.attendanceBtn_Click);
             // 
@@ -378,6 +391,7 @@
             this.dateLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.dateLabel.IsSelectionEnabled = false;
             this.dateLabel.Name = "dateLabel";
+            this.dateLabel.TabStop = false;
             this.dateLabel.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tooltip
@@ -401,10 +415,13 @@
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "loginForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.loginForm_FormClosing);
             this.Load += new System.EventHandler(this.loginForm_Load);
             this.Shown += new System.EventHandler(this.loginForm_Shown);
+            this.LocationChanged += new System.EventHandler(this.loginForm_LocationChanged);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.loginForm_KeyDown);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
@@ -437,7 +454,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel dateLabel;
         private Guna.UI2.WinForms.Guna2CircleButton minimiseBtn;
-        private Guna.UI2.WinForms.Guna2CircleButton maximiseBtn;
+        private Guna.UI2.WinForms.Guna2CircleButton shortcutBtn;
         private Guna.UI2.WinForms.Guna2CircleButton exitBtn;
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+CDoBQE81W00Kgbpsm2wUEDIl5RWsv2E2qPyn0qOMXC+r3ulpZWkI0dQBsPLfBUBt+mmxVsf1WWJ0FC/jokWKw==",
+  "dgSpecHash": "iyI1CiPRO1u6t6DozzhZkGc4r+zJHGYYR8ZjwwiI/bIB/Vac8wVfRoMwG2V61UzHOLLDI7dca3447YM6OaeV3A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Xeb\\Desktop\\CrewConnect\\CrewConnect\\CrewConnect.csproj",
   "expectedPackageFiles": [
@@ -132,10 +132,10 @@
     "C:\\Users\\Xeb\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Xeb\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Xeb\\.nuget\\packages\\zxing.net\\0.16.9\\zxing.net.0.16.9.nupkg.sha512",
-    "C:\\Users\\Xeb\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.16\\microsoft.windowsdesktop.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\Xeb\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.16\\microsoft.netcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\Xeb\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.16\\microsoft.aspnetcore.app.ref.6.0.16.nupkg.sha512",
-    "C:\\Users\\Xeb\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.16\\microsoft.netcore.app.host.win-x64.6.0.16.nupkg.sha512"
+    "C:\\Users\\Xeb\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.18\\microsoft.windowsdesktop.app.ref.6.0.18.nupkg.sha512",
+    "C:\\Users\\Xeb\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.18\\microsoft.netcore.app.ref.6.0.18.nupkg.sha512",
+    "C:\\Users\\Xeb\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.18\\microsoft.aspnetcore.app.ref.6.0.18.nupkg.sha512",
+    "C:\\Users\\Xeb\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.18\\microsoft.netcore.app.host.win-x64.6.0.18.nupkg.sha512"
   ],
   "logs": [
     {

@@ -49,9 +49,9 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.header = new Guna.UI2.WinForms.Guna2Panel();
             this.positionLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.minimiseBtn = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.maximiseBtn = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.exitBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.detailBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.shortcutBtn = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.kbBtn = new Guna.UI2.WinForms.Guna2CircleButton();
             this.mainPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.addBtn = new Guna.UI2.WinForms.Guna2Button();
             this.listBtn = new Guna.UI2.WinForms.Guna2Button();
@@ -75,9 +75,9 @@
             // 
             this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(38)))), ((int)(((byte)(60)))));
             this.header.Controls.Add(this.positionLabel);
-            this.header.Controls.Add(this.minimiseBtn);
-            this.header.Controls.Add(this.maximiseBtn);
-            this.header.Controls.Add(this.exitBtn);
+            this.header.Controls.Add(this.detailBtn);
+            this.header.Controls.Add(this.shortcutBtn);
+            this.header.Controls.Add(this.kbBtn);
             this.header.CustomizableEdges = customizableEdges7;
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
@@ -98,68 +98,71 @@
             this.positionLabel.TabIndex = 11;
             this.positionLabel.Text = "ADMIN";
             // 
-            // minimiseBtn
+            // detailBtn
             // 
-            this.minimiseBtn.BackColor = System.Drawing.Color.Transparent;
-            this.minimiseBtn.BorderColor = System.Drawing.Color.GreenYellow;
-            this.minimiseBtn.BorderThickness = 2;
-            this.minimiseBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.minimiseBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.minimiseBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.minimiseBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.minimiseBtn.FillColor = System.Drawing.Color.Transparent;
-            this.minimiseBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.minimiseBtn.ForeColor = System.Drawing.Color.White;
-            this.minimiseBtn.Location = new System.Drawing.Point(1078, 12);
-            this.minimiseBtn.Name = "minimiseBtn";
-            this.minimiseBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.minimiseBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.minimiseBtn.Size = new System.Drawing.Size(21, 20);
-            this.minimiseBtn.TabIndex = 10;
-            this.minimiseBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.minimiseBtn.UseTransparentBackground = true;
+            this.detailBtn.BackColor = System.Drawing.Color.Transparent;
+            this.detailBtn.BorderColor = System.Drawing.Color.GreenYellow;
+            this.detailBtn.BorderThickness = 2;
+            this.detailBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.detailBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.detailBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.detailBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.detailBtn.FillColor = System.Drawing.Color.Transparent;
+            this.detailBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.detailBtn.ForeColor = System.Drawing.Color.White;
+            this.detailBtn.Location = new System.Drawing.Point(1078, 12);
+            this.detailBtn.Name = "detailBtn";
+            this.detailBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            this.detailBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.detailBtn.Size = new System.Drawing.Size(21, 20);
+            this.detailBtn.TabIndex = 10;
+            this.detailBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.detailBtn.UseTransparentBackground = true;
+            this.detailBtn.Click += new System.EventHandler(this.detailBtn_Click);
             // 
-            // maximiseBtn
+            // shortcutBtn
             // 
-            this.maximiseBtn.BackColor = System.Drawing.Color.Transparent;
-            this.maximiseBtn.BorderColor = System.Drawing.Color.GreenYellow;
-            this.maximiseBtn.BorderThickness = 2;
-            this.maximiseBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.maximiseBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.maximiseBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.maximiseBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.maximiseBtn.FillColor = System.Drawing.Color.Transparent;
-            this.maximiseBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.maximiseBtn.ForeColor = System.Drawing.Color.White;
-            this.maximiseBtn.Location = new System.Drawing.Point(1104, 12);
-            this.maximiseBtn.Name = "maximiseBtn";
-            this.maximiseBtn.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            this.maximiseBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.maximiseBtn.Size = new System.Drawing.Size(21, 20);
-            this.maximiseBtn.TabIndex = 9;
-            this.maximiseBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.maximiseBtn.UseTransparentBackground = true;
+            this.shortcutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.shortcutBtn.BorderColor = System.Drawing.Color.GreenYellow;
+            this.shortcutBtn.BorderThickness = 2;
+            this.shortcutBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.shortcutBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.shortcutBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.shortcutBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.shortcutBtn.FillColor = System.Drawing.Color.Transparent;
+            this.shortcutBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.shortcutBtn.ForeColor = System.Drawing.Color.White;
+            this.shortcutBtn.Location = new System.Drawing.Point(1104, 12);
+            this.shortcutBtn.Name = "shortcutBtn";
+            this.shortcutBtn.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            this.shortcutBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.shortcutBtn.Size = new System.Drawing.Size(21, 20);
+            this.shortcutBtn.TabIndex = 9;
+            this.shortcutBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.shortcutBtn.UseTransparentBackground = true;
+            this.shortcutBtn.Click += new System.EventHandler(this.shortcutBtn_Click);
             // 
-            // exitBtn
+            // kbBtn
             // 
-            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
-            this.exitBtn.BorderColor = System.Drawing.Color.GreenYellow;
-            this.exitBtn.BorderThickness = 2;
-            this.exitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.exitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.exitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.exitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exitBtn.FillColor = System.Drawing.Color.Transparent;
-            this.exitBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.exitBtn.ForeColor = System.Drawing.Color.White;
-            this.exitBtn.Location = new System.Drawing.Point(1130, 12);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.exitBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.exitBtn.Size = new System.Drawing.Size(21, 20);
-            this.exitBtn.TabIndex = 8;
-            this.exitBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-            this.exitBtn.UseTransparentBackground = true;
+            this.kbBtn.BackColor = System.Drawing.Color.Transparent;
+            this.kbBtn.BorderColor = System.Drawing.Color.GreenYellow;
+            this.kbBtn.BorderThickness = 2;
+            this.kbBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.kbBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.kbBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.kbBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.kbBtn.FillColor = System.Drawing.Color.Transparent;
+            this.kbBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kbBtn.ForeColor = System.Drawing.Color.White;
+            this.kbBtn.Location = new System.Drawing.Point(1130, 12);
+            this.kbBtn.Name = "kbBtn";
+            this.kbBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.kbBtn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.kbBtn.Size = new System.Drawing.Size(21, 20);
+            this.kbBtn.TabIndex = 8;
+            this.kbBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.kbBtn.UseTransparentBackground = true;
+            this.kbBtn.Click += new System.EventHandler(this.kbBtn_Click);
             // 
             // mainPanel
             // 
@@ -317,7 +320,7 @@
             this.closeBtn.Location = new System.Drawing.Point(11, 627);
             this.closeBtn.Margin = new System.Windows.Forms.Padding(0);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.closeBtn.PressedState.ImageSize = new System.Drawing.Size(35, 35);
             this.closeBtn.ShadowDecoration.CustomizableEdges = customizableEdges1;
             this.closeBtn.Size = new System.Drawing.Size(65, 65);
             this.closeBtn.TabIndex = 10;
@@ -369,11 +372,14 @@
             this.Controls.Add(this.announcementBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "adminPanel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "managerAddEmployee";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.adminPanel_FormClosing);
             this.Load += new System.EventHandler(this.managerAddEmployee_Load);
+            this.LocationChanged += new System.EventHandler(this.adminPanel_LocationChanged);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.adminPanel_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.adminPanel_MouseDown);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.adminPanel_MouseUp);
             this.header.ResumeLayout(false);
@@ -392,9 +398,9 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button settingBtn;
         private Guna.UI2.WinForms.Guna2Button listBtn;
-        private Guna.UI2.WinForms.Guna2CircleButton minimiseBtn;
-        private Guna.UI2.WinForms.Guna2CircleButton maximiseBtn;
-        private Guna.UI2.WinForms.Guna2CircleButton exitBtn;
+        private Guna.UI2.WinForms.Guna2CircleButton detailBtn;
+        private Guna.UI2.WinForms.Guna2CircleButton shortcutBtn;
+        private Guna.UI2.WinForms.Guna2CircleButton kbBtn;
         private Guna.UI2.WinForms.Guna2ImageButton closeBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel positionLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;

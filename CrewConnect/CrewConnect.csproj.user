@@ -10,6 +10,9 @@
     <Compile Update="background.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="detailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="EmployeeClass\announcementView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +77,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="NoConnectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="shortcutForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

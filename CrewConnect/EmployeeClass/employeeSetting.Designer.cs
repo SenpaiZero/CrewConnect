@@ -54,6 +54,7 @@
             this.guna2BorderlessForm1.BorderRadius = 25;
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.DragForm = false;
             this.guna2BorderlessForm1.ResizeForm = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
@@ -87,6 +88,7 @@
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(355, 28);
             this.guna2HtmlLabel6.TabIndex = 12;
+            this.guna2HtmlLabel6.TabStop = false;
             this.guna2HtmlLabel6.Text = "CHANGE PASSWORD";
             this.guna2HtmlLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -108,7 +110,7 @@
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.guna2Button4.Size = new System.Drawing.Size(185, 47);
-            this.guna2Button4.TabIndex = 5;
+            this.guna2Button4.TabIndex = 4;
             this.guna2Button4.Text = "UPDATE PASSWORD";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
@@ -135,7 +137,7 @@
             this.newPass2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.newPass2.Size = new System.Drawing.Size(250, 45);
             this.newPass2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.newPass2.TabIndex = 4;
+            this.newPass2.TabIndex = 3;
             this.newPass2.IconRightClick += new System.EventHandler(this.newPass2_IconRightClick);
             // 
             // newPass
@@ -161,8 +163,9 @@
             this.newPass.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.newPass.Size = new System.Drawing.Size(250, 45);
             this.newPass.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.newPass.TabIndex = 3;
+            this.newPass.TabIndex = 2;
             this.newPass.IconRightClick += new System.EventHandler(this.newPass_IconRightClick);
+            this.newPass.TextChanged += new System.EventHandler(this.newPass_TextChanged);
             // 
             // oldPass
             // 
@@ -187,8 +190,9 @@
             this.oldPass.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.oldPass.Size = new System.Drawing.Size(250, 45);
             this.oldPass.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.oldPass.TabIndex = 2;
+            this.oldPass.TabIndex = 1;
             this.oldPass.IconRightClick += new System.EventHandler(this.oldPass_IconRightClick);
+            this.oldPass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.oldPass_KeyUp);
             // 
             // guna2HtmlLabel3
             // 
@@ -199,6 +203,7 @@
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(133, 38);
             this.guna2HtmlLabel3.TabIndex = 1;
+            this.guna2HtmlLabel3.TabStop = false;
             this.guna2HtmlLabel3.Text = "ACCOUNT";
             // 
             // guna2HtmlLabel1
@@ -210,6 +215,7 @@
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(283, 82);
             this.guna2HtmlLabel1.TabIndex = 4;
+            this.guna2HtmlLabel1.TabStop = false;
             this.guna2HtmlLabel1.Text = "SETTINGS";
             // 
             // employeeSetting
@@ -223,6 +229,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "employeeSetting";
             this.Text = "employeeSetting";
+            this.Load += new System.EventHandler(this.employeeSetting_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.employeeSetting_MouseClick);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             this.ResumeLayout(false);
@@ -236,11 +244,11 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2TextBox newPass2;
-        private Guna.UI2.WinForms.Guna2TextBox newPass;
-        private Guna.UI2.WinForms.Guna2TextBox oldPass;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2ShadowPanel panel;
+        public Guna.UI2.WinForms.Guna2TextBox newPass2;
+        public Guna.UI2.WinForms.Guna2TextBox newPass;
+        public Guna.UI2.WinForms.Guna2TextBox oldPass;
     }
 }

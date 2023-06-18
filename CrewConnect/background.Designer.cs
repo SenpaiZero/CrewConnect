@@ -61,6 +61,7 @@
             this.Text = "background";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.background_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.background_FormClosed);
             this.Load += new System.EventHandler(this.background_Load);
             this.ResumeLayout(false);
 

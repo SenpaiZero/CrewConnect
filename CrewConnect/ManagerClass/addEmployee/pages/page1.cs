@@ -15,6 +15,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
 {
     public partial class page1 : Form
     {
+        public static page1 p1;
         static bool[] isValid = new bool[8];
         public page1()
         {
@@ -137,6 +138,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
         private void page1_Load(object sender, EventArgs e)
         {
 
+            p1 = this;
             for (int i = 0; i < isValid.Length; i++)
             {
                 if(!globalVariables.isEdit)
@@ -170,6 +172,29 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
         private void mainsPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void enterClick(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Space)
+            {
+                this.Parent.Focus();
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                nextBtn.PerformClick();
+            }
+        }
+        public bool isFocus()
+        {
+            if(surnameTB.Focused || firstnameTB.Focused || middlenameTB.Focused
+                || addressTB.Focused || address2TB.Focused || cityTB.Focused
+                || postalTB.Focused)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

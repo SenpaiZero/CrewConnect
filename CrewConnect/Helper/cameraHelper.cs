@@ -53,6 +53,7 @@ namespace CrewConnect.Helper
 
             if(qrcode)
             {
+
                 barcodeReader = new QRCodeReader();
                 // Convert the Bitmap to a byte array
                 byte[] byteArray = BitmapToByteArray(frame);
@@ -69,27 +70,47 @@ namespace CrewConnect.Helper
 
                 if (result != null)
                 {
-                    // Display the decoded QR code value
-                    string qrCodeValue = result.Text;
-                    DateOnly date_ = DateOnly.FromDateTime(DateTime.Now);
-                    TimeOnly time_ = TimeOnly.FromDateTime(DateTime.Now);
-
-                    idNum = qrCodeValue;
-                    dateString = date_.ToShortDateString();
-                    timeString = time_.ToShortTimeString();
-                    fullName = getName(id);
-                    isDetect = true;
-                    if(name == "home")
+                    if (validationHelper.checkFieldNumeric(result.Text))
                     {
-                        attendance.att.setData(idNum, dateString, timeString, fullName);
+                        // Display the decoded QR code value
+                        string qrCodeValue = result.Text;
+                        DateOnly date_ = DateOnly.FromDateTime(DateTime.Now);
+                        TimeOnly time_ = TimeOnly.FromDateTime(DateTime.Now);
+
+                        idNum = qrCodeValue;
+                        dateString = date_.ToShortDateString();
+                        timeString = time_.ToShortTimeString();
+                        fullName = getName(id);
+                        isDetect = true;
+                        if (name == "home")
+                        {
+                            attendance.att.setData(idNum, dateString, timeString, fullName);
+                        }
+
+                        if (videoSource != null && videoSource.IsRunning)
+                        {
+                            videoSource.SignalToStop();
+                            videoSource.WaitForStop();
+                        }
                     }
-
-                    if (videoSource != null && videoSource.IsRunning)
+                    else
                     {
-                        videoSource.SignalToStop();
-                        videoSource.WaitForStop();
+                        isValid = false;
+                        isDetect = true;
+                        messageDialogForm msg = new messageDialogForm();
+                        msg.title = "INVALID QR CODE";
+                        msg.message = "QR CODE DOES NOT CONTAIN EMPLOYEE DATAILS";
+                        msg.StartPosition = FormStartPosition.CenterScreen;
+                        msg.ShowDialog();
+
+                        if (videoSource != null && videoSource.IsRunning)
+                        {
+                            videoSource.SignalToStop();
+                            videoSource.WaitForStop();
+                        }
                     }
                 }
+                
             }
             frame = CropToSquare(frame);
             selfPic.Image = frame; // Display the frame on the PictureBox
@@ -182,6 +203,7 @@ namespace CrewConnect.Helper
                 messageDialogForm msg = new messageDialogForm();
                 msg.title = "AN ERROR HAS OCCURED";
                 msg.message = ex.Message;
+                msg.StartPosition = FormStartPosition.CenterParent;
                 msg.ShowDialog();
             }
             return "";

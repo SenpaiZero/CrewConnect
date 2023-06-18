@@ -83,6 +83,7 @@
             // 
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.DragForm = false;
             this.guna2BorderlessForm1.ResizeForm = false;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
@@ -369,14 +370,18 @@
             this.changeBtn.FillColor = System.Drawing.Color.Transparent;
             this.changeBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.changeBtn.ForeColor = System.Drawing.Color.White;
+            this.changeBtn.IndicateFocus = true;
             this.changeBtn.Location = new System.Drawing.Point(355, 154);
             this.changeBtn.Name = "changeBtn";
             this.changeBtn.ShadowDecoration.CustomizableEdges = customizableEdges5;
             this.changeBtn.Size = new System.Drawing.Size(178, 39);
             this.changeBtn.TabIndex = 31;
+            this.changeBtn.TabStop = false;
             this.changeBtn.Text = "CURRENT";
             this.changeBtn.UseTransparentBackground = true;
             this.changeBtn.Click += new System.EventHandler(this.changeBtn_Click);
+            this.changeBtn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.changeBtn_KeyDown);
+            this.changeBtn.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.changeBtn_PreviewKeyDown);
             // 
             // mainPanel
             // 
@@ -625,9 +630,11 @@
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "payslipForm";
             this.Text = "payslipForm";
             this.Load += new System.EventHandler(this.payslipForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.payslipForm_KeyDown);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.ResumeLayout(false);

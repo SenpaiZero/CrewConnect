@@ -177,9 +177,6 @@ namespace CrewConnect.ManagerClass.addEmployee
                         command.Parameters.AddWithValue("@BSB", globalVariables.BSB.Trim());
                         command.Parameters.AddWithValue("@accountNum", globalVariables.accountNum.Trim());
 
-
-                        // add condition to know if data already exist
-
                         // Execute the query
                         command.ExecuteNonQuery();
 
@@ -191,6 +188,7 @@ namespace CrewConnect.ManagerClass.addEmployee
                     }
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;
                     employeeID id = new employeeID();
+
                     id.Show();
                     ResumeLayout();
                     con.Close();

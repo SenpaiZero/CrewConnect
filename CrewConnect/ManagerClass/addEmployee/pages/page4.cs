@@ -183,5 +183,18 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
         {
 
         }
+
+        private void onKeyEnter(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Space)
+            {
+                this.Parent.Focus();
+            }
+
+            if (e.KeyCode == Keys.Enter)
+                finishBtn.PerformClick();
+            else if (e.KeyCode == Keys.Escape)
+                prevBtn.PerformClick();
+        }
     }
 }
