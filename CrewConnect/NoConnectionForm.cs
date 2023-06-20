@@ -43,5 +43,10 @@ namespace CrewConnect
                 this.Close();
             }
         }
+
+        private void NoConnectionForm_Load(object sender, EventArgs e)
+        {
+            TopMost = true;
+        }
     }
 }

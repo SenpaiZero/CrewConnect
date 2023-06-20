@@ -13,6 +13,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
 {
     public partial class page4 : Form
     {
+        public static page4 p4;
         bool[] isValid = new bool[8];
         public page4()
         {
@@ -49,6 +50,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
 
         private void page4_Load(object sender, EventArgs e)
         {
+            p4 = this;
             validationHelper.comboBoxFirstLoad = true;
 
             for (int i = 0; i < isValid.Length; i++)
@@ -111,7 +113,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
             {
 
                 validationHelper.textBoxValidation_Alpha(companyNameTB, "Company Name", errorProvider1);
-                validationHelper.textBoxValidation_Alpha(companyAddTB, "Company Address", errorProvider1);
+                validationHelper.textBoxValidation_Address(companyAddTB, "Company Address", errorProvider1);
                 validationHelper.textBoxValidation_Alpha(branchTB, "Branch", errorProvider1);
                 validationHelper.textBoxValidation_Alpha(bankNameTB, "Bank Name", errorProvider1);
                 validationHelper.textBoxValidation_Numeric(salaryTB, "Salary", errorProvider1);
@@ -140,7 +142,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
         private void companyAddTB_Validating(object sender, CancelEventArgs e)
         {
             isValid[2] = false;
-            if (validationHelper.textBoxValidation_Alpha(companyAddTB, "Company Address", errorProvider1))
+            if (validationHelper.textBoxValidation_Address(companyAddTB, "Company Address", errorProvider1))
                 isValid[2] = true;
         }
 
@@ -184,6 +186,15 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
 
         }
 
+        public bool isFocus()
+        {
+            if(bankNameTB.Focused || branchTB.Focused || companyAddTB.Focused || accountNumTB.Focused
+                || bsbTB.Focused || companyNameTB.Focused || salaryTB.Focused)
+            {
+                return true;
+            }
+            return false;
+        }
         private void onKeyEnter(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.Space)

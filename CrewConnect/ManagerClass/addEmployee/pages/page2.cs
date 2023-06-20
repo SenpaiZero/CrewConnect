@@ -190,7 +190,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
                 nationalityCB.SelectedIndex = nationalityCB.Items.IndexOf(globalVariables.nationality);
                 bloodTypeCB.SelectedIndex = bloodTypeCB.Items.IndexOf(globalVariables.bloodType);
                 statusCB.SelectedIndex = statusCB.Items.IndexOf(globalVariables.status);
-                religionCB.SelectedIndex = religionCB.Items.IndexOf(globalVariables.religion);
+                religionCB.Text = globalVariables.religion;
 
                 monthCB.SelectedIndex = (int)globalVariables.month;
                 dayCB.SelectedIndex = (int)globalVariables.day;

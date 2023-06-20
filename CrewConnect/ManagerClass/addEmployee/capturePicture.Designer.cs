@@ -65,7 +65,7 @@
             this.selfPic.CustomizableEdges = customizableEdges7;
             this.selfPic.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
             this.selfPic.ImageRotate = 0F;
-            this.selfPic.Location = new System.Drawing.Point(195, 86);
+            this.selfPic.Location = new System.Drawing.Point(130, 83);
             this.selfPic.Name = "selfPic";
             this.selfPic.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.selfPic.Size = new System.Drawing.Size(400, 400);
@@ -86,7 +86,7 @@
             this.captureBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(94)))), ((int)(((byte)(121)))));
             this.captureBtn.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.captureBtn.ForeColor = System.Drawing.Color.White;
-            this.captureBtn.Location = new System.Drawing.Point(288, 544);
+            this.captureBtn.Location = new System.Drawing.Point(223, 541);
             this.captureBtn.Name = "captureBtn";
             this.captureBtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.captureBtn.Size = new System.Drawing.Size(225, 56);
@@ -99,7 +99,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Variable Display", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(255, -2);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(190, -5);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(272, 82);
             this.guna2HtmlLabel1.TabIndex = 3;
@@ -120,7 +120,7 @@
             this.camListCB.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.camListCB.ForeColor = System.Drawing.Color.Gray;
             this.camListCB.ItemHeight = 40;
-            this.camListCB.Location = new System.Drawing.Point(195, 492);
+            this.camListCB.Location = new System.Drawing.Point(130, 489);
             this.camListCB.Name = "camListCB";
             this.camListCB.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.camListCB.Size = new System.Drawing.Size(400, 46);
@@ -138,7 +138,7 @@
             this.cancelBtn.FillColor = System.Drawing.Color.Transparent;
             this.cancelBtn.Font = new System.Drawing.Font("Segoe UI Variable Text Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cancelBtn.ForeColor = System.Drawing.Color.Coral;
-            this.cancelBtn.Location = new System.Drawing.Point(348, 606);
+            this.cancelBtn.Location = new System.Drawing.Point(283, 603);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.cancelBtn.Size = new System.Drawing.Size(112, 26);
@@ -151,7 +151,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(52)))), ((int)(((byte)(78)))));
-            this.ClientSize = new System.Drawing.Size(796, 641);
+            this.ClientSize = new System.Drawing.Size(681, 641);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.camListCB);
             this.Controls.Add(this.guna2HtmlLabel1);

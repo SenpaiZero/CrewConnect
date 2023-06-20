@@ -124,6 +124,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "shortcutForm";
+            this.TopMost = true;
             this.Deactivate += new System.EventHandler(this.shortcutForm_Deactivate);
             this.Load += new System.EventHandler(this.shortcutForm_Load);
             this.guna2Panel2.ResumeLayout(false);

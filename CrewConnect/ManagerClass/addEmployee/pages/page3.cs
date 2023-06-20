@@ -244,6 +244,12 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
         {
 
         }
+        public bool isFocus()
+        {
+            if (phoneNumTB.Focused || emailTB.Focused || guardianTB.Focused)
+                return true;
+            return false;
+        }
 
         private void enterClick(object sender, KeyEventArgs e)
         {

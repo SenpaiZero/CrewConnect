@@ -33,6 +33,7 @@ namespace CrewConnect.ManagerClass.addEmployee
 
         private void capturePicture_Load(object sender, EventArgs e)
         {
+            TopMost = true;
             cameraHelper.qrcode = false;
             cameraHelper.camListCB = camListCB;
             cameraHelper.selfPic = selfPic;

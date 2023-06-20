@@ -51,10 +51,6 @@ namespace CrewConnect.Helper
 
                 msg.Dispose();
                 smtp.Dispose();
-                messageDialogForm msg1 = new messageDialogForm();
-                msg1.title = "Your Email Has Been Sent!";
-                msg1.message = "Please check your spam if you did not recieve the email!";
-                msg1.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -97,13 +93,6 @@ namespace CrewConnect.Helper
             smtp.EnableSsl = true;
             smtp.Send(mail);
 
-            messageDialogForm msg1 = new messageDialogForm()
-            {
-                title = "Your Email Has Been Sent!",
-                message = "Please check your spam if you did not recieve the email!"
-            };
-
-            msg1.ShowDialog();
 
             // Dispose the linkedImage and remove it from the AlternateView to release the file lock
             linkedImage.Dispose();

@@ -25,7 +25,6 @@ namespace CrewConnect.ManagerClass
         public adminPanel()
         {
             InitializeComponent();
-
             CheckForIllegalCrossThreadCalls = false;
         }
         protected override CreateParams CreateParams
@@ -40,38 +39,41 @@ namespace CrewConnect.ManagerClass
 
         private void managerAddEmployee_Load(object sender, EventArgs e)
         {
+            Task.Run(() => {
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(globalVariables.server))
+                    {
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand($"SELECT name FROM personal WHERE username = '{globalVariables.username}'", con))
+                        {
+                            SqlDataReader dr = cmd.ExecuteReader();
+
+                            if (dr.Read())
+                            {
+                                nameLabel.Text = dr.GetString(0);
+                            }
+                            else
+                            {
+                                nameLabel.Text = "ADMIN";
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    messageDialogForm msg = new messageDialogForm();
+                    msg.title = "AN ERROR HAS OCCURED";
+                    msg.message = ex.Message;
+                    msg.ShowDialog();
+                }
+            });
+
+            TopMost = true;
             logoutBtn.Cursor = Cursors.Hand;
             positionLabel.Text = globalVariables.userPosition;
             panel = this.mainPanel;
             pageHelper.changePage(new page1(), panel);
-
-            try
-            {            
-                using (SqlConnection con = new SqlConnection(globalVariables.server))
-                {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand($"SELECT name FROM personal WHERE username = '{globalVariables.username}'", con))
-                    {   
-                        SqlDataReader dr = cmd.ExecuteReader();
-
-                        if (dr.Read())
-                        {
-                            nameLabel.Text = dr.GetString(0);
-                        }
-                        else
-                        {
-                            nameLabel.Text = "ADMIN";
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                messageDialogForm msg = new messageDialogForm();
-                msg.title = "AN ERROR HAS OCCURED";
-                msg.message = ex.Message;
-                msg.ShowDialog();
-            }
         }
 
         private void header_Paint(object sender, PaintEventArgs e)
@@ -93,6 +95,7 @@ namespace CrewConnect.ManagerClass
                 pageHelper.changePage(new page1(), panel);
                 ResumeLayout();
             }
+            Focus();
         }
 
         private void adminPanel_MouseDown(object sender, MouseEventArgs e)
@@ -136,6 +139,7 @@ namespace CrewConnect.ManagerClass
                 pageHelper.changePage(new EmployeeList(), panel);
                 ResumeLayout();
             }
+            Focus();
         }
 
         private void settingBtn_Click(object sender, EventArgs e)
@@ -153,6 +157,7 @@ namespace CrewConnect.ManagerClass
                 pageHelper.changePage(new adminSetting(), panel);
                 ResumeLayout();
             }
+            Focus();
         }
 
         private void guna2Button5_Click(object sender, EventArgs e)
@@ -170,6 +175,7 @@ namespace CrewConnect.ManagerClass
                 pageHelper.changePage(new addAnnouncement(), panel);
                 ResumeLayout();
             }
+            Focus();
         }
 
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
@@ -207,6 +213,7 @@ namespace CrewConnect.ManagerClass
         private void kbBtn_Click(object sender, EventArgs e)
         {
             userInterfaceHelper.openScreenKeyboard();
+            Focus();
         }
 
         private void detailBtn_Click(object sender, EventArgs e)
@@ -214,6 +221,7 @@ namespace CrewConnect.ManagerClass
             detailsForm detail = new detailsForm();
             detail.StartPosition = FormStartPosition.CenterParent;
             detail.ShowDialog();
+            Focus();
         }
 
         public static shortcutForm shortcut;
@@ -251,10 +259,30 @@ namespace CrewConnect.ManagerClass
             shortcut.Size = new Size(size.Width, this.Height);
             shortcut.showAsSide(this);
             shortcut.Show();
+            Focus();
         }
 
         private void adminPanel_KeyDown(object sender, KeyEventArgs e)
         {
+            if(page1.p1 != null)
+                if (page1.p1.isFocus())
+                    return;
+            if (page3.p3 != null)
+                if (page3.p3.isFocus())
+                    return;
+            if (page4.p4 != null)
+                if (page4.p4.isFocus())
+                    return;
+            if (addAnnouncement.ann != null)
+                if (addAnnouncement.ann.isFocus())
+                    return;
+            if (EmployeeList.empList != null)
+                if (EmployeeList.empList.isFocus())
+                    return;
+            if (adminSetting.adSet != null)
+                if (adminSetting.adSet.isFocus())
+                    return;
+
             if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
                 addBtn.PerformClick();
             if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)

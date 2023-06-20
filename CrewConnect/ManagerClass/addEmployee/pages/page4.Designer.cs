@@ -172,6 +172,7 @@
             this.salaryTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.salaryTB.Location = new System.Drawing.Point(58, 493);
             this.salaryTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.salaryTB.MaxLength = 12;
             this.salaryTB.Name = "salaryTB";
             this.salaryTB.PasswordChar = '\0';
             this.salaryTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -198,6 +199,7 @@
             this.bsbTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.bsbTB.Location = new System.Drawing.Point(58, 374);
             this.bsbTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bsbTB.MaxLength = 6;
             this.bsbTB.Name = "bsbTB";
             this.bsbTB.PasswordChar = '\0';
             this.bsbTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -224,6 +226,7 @@
             this.accountNumTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.accountNumTB.Location = new System.Drawing.Point(287, 374);
             this.accountNumTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.accountNumTB.MaxLength = 15;
             this.accountNumTB.Name = "accountNumTB";
             this.accountNumTB.PasswordChar = '\0';
             this.accountNumTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -250,6 +253,7 @@
             this.companyNameTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.companyNameTB.Location = new System.Drawing.Point(58, 300);
             this.companyNameTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.companyNameTB.MaxLength = 50;
             this.companyNameTB.Name = "companyNameTB";
             this.companyNameTB.PasswordChar = '\0';
             this.companyNameTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -276,10 +280,11 @@
             this.companyAddTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.companyAddTB.Location = new System.Drawing.Point(59, 231);
             this.companyAddTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.companyAddTB.MaxLength = 100;
             this.companyAddTB.Name = "companyAddTB";
             this.companyAddTB.PasswordChar = '\0';
             this.companyAddTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.companyAddTB.PlaceholderText = "COMPANY ADDRESS";
+            this.companyAddTB.PlaceholderText = "BANK ADDRESS";
             this.companyAddTB.SelectedText = "";
             this.companyAddTB.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.companyAddTB.Size = new System.Drawing.Size(761, 45);
@@ -302,6 +307,7 @@
             this.branchTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.branchTB.Location = new System.Drawing.Point(486, 164);
             this.branchTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.branchTB.MaxLength = 50;
             this.branchTB.Name = "branchTB";
             this.branchTB.PasswordChar = '\0';
             this.branchTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -341,6 +347,7 @@
             this.bankNameTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.bankNameTB.Location = new System.Drawing.Point(58, 164);
             this.bankNameTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bankNameTB.MaxLength = 50;
             this.bankNameTB.Name = "bankNameTB";
             this.bankNameTB.PasswordChar = '\0';
             this.bankNameTB.PlaceholderForeColor = System.Drawing.Color.DimGray;

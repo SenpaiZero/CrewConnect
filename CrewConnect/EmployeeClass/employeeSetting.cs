@@ -38,7 +38,17 @@ namespace CrewConnect.EmployeeClass
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             loading();
-            string query = "SELECT password FROM Users WHERE password COLLATE Latin1_General_CS_AS = @password";
+            if (newPass.Text.Length < 5)
+            {
+                messageDialogForm msg2 = new messageDialogForm()
+                {
+                    title = "WEAK PASSWORD",
+                    message = "MAKE SURE YOU HAVE ATLEAST 5 CHARACTERS"
+                };
+                msg2.ShowDialog();
+                return;
+            }
+                string query = "SELECT password FROM Users WHERE password COLLATE Latin1_General_CS_AS = @password";
             using (SqlConnection con = new SqlConnection(globalVariables.server))
             {
                 con.Open();

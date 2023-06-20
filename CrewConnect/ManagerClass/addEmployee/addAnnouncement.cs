@@ -192,5 +192,12 @@ namespace CrewConnect.ManagerClass.addEmployee
                 addBtn.PerformClick();
             }
         }
+
+        public bool isFocus()
+        {
+            if (newMsgTB.Focused || searchTB.Focused)
+                return true;
+            return false;
+        }
     }
 }

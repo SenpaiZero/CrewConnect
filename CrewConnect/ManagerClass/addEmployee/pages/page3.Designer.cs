@@ -297,6 +297,7 @@
             this.guardianTB.ForeColor = System.Drawing.Color.DimGray;
             this.guardianTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guardianTB.Location = new System.Drawing.Point(62, 484);
+            this.guardianTB.MaxLength = 50;
             this.guardianTB.Name = "guardianTB";
             this.guardianTB.PasswordChar = '\0';
             this.guardianTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -323,6 +324,7 @@
             this.emailTB.ForeColor = System.Drawing.Color.DimGray;
             this.emailTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.emailTB.Location = new System.Drawing.Point(62, 418);
+            this.emailTB.MaxLength = 50;
             this.emailTB.Name = "emailTB";
             this.emailTB.PasswordChar = '\0';
             this.emailTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -350,6 +352,7 @@
             this.phoneNumTB.ForeColor = System.Drawing.Color.DimGray;
             this.phoneNumTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phoneNumTB.Location = new System.Drawing.Point(443, 356);
+            this.phoneNumTB.MaxLength = 11;
             this.phoneNumTB.Name = "phoneNumTB";
             this.phoneNumTB.PasswordChar = '\0';
             this.phoneNumTB.PlaceholderForeColor = System.Drawing.Color.DimGray;

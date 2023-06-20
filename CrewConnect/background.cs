@@ -39,6 +39,7 @@ namespace CrewConnect
         }
         private void background_Load(object sender, EventArgs e)
         {
+            TopMost = true;
             try
             {
                 log = new loginForm();
@@ -77,5 +78,6 @@ namespace CrewConnect
             int hwndTaskbar = FindWindow("Shell_TrayWnd", "");
             ShowWindow(hwndTaskbar, SW_SHOW);
         }
+
     }
 }

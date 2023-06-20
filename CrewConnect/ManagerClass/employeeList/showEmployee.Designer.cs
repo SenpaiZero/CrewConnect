@@ -188,6 +188,7 @@
             this.name1.ForeColor = System.Drawing.Color.White;
             this.name1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.name1.Location = new System.Drawing.Point(320, 38);
+            this.name1.MaxLength = 100;
             this.name1.Name = "name1";
             this.name1.PasswordChar = '\0';
             this.name1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
@@ -214,6 +215,7 @@
             this.salary1.ForeColor = System.Drawing.Color.White;
             this.salary1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.salary1.Location = new System.Drawing.Point(64, 498);
+            this.salary1.MaxLength = 12;
             this.salary1.Name = "salary1";
             this.salary1.PasswordChar = '\0';
             this.salary1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
@@ -293,6 +295,7 @@
             this.email2.ForeColor = System.Drawing.Color.White;
             this.email2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.email2.Location = new System.Drawing.Point(320, 140);
+            this.email2.MaxLength = 50;
             this.email2.Name = "email2";
             this.email2.PasswordChar = '\0';
             this.email2.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
@@ -319,6 +322,7 @@
             this.phoneNum1.ForeColor = System.Drawing.Color.White;
             this.phoneNum1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phoneNum1.Location = new System.Drawing.Point(320, 191);
+            this.phoneNum1.MaxLength = 11;
             this.phoneNum1.Name = "phoneNum1";
             this.phoneNum1.PasswordChar = '\0';
             this.phoneNum1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
@@ -345,6 +349,7 @@
             this.address1.ForeColor = System.Drawing.Color.White;
             this.address1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.address1.Location = new System.Drawing.Point(320, 242);
+            this.address1.MaxLength = 100;
             this.address1.Name = "address1";
             this.address1.PasswordChar = '\0';
             this.address1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
@@ -371,6 +376,7 @@
             this.address2.ForeColor = System.Drawing.Color.White;
             this.address2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.address2.Location = new System.Drawing.Point(320, 294);
+            this.address2.MaxLength = 100;
             this.address2.Name = "address2";
             this.address2.PasswordChar = '\0';
             this.address2.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
@@ -397,6 +403,7 @@
             this.bankname1.ForeColor = System.Drawing.Color.White;
             this.bankname1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.bankname1.Location = new System.Drawing.Point(650, 294);
+            this.bankname1.MaxLength = 50;
             this.bankname1.Name = "bankname1";
             this.bankname1.PasswordChar = '\0';
             this.bankname1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
@@ -423,6 +430,7 @@
             this.branch1.ForeColor = System.Drawing.Color.White;
             this.branch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.branch1.Location = new System.Drawing.Point(650, 396);
+            this.branch1.MaxLength = 50;
             this.branch1.Name = "branch1";
             this.branch1.PasswordChar = '\0';
             this.branch1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
@@ -449,6 +457,7 @@
             this.companyAdd1.ForeColor = System.Drawing.Color.White;
             this.companyAdd1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.companyAdd1.Location = new System.Drawing.Point(650, 345);
+            this.companyAdd1.MaxLength = 100;
             this.companyAdd1.Name = "companyAdd1";
             this.companyAdd1.PasswordChar = '\0';
             this.companyAdd1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
@@ -475,6 +484,7 @@
             this.accountName1.ForeColor = System.Drawing.Color.White;
             this.accountName1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.accountName1.Location = new System.Drawing.Point(650, 447);
+            this.accountName1.MaxLength = 15;
             this.accountName1.Name = "accountName1";
             this.accountName1.PasswordChar = '\0';
             this.accountName1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;
@@ -501,6 +511,7 @@
             this.bsb1.ForeColor = System.Drawing.Color.White;
             this.bsb1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.bsb1.Location = new System.Drawing.Point(650, 498);
+            this.bsb1.MaxLength = 6;
             this.bsb1.Name = "bsb1";
             this.bsb1.PasswordChar = '\0';
             this.bsb1.PlaceholderForeColor = System.Drawing.Color.WhiteSmoke;

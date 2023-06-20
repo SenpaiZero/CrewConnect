@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CrewConnect.Helper;
 using ZXing;
+using System.Text.RegularExpressions;
 
 namespace CrewConnect.ManagerClass
 {
@@ -34,6 +35,19 @@ namespace CrewConnect.ManagerClass
         }
         private void adminSetting_Load(object sender, EventArgs e)
         {
+            religionTB.TabStop = true;
+            positionTB.TabStop = true;
+
+            oldPass.TabStop = false;
+            newPass.TabStop = false;
+            newPass2.TabStop = false;
+
+            positionTB.TabIndex = 1;
+            religionTB.TabIndex = 2;
+
+            oldPass.TabIndex = 3;
+            newPass.TabIndex = 4;
+            newPass2.TabIndex = 5;
             adSet = this;
             showData();
         }
@@ -72,17 +86,62 @@ namespace CrewConnect.ManagerClass
 
         void removeData(string table, string column, Guna2ComboBox cb) 
         {
+            messageDialogForm msg = new messageDialogForm()
+            {
+                title = "ARE YOU SURE?",
+                message = $"YOU ARE ABOUT TO DELETE {table.ToUpper()}",
+                isOkDialog = true
+            };
+
+            if (msg.ShowDialog() != DialogResult.OK)
+                return;
+
+            loading();
             string query = $"DELETE FROM {table} WHERE {column} = @SelectedText";
             using (SqlConnection con = new SqlConnection(globalVariables.server))
             {
+                // checking data
+                string checkData = "";
                 con.Open();
+                if(cb == positionCB)
+                {
+                    checkData = $"SELECT COUNT(position) FROM job WHERE position = '{positionCB.Text}'";
+                }
+                else if(cb == religionCB)
+                {
+                    checkData = $"SELECT COUNT(religion) FROM personal WHERE religion = '{religionCB.Text}'";
+                }
+
+                if(!string.IsNullOrEmpty(checkData))
+                {
+                    using (SqlCommand checkingData = new SqlCommand(checkData, con))
+                    {
+                        string count = checkingData.ExecuteScalar().ToString();
+                        SqlDataReader dr = checkingData.ExecuteReader();
+
+                        if (dr.Read())
+                        {
+                            if(Convert.ToInt32(count.Trim()) > 0)
+                            {
+                                messageDialogForm msg2 = new messageDialogForm()
+                                {
+                                    title = "ITEM CAN'T BE DELETED",
+                                    message = $"THE ITEM YOU SELECTED IS BEING USED BY {count} PEOPLES"
+                                };
+                                msg2.ShowDialog();
+                                return;
+                            }
+                        }
+                            dr.Close();
+                    }
+                }
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@SelectedText", cb.Text);
 
-                    messageDialogForm msg = new messageDialogForm();
-                    msg.message = "You've Successfully Removed " + cb.Text;
-                    msg.ShowDialog();
+                    messageDialogForm msg2 = new messageDialogForm();
+                    msg2.message = "You've Successfully Removed " + cb.Text;
+                    msg2.ShowDialog();
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -149,16 +208,27 @@ namespace CrewConnect.ManagerClass
 
         private void removePositionBtn_Click(object sender, EventArgs e)
         {
-            loading();
+            if (positionCB.Text.ToLower() == "position")
+                return;
             removeData("system", "position", positionCB);
             showData();
         }
 
         private void removeReligionBtn_Click(object sender, EventArgs e)
         {
-            loading();
-            if (religionCB.Text == "Other indigenous beliefs")
+            if (religionCB.Text == "religion")
                 return;
+
+            if (religionCB.Text == "Other indigenous beliefs")
+            {
+                messageDialogForm error = new messageDialogForm()
+                {
+                    title = "ITEM CAN'T BE DELETED",
+                    message = $"YOU ARE NOT ALLOWED TO DELETE THE ITEM YOU SELECTED"
+                };
+                error.ShowDialog();
+                return;
+            }
 
             removeData("religion", "religion", religionCB);
             showData();
@@ -184,6 +254,31 @@ namespace CrewConnect.ManagerClass
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             loading();
+
+            if (oldPass.Text.ToUpper() == "ADMIN")
+            {
+                messageDialogForm msg2 = new messageDialogForm()
+                {
+                    title = "PERMISSION NOT GRANTED",
+                    message = "YOU ARE NOT ALLOWED TO CHANGE ADMIN'S PASSWORD"
+                };
+                msg2.ShowDialog();
+                return;
+            }
+
+            if (newPass.Text.Length < 5)
+            {
+                messageDialogForm msg2 = new messageDialogForm()
+                {
+                    title = "WEAK PASSWORD",
+                    message = "MAKE SURE YOU HAVE ATLEAST 5 CHARACTERS"
+                };
+                msg2.ShowDialog();
+                return;
+            }
+
+            
+
             string query = "SELECT password FROM Users WHERE password COLLATE Latin1_General_CS_AS = @password";
             using (SqlConnection con = new SqlConnection(globalVariables.server))
             {
@@ -350,13 +445,16 @@ namespace CrewConnect.ManagerClass
             }
         }
 
-        private void bgPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void systemBtn_Click(object sender, EventArgs e)
         {
+            religionTB.TabStop = true;
+            positionTB.TabStop = true;
+
+            oldPass.TabStop = false;
+            newPass.TabStop = false;
+            newPass2.TabStop = false;
+
             titleSys.Visible = true;
             accountTitle.Visible = false;
             accountPanel.Size = new Size(50, 415);
@@ -378,6 +476,13 @@ namespace CrewConnect.ManagerClass
 
         private void accountBtn_Click(object sender, EventArgs e)
         {
+            religionTB.TabStop = false;
+            positionTB.TabStop = false;
+
+            oldPass.TabStop = true;
+            newPass.TabStop = true;
+            newPass2.TabStop = true;
+
             titleSys.Visible = false;
             accountTitle.Visible = true;
             accountTitle.BringToFront();
@@ -417,6 +522,23 @@ namespace CrewConnect.ManagerClass
             if (e.Control && e.KeyCode == Keys.Space)
             {
                 this.Parent.Focus();
+            }
+        }
+
+        public bool isFocus()
+        {
+            if(newPass.Focused || newPass2.Focused || oldPass.Focused
+                || positionTB.Focused || religionTB.Focused)
+            {
+                return true;
+            }
+            return false;
+        }
+        void tbOnclick(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.Space)
+            {
+                    this.Parent.Focus();
             }
         }
     }

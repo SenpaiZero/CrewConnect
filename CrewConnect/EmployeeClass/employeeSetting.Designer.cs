@@ -129,6 +129,7 @@
             this.newPass2.IconRight = global::CrewConnect.Properties.Resources.hide;
             this.newPass2.IconRightOffset = new System.Drawing.Point(5, 0);
             this.newPass2.Location = new System.Drawing.Point(58, 262);
+            this.newPass2.MaxLength = 50;
             this.newPass2.Name = "newPass2";
             this.newPass2.PasswordChar = '●';
             this.newPass2.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -155,6 +156,7 @@
             this.newPass.IconRight = global::CrewConnect.Properties.Resources.hide;
             this.newPass.IconRightOffset = new System.Drawing.Point(5, 0);
             this.newPass.Location = new System.Drawing.Point(58, 211);
+            this.newPass.MaxLength = 50;
             this.newPass.Name = "newPass";
             this.newPass.PasswordChar = '●';
             this.newPass.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -182,6 +184,7 @@
             this.oldPass.IconRight = global::CrewConnect.Properties.Resources.hide;
             this.oldPass.IconRightOffset = new System.Drawing.Point(5, 0);
             this.oldPass.Location = new System.Drawing.Point(58, 160);
+            this.oldPass.MaxLength = 50;
             this.oldPass.Name = "oldPass";
             this.oldPass.PasswordChar = '●';
             this.oldPass.PlaceholderForeColor = System.Drawing.Color.Gray;

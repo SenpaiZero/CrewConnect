@@ -96,9 +96,9 @@
             this.positionLabel.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.positionLabel.Location = new System.Drawing.Point(75, 29);
             this.positionLabel.Name = "positionLabel";
-            this.positionLabel.Size = new System.Drawing.Size(95, 39);
+            this.positionLabel.Size = new System.Drawing.Size(125, 39);
             this.positionLabel.TabIndex = 11;
-            this.positionLabel.Text = "ADMIN";
+            this.positionLabel.Text = "LOADING";
             // 
             // minimiseBtn
             // 
@@ -193,7 +193,7 @@
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(212, 60);
             this.nameLabel.TabIndex = 22;
-            this.nameLabel.Text = "Santos, Ygi Martin";
+            this.nameLabel.Text = "LOADING";
             this.nameLabel.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // announcementBtn

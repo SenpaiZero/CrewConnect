@@ -25,6 +25,7 @@ namespace CrewConnect
         public String message { get; set; }
         private void messageDialog_Load(object sender, EventArgs e)
         {
+            TopMost = true;
             titleLabel.Text = title;
             bodyLabel.Text = message;
             if(isOkDialog == true)

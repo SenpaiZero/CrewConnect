@@ -212,6 +212,7 @@
             this.mainsPanel.Name = "mainsPanel";
             this.mainsPanel.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.mainsPanel.UseTransparentBackground = true;
+            this.mainsPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainsPanel_Paint);
             // 
             // guna2Button2
             // 

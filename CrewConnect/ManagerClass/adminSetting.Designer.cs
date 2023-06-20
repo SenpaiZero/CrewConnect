@@ -156,6 +156,7 @@
             this.isAdmin.Name = "isAdmin";
             this.isAdmin.Size = new System.Drawing.Size(109, 26);
             this.isAdmin.TabIndex = 0;
+            this.isAdmin.TabStop = false;
             this.isAdmin.Text = "IS ADMIN";
             this.isAdmin.UncheckedState.BorderColor = System.Drawing.Color.White;
             this.isAdmin.UncheckedState.BorderRadius = 0;
@@ -189,6 +190,7 @@
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(91, 29);
             this.guna2HtmlLabel5.TabIndex = 12;
+            this.guna2HtmlLabel5.TabStop = false;
             this.guna2HtmlLabel5.Text = "RELIGION";
             // 
             // guna2HtmlLabel4
@@ -200,6 +202,7 @@
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(94, 29);
             this.guna2HtmlLabel4.TabIndex = 11;
+            this.guna2HtmlLabel4.TabStop = false;
             this.guna2HtmlLabel4.Text = "POSITION";
             // 
             // removeReligionBtn
@@ -278,6 +281,7 @@
             this.religionTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.religionTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.religionTB.Location = new System.Drawing.Point(168, 262);
+            this.religionTB.MaxLength = 50;
             this.religionTB.Name = "religionTB";
             this.religionTB.PasswordChar = '\0';
             this.religionTB.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -287,8 +291,9 @@
             this.religionTB.Size = new System.Drawing.Size(167, 36);
             this.religionTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.religionTB.TabIndex = 5;
+            this.religionTB.TabStop = false;
             this.religionTB.TextChanged += new System.EventHandler(this.religionTB_TextChanged);
-            this.religionTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textboxClick);
+            this.religionTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbOnclick);
             this.religionTB.Validating += new System.ComponentModel.CancelEventHandler(this.religionTB_Validating);
             // 
             // religionCB
@@ -307,6 +312,7 @@
             this.religionCB.ShadowDecoration.CustomizableEdges = customizableEdges22;
             this.religionCB.Size = new System.Drawing.Size(167, 36);
             this.religionCB.TabIndex = 4;
+            this.religionCB.TabStop = false;
             // 
             // addReligionBtn
             // 
@@ -342,6 +348,7 @@
             this.positionTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.positionTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.positionTB.Location = new System.Drawing.Point(168, 131);
+            this.positionTB.MaxLength = 50;
             this.positionTB.Name = "positionTB";
             this.positionTB.PasswordChar = '\0';
             this.positionTB.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -351,8 +358,9 @@
             this.positionTB.Size = new System.Drawing.Size(167, 36);
             this.positionTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.positionTB.TabIndex = 2;
+            this.positionTB.TabStop = false;
             this.positionTB.TextChanged += new System.EventHandler(this.positionTB_TextChanged);
-            this.positionTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textboxClick);
+            this.positionTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbOnclick);
             this.positionTB.Validating += new System.ComponentModel.CancelEventHandler(this.positionTB_Validating);
             // 
             // positionCB
@@ -371,6 +379,7 @@
             this.positionCB.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.positionCB.Size = new System.Drawing.Size(167, 36);
             this.positionCB.TabIndex = 1;
+            this.positionCB.TabStop = false;
             // 
             // titleSys
             // 
@@ -384,6 +393,7 @@
             this.titleSys.Name = "titleSys";
             this.titleSys.Size = new System.Drawing.Size(686, 62);
             this.titleSys.TabIndex = 0;
+            this.titleSys.TabStop = false;
             this.titleSys.Text = "SYSTEM";
             this.titleSys.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -419,6 +429,7 @@
             this.accountTitle.Name = "accountTitle";
             this.accountTitle.Size = new System.Drawing.Size(0, 48);
             this.accountTitle.TabIndex = 13;
+            this.accountTitle.TabStop = false;
             this.accountTitle.Text = "ACCOUNT";
             this.accountTitle.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.accountTitle.Visible = false;
@@ -434,6 +445,7 @@
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(355, 32);
             this.guna2HtmlLabel6.TabIndex = 12;
+            this.guna2HtmlLabel6.TabStop = false;
             this.guna2HtmlLabel6.Text = "CHANGE PASSWORD";
             this.guna2HtmlLabel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -474,6 +486,7 @@
             this.newPass2.IconRight = global::CrewConnect.Properties.Resources.hide;
             this.newPass2.IconRightOffset = new System.Drawing.Point(5, 0);
             this.newPass2.Location = new System.Drawing.Point(216, 243);
+            this.newPass2.MaxLength = 30;
             this.newPass2.Name = "newPass2";
             this.newPass2.PasswordChar = '●';
             this.newPass2.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -483,7 +496,9 @@
             this.newPass2.Size = new System.Drawing.Size(250, 45);
             this.newPass2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.newPass2.TabIndex = 4;
+            this.newPass2.TabStop = false;
             this.newPass2.IconRightClick += new System.EventHandler(this.newPass2_IconRightClick);
+            this.newPass2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbOnclick);
             // 
             // newPass
             // 
@@ -500,6 +515,7 @@
             this.newPass.IconRight = global::CrewConnect.Properties.Resources.hide;
             this.newPass.IconRightOffset = new System.Drawing.Point(5, 0);
             this.newPass.Location = new System.Drawing.Point(216, 192);
+            this.newPass.MaxLength = 30;
             this.newPass.Name = "newPass";
             this.newPass.PasswordChar = '●';
             this.newPass.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -509,7 +525,9 @@
             this.newPass.Size = new System.Drawing.Size(250, 45);
             this.newPass.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.newPass.TabIndex = 3;
+            this.newPass.TabStop = false;
             this.newPass.IconRightClick += new System.EventHandler(this.newPass_IconRightClick);
+            this.newPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbOnclick);
             // 
             // oldPass
             // 
@@ -526,6 +544,7 @@
             this.oldPass.IconRight = global::CrewConnect.Properties.Resources.hide;
             this.oldPass.IconRightOffset = new System.Drawing.Point(5, 0);
             this.oldPass.Location = new System.Drawing.Point(216, 141);
+            this.oldPass.MaxLength = 30;
             this.oldPass.Name = "oldPass";
             this.oldPass.PasswordChar = '●';
             this.oldPass.PlaceholderForeColor = System.Drawing.Color.Gray;
@@ -535,7 +554,9 @@
             this.oldPass.Size = new System.Drawing.Size(250, 45);
             this.oldPass.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.oldPass.TabIndex = 2;
+            this.oldPass.TabStop = false;
             this.oldPass.IconRightClick += new System.EventHandler(this.oldPass_IconRightClick);
+            this.oldPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbOnclick);
             // 
             // errorProvider1
             // 

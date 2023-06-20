@@ -21,6 +21,7 @@ namespace CrewConnect
         public int loadingTime = 1000; 
         private void pleaseWaitForm_Load(object sender, EventArgs e)
         {
+            TopMost = true;
             timer1.Interval = 500;
             timer1.Start();
 

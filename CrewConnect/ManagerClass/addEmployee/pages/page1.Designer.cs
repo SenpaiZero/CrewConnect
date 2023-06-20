@@ -194,6 +194,7 @@
             this.postalTB.ForeColor = System.Drawing.Color.DimGray;
             this.postalTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.postalTB.Location = new System.Drawing.Point(53, 484);
+            this.postalTB.MaxLength = 5;
             this.postalTB.Name = "postalTB";
             this.postalTB.PasswordChar = '\0';
             this.postalTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -220,6 +221,7 @@
             this.stateTB.ForeColor = System.Drawing.Color.DimGray;
             this.stateTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.stateTB.Location = new System.Drawing.Point(447, 413);
+            this.stateTB.MaxLength = 30;
             this.stateTB.Name = "stateTB";
             this.stateTB.PasswordChar = '\0';
             this.stateTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -246,6 +248,7 @@
             this.cityTB.ForeColor = System.Drawing.Color.DimGray;
             this.cityTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cityTB.Location = new System.Drawing.Point(53, 413);
+            this.cityTB.MaxLength = 30;
             this.cityTB.Name = "cityTB";
             this.cityTB.PasswordChar = '\0';
             this.cityTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -272,6 +275,7 @@
             this.address2TB.ForeColor = System.Drawing.Color.DimGray;
             this.address2TB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.address2TB.Location = new System.Drawing.Point(53, 341);
+            this.address2TB.MaxLength = 100;
             this.address2TB.Name = "address2TB";
             this.address2TB.PasswordChar = '\0';
             this.address2TB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -298,6 +302,7 @@
             this.addressTB.ForeColor = System.Drawing.Color.DimGray;
             this.addressTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.addressTB.Location = new System.Drawing.Point(54, 267);
+            this.addressTB.MaxLength = 100;
             this.addressTB.Name = "addressTB";
             this.addressTB.PasswordChar = '\0';
             this.addressTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -324,10 +329,11 @@
             this.middlenameTB.ForeColor = System.Drawing.Color.DimGray;
             this.middlenameTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.middlenameTB.Location = new System.Drawing.Point(656, 161);
+            this.middlenameTB.MaxLength = 30;
             this.middlenameTB.Name = "middlenameTB";
             this.middlenameTB.PasswordChar = '\0';
             this.middlenameTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.middlenameTB.PlaceholderText = "MIDDLE INITIAL";
+            this.middlenameTB.PlaceholderText = "MIDDLE NAME";
             this.middlenameTB.SelectedText = "";
             this.middlenameTB.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.middlenameTB.Size = new System.Drawing.Size(185, 45);
@@ -350,6 +356,7 @@
             this.firstnameTB.ForeColor = System.Drawing.Color.DimGray;
             this.firstnameTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.firstnameTB.Location = new System.Drawing.Point(367, 161);
+            this.firstnameTB.MaxLength = 30;
             this.firstnameTB.Name = "firstnameTB";
             this.firstnameTB.PasswordChar = '\0';
             this.firstnameTB.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -445,6 +452,7 @@
             this.surnameTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.surnameTB.Location = new System.Drawing.Point(53, 161);
             this.surnameTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.surnameTB.MaxLength = 30;
             this.surnameTB.Name = "surnameTB";
             this.surnameTB.PasswordChar = '\0';
             this.surnameTB.PlaceholderForeColor = System.Drawing.Color.DimGray;

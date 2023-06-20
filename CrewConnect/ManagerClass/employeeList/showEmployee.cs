@@ -34,6 +34,7 @@ namespace CrewConnect.ManagerClass
         }
         private void showEmployee_Load(object sender, EventArgs e)
         {
+            TopMost = true;
             for (int i = 0; i < isValid.Length; i++)
             {
                 isValid[i] = true;
@@ -45,37 +46,36 @@ namespace CrewConnect.ManagerClass
             if (!int.TryParse(EmployeeList.selectedID, out selectedID))
                 return;
 
-            
             // Information
             String[] contacts =
             {
-                "FULLTIME", "PART-TIME"
+            "FULLTIME", "PART-TIME"
             };
             String[] bloods =
             {
-                "O-", "O+", "B-", "B+", "A-", "A+", "AB-", "AB+"
+            "O-", "O+", "B-", "B+", "A-", "A+", "AB-", "AB+"
             };
 
             String[] genders =
             {
-                "MALE", "FEMALE", "OTHERS"
+            "MALE", "FEMALE", "OTHERS"
             };
 
             String[] nationalities =
             {
-                "Filipino", "American", "Canadian", "British", "Australian", "Chinese",
-                "Japanese", "Korean", "Russian", "French", "German", "Italian", "Spanish",
-                "Mexican", "Brazilian"
+            "Filipino", "American", "Canadian", "British", "Australian", "Chinese",
+            "Japanese", "Korean", "Russian", "French", "German", "Italian", "Spanish",
+            "Mexican", "Brazilian"
             };
 
             String[] status =
             {
-                "SINGLE", "MARRIED", "WIDOWED", "DIVORCED", "SEPARATED"
+            "SINGLE", "MARRIED", "WIDOWED", "DIVORCED", "SEPARATED"
             };
             String[] monthVal =
             {
-                "JANUARY", "FEBUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST",
-                "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
+            "JANUARY", "FEBUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST",
+            "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
             };
 
             cbValue("religion", "religion", religionCB);
@@ -95,30 +95,39 @@ namespace CrewConnect.ManagerClass
             userInterfaceHelper.comboBoxValue(dayCB, 30);
             userInterfaceHelper.comboBoxValue(yearCB, 1960, DateTime.UtcNow.Year);
 
-            string query =  "SELECT * " +
+            yearCB.MaxDropDownItems = 12;
+            dayCB.MaxDropDownItems = 12;
+            monthCB.MaxDropDownItems = 12;
+            bloodTypeCB.MaxDropDownItems = 12;
+            positionCB.MaxDropDownItems = 12;
+            religionCB.MaxDropDownItems = 12;
+            positionCB.MaxDropDownItems = 12;
+
+            string query = "SELECT * " +
                             "FROM bank " +
                             "INNER JOIN contact ON bank.Id = contact.Id " +
                             "INNER JOIN identities ON bank.Id = identities.Id " +
                             "INNER JOIN job ON bank.Id = job.Id " +
                             "INNER JOIN personal ON bank.Id = personal.Id " +
                             $"WHERE bank.Id = '{selectedID}'";
+            
             using (SqlConnection con = new SqlConnection(globalVariables.server))
             {
                 con.Open();
                 using (SqlCommand command = new SqlCommand(query, con))
-                { 
+                {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         DateTime date;
-                        while(reader.Read())
+                        while (reader.Read())
                         {
-                            date = (DateTime) reader["birthday"];
+                            date = (DateTime)reader["birthday"];
                             username1.PlaceholderText = "USERNAME: " + reader["username"].ToString();
                             name1.PlaceholderText = "NAME: " + reader["name"].ToString();
                             statusCB.Text = reader["status"].ToString();
                             religionCB.Text = reader["religion"].ToString();
                             genderCB.Text = reader["gender"].ToString();
-                            monthCB.SelectedIndex = Math.Abs(date.Month-1);
+                            monthCB.SelectedIndex = Math.Abs(date.Month - 1);
                             dayCB.Text = date.Day.ToString();
                             yearCB.Text = date.Year.ToString();
                             bloodTypeCB.Text = reader["bloodType"].ToString();
@@ -133,10 +142,9 @@ namespace CrewConnect.ManagerClass
                             address2.PlaceholderText = "ADDRESS2: " + reader["address2"].ToString();
                             bankname1.PlaceholderText = "BANK NAME: " + reader["bankName"].ToString();
                             branch1.PlaceholderText = "BRANCH: " + reader["branch"].ToString();
-                            companyAdd1.PlaceholderText = "COMPANY ADDRESS: " + reader["companyAddress"].ToString();
+                            companyAdd1.PlaceholderText = "BANK ADDRESS: " + reader["companyAddress"].ToString();
                             accountName1.PlaceholderText = "ACCOUNT NUM: " + reader["accountName"].ToString();
                             bsb1.PlaceholderText = "BSB: " + reader["BSB"].ToString();
-                            accountName1.PlaceholderText = "ACCOUNT NAME: " + reader["accountNum"].ToString();
 
                             byte[] perPic = (byte[])reader["personalPhoto"];
                             byte[] qrPic = (byte[])reader["qrCodePhoto"];
@@ -236,10 +244,10 @@ namespace CrewConnect.ManagerClass
             }
             ResumeLayout();
             msg.isOkDialog = false;
-            msg.title = "";
+            msg.title = "DELETE SUCCESS";
             msg.message = $"You successfully deleted ID # {selectedID}";
-            if (msg.ShowDialog() == DialogResult.OK)
-                this.Close();
+            msg.ShowDialog();
+            this.Close();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -291,7 +299,7 @@ namespace CrewConnect.ManagerClass
 
                                     messageDialogForm msg = new messageDialogForm();
                                     msg.isOkDialog = false;
-                                    msg.title = "";
+                                    msg.title = "UPDATE SUCCESS";
                                     msg.message = $"You Successfully Update Employee ID # {selectedID}";
                                     if (msg.ShowDialog() == DialogResult.OK)
                                         this.Close();
@@ -328,6 +336,13 @@ namespace CrewConnect.ManagerClass
                 validationHelper.textBoxValidation_Alpha_optional(branch1, "Branch", errorProvider);
                 validationHelper.textBoxValidation_Numeric_optional(accountName1, "Account Number", errorProvider);
                 validationHelper.textBoxValidation_Numeric_optional(bsb1, "BSB", errorProvider);
+
+                messageDialogForm msg = new messageDialogForm()
+                {
+                    title = "INCORRECT INFORMATION",
+                    message = "Please enter a valid data"
+                };
+                msg.ShowDialog();
             }
         }
         void updateData(Guna2TextBox tb, string table, string column, SqlCommand cmd)
@@ -447,7 +462,7 @@ namespace CrewConnect.ManagerClass
         private void companyAdd1_Validating(object sender, CancelEventArgs e)
         {
             isValid[7] = false;
-            if (validationHelper.textBoxValidation_Alpha_optional(companyAdd1, "Company Address", errorProvider))
+            if (validationHelper.textBoxValidation_Address_optional(companyAdd1, "Bank Address", errorProvider))
                 isValid[7] = true;
         }
 

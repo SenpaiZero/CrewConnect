@@ -190,7 +190,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
         {
             if(surnameTB.Focused || firstnameTB.Focused || middlenameTB.Focused
                 || addressTB.Focused || address2TB.Focused || cityTB.Focused
-                || postalTB.Focused)
+                || postalTB.Focused || stateTB.Focused)
             {
                 return true;
             }

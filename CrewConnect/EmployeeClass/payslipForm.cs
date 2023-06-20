@@ -21,16 +21,12 @@ namespace CrewConnect.EmployeeClass
         public static payslipForm payslip;
         string current = "current";
 
-        public static payslipForm pay;
         public payslipForm()
         {
             InitializeComponent();
-            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-            this.BackColor = Color.Transparent;
-
             CheckForIllegalCrossThreadCalls = false;
-            payslip = this;
         }
+
         string id = "", contract = "", salary = "", position = "";
         DateOnly date;
         TimeOnly inTime, outTime;
@@ -56,6 +52,7 @@ namespace CrewConnect.EmployeeClass
                 return handleParams;
             }
         }
+
         void loading()
         {
             var loadingForm = new loadingForm();
@@ -72,7 +69,7 @@ namespace CrewConnect.EmployeeClass
 
         private void payslipForm_Load(object sender, EventArgs e)
         {
-            pay = this;
+            payslip = this;
 
             loadCurrent("attendance");
             positionLabel.Text = globalVariables.userPosition;
@@ -180,6 +177,12 @@ namespace CrewConnect.EmployeeClass
                 current = "current";
             }
         }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public static bool isFirstRun = true;
         void loadCurrent(string table)
         {
@@ -335,37 +338,49 @@ namespace CrewConnect.EmployeeClass
 
         private void emailBtn_Click(object sender, EventArgs e)
         {
-            loading();
             string email = "";
             string position = "";
-            
-            using (SqlConnection con = new SqlConnection(globalVariables.server))
-            {
-                string query = $"SELECT emailAddress FROM contact WHERE username = '{globalVariables.username}'";
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand(query, con))
+            Task.Run(() => {
+                using (SqlConnection con = new SqlConnection(globalVariables.server))
                 {
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if(dr.Read())
+                    string query = $"SELECT emailAddress FROM contact WHERE username = '{globalVariables.username}'";
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        email = dr.GetString(0);
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            email = dr.GetString(0);
+                        }
+                        dr.Close();
                     }
-                    dr.Close();
-                }
 
-                string query2 = $"SELECT position FROM job WHERE username = '{globalVariables.username}'";
-                using (SqlCommand cmd = new SqlCommand(query2, con))
-                {
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.Read())
+                    string query2 = $"SELECT position FROM job WHERE username = '{globalVariables.username}'";
+                    using (SqlCommand cmd = new SqlCommand(query2, con))
                     {
-                        position = dr.GetString(0);
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        if (dr.Read())
+                        {
+                            position = dr.GetString(0);
+                        }
+                        dr.Close();
                     }
-                    dr.Close();
                 }
-            }
-            Bitmap capturedImage = userInterfaceHelper.CapturePanelImage(this);
-            emailHelper.sendEmail_payslip(email, capturedImage);
+                emailBtn.Visible = false;
+                Bitmap capturedImage = userInterfaceHelper.CapturePanelImage(this);
+                emailHelper.sendEmail_payslip(email, capturedImage);
+            });
+
+            loading();
+            emailBtn.Visible = true;
+
+            messageDialogForm msg1 = new messageDialogForm()
+            {
+                title = "Your Email Has Been Sent!",
+                message = "Please check your spam if you did not recieve the email!"
+            };
+
+            msg1.ShowDialog();
         }
     }
 }

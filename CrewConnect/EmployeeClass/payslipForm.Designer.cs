@@ -81,6 +81,7 @@
             // 
             // guna2BorderlessForm1
             // 
+            this.guna2BorderlessForm1.BorderRadius = 25;
             this.guna2BorderlessForm1.ContainerControl = this;
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.DragForm = false;
@@ -100,6 +101,7 @@
             this.guna2HtmlLabel1.TabIndex = 0;
             this.guna2HtmlLabel1.Text = "PAYSLIP";
             this.guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
             // 
             // guna2Shapes2
             // 

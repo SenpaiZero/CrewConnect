@@ -32,5 +32,10 @@ namespace CrewConnect
             this.Hide();
             this.Close();
         }
+
+        private void detailsForm_Load(object sender, EventArgs e)
+        {
+            TopMost = true;
+        }
     }
 }

@@ -42,6 +42,7 @@ namespace CrewConnect
                 loginBtn.FillColor = Color.FromArgb(39, 72, 93);
                 pageHelper.f.Close();
             }
+            Focus();
         }
 
         // AttendanceBtn
@@ -54,6 +55,7 @@ namespace CrewConnect
                 attendanceBtn.FillColor = Color.FromArgb(39, 72, 93);
                 pageHelper.changePage(new attendance(), this.mainsPanel);
             }
+            Focus();
         }
 
         //Login btn
@@ -66,8 +68,8 @@ namespace CrewConnect
             SuspendLayout();
 
             String username, password;
-            username = userNameTB.Text;
-            password = passwordTB.Text;
+            username = userNameTB.Text.Trim();
+            password = passwordTB.Text.Trim();
 
             var loadingForm = new loadingForm();
             loadingForm.StartPosition = FormStartPosition.Manual;
@@ -178,14 +180,12 @@ namespace CrewConnect
         {
             if (e.Control && e.KeyCode == Keys.Space)
             {
-                e.SuppressKeyPress = false;
                 mainsPanel.Focus();
             }
 
             if (e.KeyCode == Keys.Enter)
             {
-                if(whatBtn != "login")
-                    guna2Button2.PerformClick();
+                guna2Button2.PerformClick();
             }
         }
 
@@ -202,6 +202,7 @@ namespace CrewConnect
 
         private void loginForm_Load(object sender, EventArgs e)
         {
+            TopMost = true;
             con = new SqlConnection(globalVariables.server);
             DateTime date = DateTime.Today;
             dateLabel.Text = date.ToShortDateString();
@@ -223,6 +224,7 @@ namespace CrewConnect
         private void exitBtn_Click(object sender, EventArgs e)
         {
             userInterfaceHelper.openScreenKeyboard();
+            Focus();
         }
 
         public static shortcutForm shortcut;
@@ -250,6 +252,7 @@ namespace CrewConnect
             shortcut.Size = new Size(size.Width, this.Height);
             shortcut.showAsSide(this);
             shortcut.Show();
+            Focus();
         }
 
         private void loginForm_KeyDown(object sender, KeyEventArgs e)
@@ -291,6 +294,7 @@ namespace CrewConnect
             detailsForm detail = new detailsForm();
             detail.StartPosition = FormStartPosition.CenterParent;
             detail.ShowDialog();
+            Focus();
         }
 
         private void loginForm_LocationChanged(object sender, EventArgs e)
@@ -299,6 +303,11 @@ namespace CrewConnect
             {
                 shortcut.showAsSide(this);
             }
+        }
+
+        private void mainsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

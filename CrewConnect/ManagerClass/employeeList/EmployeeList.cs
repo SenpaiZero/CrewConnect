@@ -111,15 +111,24 @@ namespace CrewConnect.ManagerClass
                 selectedID = selectedRow.Cells[0].Value.ToString();
 
                 showEmployee empl = new showEmployee();
-                empl.Owner = this;
-                empl.Show();
+                empl.StartPosition = FormStartPosition.CenterParent;
+                empl.ShowDialog();
+                refreshBtn.PerformClick();
+                
             }
         }
+
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             searchTB.Text = "";
             showData();
+        }
+        public bool isFocus()
+        {
+            if (searchTB.Focused)
+                return true;
+            return false;
         }
         public void focusTB()
         {

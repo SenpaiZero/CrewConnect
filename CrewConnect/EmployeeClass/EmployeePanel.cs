@@ -35,37 +35,40 @@ namespace CrewConnect.EmployeeClass
 
         private void EmployeePanel_Load(object sender, EventArgs e)
         {
+            Task.Run(() => {
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(globalVariables.server))
+                    {
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand($"SELECT name FROM personal WHERE username = '{globalVariables.username}'", con))
+                        {
+                            SqlDataReader dr = cmd.ExecuteReader();
+
+                            if (dr.Read())
+                            {
+                                nameLabel.Text = dr.GetString(0);
+                            }
+                            else
+                            {
+                                nameLabel.Text = "ADMIN";
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    messageDialogForm msg = new messageDialogForm();
+                    msg.title = "AN ERROR HAS OCCURED";
+                    msg.message = ex.Message;
+                    msg.ShowDialog();
+                }
+            });
+            TopMost = true;
             guna2HtmlLabel2.Cursor = Cursors.Hand;
             positionLabel.Text = globalVariables.userPosition;
 
             pageHelper.changePage(new payslipForm(), mainPanel);
-            try
-            { 
-                using (SqlConnection con = new SqlConnection(globalVariables.server))
-                {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand($"SELECT name FROM personal WHERE username = '{globalVariables.username}'", con))
-                    {
-                        SqlDataReader dr = cmd.ExecuteReader();
-
-                        if (dr.Read())
-                        {
-                            nameLabel.Text = dr.GetString(0);
-                        }
-                        else
-                        {
-                            nameLabel.Text = "ADMIN";
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                messageDialogForm msg = new messageDialogForm();
-                msg.title = "AN ERROR HAS OCCURED";
-                msg.message = ex.Message;
-                msg.ShowDialog();
-            }
         }
 
         private void guna2HtmlLabel2_Click(object sender, EventArgs e)
@@ -119,6 +122,7 @@ namespace CrewConnect.EmployeeClass
                 pageHelper.changePage(new announcementView(), mainPanel);
                 ResumeLayout();
             }
+            Focus();
         }
 
         private void EmployeePanel_FormClosing(object sender, FormClosingEventArgs e)
@@ -141,6 +145,7 @@ namespace CrewConnect.EmployeeClass
                 pageHelper.changePage(new payslipForm(), mainPanel);
                 ResumeLayout();
             }
+            Focus();
         }
 
         private void settingBtn_Click(object sender, EventArgs e)
@@ -156,11 +161,13 @@ namespace CrewConnect.EmployeeClass
                 pageHelper.changePage(new employeeSetting(), mainPanel);
                 ResumeLayout();
             }
+            Focus();
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
             userInterfaceHelper.openScreenKeyboard();
+            Focus();
         }
 
         private void minimiseBtn_Click(object sender, EventArgs e)
@@ -168,6 +175,7 @@ namespace CrewConnect.EmployeeClass
             detailsForm detail = new detailsForm();
             detail.StartPosition = FormStartPosition.CenterParent;
             detail.ShowDialog();
+            Focus();
         }
 
         private void EmployeePanel_KeyDown(object sender, KeyEventArgs e)
@@ -195,7 +203,7 @@ namespace CrewConnect.EmployeeClass
 
             if(whatBtn == "payslip" || whatBtn == "")
             {
-                payslipForm.pay.shortcut(e);
+                payslipForm.payslip.shortcut(e);
             }
 
             this.ActiveControl = null;
@@ -225,6 +233,7 @@ namespace CrewConnect.EmployeeClass
             shortcut.Size = new Size(size.Width, this.Height);
             shortcut.showAsSide(this);
             shortcut.Show();
+            Focus();
         }
 
         private void EmployeePanel_Move(object sender, EventArgs e)
