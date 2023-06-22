@@ -67,7 +67,7 @@ namespace CrewConnect
 
         private void background_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+           // e.Cancel = true;
         }
 
         private void background_FormClosed(object sender, FormClosedEventArgs e)

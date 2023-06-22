@@ -56,6 +56,7 @@ C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\obj\Release\net6.0-windows\refint\C
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\obj\Release\net6.0-windows\CrewConnect.pdb
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\obj\Release\net6.0-windows\CrewConnect.genruntimeconfig.cache
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\obj\Release\net6.0-windows\ref\CrewConnect.dll
+C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\obj\Release\net6.0-windows\CrewConnect.EmployeeClass.printPayslip.resources
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\bin\Release\net6.0-windows\CrewConnect.dll.manifest
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\bin\Release\net6.0-windows\CrewConnect.application
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\obj\Release\net6.0-windows\CrewConnect.dll.manifest

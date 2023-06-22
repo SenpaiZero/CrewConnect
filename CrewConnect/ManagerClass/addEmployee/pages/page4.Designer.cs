@@ -209,6 +209,7 @@
             this.bsbTB.Size = new System.Drawing.Size(211, 45);
             this.bsbTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.bsbTB.TabIndex = 5;
+            this.bsbTB.TextChanged += new System.EventHandler(this.bsbTB_TextChanged);
             this.bsbTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.onKeyEnter);
             this.bsbTB.Validating += new System.ComponentModel.CancelEventHandler(this.bsbTB_Validating);
             // 
@@ -241,6 +242,7 @@
             // 
             // companyNameTB
             // 
+            this.companyNameTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.companyNameTB.CustomizableEdges = customizableEdges9;
             this.companyNameTB.DefaultText = "";
             this.companyNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -268,6 +270,7 @@
             // 
             // companyAddTB
             // 
+            this.companyAddTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.companyAddTB.CustomizableEdges = customizableEdges11;
             this.companyAddTB.DefaultText = "";
             this.companyAddTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -295,6 +298,7 @@
             // 
             // branchTB
             // 
+            this.branchTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.branchTB.CustomizableEdges = customizableEdges13;
             this.branchTB.DefaultText = "";
             this.branchTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -335,6 +339,7 @@
             // 
             // bankNameTB
             // 
+            this.bankNameTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.bankNameTB.CustomizableEdges = customizableEdges15;
             this.bankNameTB.DefaultText = "";
             this.bankNameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

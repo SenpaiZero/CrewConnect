@@ -172,6 +172,17 @@ namespace CrewConnect.ManagerClass
                     }
                 }
             }
+            else
+            {
+                messageDialogForm msg = new messageDialogForm()
+                {
+                    title = "INVALID INPUT",
+                    message = "Numbers are not allowed"
+                };
+
+                msg.StartPosition = FormStartPosition.CenterParent;
+                msg.ShowDialog();
+            }
         }
 
         private void addPositionBtn_Click(object sender, EventArgs e)
@@ -203,6 +214,17 @@ namespace CrewConnect.ManagerClass
                         showData();
                     }
                 }
+            }
+            else
+            {
+                messageDialogForm msg = new messageDialogForm()
+                {
+                    title = "INVALID INPUT",
+                    message = "Numbers are not allowed"
+                };
+
+                msg.StartPosition= FormStartPosition.CenterParent;
+                msg.ShowDialog();
             }
         }
 
@@ -292,7 +314,7 @@ namespace CrewConnect.ManagerClass
                     {
                         string storedPassword = dr["password"].ToString();
 
-                        if (storedPassword == oldPass.Text && newPass.Text == newPass2.Text)
+                        if (storedPassword == securityHelper.HashPassword(oldPass.Text) && newPass.Text == newPass2.Text)
                         {
                             dr.Close(); 
 
@@ -303,6 +325,7 @@ namespace CrewConnect.ManagerClass
                             cmd2.ExecuteNonQuery();
 
                             messageDialogForm msg = new messageDialogForm();
+                            msg.title = "PASSWORD CHANGED";
                             msg.message = "You've Successfully Changed Your Password";
                             msg.ShowDialog();
 

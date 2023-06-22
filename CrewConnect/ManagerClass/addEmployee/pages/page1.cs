@@ -79,7 +79,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
                 validationHelper.textBoxValidation_Address_optional(address2TB, "Address", errorProvider);
                 validationHelper.textBoxValidation_Alpha(cityTB, "City", errorProvider);
                 validationHelper.textBoxValidation_Alpha(stateTB, "State", errorProvider);
-                validationHelper.textBoxValidation_Numeric(postalTB, "Postal", errorProvider);
+                validationHelper.textBoxValidation_Numeric(postalTB, "Postal", errorProvider, 4);
 
                 pageHelper.errorDetails();
             }
@@ -131,7 +131,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
         private void postalTB_Validating(object sender, CancelEventArgs e)
         {
             isValid[6] = false;
-            if (validationHelper.textBoxValidation_Numeric(postalTB, "Postal", errorProvider))
+            if (validationHelper.textBoxValidation_Numeric(postalTB, "Postal", errorProvider, 4))
                 isValid[6] = true;
         }
 

@@ -286,6 +286,7 @@
             // guardianTB
             // 
             this.guardianTB.BorderThickness = 5;
+            this.guardianTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.guardianTB.CustomizableEdges = customizableEdges13;
             this.guardianTB.DefaultText = "";
             this.guardianTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -313,6 +314,7 @@
             // emailTB
             // 
             this.emailTB.BorderThickness = 5;
+            this.emailTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.emailTB.CustomizableEdges = customizableEdges15;
             this.emailTB.DefaultText = "";
             this.emailTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

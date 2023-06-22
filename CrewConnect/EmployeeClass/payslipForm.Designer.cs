@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(payslipForm));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
@@ -62,6 +65,7 @@
             this.nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.changeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.mainPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.printBtn = new Guna.UI2.WinForms.Guna2Button();
             this.emailBtn = new Guna.UI2.WinForms.Guna2Button();
             this.netpayLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Shapes3 = new Guna.UI2.WinForms.Guna2Shapes();
@@ -76,6 +80,7 @@
             this.center = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.daysLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.numDayLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,7 +118,7 @@
             this.guna2Shapes2.Name = "guna2Shapes2";
             this.guna2Shapes2.PolygonSkip = 1;
             this.guna2Shapes2.Rotate = 0F;
-            this.guna2Shapes2.RoundedEdges = customizableEdges7;
+            this.guna2Shapes2.RoundedEdges = customizableEdges9;
             this.guna2Shapes2.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
             this.guna2Shapes2.Size = new System.Drawing.Size(702, 20);
             this.guna2Shapes2.TabIndex = 2;
@@ -153,7 +158,7 @@
             this.guna2Shapes1.Name = "guna2Shapes1";
             this.guna2Shapes1.PolygonSkip = 1;
             this.guna2Shapes1.Rotate = 0F;
-            this.guna2Shapes1.RoundedEdges = customizableEdges6;
+            this.guna2Shapes1.RoundedEdges = customizableEdges8;
             this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
             this.guna2Shapes1.Size = new System.Drawing.Size(702, 20);
             this.guna2Shapes1.TabIndex = 7;
@@ -364,7 +369,7 @@
             // changeBtn
             // 
             this.changeBtn.BackColor = System.Drawing.Color.Transparent;
-            this.changeBtn.CustomizableEdges = customizableEdges4;
+            this.changeBtn.CustomizableEdges = customizableEdges6;
             this.changeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.changeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.changeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -375,7 +380,7 @@
             this.changeBtn.IndicateFocus = true;
             this.changeBtn.Location = new System.Drawing.Point(355, 154);
             this.changeBtn.Name = "changeBtn";
-            this.changeBtn.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            this.changeBtn.ShadowDecoration.CustomizableEdges = customizableEdges7;
             this.changeBtn.Size = new System.Drawing.Size(178, 39);
             this.changeBtn.TabIndex = 31;
             this.changeBtn.TabStop = false;
@@ -388,6 +393,7 @@
             // mainPanel
             // 
             this.mainPanel.BorderRadius = 20;
+            this.mainPanel.Controls.Add(this.printBtn);
             this.mainPanel.Controls.Add(this.emailBtn);
             this.mainPanel.Controls.Add(this.netpayLabel);
             this.mainPanel.Controls.Add(this.guna2Shapes3);
@@ -423,14 +429,37 @@
             this.mainPanel.Controls.Add(this.guna2HtmlLabel5);
             this.mainPanel.Controls.Add(this.guna2Shapes2);
             this.mainPanel.Controls.Add(this.guna2HtmlLabel3);
-            this.mainPanel.CustomizableEdges = customizableEdges8;
+            this.mainPanel.CustomizableEdges = customizableEdges10;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            this.mainPanel.ShadowDecoration.CustomizableEdges = customizableEdges11;
             this.mainPanel.Size = new System.Drawing.Size(885, 652);
             this.mainPanel.TabIndex = 32;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            // 
+            // printBtn
+            // 
+            this.printBtn.BackColor = System.Drawing.Color.Transparent;
+            this.printBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(185)))), ((int)(((byte)(209)))));
+            this.printBtn.BorderRadius = 20;
+            this.printBtn.BorderThickness = 1;
+            this.printBtn.CustomizableEdges = customizableEdges1;
+            this.printBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.printBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.printBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.printBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.printBtn.FillColor = System.Drawing.Color.Transparent;
+            this.printBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.printBtn.ForeColor = System.Drawing.Color.White;
+            this.printBtn.Location = new System.Drawing.Point(445, 598);
+            this.printBtn.Name = "printBtn";
+            this.printBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.printBtn.Size = new System.Drawing.Size(246, 39);
+            this.printBtn.TabIndex = 44;
+            this.printBtn.Text = "PRINT PAYSLIP";
+            this.printBtn.UseTransparentBackground = true;
+            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
             // emailBtn
             // 
@@ -438,7 +467,7 @@
             this.emailBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(185)))), ((int)(((byte)(209)))));
             this.emailBtn.BorderRadius = 20;
             this.emailBtn.BorderThickness = 1;
-            this.emailBtn.CustomizableEdges = customizableEdges1;
+            this.emailBtn.CustomizableEdges = customizableEdges3;
             this.emailBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.emailBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.emailBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -446,9 +475,9 @@
             this.emailBtn.FillColor = System.Drawing.Color.Transparent;
             this.emailBtn.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.emailBtn.ForeColor = System.Drawing.Color.White;
-            this.emailBtn.Location = new System.Drawing.Point(315, 601);
+            this.emailBtn.Location = new System.Drawing.Point(193, 598);
             this.emailBtn.Name = "emailBtn";
-            this.emailBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.emailBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.emailBtn.Size = new System.Drawing.Size(246, 39);
             this.emailBtn.TabIndex = 43;
             this.emailBtn.Text = "EMAIL PAYSLIP";
@@ -478,7 +507,7 @@
             this.guna2Shapes3.Name = "guna2Shapes3";
             this.guna2Shapes3.PolygonSkip = 1;
             this.guna2Shapes3.Rotate = 0F;
-            this.guna2Shapes3.RoundedEdges = customizableEdges3;
+            this.guna2Shapes3.RoundedEdges = customizableEdges5;
             this.guna2Shapes3.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
             this.guna2Shapes3.Size = new System.Drawing.Size(702, 20);
             this.guna2Shapes3.TabIndex = 41;
@@ -623,6 +652,18 @@
             this.numDayLabel.TabIndex = 22;
             this.numDayLabel.Text = "NO. OF DAYS";
             // 
+            // printPreviewDialog
+            // 
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.MdiChildrenMinimizedAnchorBottom = false;
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            this.printPreviewDialog.ShowIcon = false;
+            this.printPreviewDialog.Visible = false;
+            // 
             // payslipForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -683,5 +724,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel netpayLabel;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes3;
         private Guna.UI2.WinForms.Guna2Button emailBtn;
+        private Guna.UI2.WinForms.Guna2Button printBtn;
+        private PrintPreviewDialog printPreviewDialog;
     }
 }

@@ -5,13 +5,18 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.Contracts;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CrewConnect.Helper;
 using CrewConnect.Helper.email;
 using CrewConnect.ManagerClass;
+using Guna.UI2.WinForms;
+using Microsoft.SqlServer.Server;
 using static QRCoder.PayloadGenerator.SwissQrCode;
 
 namespace CrewConnect.EmployeeClass
@@ -181,6 +186,137 @@ namespace CrewConnect.EmployeeClass
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        Bitmap capturedImage;
+        private void printBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PrintDocument printDocument = new PrintDocument();
+                printPayslip print = new printPayslip();
+
+                changeColorPrint(true);
+                capturedImage = userInterfaceHelper.CapturePanelImage(this);
+                printDocument.PrintPage += PrintDocument_PrintPage;
+
+                print.doc = printDocument;
+                changeColorPrint(false);
+                // Show the print preview form
+                if (print.ShowDialog() == DialogResult.OK)
+                {
+                    messageDialogForm msg = new messageDialogForm()
+                    {
+                        title = "PRINT SUCCESS",
+                        message = "Your payslip is about to print. If it failed please check" +
+                        " the print queue"
+                    };
+                    msg.ShowDialog();
+                }
+            }
+            catch(Exception ex)
+            {
+                messageDialogForm msg = new messageDialogForm()
+                {
+                    title = "AN ERROR OCCURED",
+                    message = ex.Message.ToString()
+                };
+
+                msg.ShowDialog();
+            }
+            
+        }
+
+
+        public bool printPage()
+        {
+            try
+            {
+                PrintDocument printDoc = new PrintDocument();
+                printDoc.PrintPage += PrintDocument_PrintPage;
+
+                // Print the image
+                PrintDialog printDialog = new PrintDialog();
+                printDialog.Document = printDoc;
+                if (printDialog.ShowDialog() == DialogResult.OK)
+                {
+                    printDoc.Print();
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                messageDialogForm msg = new messageDialogForm()
+                {
+                    title = "AN ERROR OCCURED",
+                    message = e.Message
+                };
+
+                msg.ShowDialog();
+            }
+            
+            return false;
+        }
+        private void changeColorPrint(bool isPrint)
+        {
+            if (isPrint)
+            {
+                foreach (Control item in mainPanel.Controls)
+                {
+                    if(item is Guna2HtmlLabel tb)
+                    {
+                        tb.ForeColor = Color.Black;
+                    }
+                }
+
+                printBtn.Visible = false;
+                emailBtn.Visible = false;
+                mainPanel.BackColor = Color.White;
+            }
+            else
+            {
+                foreach (Control item in mainPanel.Controls)
+                {
+                    if (item is Guna2HtmlLabel tb)
+                    {
+                        tb.ForeColor = Color.WhiteSmoke;
+                    }
+                }
+
+                printBtn.Visible = true;
+                emailBtn.Visible = true;
+                mainPanel.BackColor = Color.FromArgb(39, 72, 93);
+            }
+        }
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+
+            // Calculate the aspect ratio of the captured image
+            if(capturedImage == null)
+            {
+                changeColorPrint(true);
+                capturedImage = userInterfaceHelper.CapturePanelImage(this);
+                changeColorPrint(false);
+            }
+            
+            float imageAspectRatio = (float)capturedImage.Width / capturedImage.Height;
+
+            // Calculate the dimensions to fit the image within the margin bounds
+            int maxWidth = e.MarginBounds.Width;
+            int maxHeight = (int)(maxWidth / imageAspectRatio) + 90;
+
+            if (maxHeight > e.MarginBounds.Height)
+            {
+                maxHeight = e.MarginBounds.Height;
+                maxWidth = (int)(maxHeight * imageAspectRatio);
+            }
+
+            // Calculate the position to center the image on the page
+            int imageX = e.MarginBounds.Left + (e.MarginBounds.Width - maxWidth) / 2;
+            int imageY = e.MarginBounds.Top + (e.MarginBounds.Height - maxHeight) / 2;
+
+            // Print the image onto the page
+            e.Graphics.DrawImage(capturedImage, imageX, imageY, maxWidth, maxHeight);
         }
 
         public static bool isFirstRun = true;
@@ -367,11 +503,13 @@ namespace CrewConnect.EmployeeClass
                     }
                 }
                 emailBtn.Visible = false;
+                printBtn.Visible = false;
                 Bitmap capturedImage = userInterfaceHelper.CapturePanelImage(this);
                 emailHelper.sendEmail_payslip(email, capturedImage);
             });
 
             loading();
+            printBtn.Visible = true;
             emailBtn.Visible = true;
 
             messageDialogForm msg1 = new messageDialogForm()

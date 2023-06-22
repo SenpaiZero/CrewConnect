@@ -51,7 +51,8 @@ namespace CrewConnect.ManagerClass.addEmployee
             else
                 add2Label.Text = userInterfaceHelper.limitLabelDisplay(globalVariables.streetAdd2, 42);
 
-            cityLabel.Text = globalVariables.state;
+            stateLabel.Text = globalVariables.state;
+            cityLabel.Text = globalVariables.city;
             postalLabel.Text = globalVariables.postal;
         }
 
@@ -124,14 +125,23 @@ namespace CrewConnect.ManagerClass.addEmployee
 
         private void finishBtn_Click(object sender, EventArgs e)
         {
+            createUsername();
 
-            Task.Run(() => {
+            Task.Run(() =>
+            {
                 try
                 {
                     using (SqlConnection con = new SqlConnection(globalVariables.server))
                     {
                         con.Open();
                         string query = $"" +
+                        // Users Table
+                        $"{globalVariables.cmd_insert_Users} VALUES (@Id, @username, @password, @position);" +
+                        // job Table
+                        $"{globalVariables.cmd_insert_job} VALUES (@Id, @username, @position, @contract, @salary);" +
+                        // Personal Table
+                        $"{globalVariables.cmd_insert_personal} VALUES (@Id, @username, @name, @birthday, @age," +
+                        $" @bloodType, @status, @religion, @gender)" +
                         // Bank Table
                         $"{globalVariables.cmd_insert_bank} VALUES (@Id, @username, @bankName," +
                         $" @branch, @companyAdd, @accountName, @BSB, @accountNum);" +
@@ -139,14 +149,7 @@ namespace CrewConnect.ManagerClass.addEmployee
                         $"{globalVariables.cmd_insert_contact} VALUES (@Id, @username, @phoneNumber," +
                         $"@emailAddress, @emailAddress2, @address, @adress2);" +
                         // Identity Table
-                        $"{globalVariables.cmd_insert_identity} VALUES (@Id, @username, @personalPhoto, @qrCodePhoto);" +
-                        // job Table
-                        $"{globalVariables.cmd_insert_job} VALUES (@Id, @username, @position, @contract, @salary);" +
-                        // Users Table
-                        $"{globalVariables.cmd_insert_Users} VALUES (@Id, @username, @password, @position);" +
-                        // Personal Table
-                        $"{globalVariables.cmd_insert_personal} VALUES (@Id, @username, @name, @birthday, @age," +
-                        $" @bloodType, @status, @religion, @gender)";
+                        $"{globalVariables.cmd_insert_identity} VALUES (@Id, @username, @personalPhoto, @qrCodePhoto);";
 
                         String name = (globalVariables.lastname.Trim() + ", " + globalVariables.firstname.Trim() + " " + globalVariables.middlename.Trim()).ToUpper();
                         using (SqlCommand command = new SqlCommand(query, con))
@@ -186,13 +189,14 @@ namespace CrewConnect.ManagerClass.addEmployee
 
 
                             messageDialogForm msg = new messageDialogForm();
+                            msg.StartPosition = FormStartPosition.CenterParent;
                             msg.title = "EMPLOYEE HAS BEEN SAVED";
                             msg.message = "YOU'VE SUCCESSFULLY ADDED A NEW AMPLOYEE!";
                             msg.ShowDialog();
                         }
                         this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                        employeeID id = new employeeID();
 
+                        employeeID id = new employeeID();
                         id.Show();
                         ResumeLayout();
                         con.Close();
@@ -202,6 +206,7 @@ namespace CrewConnect.ManagerClass.addEmployee
                 catch (Exception ex)
                 {
                     messageDialogForm msg = new messageDialogForm();
+                    msg.StartPosition = FormStartPosition.CenterParent;
                     msg.title = "AN ERROR HAS OCCURED";
                     msg.message = ex.Message;
                     msg.ShowDialog();
@@ -210,13 +215,13 @@ namespace CrewConnect.ManagerClass.addEmployee
             
             globalVariables.isEdit = false;
             SuspendLayout();
-            createUsername();
             var loadingForm = new loadingForm();
             loadingForm.StartPosition = FormStartPosition.CenterParent;
-            loadingForm.loadingTime = 2500;
+            loadingForm.loadingTime = 3000;
             loadingForm.ShowDialog();
 
             messageDialogForm msg1 = new messageDialogForm();
+            msg1.StartPosition= FormStartPosition.CenterParent;
             msg1.title = "Your Email Has Been Sent!";
             msg1.message = "Please check your spam if you did not recieve the email!";
             msg1.ShowDialog();

@@ -116,9 +116,9 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
                 validationHelper.textBoxValidation_Address(companyAddTB, "Company Address", errorProvider1);
                 validationHelper.textBoxValidation_Alpha(branchTB, "Branch", errorProvider1);
                 validationHelper.textBoxValidation_Alpha(bankNameTB, "Bank Name", errorProvider1);
-                validationHelper.textBoxValidation_Numeric(salaryTB, "Salary", errorProvider1);
-                validationHelper.textBoxValidation_Numeric(accountNumTB, "Account Number", errorProvider1);
-                validationHelper.textBoxValidation_Numeric(bsbTB, "BSB", errorProvider1);
+                validationHelper.textBoxValidation_Numeric(salaryTB, "Salary", errorProvider1, 2);
+                validationHelper.textBoxValidation_Numeric(accountNumTB, "Account Number", errorProvider1, 10);
+                validationHelper.textBoxValidation_Numeric(bsbTB, "BSB", errorProvider1, 6);
                 validationHelper.comboBoxValidation(contractCB, "CONTRACTS", errorProvider1);
                 pageHelper.errorDetails();
             }
@@ -156,21 +156,25 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
         private void bsbTB_Validating(object sender, CancelEventArgs e)
         {
             isValid[4] = false;
-            if (validationHelper.textBoxValidation_Numeric(bsbTB, "BSB", errorProvider1))
+            if (bsbTB.Text.Length < 6)
+                return;
+            if (validationHelper.textBoxValidation_Numeric(bsbTB, "BSB", errorProvider1, 6))
                 isValid[4] = true;
         }
 
         private void accountNumTB_Validating(object sender, CancelEventArgs e)
         {
             isValid[5] = false;
-            if (validationHelper.textBoxValidation_Numeric(accountNumTB, "Account Number", errorProvider1))
+            if (accountNumTB.Text.Length < 10)
+                return;
+            if (validationHelper.textBoxValidation_Numeric(accountNumTB, "Account Number", errorProvider1, 10))
                 isValid[5] = true;
         }
 
         private void salaryTB_Validating(object sender, CancelEventArgs e)
         {
             isValid[6] = false;
-            if (validationHelper.textBoxValidation_Numeric(salaryTB, "Salary", errorProvider1))
+            if (validationHelper.textBoxValidation_Numeric(salaryTB, "Salary", errorProvider1, 2))
                 isValid[6] = true;
         }
 
@@ -206,6 +210,11 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
                 finishBtn.PerformClick();
             else if (e.KeyCode == Keys.Escape)
                 prevBtn.PerformClick();
+        }
+
+        private void bsbTB_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

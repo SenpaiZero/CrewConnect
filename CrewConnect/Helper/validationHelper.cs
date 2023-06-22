@@ -105,7 +105,7 @@ namespace CrewConnect.Helper
         }
 
         public static bool comboBoxFirstLoad { get; set; }
-        public static bool textBoxValidation_Numeric(Guna2TextBox tb, String name, ErrorProvider errorProvider)
+        public static bool textBoxValidation_Numeric(Guna2TextBox tb, String name, ErrorProvider errorProvider, int min)
         {
             String nullField = "is required. Please complete this field to continue";
             String symLetter = "is invalid (Only numbers are allowed)";
@@ -122,12 +122,17 @@ namespace CrewConnect.Helper
                 errorProvider.SetError(tb, $"{name} {symLetter}");
                 return false;
             }
+            else if(tb.Text.Length < min)
+            {
+                errorProvider.SetError(tb, $"There should be more than {min} characters");
+                return false;
+            }
             // Clears the error
             tb.BorderColor = Color.FromArgb(213, 218, 223);
             errorProvider.SetError(tb, null);
             return true;
         }
-        public static bool textBoxValidation_Numeric_optional(Guna2TextBox tb, String name, ErrorProvider errorProvider)
+        public static bool textBoxValidation_Numeric_optional(Guna2TextBox tb, String name, ErrorProvider errorProvider, int min)
         {
             String symLetter = "is invalid (Only numbers are allowed)";
             tb.BorderColor = Color.IndianRed;
@@ -142,6 +147,12 @@ namespace CrewConnect.Helper
             if (!validationHelper.checkFieldNumeric(tb.Text))
             {
                 errorProvider.SetError(tb, $"{name} {symLetter}");
+                return false;
+            }
+
+            if (tb.Text.Length < min)
+            {
+                errorProvider.SetError(tb, $"There should be more than {min} characters");
                 return false;
             }
             // Clears the error
@@ -172,7 +183,7 @@ namespace CrewConnect.Helper
         // Check if user entered alphabets only
         public static bool checkFieldAlpha(String tb)
         {
-            if (Regex.IsMatch(tb, "^[a-zA-Z\\s]+$"))
+            if (Regex.IsMatch(tb, "^[a-zA-Z\\s]+$") && !tb.Contains("  "))
                 return true;
             return false;
         }

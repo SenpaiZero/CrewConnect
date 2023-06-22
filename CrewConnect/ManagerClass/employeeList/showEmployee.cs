@@ -327,15 +327,15 @@ namespace CrewConnect.ManagerClass
             else
             {
                 validationHelper.textBoxValidation_PhoneNumber_optional(phoneNum1, "Phone Number", errorProvider);
-                validationHelper.textBoxValidation_Numeric_optional(salary1, "Salary", errorProvider);
+                validationHelper.textBoxValidation_Numeric_optional(salary1, "Salary", errorProvider, 2);
                 validationHelper.textBoxValidation_Alpha_optional(address2, "Address", errorProvider);
                 validationHelper.textBoxValidation_Alpha_optional(address1, "Address", errorProvider);
                 validationHelper.textBoxValidation_Email_option(email2, "Email", errorProvider);
                 validationHelper.textBoxValidation_Email_option(email1, "Email", errorProvider);
                 validationHelper.textBoxValidation_Alpha_optional(bankname1, "Bank Name", errorProvider);
                 validationHelper.textBoxValidation_Alpha_optional(branch1, "Branch", errorProvider);
-                validationHelper.textBoxValidation_Numeric_optional(accountName1, "Account Number", errorProvider);
-                validationHelper.textBoxValidation_Numeric_optional(bsb1, "BSB", errorProvider);
+                validationHelper.textBoxValidation_Numeric_optional(accountName1, "Account Number", errorProvider, 10);
+                validationHelper.textBoxValidation_Numeric_optional(bsb1, "BSB", errorProvider, 6);
 
                 messageDialogForm msg = new messageDialogForm()
                 {
@@ -413,7 +413,7 @@ namespace CrewConnect.ManagerClass
         private void salary1_Validating(object sender, CancelEventArgs e)
         {
             isValid[0] = false;
-            if (validationHelper.textBoxValidation_Numeric_optional(salary1, "Salary", errorProvider))
+            if (validationHelper.textBoxValidation_Numeric_optional(salary1, "Salary", errorProvider, 2))
                 isValid[0] = true;
         }
 
@@ -476,14 +476,14 @@ namespace CrewConnect.ManagerClass
         private void accountName1_Validating(object sender, CancelEventArgs e)
         {
             isValid[9] = false;
-            if (validationHelper.textBoxValidation_Numeric_optional(accountName1, "Account Number", errorProvider))
+            if (validationHelper.textBoxValidation_Numeric_optional(accountName1, "Account Number", errorProvider, 10))
                 isValid[9] = true;
         }
 
         private void bsb1_Validating(object sender, CancelEventArgs e)
         {
             isValid[10] = false;
-            if (validationHelper.textBoxValidation_Numeric_optional(bsb1, "BSB", errorProvider))
+            if (validationHelper.textBoxValidation_Numeric_optional(bsb1, "BSB", errorProvider, 6))
                 isValid[10] = true;
         }
     }

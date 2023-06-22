@@ -271,6 +271,7 @@
             // religionTB
             // 
             this.religionTB.BorderThickness = 5;
+            this.religionTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.religionTB.CustomizableEdges = customizableEdges19;
             this.religionTB.DefaultText = "";
             this.religionTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -338,6 +339,7 @@
             // positionTB
             // 
             this.positionTB.BorderThickness = 5;
+            this.positionTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.positionTB.CustomizableEdges = customizableEdges25;
             this.positionTB.DefaultText = "";
             this.positionTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

@@ -183,6 +183,7 @@
             // postalTB
             // 
             this.postalTB.BorderThickness = 5;
+            this.postalTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.postalTB.CustomizableEdges = customizableEdges3;
             this.postalTB.DefaultText = "";
             this.postalTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -210,6 +211,7 @@
             // stateTB
             // 
             this.stateTB.BorderThickness = 5;
+            this.stateTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.stateTB.CustomizableEdges = customizableEdges5;
             this.stateTB.DefaultText = "";
             this.stateTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -237,6 +239,7 @@
             // cityTB
             // 
             this.cityTB.BorderThickness = 5;
+            this.cityTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cityTB.CustomizableEdges = customizableEdges7;
             this.cityTB.DefaultText = "";
             this.cityTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -264,6 +267,7 @@
             // address2TB
             // 
             this.address2TB.BorderThickness = 5;
+            this.address2TB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.address2TB.CustomizableEdges = customizableEdges9;
             this.address2TB.DefaultText = "";
             this.address2TB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -291,6 +295,7 @@
             // addressTB
             // 
             this.addressTB.BorderThickness = 5;
+            this.addressTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.addressTB.CustomizableEdges = customizableEdges11;
             this.addressTB.DefaultText = "";
             this.addressTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -318,6 +323,7 @@
             // middlenameTB
             // 
             this.middlenameTB.BorderThickness = 5;
+            this.middlenameTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.middlenameTB.CustomizableEdges = customizableEdges13;
             this.middlenameTB.DefaultText = "";
             this.middlenameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -345,6 +351,7 @@
             // firstnameTB
             // 
             this.firstnameTB.BorderThickness = 5;
+            this.firstnameTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.firstnameTB.CustomizableEdges = customizableEdges15;
             this.firstnameTB.DefaultText = "";
             this.firstnameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -440,6 +447,7 @@
             // surnameTB
             // 
             this.surnameTB.BorderThickness = 5;
+            this.surnameTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.surnameTB.CustomizableEdges = customizableEdges25;
             this.surnameTB.DefaultText = "";
             this.surnameTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

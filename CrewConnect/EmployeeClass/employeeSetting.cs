@@ -48,7 +48,7 @@ namespace CrewConnect.EmployeeClass
                 msg2.ShowDialog();
                 return;
             }
-                string query = "SELECT password FROM Users WHERE password COLLATE Latin1_General_CS_AS = @password";
+            string query = "SELECT password FROM Users WHERE password COLLATE Latin1_General_CS_AS = @password";
             using (SqlConnection con = new SqlConnection(globalVariables.server))
             {
                 con.Open();
@@ -72,6 +72,7 @@ namespace CrewConnect.EmployeeClass
                             cmd2.ExecuteNonQuery();
 
                             messageDialogForm msg = new messageDialogForm();
+                            msg.title = "PASSWORD CHANGED";
                             msg.message = "You've Successfully Changed Your Password";
                             msg.ShowDialog();
 

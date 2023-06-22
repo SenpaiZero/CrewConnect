@@ -253,6 +253,7 @@
             this.userNameTB.BackColor = System.Drawing.Color.Transparent;
             this.userNameTB.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.userNameTB.BorderRadius = 24;
+            this.userNameTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.userNameTB.CustomizableEdges = customizableEdges3;
             this.guna2Transition1.SetDecoration(this.userNameTB, Guna.UI2.AnimatorNS.DecorationType.None);
             this.userNameTB.DefaultText = "";

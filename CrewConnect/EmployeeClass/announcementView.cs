@@ -49,13 +49,14 @@ namespace CrewConnect.EmployeeClass
                 {
                     addNewLabel("MESSAGE", "DATE", true);
                     SqlDataReader dr = cmd.ExecuteReader();
-                    while(dr.Read())
-                    {
-                        addNewLabel(dr.GetString(0), dr.GetDateTime(1).ToShortDateString(), false);
-                    }
-                    dr.Close();
+                        while (dr.Read())
+                        {
+                            addNewLabel(dr.GetString(0), dr.GetDateTime(1).ToShortDateString(), false);
+                        }
+                dr.Close();
                 }
             }
+
         }
 
         int index = 0;

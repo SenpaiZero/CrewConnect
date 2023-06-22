@@ -104,8 +104,12 @@ namespace CrewConnect.ManagerClass.addEmployee
 
                     if (msg.ShowDialog() == DialogResult.OK)
                     {
-                        searchBtn.PerformClick();
                         cmd.ExecuteNonQuery();
+
+                        if (string.IsNullOrEmpty(searchTB.Text))
+                            refreshBtn.PerformClick();
+                        else
+                            searchBtn.PerformClick();
                     }
                 }
             }

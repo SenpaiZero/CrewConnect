@@ -18,9 +18,12 @@ namespace CrewConnect
             InitializeComponent();
         }
         Stopwatch stopwatch = new Stopwatch();
-        public int loadingTime = 1000; 
+        public int loadingTime = 1000;
+        public string title;
         private void pleaseWaitForm_Load(object sender, EventArgs e)
         {
+            if(title != null)
+                guna2HtmlLabel1.Text = title;
             TopMost = true;
             timer1.Interval = 500;
             timer1.Start();

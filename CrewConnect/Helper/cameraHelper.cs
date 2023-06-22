@@ -67,20 +67,21 @@ namespace CrewConnect.Helper
 
                 // Read QR code from the frame
                 Result result = barcodeReader.decode(binaryBitmap);
-
                 if (result != null)
                 {
                     if (validationHelper.checkFieldNumeric(result.Text))
                     {
                         // Display the decoded QR code value
                         string qrCodeValue = result.Text;
+                        idNum = qrCodeValue;
+                        fullName = getName();
+                        if (string.IsNullOrEmpty(fullName))
+                            return;
                         DateOnly date_ = DateOnly.FromDateTime(DateTime.Now);
                         TimeOnly time_ = TimeOnly.FromDateTime(DateTime.Now);
 
-                        idNum = qrCodeValue;
                         dateString = date_.ToShortDateString();
                         timeString = time_.ToShortTimeString();
-                        fullName = getName(id);
                         isDetect = true;
                         if (name == "home")
                         {
@@ -167,7 +168,8 @@ namespace CrewConnect.Helper
             return squareImage;
         }
 
-        static string getName(string id)
+        static string invalidID;
+        static string getName()
         {
             try
             {
@@ -186,10 +188,15 @@ namespace CrewConnect.Helper
                         }
                         else
                         {
+                            if (invalidID == idNum)
+                                return "";
+
+                            invalidID = idNum.ToString();
                             isValid = false;
                             messageDialogForm msg = new messageDialogForm();
                             msg.isOkDialog = false;
-                            msg.title = "";
+                            msg.title = "INVALID QRCODE";
+                            msg.TopMost = true;
                             msg.message = $"The {idNum} Employee Number Does not Exist";
                             msg.StartPosition = FormStartPosition.CenterScreen;
                             msg.ShowDialog();
@@ -203,6 +210,7 @@ namespace CrewConnect.Helper
                 messageDialogForm msg = new messageDialogForm();
                 msg.title = "AN ERROR HAS OCCURED";
                 msg.message = ex.Message;
+                msg.TopMost = true;
                 msg.StartPosition = FormStartPosition.CenterParent;
                 msg.ShowDialog();
             }

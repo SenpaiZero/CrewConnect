@@ -25,6 +25,9 @@
     <Compile Update="EmployeeClass\payslipForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="EmployeeClass\printPayslip.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Helper\userInterfaceHelper.cs">
       <SubType>Form</SubType>
     </Compile>

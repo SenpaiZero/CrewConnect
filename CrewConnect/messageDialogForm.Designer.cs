@@ -56,14 +56,13 @@
             // 
             this.titleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.titleLabel.AutoSize = false;
-            this.titleLabel.AutoSizeHeightOnly = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("Segoe UI Variable Text", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             this.titleLabel.IsSelectionEnabled = false;
-            this.titleLabel.Location = new System.Drawing.Point(12, 74);
+            this.titleLabel.Location = new System.Drawing.Point(24, 12);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(582, 50);
+            this.titleLabel.Size = new System.Drawing.Size(553, 108);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "TITLE";
             this.titleLabel.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -168,6 +167,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "messageDialog";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.messageDialog_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messageDialogForm_KeyDown);
             this.ResumeLayout(false);
