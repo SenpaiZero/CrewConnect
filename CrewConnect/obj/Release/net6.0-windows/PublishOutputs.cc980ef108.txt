@@ -1,6 +1,7 @@
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\bin\Release\net6.0-windows\app.publish\CrewConnect.exe
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\bin\Release\net6.0-windows\app.publish\CrewConnect.dll
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\bin\Release\net6.0-windows\app.publish\CrewConnect.runtimeconfig.json
+C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\bin\Release\net6.0-windows\app.publish\CrewConnect.dll.config
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\bin\Release\net6.0-windows\app.publish\CrewConnect.pdb
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\bin\Release\net6.0-windows\app.publish\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\bin\Release\net6.0-windows\app.publish\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll

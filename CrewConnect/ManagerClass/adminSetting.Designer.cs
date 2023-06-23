@@ -47,6 +47,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -56,15 +58,17 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminSetting));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.systemPanel = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.fullscreenSwitch = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.isAdmin = new Guna.UI2.WinForms.Guna2CheckBox();
             this.resetAttBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -117,6 +121,8 @@
             // systemPanel
             // 
             this.systemPanel.BackColor = System.Drawing.Color.Transparent;
+            this.systemPanel.Controls.Add(this.guna2HtmlLabel2);
+            this.systemPanel.Controls.Add(this.fullscreenSwitch);
             this.systemPanel.Controls.Add(this.isAdmin);
             this.systemPanel.Controls.Add(this.resetAttBtn);
             this.systemPanel.Controls.Add(this.guna2HtmlLabel5);
@@ -142,6 +148,37 @@
             this.systemPanel.TabIndex = 1;
             this.systemPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.systemPanel_Paint);
             // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI Variable Display", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(403, 358);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(127, 29);
+            this.guna2HtmlLabel2.TabIndex = 15;
+            this.guna2HtmlLabel2.Text = "FULL SCREEN";
+            // 
+            // fullscreenSwitch
+            // 
+            this.fullscreenSwitch.Checked = true;
+            this.fullscreenSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fullscreenSwitch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.fullscreenSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.fullscreenSwitch.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.fullscreenSwitch.CustomizableEdges = customizableEdges11;
+            this.fullscreenSwitch.Location = new System.Drawing.Point(353, 362);
+            this.fullscreenSwitch.Name = "fullscreenSwitch";
+            this.fullscreenSwitch.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.fullscreenSwitch.Size = new System.Drawing.Size(44, 25);
+            this.fullscreenSwitch.TabIndex = 14;
+            this.fullscreenSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(78)))), ((int)(((byte)(117)))));
+            this.fullscreenSwitch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(78)))), ((int)(((byte)(117)))));
+            this.fullscreenSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(155)))), ((int)(((byte)(188)))));
+            this.fullscreenSwitch.UncheckedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(154)))), ((int)(((byte)(155)))), ((int)(((byte)(188)))));
+            this.fullscreenSwitch.CheckedChanged += new System.EventHandler(this.fullscreenSwitch_CheckedChanged);
+            this.fullscreenSwitch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.fullscreenSwitch_MouseDown);
+            // 
             // isAdmin
             // 
             this.isAdmin.AutoSize = true;
@@ -152,7 +189,7 @@
             this.isAdmin.CheckMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(111)))), ((int)(((byte)(121)))));
             this.isAdmin.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.isAdmin.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.isAdmin.Location = new System.Drawing.Point(168, 99);
+            this.isAdmin.Location = new System.Drawing.Point(164, 97);
             this.isAdmin.Name = "isAdmin";
             this.isAdmin.Size = new System.Drawing.Size(109, 26);
             this.isAdmin.TabIndex = 0;
@@ -165,7 +202,7 @@
             // 
             // resetAttBtn
             // 
-            this.resetAttBtn.CustomizableEdges = customizableEdges11;
+            this.resetAttBtn.CustomizableEdges = customizableEdges13;
             this.resetAttBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.resetAttBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.resetAttBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -173,10 +210,10 @@
             this.resetAttBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(142)))), ((int)(((byte)(189)))));
             this.resetAttBtn.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.resetAttBtn.ForeColor = System.Drawing.Color.White;
-            this.resetAttBtn.Location = new System.Drawing.Point(236, 350);
+            this.resetAttBtn.Location = new System.Drawing.Point(164, 353);
             this.resetAttBtn.Name = "resetAttBtn";
-            this.resetAttBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            this.resetAttBtn.Size = new System.Drawing.Size(198, 45);
+            this.resetAttBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            this.resetAttBtn.Size = new System.Drawing.Size(167, 46);
             this.resetAttBtn.TabIndex = 13;
             this.resetAttBtn.Text = "RESET ATTENDANCE";
             this.resetAttBtn.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -186,7 +223,7 @@
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(301, 224);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(297, 222);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(91, 29);
             this.guna2HtmlLabel5.TabIndex = 12;
@@ -198,7 +235,7 @@
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI Variable Display Semib", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(301, 78);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(297, 76);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(94, 29);
             this.guna2HtmlLabel4.TabIndex = 11;
@@ -210,7 +247,7 @@
             this.removeReligionBtn.BackColor = System.Drawing.Color.Transparent;
             this.removeReligionBtn.BorderColor = System.Drawing.Color.Gold;
             this.removeReligionBtn.BorderRadius = 5;
-            this.removeReligionBtn.CustomizableEdges = customizableEdges13;
+            this.removeReligionBtn.CustomizableEdges = customizableEdges15;
             this.removeReligionBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.removeReligionBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.removeReligionBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -218,9 +255,9 @@
             this.removeReligionBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(112)))), ((int)(((byte)(97)))));
             this.removeReligionBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.removeReligionBtn.ForeColor = System.Drawing.Color.White;
-            this.removeReligionBtn.Location = new System.Drawing.Point(341, 301);
+            this.removeReligionBtn.Location = new System.Drawing.Point(337, 299);
             this.removeReligionBtn.Name = "removeReligionBtn";
-            this.removeReligionBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            this.removeReligionBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
             this.removeReligionBtn.Size = new System.Drawing.Size(185, 40);
             this.removeReligionBtn.TabIndex = 9;
             this.removeReligionBtn.Text = "REMOVE";
@@ -231,7 +268,7 @@
             this.addPositionBtn.BackColor = System.Drawing.Color.Transparent;
             this.addPositionBtn.BorderColor = System.Drawing.Color.Gold;
             this.addPositionBtn.BorderRadius = 5;
-            this.addPositionBtn.CustomizableEdges = customizableEdges15;
+            this.addPositionBtn.CustomizableEdges = customizableEdges17;
             this.addPositionBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.addPositionBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.addPositionBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -239,9 +276,9 @@
             this.addPositionBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(142)))), ((int)(((byte)(189)))));
             this.addPositionBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addPositionBtn.ForeColor = System.Drawing.Color.White;
-            this.addPositionBtn.Location = new System.Drawing.Point(341, 131);
+            this.addPositionBtn.Location = new System.Drawing.Point(337, 129);
             this.addPositionBtn.Name = "addPositionBtn";
-            this.addPositionBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            this.addPositionBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
             this.addPositionBtn.Size = new System.Drawing.Size(185, 40);
             this.addPositionBtn.TabIndex = 8;
             this.addPositionBtn.Text = "ADD";
@@ -252,7 +289,7 @@
             this.removePositionBtn.BackColor = System.Drawing.Color.Transparent;
             this.removePositionBtn.BorderColor = System.Drawing.Color.Gold;
             this.removePositionBtn.BorderRadius = 5;
-            this.removePositionBtn.CustomizableEdges = customizableEdges17;
+            this.removePositionBtn.CustomizableEdges = customizableEdges19;
             this.removePositionBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.removePositionBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.removePositionBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -260,9 +297,9 @@
             this.removePositionBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(112)))), ((int)(((byte)(97)))));
             this.removePositionBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.removePositionBtn.ForeColor = System.Drawing.Color.White;
-            this.removePositionBtn.Location = new System.Drawing.Point(341, 173);
+            this.removePositionBtn.Location = new System.Drawing.Point(337, 171);
             this.removePositionBtn.Name = "removePositionBtn";
-            this.removePositionBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            this.removePositionBtn.ShadowDecoration.CustomizableEdges = customizableEdges20;
             this.removePositionBtn.Size = new System.Drawing.Size(185, 40);
             this.removePositionBtn.TabIndex = 7;
             this.removePositionBtn.Text = "REMOVE";
@@ -272,7 +309,7 @@
             // 
             this.religionTB.BorderThickness = 5;
             this.religionTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.religionTB.CustomizableEdges = customizableEdges19;
+            this.religionTB.CustomizableEdges = customizableEdges21;
             this.religionTB.DefaultText = "";
             this.religionTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.religionTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -281,14 +318,14 @@
             this.religionTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.religionTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.religionTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.religionTB.Location = new System.Drawing.Point(168, 262);
+            this.religionTB.Location = new System.Drawing.Point(164, 260);
             this.religionTB.MaxLength = 50;
             this.religionTB.Name = "religionTB";
             this.religionTB.PasswordChar = '\0';
             this.religionTB.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.religionTB.PlaceholderText = "Religion Name";
             this.religionTB.SelectedText = "";
-            this.religionTB.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            this.religionTB.ShadowDecoration.CustomizableEdges = customizableEdges22;
             this.religionTB.Size = new System.Drawing.Size(167, 36);
             this.religionTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.religionTB.TabIndex = 5;
@@ -300,7 +337,7 @@
             // religionCB
             // 
             this.religionCB.BackColor = System.Drawing.Color.Transparent;
-            this.religionCB.CustomizableEdges = customizableEdges21;
+            this.religionCB.CustomizableEdges = customizableEdges23;
             this.religionCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.religionCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.religionCB.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -308,9 +345,9 @@
             this.religionCB.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.religionCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.religionCB.ItemHeight = 30;
-            this.religionCB.Location = new System.Drawing.Point(168, 305);
+            this.religionCB.Location = new System.Drawing.Point(164, 303);
             this.religionCB.Name = "religionCB";
-            this.religionCB.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            this.religionCB.ShadowDecoration.CustomizableEdges = customizableEdges24;
             this.religionCB.Size = new System.Drawing.Size(167, 36);
             this.religionCB.TabIndex = 4;
             this.religionCB.TabStop = false;
@@ -320,7 +357,7 @@
             this.addReligionBtn.BackColor = System.Drawing.Color.Transparent;
             this.addReligionBtn.BorderColor = System.Drawing.Color.Gold;
             this.addReligionBtn.BorderRadius = 5;
-            this.addReligionBtn.CustomizableEdges = customizableEdges23;
+            this.addReligionBtn.CustomizableEdges = customizableEdges25;
             this.addReligionBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.addReligionBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.addReligionBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -328,9 +365,9 @@
             this.addReligionBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(142)))), ((int)(((byte)(189)))));
             this.addReligionBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.addReligionBtn.ForeColor = System.Drawing.Color.White;
-            this.addReligionBtn.Location = new System.Drawing.Point(341, 259);
+            this.addReligionBtn.Location = new System.Drawing.Point(337, 257);
             this.addReligionBtn.Name = "addReligionBtn";
-            this.addReligionBtn.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            this.addReligionBtn.ShadowDecoration.CustomizableEdges = customizableEdges26;
             this.addReligionBtn.Size = new System.Drawing.Size(185, 40);
             this.addReligionBtn.TabIndex = 3;
             this.addReligionBtn.Text = "ADD";
@@ -340,7 +377,7 @@
             // 
             this.positionTB.BorderThickness = 5;
             this.positionTB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.positionTB.CustomizableEdges = customizableEdges25;
+            this.positionTB.CustomizableEdges = customizableEdges27;
             this.positionTB.DefaultText = "";
             this.positionTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.positionTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -349,14 +386,14 @@
             this.positionTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.positionTB.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.positionTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.positionTB.Location = new System.Drawing.Point(168, 131);
+            this.positionTB.Location = new System.Drawing.Point(164, 129);
             this.positionTB.MaxLength = 50;
             this.positionTB.Name = "positionTB";
             this.positionTB.PasswordChar = '\0';
             this.positionTB.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.positionTB.PlaceholderText = "Position Name";
             this.positionTB.SelectedText = "";
-            this.positionTB.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            this.positionTB.ShadowDecoration.CustomizableEdges = customizableEdges28;
             this.positionTB.Size = new System.Drawing.Size(167, 36);
             this.positionTB.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.positionTB.TabIndex = 2;
@@ -368,7 +405,7 @@
             // positionCB
             // 
             this.positionCB.BackColor = System.Drawing.Color.Transparent;
-            this.positionCB.CustomizableEdges = customizableEdges27;
+            this.positionCB.CustomizableEdges = customizableEdges29;
             this.positionCB.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.positionCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.positionCB.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -376,9 +413,9 @@
             this.positionCB.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.positionCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.positionCB.ItemHeight = 30;
-            this.positionCB.Location = new System.Drawing.Point(168, 173);
+            this.positionCB.Location = new System.Drawing.Point(164, 171);
             this.positionCB.Name = "positionCB";
-            this.positionCB.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            this.positionCB.ShadowDecoration.CustomizableEdges = customizableEdges30;
             this.positionCB.Size = new System.Drawing.Size(167, 36);
             this.positionCB.TabIndex = 1;
             this.positionCB.TabStop = false;
@@ -572,10 +609,10 @@
             this.systemBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(133)))));
             this.systemBtn.BorderRadius = 15;
             this.systemBtn.BorderThickness = 2;
-            customizableEdges29.BottomLeft = false;
-            customizableEdges29.BottomRight = false;
-            customizableEdges29.TopRight = false;
-            this.systemBtn.CustomizableEdges = customizableEdges29;
+            customizableEdges31.BottomLeft = false;
+            customizableEdges31.BottomRight = false;
+            customizableEdges31.TopRight = false;
+            this.systemBtn.CustomizableEdges = customizableEdges31;
             this.systemBtn.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(133)))));
             this.systemBtn.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(133)))));
             this.systemBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(133)))));
@@ -586,7 +623,7 @@
             this.systemBtn.ForeColor = System.Drawing.Color.White;
             this.systemBtn.Location = new System.Drawing.Point(190, 120);
             this.systemBtn.Name = "systemBtn";
-            this.systemBtn.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            this.systemBtn.ShadowDecoration.CustomizableEdges = customizableEdges32;
             this.systemBtn.Size = new System.Drawing.Size(249, 56);
             this.systemBtn.TabIndex = 3;
             this.systemBtn.Text = "SYSTEM";
@@ -609,10 +646,10 @@
             this.accountBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(133)))));
             this.accountBtn.BorderRadius = 15;
             this.accountBtn.BorderThickness = 2;
-            customizableEdges31.BottomLeft = false;
-            customizableEdges31.BottomRight = false;
-            customizableEdges31.TopLeft = false;
-            this.accountBtn.CustomizableEdges = customizableEdges31;
+            customizableEdges33.BottomLeft = false;
+            customizableEdges33.BottomRight = false;
+            customizableEdges33.TopLeft = false;
+            this.accountBtn.CustomizableEdges = customizableEdges33;
             this.accountBtn.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(133)))));
             this.accountBtn.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(133)))));
             this.accountBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(102)))), ((int)(((byte)(133)))));
@@ -622,7 +659,7 @@
             this.accountBtn.ForeColor = System.Drawing.Color.White;
             this.accountBtn.Location = new System.Drawing.Point(439, 120);
             this.accountBtn.Name = "accountBtn";
-            this.accountBtn.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            this.accountBtn.ShadowDecoration.CustomizableEdges = customizableEdges34;
             this.accountBtn.Size = new System.Drawing.Size(249, 56);
             this.accountBtn.TabIndex = 15;
             this.accountBtn.Text = "ACCOUNT";
@@ -682,5 +719,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button accountBtn;
         private Guna.UI2.WinForms.Guna2HtmlLabel accountTitle;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch fullscreenSwitch;
     }
 }

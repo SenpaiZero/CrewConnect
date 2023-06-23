@@ -24,6 +24,7 @@ namespace CrewConnect
 
         [DllImport("user32.dll")]
         private static extern int ShowWindow(int hwnd, int command);
+        public static background bg;
         public background()
         {
             InitializeComponent();
@@ -37,11 +38,27 @@ namespace CrewConnect
                 return handleParams;
             }
         }
+        public void disableFullscreen()
+        {
+            bg.Hide();
+        }
+
+        public void enableFullscreen()
+        {
+            bg.Show();
+        }
+
         private void background_Load(object sender, EventArgs e)
         {
+            bg = this;
             TopMost = true;
             try
             {
+
+                if (Properties.Settings.Default.fullscreen == false)
+                {
+                    disableFullscreen();
+                }
                 log = new loginForm();
                 log.Owner = this;
                 if (!log.InvokeRequired)
@@ -61,7 +78,6 @@ namespace CrewConnect
                 msg.StartPosition= FormStartPosition.CenterScreen;
                 msg.ShowDialog();
             }
-            
 
         }
 

@@ -10,6 +10,8 @@ namespace CrewConnect.Helper
     internal class pageHelper
     {
         public static Form f;
+
+        // load the form into panel
         public void loadForm(object Form, Guna2Panel mainPanel)
         {
             f = Form as Form;
@@ -19,6 +21,7 @@ namespace CrewConnect.Helper
             f.Show();
         }
 
+        // Change page without loading
         public static void changePage(object Form, Guna2Panel mainPanel)
         {
             pageHelper ph = new pageHelper();

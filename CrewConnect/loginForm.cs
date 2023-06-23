@@ -67,10 +67,12 @@ namespace CrewConnect
                 return;
             SuspendLayout();
 
+            // Storing the variable from textbox
             String username, password;
             username = userNameTB.Text.Trim();
             password = passwordTB.Text.Trim();
 
+            // Loading in the center of panel
             var loadingForm = new loadingForm();
             loadingForm.StartPosition = FormStartPosition.Manual;
 
@@ -81,6 +83,8 @@ namespace CrewConnect
 
             loadingForm.loadingTime = 2500;
             loadingForm.ShowDialog();
+
+
             try
             {
                 con.Open();
@@ -88,16 +92,20 @@ namespace CrewConnect
                 EmployeePanel em = new EmployeePanel();
                 if (password == "ADMIN")
                 {
+                    // if the username is ADMIN, don't use hash
                     cmd = new SqlCommand($"SELECT * FROM Users WHERE username COLLATE Latin1_General_CS_AS = '{username}'" +
                         $" AND password COLLATE Latin1_General_CS_AS = '{password}'", con);
                 }
                 else
                 {
+                    // Checking if username and hashed password is in the database
                     cmd = new SqlCommand($"SELECT * FROM Users WHERE username COLLATE Latin1_General_CS_AS = '{username}'" +
                         $" AND password COLLATE Latin1_General_CS_AS = '{securityHelper.HashPassword(password)}'", con);
                 }
                 dr = cmd.ExecuteReader();
 
+
+                //continue if it exist in database
                 if (dr.Read())
                 {
                     globalVariables.userPosition = dr.GetString(3).ToUpper();
@@ -255,6 +263,7 @@ namespace CrewConnect
             Focus();
         }
 
+        // Keyboard shortcut functions
         private void loginForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (userNameTB.Focused || passwordTB.Focused)
@@ -277,6 +286,7 @@ namespace CrewConnect
             Focus();
         }
 
+        // username textbox keyboard functions
         private void userNameTB_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Control && e.KeyCode == Keys.Space)

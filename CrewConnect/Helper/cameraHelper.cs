@@ -31,8 +31,10 @@ namespace CrewConnect.Helper
             }
         }
 
+        // Changing cam based on index of combobox
         public static void changeCam(int index)
         {
+            // Close the form if the camera is running
             if (capturing)
             {
                 closeForm();
@@ -40,17 +42,22 @@ namespace CrewConnect.Helper
 
             videoSource = new VideoCaptureDevice(videoDevices[index].MonikerString);
 
-            videoSource.NewFrame += new NewFrameEventHandler(videoSource_NewFrame); // Event handler for new frames
+            // Event handler for new frames
+            videoSource.NewFrame += new NewFrameEventHandler(videoSource_NewFrame); 
 
             videoSource.Start(); // Start capturing
             capturing = true;
         }
+
+        // Event for the picturebox to run live without dela
         private static void videoSource_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             if (!capturing) return;
 
-            frame = (Bitmap)eventArgs.Frame.Clone(); // Clone the new frame to avoid cross-threading issues
+            // Clone the new frame to avoid cross-threading issues
+            frame = (Bitmap)eventArgs.Frame.Clone(); 
 
+            // Continue if the qrcode bool property is true
             if(qrcode)
             {
 
@@ -71,23 +78,27 @@ namespace CrewConnect.Helper
                 {
                     if (validationHelper.checkFieldNumeric(result.Text))
                     {
-                        // Display the decoded QR code value
+                        // Getting the value of the qr code
                         string qrCodeValue = result.Text;
+
+                        // Adding value to idNum public string
                         idNum = qrCodeValue;
                         fullName = getName();
+
+                        // if the fullname does not exist in database, stop the program
                         if (string.IsNullOrEmpty(fullName))
                             return;
+
                         DateOnly date_ = DateOnly.FromDateTime(DateTime.Now);
                         TimeOnly time_ = TimeOnly.FromDateTime(DateTime.Now);
 
                         dateString = date_.ToShortDateString();
                         timeString = time_.ToShortTimeString();
                         isDetect = true;
-                        if (name == "home")
-                        {
-                            attendance.att.setData(idNum, dateString, timeString, fullName);
-                        }
 
+                        attendance.att.setData(idNum, dateString, timeString, fullName);
+                        
+                        // stop the camera if its running
                         if (videoSource != null && videoSource.IsRunning)
                         {
                             videoSource.SignalToStop();
@@ -104,6 +115,7 @@ namespace CrewConnect.Helper
                         msg.StartPosition = FormStartPosition.CenterScreen;
                         msg.ShowDialog();
 
+                        // stop the camera if its running
                         if (videoSource != null && videoSource.IsRunning)
                         {
                             videoSource.SignalToStop();
@@ -118,6 +130,7 @@ namespace CrewConnect.Helper
         }
 
 
+        // Method for starting a form with a cam
         public static void onLoad()
         {
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice); // Get available video devices
@@ -137,6 +150,7 @@ namespace CrewConnect.Helper
             changeCam(0);
         }
 
+        // Method for taking a picture
         public static void captureBtn()
         {
             globalVariables.selfPic = frame;
@@ -146,6 +160,8 @@ namespace CrewConnect.Helper
             videoSource = null;
             changeCam(i);
         }
+
+        // Converting bitmap into byte array
         private static byte[] BitmapToByteArray(Bitmap bitmap)
         {
             using (var stream = new System.IO.MemoryStream())
@@ -154,6 +170,8 @@ namespace CrewConnect.Helper
                 return stream.ToArray();
             }
         }
+
+        // Cropping the picture box into box aspect ratio
         private static Bitmap CropToSquare(Bitmap image)
         {
             int size = Math.Min(image.Width, image.Height);
@@ -169,6 +187,8 @@ namespace CrewConnect.Helper
         }
 
         static string invalidID;
+
+        // method for checking if the name is in database or not
         static string getName()
         {
             try

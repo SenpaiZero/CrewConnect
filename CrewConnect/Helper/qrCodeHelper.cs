@@ -5,6 +5,8 @@ namespace CrewConnect.Helper
 {
     internal class qrCodeHelper
     {
+
+        // Generating qr code based on qrcode library
        public static Bitmap generateQrCode(string idNum)
         {
             using QRCodeGenerator generator = new QRCodeGenerator();

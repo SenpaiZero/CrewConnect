@@ -14,8 +14,7 @@ namespace CrewConnect.Helper
 {
     public class userInterfaceHelper : Form
     {
-        // Clear all persistence data
-
+        // Clear all persistence data (global variables)
         public static void removeAllData()
         {
             globalVariables.firstname = null;
@@ -113,15 +112,13 @@ namespace CrewConnect.Helper
         private void InitializeComponent()
         {
             this.SuspendLayout();
-            // 
-            // userInterfaceHelper
-            // 
             this.ClientSize = new System.Drawing.Size(282, 253);
             this.Name = "userInterfaceHelper";
             this.Load += new System.EventHandler(this.userInterfaceHelper_Load);
             this.ResumeLayout(false);
 
         }
+
         // Limitting text count in label display
         public static String limitLabelDisplay(String text, int txtCount)
         {
@@ -135,9 +132,10 @@ namespace CrewConnect.Helper
             return text;
         }
 
+        // Method for closing all instantiated shortcut popup
         public static void closeShortcut()
         {
-            string formNameToClose = "shortcutForm"; // Replace with the name of the form you want to close
+            string formNameToClose = "shortcutForm"; 
 
             var formsToClose = Application.OpenForms
                 .OfType<Form>()
@@ -153,6 +151,7 @@ namespace CrewConnect.Helper
         {
 
         }
+        // Method for capturing application into image
         public static Bitmap CapturePanelImage(Form form)
         {
             Bitmap image = new Bitmap(form.Width, form.Height);
@@ -164,6 +163,8 @@ namespace CrewConnect.Helper
 
             return image;
         }
+
+        // Method for showing osk (on-screen keyboard)
         public static void openScreenKeyboard()
         {
             try

@@ -113,3 +113,4 @@ C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\obj\Debug\net6.0-windows\ref\CrewCo
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\obj\Debug\net6.0-windows\CrewConnect.shortcutForm.resources
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\obj\Debug\net6.0-windows\CrewConnect.detailsForm.resources
 C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\obj\Debug\net6.0-windows\CrewConnect.EmployeeClass.printPayslip.resources
+C:\Users\Xeb\Desktop\CrewConnect\CrewConnect\bin\Debug\net6.0-windows\CrewConnect.dll.config

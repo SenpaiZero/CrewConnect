@@ -33,8 +33,12 @@ namespace CrewConnect.ManagerClass
                 return handleParams;
             }
         }
+
+        bool isFirst = true;
         private void adminSetting_Load(object sender, EventArgs e)
         {
+            fullscreenSwitch.Checked = Properties.Settings.Default.fullscreen;
+
             religionTB.TabStop = true;
             positionTB.TabStop = true;
 
@@ -563,6 +567,27 @@ namespace CrewConnect.ManagerClass
             {
                     this.Parent.Focus();
             }
+        }
+
+        private void fullscreenSwitch_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void fullscreenSwitch_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (fullscreenSwitch.Checked == true)
+            {
+                Properties.Settings.Default.fullscreen = false;
+                background.bg.disableFullscreen();
+            }
+            else
+            {
+                Properties.Settings.Default.fullscreen = true;
+                background.bg.enableFullscreen();
+            }
+
+            this.Focus();
+            Properties.Settings.Default.Save();
         }
     }
 }
