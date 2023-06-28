@@ -111,7 +111,7 @@ namespace CrewConnect.ManagerClass.addEmployee.pages
             // Birth Day
             String[] monthVal = 
             {
-                "MONTH" ,"JANUARY", "FEBUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST",
+                "MONTH" ,"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST",
                 "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
             };
 

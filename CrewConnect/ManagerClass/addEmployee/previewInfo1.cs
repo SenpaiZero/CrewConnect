@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AForge;
 using CrewConnect.Helper;
 using CrewConnect.ManagerClass.addEmployee.pages;
 
@@ -20,6 +21,7 @@ namespace CrewConnect.ManagerClass.addEmployee
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
+            
         }
         protected override CreateParams CreateParams
         {
@@ -125,108 +127,123 @@ namespace CrewConnect.ManagerClass.addEmployee
 
         private void finishBtn_Click(object sender, EventArgs e)
         {
+            if (!validationHelper.internetAvailability())
+            {
+                NoConnectionForm cnn = new NoConnectionForm();
+                cnn.StartPosition = FormStartPosition.CenterParent;
+                cnn.ShowDialog(ParentForm);
+                return;
+            }
+
             createUsername();
 
-            Task.Run(() =>
-            {
                 try
                 {
-                    using (SqlConnection con = new SqlConnection(globalVariables.server))
+                    Task.Run(() =>
                     {
-                        con.Open();
-                        string query = $"" +
-                        // Users Table
-                        $"{globalVariables.cmd_insert_Users} VALUES (@Id, @username, @password, @position);" +
-                        // job Table
-                        $"{globalVariables.cmd_insert_job} VALUES (@Id, @username, @position, @contract, @salary);" +
-                        // Personal Table
-                        $"{globalVariables.cmd_insert_personal} VALUES (@Id, @username, @name, @birthday, @age," +
-                        $" @bloodType, @status, @religion, @gender)" +
-                        // Bank Table
-                        $"{globalVariables.cmd_insert_bank} VALUES (@Id, @username, @bankName," +
-                        $" @branch, @companyAdd, @accountName, @BSB, @accountNum);" +
-                        // Contact Table
-                        $"{globalVariables.cmd_insert_contact} VALUES (@Id, @username, @phoneNumber," +
-                        $"@emailAddress, @emailAddress2, @address, @adress2);" +
-                        // Identity Table
-                        $"{globalVariables.cmd_insert_identity} VALUES (@Id, @username, @personalPhoto, @qrCodePhoto);";
-
-                        String name = (globalVariables.lastname.Trim() + ", " + globalVariables.firstname.Trim() + " " + globalVariables.middlename.Trim()).ToUpper();
-                        using (SqlCommand command = new SqlCommand(query, con))
+                        using (SqlConnection con = new SqlConnection(globalVariables.server))
                         {
-                            DateTime bday = new DateTime((int)globalVariables.year, (int)globalVariables.month, (int)globalVariables.day);
-                            int id_ = int.Parse(globalVariables.idNum);
-                            command.Parameters.AddWithValue("@username", globalVariables.usernameNew.Trim());
-                            command.Parameters.AddWithValue("@employeeID", globalVariables.idNum);
-                            command.Parameters.AddWithValue("@password", securityHelper.HashPassword(globalVariables.usernameNew.Trim()));
-                            command.Parameters.AddWithValue("@name", name.Trim());
-                            command.Parameters.AddWithValue("@status", globalVariables.status.Trim());
-                            command.Parameters.AddWithValue("@religion", globalVariables.religion.Trim());
-                            command.Parameters.AddWithValue("@gender", globalVariables.gender.Trim());
-                            command.Parameters.AddWithValue("@birthday", bday);
-                            command.Parameters.AddWithValue("@age", globalVariables.age);
-                            command.Parameters.AddWithValue("@bloodType", globalVariables.bloodType.Trim());
-                            command.Parameters.AddWithValue("@Id", id_);
-                            command.Parameters.AddWithValue("@position", globalVariables.position.Trim());
-                            command.Parameters.AddWithValue("@contract", globalVariables.contract.Trim());
-                            command.Parameters.AddWithValue("@salary", globalVariables.salary.Trim());
-                            command.Parameters.AddWithValue("@personalPhoto", validationHelper.convertBitmapToByte(globalVariables.selfPic));
-                            command.Parameters.AddWithValue("@qrCodePhoto", validationHelper.convertBitmapToByte(globalVariables.qrCodePic));
-                            command.Parameters.AddWithValue("@phoneNumber", globalVariables.phoneNumber.Trim());
-                            command.Parameters.AddWithValue("@emailAddress", globalVariables.email.Trim());
-                            command.Parameters.AddWithValue("@emailAddress2", globalVariables.email2.Trim());
-                            command.Parameters.AddWithValue("@address", globalVariables.streetAdd.Trim());
-                            command.Parameters.AddWithValue("@adress2", globalVariables.streetAdd2.Trim());
-                            command.Parameters.AddWithValue("@bankName", globalVariables.bankName.Trim());
-                            command.Parameters.AddWithValue("@branch", globalVariables.branch.Trim());
-                            command.Parameters.AddWithValue("@companyAdd", globalVariables.companyAdd.Trim());
-                            command.Parameters.AddWithValue("@accountName", globalVariables.accountName.Trim());
-                            command.Parameters.AddWithValue("@BSB", globalVariables.BSB.Trim());
-                            command.Parameters.AddWithValue("@accountNum", globalVariables.accountNum.Trim());
+                            con.Open();
+                            string query = $"" +
+                            // Users Table
+                            $"{globalVariables.cmd_insert_Users} VALUES (@Id, @username, @password, @position);" +
+                            // job Table
+                            $"{globalVariables.cmd_insert_job} VALUES (@Id, @username, @position, @contract, @salary);" +
+                            // Personal Table
+                            $"{globalVariables.cmd_insert_personal} VALUES (@Id, @username, @name, @birthday, @age," +
+                            $" @bloodType, @status, @religion, @gender)" +
+                            // Bank Table
+                            $"{globalVariables.cmd_insert_bank} VALUES (@Id, @username, @bankName," +
+                            $" @branch, @companyAdd, @accountName, @BSB, @accountNum);" +
+                            // Contact Table
+                            $"{globalVariables.cmd_insert_contact} VALUES (@Id, @username, @phoneNumber," +
+                            $"@emailAddress, @emailAddress2, @address, @adress2);" +
+                            // Identity Table
+                            $"{globalVariables.cmd_insert_identity} VALUES (@Id, @username, @personalPhoto, @qrCodePhoto);";
 
-                            // Execute the query
-                            command.ExecuteNonQuery();
+                            String name = (globalVariables.lastname.Trim() + ", " + globalVariables.firstname.Trim() + " " + globalVariables.middlename.Trim()).ToUpper();
+                            using (SqlCommand command = new SqlCommand(query, con))
+                            {
+                                DateTime bday = new DateTime((int)globalVariables.year, (int)globalVariables.month, (int)globalVariables.day);
+                                int id_ = int.Parse(globalVariables.idNum);
+                                command.Parameters.AddWithValue("@username", globalVariables.usernameNew.Trim());
+                                command.Parameters.AddWithValue("@employeeID", globalVariables.idNum);
+                                command.Parameters.AddWithValue("@password", securityHelper.HashPassword(globalVariables.usernameNew.Trim()));
+                                command.Parameters.AddWithValue("@name", name.Trim());
+                                command.Parameters.AddWithValue("@status", globalVariables.status.Trim());
+                                command.Parameters.AddWithValue("@religion", globalVariables.religion.Trim());
+                                command.Parameters.AddWithValue("@gender", globalVariables.gender.Trim());
+                                command.Parameters.AddWithValue("@birthday", bday);
+                                command.Parameters.AddWithValue("@age", globalVariables.age);
+                                command.Parameters.AddWithValue("@bloodType", globalVariables.bloodType.Trim());
+                                command.Parameters.AddWithValue("@Id", id_);
+                                command.Parameters.AddWithValue("@position", globalVariables.position.Trim());
+                                command.Parameters.AddWithValue("@contract", globalVariables.contract.Trim());
+                                command.Parameters.AddWithValue("@salary", globalVariables.salary.Trim());
+                                command.Parameters.AddWithValue("@personalPhoto", validationHelper.convertBitmapToByte(globalVariables.selfPic));
+                                command.Parameters.AddWithValue("@qrCodePhoto", validationHelper.convertBitmapToByte(globalVariables.qrCodePic));
+                                command.Parameters.AddWithValue("@phoneNumber", globalVariables.phoneNumber.Trim());
+                                command.Parameters.AddWithValue("@emailAddress", globalVariables.email.Trim());
+                                command.Parameters.AddWithValue("@emailAddress2", globalVariables.email2.Trim());
+                                command.Parameters.AddWithValue("@address", globalVariables.streetAdd.Trim());
+                                command.Parameters.AddWithValue("@adress2", globalVariables.streetAdd2.Trim());
+                                command.Parameters.AddWithValue("@bankName", globalVariables.bankName.Trim());
+                                command.Parameters.AddWithValue("@branch", globalVariables.branch.Trim());
+                                command.Parameters.AddWithValue("@companyAdd", globalVariables.companyAdd.Trim());
+                                command.Parameters.AddWithValue("@accountName", globalVariables.accountName.Trim());
+                                command.Parameters.AddWithValue("@BSB", globalVariables.BSB.Trim());
+                                command.Parameters.AddWithValue("@accountNum", globalVariables.accountNum.Trim());
+
+                                // Execute the query
+                                command.ExecuteNonQuery();
+                            }
+                            this.DialogResult = System.Windows.Forms.DialogResult.OK;
 
 
-                            messageDialogForm msg = new messageDialogForm();
-                            msg.StartPosition = FormStartPosition.CenterParent;
-                            msg.title = "EMPLOYEE HAS BEEN SAVED";
-                            msg.message = "YOU'VE SUCCESSFULLY ADDED A NEW AMPLOYEE!";
-                            msg.ShowDialog();
+                            employeeID id = new employeeID();
+                            id.Show();
+                            ResumeLayout();
+                            con.Close();
+                            this.Close();
                         }
-                        this.DialogResult = System.Windows.Forms.DialogResult.OK;
-
-                        employeeID id = new employeeID();
-                        id.Show();
-                        ResumeLayout();
-                        con.Close();
-                        this.Close();
-                    }
+                    });
                 }
                 catch (Exception ex)
                 {
-                    messageDialogForm msg = new messageDialogForm();
-                    msg.StartPosition = FormStartPosition.CenterParent;
-                    msg.title = "AN ERROR HAS OCCURED";
-                    msg.message = ex.Message;
-                    msg.ShowDialog();
+                    messageDialogForm msg2 = new messageDialogForm();
+                    msg2.StartPosition = FormStartPosition.CenterParent;
+                    msg2.title = "AN ERROR HAS OCCURED";
+                    msg2.message = ex.Message;
+                    msg2.ShowDialog();
                 }
-            });
-            
-            globalVariables.isEdit = false;
-            SuspendLayout();
+
             var loadingForm = new loadingForm();
             loadingForm.StartPosition = FormStartPosition.CenterParent;
             loadingForm.loadingTime = 3000;
+            loadingForm.title = "Please Wait";
             loadingForm.ShowDialog();
 
-            messageDialogForm msg1 = new messageDialogForm();
-            msg1.StartPosition= FormStartPosition.CenterParent;
-            msg1.title = "Your Email Has Been Sent!";
-            msg1.message = "Please check your spam if you did not recieve the email!";
-            msg1.ShowDialog();
-        }
+            messageDialogForm msg = new messageDialogForm();
+            msg.StartPosition = FormStartPosition.CenterParent;
+            msg.title = "EMPLOYEE HAS BEEN SAVED";
+            msg.message = "YOU'VE SUCCESSFULLY ADDED A NEW EMPLOYEE!";
+            msg.ShowDialog(ParentForm);
 
+            var loadingForm2 = new loadingForm();
+            loadingForm2.StartPosition = FormStartPosition.CenterParent;
+            loadingForm2.title = "Sending Email";
+            loadingForm2.loadingTime = 2000;
+            loadingForm2.ShowDialog();
+
+            messageDialogForm msg1 = new messageDialogForm();
+            msg1.StartPosition = FormStartPosition.CenterParent;
+            msg1.title = "YOUR EMAIL HAS BEEN SENT!";
+            msg1.message = "Please check your spam if you did not recieve the email!";
+            msg1.ShowDialog(ParentForm);
+
+            globalVariables.isEdit = false;
+
+        }
         private void mainsPanel_Paint(object sender, PaintEventArgs e)
         {
             TopMost = true;

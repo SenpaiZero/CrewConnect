@@ -183,7 +183,7 @@ namespace CrewConnect.Helper
         // Check if user entered alphabets only
         public static bool checkFieldAlpha(String tb)
         {
-            if (Regex.IsMatch(tb, "^[a-zA-Z\\s]+$") && !tb.Contains("  "))
+            if (Regex.IsMatch(tb, "^[a-zA-Z]+(\\s[a-zA-Z]+)*$") && !tb.Contains("  "))
                 return true;
             return false;
         }
@@ -191,7 +191,7 @@ namespace CrewConnect.Helper
         // Checks if user entered correct address
         public static bool IsValidAddress(string address)
         {
-            string pattern = "^[a-zA-Z0-9., ]+$";
+            string pattern = @"^(?!.*[,.-]{2})(?!.*\s{2})[a-zA-Z0-9,. -]+$";
             if (Regex.IsMatch(address, pattern))
                 return true;
             return false;

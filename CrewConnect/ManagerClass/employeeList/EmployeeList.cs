@@ -77,8 +77,8 @@ namespace CrewConnect.ManagerClass
         {
             con = new SqlConnection(globalVariables.server);
             SqlCommand cmd = new SqlCommand("SELECT personal.Id, personal.name, personal.age, contact.emailAddress," +
-                    " contact.phoneNumber, job.position, job.contract FROM personal JOIN contact ON " +
-                    "personal.Id = contact.Id JOIN job ON personal.Id = job.Id", con);
+                " contact.phoneNumber, job.position, job.contract FROM personal JOIN contact ON " +
+                "personal.Id = contact.Id JOIN job ON personal.Id = job.Id", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -94,8 +94,16 @@ namespace CrewConnect.ManagerClass
             loadingForm.loadingTime = 1000;
             loadingForm.ShowDialog();
 
-
             listTable.DataSource = dt;
+
+            // Modify column headers
+            listTable.Columns["Id"].HeaderText = "ID";
+            listTable.Columns["name"].HeaderText = "Name";
+            listTable.Columns["age"].HeaderText = "Age";
+            listTable.Columns["emailAddress"].HeaderText = "Email Address";
+            listTable.Columns["phoneNumber"].HeaderText = "Phone Number";
+            listTable.Columns["position"].HeaderText = "Position";
+            listTable.Columns["contract"].HeaderText = "Contract";
         }
 
         private void openSelectedBtn_Click(object sender, EventArgs e)

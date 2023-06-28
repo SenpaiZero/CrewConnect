@@ -96,6 +96,7 @@ namespace CrewConnect.Helper
         // Calculating date
         public static String calculateAge(int year, int month, int day)
         {
+            month -= 1; 
             DateTime today = DateTime.Now;
             DateTime birthdate = new DateTime(year, month, day);
 

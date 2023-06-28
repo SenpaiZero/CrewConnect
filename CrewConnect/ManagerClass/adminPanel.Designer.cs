@@ -45,6 +45,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(adminPanel));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.header = new Guna.UI2.WinForms.Guna2Panel();
@@ -60,6 +62,7 @@
             this.closeBtn = new Guna.UI2.WinForms.Guna2ImageButton();
             this.nameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.logoutBtn = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.payslipBtn = new Guna.UI2.WinForms.Guna2Button();
             this.header.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -355,6 +358,38 @@
             this.logoutBtn.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
             this.logoutBtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2HtmlLabel2_MouseDown);
             // 
+            // payslipBtn
+            // 
+            this.payslipBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.payslipBtn.AutoRoundedCorners = true;
+            this.payslipBtn.BackColor = System.Drawing.Color.Transparent;
+            this.payslipBtn.BorderRadius = 39;
+            this.payslipBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            customizableEdges17.BottomRight = false;
+            customizableEdges17.TopRight = false;
+            this.payslipBtn.CustomizableEdges = customizableEdges17;
+            this.payslipBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.payslipBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.payslipBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.payslipBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.payslipBtn.FillColor = System.Drawing.Color.Transparent;
+            this.payslipBtn.Font = new System.Drawing.Font("Segoe UI Historic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.payslipBtn.ForeColor = System.Drawing.Color.White;
+            this.payslipBtn.HoverState.Font = new System.Drawing.Font("Segoe UI Historic", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.payslipBtn.Image = global::CrewConnect.Properties.Resources.dollar;
+            this.payslipBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.payslipBtn.ImageOffset = new System.Drawing.Point(10, 0);
+            this.payslipBtn.ImageSize = new System.Drawing.Size(32, 32);
+            this.payslipBtn.Location = new System.Drawing.Point(11, 497);
+            this.payslipBtn.Name = "payslipBtn";
+            this.payslipBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            this.payslipBtn.Size = new System.Drawing.Size(261, 81);
+            this.payslipBtn.TabIndex = 14;
+            this.payslipBtn.Text = "PAYSLIP";
+            this.payslipBtn.TextOffset = new System.Drawing.Point(15, 0);
+            this.payslipBtn.UseTransparentBackground = true;
+            this.payslipBtn.Click += new System.EventHandler(this.payslipBtn_Click);
+            // 
             // adminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -370,6 +405,7 @@
             this.Controls.Add(this.listBtn);
             this.Controls.Add(this.settingBtn);
             this.Controls.Add(this.announcementBtn);
+            this.Controls.Add(this.payslipBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -407,5 +443,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel nameLabel;
         private Guna.UI2.WinForms.Guna2Panel mainPanel;
         private Guna.UI2.WinForms.Guna2HtmlLabel logoutBtn;
+        private Guna.UI2.WinForms.Guna2Button payslipBtn;
     }
 }

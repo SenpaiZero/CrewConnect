@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CrewConnect.Helper;
+using CrewConnect.ManagerClass;
 
 namespace CrewConnect
 {
@@ -30,7 +31,15 @@ namespace CrewConnect
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var loadingForm = new loadingForm();
+            loginForm log = new loginForm();
+            loadingForm.StartPosition = FormStartPosition.CenterParent;
+            loadingForm.loadingTime = 2000;
+            loadingForm.ShowDialog();
+
+            adminPanel.isCancelExit = false;
+            this.Hide();
+            Environment.Exit(0);
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

@@ -14,6 +14,7 @@ using TheArtOfDevHtmlRenderer.Adapters;
 using CrewConnect.Helper;
 using CrewConnect.ManagerClass.addEmployee;
 using CrewConnect.ManagerClass.addEmployee.pages;
+using CrewConnect.EmployeeClass;
 
 namespace CrewConnect.ManagerClass
 {
@@ -21,7 +22,7 @@ namespace CrewConnect.ManagerClass
     {
         string whatBtn = "";
         public static Guna2Panel panel;
-        private Boolean isCancelExit = true;
+        public static Boolean isCancelExit = true;
         public adminPanel()
         {
             InitializeComponent();
@@ -39,6 +40,8 @@ namespace CrewConnect.ManagerClass
 
         private void managerAddEmployee_Load(object sender, EventArgs e)
         {
+            isCancelExit = false;
+
             Task.Run(() => {
                 try
                 {
@@ -56,6 +59,8 @@ namespace CrewConnect.ManagerClass
                             else
                             {
                                 nameLabel.Text = "ADMIN";
+                                payslipBtn.Enabled = false;
+                                payslipBtn.Visible= false;
                             }
                         }
                     }
@@ -92,6 +97,7 @@ namespace CrewConnect.ManagerClass
                 addBtn.FillColor = Color.FromArgb(39, 72, 93);
                 settingBtn.FillColor = Color.FromArgb(51, 52, 78);
                 announcementBtn.FillColor = Color.FromArgb(51, 52, 78);
+                payslipBtn.FillColor = Color.FromArgb(51, 52, 78);
                 pageHelper.changePage(new page1(), panel);
                 ResumeLayout();
             }
@@ -136,6 +142,7 @@ namespace CrewConnect.ManagerClass
                 listBtn.FillColor = Color.FromArgb(39, 72, 93);
                 settingBtn.FillColor = Color.FromArgb(51, 52, 78);
                 announcementBtn.FillColor = Color.FromArgb(51, 52, 78);
+                payslipBtn.FillColor = Color.FromArgb(51, 52, 78);
                 pageHelper.changePage(new EmployeeList(), panel);
                 ResumeLayout();
             }
@@ -154,6 +161,7 @@ namespace CrewConnect.ManagerClass
                 listBtn.FillColor = Color.FromArgb(51, 52, 78);
                 settingBtn.FillColor = Color.FromArgb(39, 72, 93);
                 announcementBtn.FillColor = Color.FromArgb(51, 52, 78);
+                payslipBtn.FillColor = Color.FromArgb(51, 52, 78);
                 pageHelper.changePage(new adminSetting(), panel);
                 ResumeLayout();
             }
@@ -169,6 +177,7 @@ namespace CrewConnect.ManagerClass
                 pageHelper.f.Close();
                 whatBtn = "announcement";
                 addBtn.FillColor = Color.FromArgb(51, 52, 78);
+                payslipBtn.FillColor = Color.FromArgb(51, 52, 78);
                 listBtn.FillColor = Color.FromArgb(51, 52, 78);
                 settingBtn.FillColor = Color.FromArgb(51, 52, 78);
                 announcementBtn.FillColor = Color.FromArgb(39, 72, 93);
@@ -237,21 +246,21 @@ namespace CrewConnect.ManagerClass
                     "Add Employee", "Add Employee", "Textbox", 
                     "Search", "Search", "Employee List", "Employee List",
                     "Setting", "Setting", "Announcement", "Announcement",
-                    "Menu", "Menu", "Menu", "Menu"
+                    "Menu", "Menu", "Menu", "Menu", "Menu"
                 },
                 Names = new string[]
                 {
                     "Next Button", "Previous Button", "Stop Textbox Focus", 
                     "Focus Search Textbox", "Enter Search", "All Refresh", "Open Selected",
                     "System Tab", "Account Tab", "Delete Selected", "Focus Add Textbox",
-                    "Add Employee", "Employee List", "Settings", "Announcement"
+                    "Add Employee", "Employee List", "Settings", "Announcement", "Payslip"
                 },
                 Key = new string[]
                 {
                     "ENTER", "ESC", "CTRL + SPACE", 
                     "F", "ENTER", "R", "O",
                     "Q", "W", "D", "A",
-                    "NUM 1", "NUM 2", "NUM 3", "NUM 4"
+                    "NUM 1", "NUM 2", "NUM 3", "NUM 4", "Num 5"
                 },
             };
 
@@ -291,9 +300,11 @@ namespace CrewConnect.ManagerClass
                 settingBtn.PerformClick();
             if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
                 announcementBtn.PerformClick();
+            if (e.KeyCode == Keys.D5 || e.KeyCode == Keys.NumPad5)
+                payslipBtn.PerformClick();
 
             // list
-            if(whatBtn == "list")
+            if (whatBtn == "list")
             {
                 if(e.KeyCode == Keys.F)
                 {
@@ -340,6 +351,36 @@ namespace CrewConnect.ManagerClass
         {
             if(shortcut != null)
                 shortcut.showAsSide(this);
+        }
+
+        private void payslipBtn_Click(object sender, EventArgs e)
+        {
+            if(nameLabel.Text == "ADMIN")
+            {
+                messageDialogForm msg = new messageDialogForm()
+                {
+                    title = "You are not allowed to see payslip",
+                    message = "Owner does not have a salary"
+                };
+                msg.ShowDialog();
+                return;
+            }
+
+            if (whatBtn != "payslip")
+            {
+                globalVariables.isEdit = false;
+                SuspendLayout();
+                pageHelper.f.Close();
+                whatBtn = "payslip";
+                addBtn.FillColor = Color.FromArgb(51, 52, 78);
+                payslipBtn.FillColor = Color.FromArgb(39, 72, 93);
+                listBtn.FillColor = Color.FromArgb(51, 52, 78);
+                settingBtn.FillColor = Color.FromArgb(51, 52, 78);
+                announcementBtn.FillColor = Color.FromArgb(51, 52, 78);
+                pageHelper.changePage(new payslipForm(), panel);
+                ResumeLayout();
+            }
+            Focus();
         }
     }
 }

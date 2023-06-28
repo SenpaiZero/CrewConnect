@@ -269,19 +269,21 @@ namespace CrewConnect.ManagerClass
                                     cmd.Transaction = trans;
 
                                     //updateData(name1, "personal", "name", cmd);
+                                    updateData(positionCB.Text, "Users", "position", cmd);
+
                                     updateData(statusCB.Text, "personal", "status", cmd);
                                     updateData(religionCB.Text, "personal", "religion", cmd);
                                     updateData(genderCB.Text, "personal", "gender", cmd);
+                                    updateData(calculateAge(), "personal", "age", cmd);
+                                    updateData(bloodTypeCB.Text, "personal", "bloodType", cmd);
+                                    updateData(positionCB.Text, "job", "position", cmd);
+                                    updateData(contractCB.Text, "job", "contract", cmd);
+                                    updateData(salary1, "job", "salary", cmd);
 
                                     DateTime date = new DateTime(Convert.ToInt32(yearCB.Text), (monthCB.SelectedIndex + 1),
                                         Convert.ToInt32(dayCB.Text));
                                     updateData(date, "personal", "birthday", cmd);
-                                    updateData(calculateAge(), "personal", "age", cmd);
-                                    updateData(bloodTypeCB.Text, "personal", "bloodType", cmd);
 
-                                    updateData(positionCB.Text, "job", "position", cmd);
-                                    updateData(contractCB.Text, "job", "contract", cmd);
-                                    updateData(salary1, "job", "salary", cmd);
 
                                     updateData(phoneNum1, "contact", "phoneNumber", cmd);
                                     updateData(email1, "contact", "emailAddress", cmd);
@@ -358,10 +360,11 @@ namespace CrewConnect.ManagerClass
 
         void updateData(string data, string table, string column, SqlCommand cmd)
         {
-            cmd.CommandText = $"UPDATE {table} SET {column} = @{column} WHERE {table}.Id = '{selectedID}'";
-            cmd.Parameters.AddWithValue("@" + column, data);
+            cmd.CommandText = $"UPDATE {table} SET {column} = @{table}_{column} WHERE {table}.Id = '{selectedID}'";
+            cmd.Parameters.AddWithValue("@" + table + "_" + column, data); 
 
             cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
         }
 
         void updateData(DateTime date, string table, string column, SqlCommand cmd)
