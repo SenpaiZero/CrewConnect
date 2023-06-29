@@ -28,7 +28,11 @@
 
 
 <div align="center">
-
+ 
+ ## 
+LINK TO PAPER AND PPT USED IN DEFENDING OUR SYSTEM
+ 
+https://drive.google.com/drive/folders/1c6xX3PAdzjsfurJd-CILYz9QTHh-5IBH?usp=sharing
 <br /><br />
  
   ## EMAIL EXAMPLES
